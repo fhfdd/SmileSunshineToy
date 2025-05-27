@@ -13,10 +13,10 @@ namespace SmileSunshineToy
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class testEntities : DbContext
+    public partial class testEntities2 : DbContext
     {
-        public testEntities()
-            : base("name=testEntities")
+        public testEntities2()
+            : base("name=testEntities2")
         {
         }
     
@@ -25,6 +25,23 @@ namespace SmileSunshineToy
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<student> students { get; set; }
+        public DbSet<aftersalerequest> aftersalerequests { get; set; }
+        public DbSet<cschat> cschats { get; set; }
+        public DbSet<customer> customers { get; set; }
+        public DbSet<feedback> feedbacks { get; set; }
+        public DbSet<inventory> inventories { get; set; }
+        public DbSet<invoice> invoices { get; set; }
+        public DbSet<logistic> logistics { get; set; }
+        public DbSet<order> orders { get; set; }
+        public DbSet<payment> payments { get; set; }
+        public DbSet<product> products { get; set; }
+        public DbSet<productionplan> productionplans { get; set; }
+        public DbSet<quotation> quotations { get; set; }
+        public DbSet<returnrequest> returnrequests { get; set; }
+        public DbSet<shipment> shipments { get; set; }
+        public DbSet<supplier> suppliers { get; set; }
+        public DbSet<task> tasks { get; set; }
+        public DbSet<user> users { get; set; }
+        public DbSet<workorder> workorders { get; set; }
     }
 }

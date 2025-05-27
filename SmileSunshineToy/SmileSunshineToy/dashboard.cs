@@ -41,5 +41,12 @@ namespace SmileSunshineToy
         {
 
         }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(DialogResult.Yes == MessageBox.Show("Are you sure to sign out?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)){
+                this.Close();
+            }
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace SmileSunshineToy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new sale_order());
+            Application.Run(new login());
         }
     }
 }
