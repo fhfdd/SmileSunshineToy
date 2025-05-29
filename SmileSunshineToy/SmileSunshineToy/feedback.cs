@@ -12,10 +12,13 @@ namespace SmileSunshineToy
     using System;
     using System.Collections.Generic;
     
-    public partial class student
+    public partial class feedback
     {
-        public int sid { get; set; }
-        public string fname { get; set; }
-        public string lname { get; set; }
+        public int FeedbackID { get; set; }
+        public int CustomerID { get; set; }
+        public string FeedbackText { get; set; }
+        public Nullable<System.DateTime> FeedbackDate { get; set; }
+    
+        public virtual customer customer { get; set; }
     }
 }
