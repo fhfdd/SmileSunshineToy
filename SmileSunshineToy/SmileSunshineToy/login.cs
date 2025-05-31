@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.Sql;
+using System.Data.SqlTypes;
+using MySql.Data.MySqlClient;
 
 namespace SmileSunshineToy
 {
     public partial class login : Form
     {
+        private string sqlcon1 = "Server=127.0.0.1;Database=test;Uid=root;Pwd=;";
         public login()
         {
             InitializeComponent();
@@ -22,15 +25,14 @@ namespace SmileSunshineToy
         public static int UserID;
         public static string UserName;
 
-        //1.不同用户不同界面
 
-
-        //2.获取账号
+          //1.获取账号
         private void Login() {
             int id = int.Parse(userID.Text);
             string pwd = password.Text;
 
-            //获取数据库
+            //2.不同用户不同界面
+
 
         }
 
@@ -52,62 +54,37 @@ namespace SmileSunshineToy
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // 验证输入是否为空
             if (string.IsNullOrEmpty(userID.Text) || string.IsNullOrEmpty(password.Text))
             {
-                MessageBox.Show("Please input username or password", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("please enter you id and password");
                 return;
             }
 
-            // 数据库连接字符串
-            string connectionString = "Server=.;Database=test;Integrated Security=True;";
-
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (MySqlConnection conn = new MySqlConnection(sqlcon1))
                 {
                     conn.Open();
-                    string sql = "SELECT UserID, Name, Role FROM [User] WHERE UserID = @UserID AND Password = @Password";
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    string sql = "SELECT UserID, Name, Role FROM `User` WHERE UserID = @UserID AND Password = @Password";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                     {
-
-                        int userId;
-                        if (!int.TryParse(userID.Text, out userId))
-                        {
-                            MessageBox.Show("userid have to be interger", "Mistake", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        cmd.Parameters.AddWithValue("@UserID", userId);
+                        cmd.Parameters.AddWithValue("@UserID", int.Parse(userID.Text));
                         cmd.Parameters.AddWithValue("@Password", password.Text);
 
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                // 提取用户信息
-                                UserID = (int)reader["UserID"];
+                                UserID = Convert.ToInt32(reader["UserID"]);
                                 UserName = reader["Name"].ToString();
-                                string role = reader["Role"].ToString();
-
-                                // 根据角色跳转界面（需先创建对应的窗体：AdminForm 和 SalesForm）
-                                switch (role)
-                                {
-                                    case "Admin":
-                                        new dashboard().Show(); // 管理员界面（需存在该窗体）
-                                        break;
-                                    case "Sales":
-                                        new dashboard().Show(); // 销售界面（需存在该窗体）
-                                        break;
-                                    default:
-                                        MessageBox.Show("该角色无访问权限", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        return;
-                                }
-                                this.Hide(); // 隐藏登录窗口
+                                MessageBox.Show("Login successful");
+                                this.Hide();
+                                new dashboard().Show();
                             }
                             else
                             {
-                                MessageBox.Show("account or password wrong", "Mistake", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("account or password discorrect");
                             }
                         }
                     }
@@ -115,8 +92,16 @@ namespace SmileSunshineToy
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"数据库操作失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MySqlConnection con1 = new MySqlConnection(sqlcon1);
+            con1.Open();
+            MessageBox.Show("求你成功吧");
+            con1.Close();
         }
     }
 }
