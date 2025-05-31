@@ -4,8 +4,39 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="059cec75e3784b7f8c4b890686e3f083" Name="Diagram1">
-        <EntityTypeShape EntityType="testModel.student" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="0f7b26c1483142bd90b822d422921752" Name="Diagram1">
+        <EntityTypeShape EntityType="testModel.aftersalerequest" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.cschat" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.customer" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.feedback" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.inventory" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.invoice" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.logistic" Width="1.5" PointX="7.5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.order" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.payment" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.product" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.productionplan" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.quotation" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.returnrequest" Width="1.5" PointX="8.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.shipment" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.supplier" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.task" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.user" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.workorder" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="testModel.aftersalerequest_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.cschat_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.feedback_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.order_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.quotation_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.inventory_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.invoice_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.payment_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.logistics_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.returnrequest_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.shipment_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.quotation_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.returnrequest_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.workorder_ibfk_1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
