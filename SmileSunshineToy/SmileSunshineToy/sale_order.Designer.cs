@@ -1,6 +1,6 @@
 ﻿namespace SmileSunshineToy
 {
-    partial class dashboard
+    partial class sale_order
     {
         /// <summary>
         /// Required designer variable.
@@ -62,24 +62,21 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(227, 448);
-            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Size = new System.Drawing.Size(227, 571);
+            this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // saleOrderToolStripMenuItem
             // 
             this.saleOrderToolStripMenuItem.Name = "saleOrderToolStripMenuItem";
             this.saleOrderToolStripMenuItem.Size = new System.Drawing.Size(119, 26);
             this.saleOrderToolStripMenuItem.Text = "Sale order";
-            this.saleOrderToolStripMenuItem.Click += new System.EventHandler(this.saleOrderToolStripMenuItem_Click);
             // 
             // inventoryToolStripMenuItem
             // 
@@ -92,14 +89,12 @@
             this.rDToolStripMenuItem.Name = "rDToolStripMenuItem";
             this.rDToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.rDToolStripMenuItem.Text = "R&D";
-            this.rDToolStripMenuItem.Click += new System.EventHandler(this.rDToolStripMenuItem_Click);
             // 
             // financialToolStripMenuItem
             // 
             this.financialToolStripMenuItem.Name = "financialToolStripMenuItem";
             this.financialToolStripMenuItem.Size = new System.Drawing.Size(107, 26);
             this.financialToolStripMenuItem.Text = "Financial";
-            this.financialToolStripMenuItem.Click += new System.EventHandler(this.financialToolStripMenuItem_Click);
             // 
             // productionToolStripMenuItem
             // 
@@ -132,20 +127,15 @@
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(97, 26);
             this.signOutToolStripMenuItem.Text = "sign out";
-            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
-            // dashboard
+            // sale_order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 448);
+            this.ClientSize = new System.Drawing.Size(995, 571);
             this.Controls.Add(this.menuStrip1);
-            this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "dashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "dashboard";
-            this.Load += new System.EventHandler(this.dashboard_Load);
+            this.Name = "sale_order";
+            this.Text = "sale_order";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
