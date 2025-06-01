@@ -289,6 +289,7 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(213, 715);
             this.leftPanel.TabIndex = 2;
+            this.leftPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.leftPanel_Paint);
             // 
             // RD
             // 
