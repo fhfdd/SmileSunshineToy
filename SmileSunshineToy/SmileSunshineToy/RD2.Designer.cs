@@ -83,12 +83,13 @@ namespace WindowsFormsApp1
             this.labelManager = new System.Windows.Forms.Label();
             this.textBoxProjectID = new System.Windows.Forms.TextBox();
             this.labelProjectID = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.materialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvailableStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outboundWarehouse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.version = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -318,12 +319,13 @@ namespace WindowsFormsApp1
             this.dataGridViewPrototype.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewPrototype.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPrototype.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewButtonColumn1});
+            this.materialName,
+            this.materialID,
+            this.AvailableStock,
+            this.qty,
+            this.Price,
+            this.outboundWarehouse,
+            this.version});
             this.dataGridViewPrototype.Location = new System.Drawing.Point(22, 313);
             this.dataGridViewPrototype.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewPrototype.Name = "dataGridViewPrototype";
@@ -614,53 +616,61 @@ namespace WindowsFormsApp1
             this.labelProjectID.TabIndex = 5;
             this.labelProjectID.Text = "Project ID:";
             // 
-            // dataGridViewTextBoxColumn1
+            // materialName
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 190;
+            this.materialName.HeaderText = "materialName";
+            this.materialName.MinimumWidth = 8;
+            this.materialName.Name = "materialName";
+            this.materialName.ReadOnly = true;
+            this.materialName.Width = 180;
             // 
-            // dataGridViewTextBoxColumn2
+            // materialID
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 190;
+            this.materialID.HeaderText = "materialID";
+            this.materialID.MinimumWidth = 8;
+            this.materialID.Name = "materialID";
+            this.materialID.ReadOnly = true;
+            this.materialID.Width = 180;
             // 
-            // dataGridViewTextBoxColumn3
+            // AvailableStock
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 190;
+            this.AvailableStock.HeaderText = "AvailableStock";
+            this.AvailableStock.MinimumWidth = 8;
+            this.AvailableStock.Name = "AvailableStock";
+            this.AvailableStock.ReadOnly = true;
+            this.AvailableStock.Width = 180;
             // 
-            // dataGridViewTextBoxColumn4
+            // qty
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 190;
+            this.qty.HeaderText = "qty";
+            this.qty.MinimumWidth = 8;
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            this.qty.Width = 120;
             // 
-            // dataGridViewTextBoxColumn5
+            // Price
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 190;
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 8;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 140;
             // 
-            // dataGridViewButtonColumn1
+            // outboundWarehouse
             // 
-            this.dataGridViewButtonColumn1.HeaderText = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.MinimumWidth = 10;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Width = 190;
+            this.outboundWarehouse.HeaderText = "outboundWarehouse";
+            this.outboundWarehouse.MinimumWidth = 8;
+            this.outboundWarehouse.Name = "outboundWarehouse";
+            this.outboundWarehouse.ReadOnly = true;
+            this.outboundWarehouse.Width = 200;
+            // 
+            // version
+            // 
+            this.version.HeaderText = "version";
+            this.version.MinimumWidth = 8;
+            this.version.Name = "version";
+            this.version.ReadOnly = true;
+            this.version.Width = 140;
             // 
             // RD2
             // 
@@ -743,11 +753,12 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Button buttonCreateReport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AvailableStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outboundWarehouse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn version;
     }
 }
