@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class sale_order : Form
+    public partial class SalPrint : Form
     {
-        public sale_order()
+        public SalPrint()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SalPrint_Load(object sender, EventArgs e)
         {
 
         }

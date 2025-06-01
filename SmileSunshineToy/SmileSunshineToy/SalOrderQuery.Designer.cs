@@ -1,6 +1,6 @@
 ﻿namespace SmileSunshineToy
 {
-    partial class Dashboard
+    partial class SalOrderQuery
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.components = new System.ComponentModel.Container();
+            this.saleAllSearch = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.saleAllFliter = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.testDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new SmileSunshineToy.testDataSet();
+            this.saleSearch = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,71 +49,34 @@
             this.procurementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personnelInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BottomToolStripPanel
+            // saleAllSearch
             // 
-            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
-            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            this.saleAllSearch.Location = new System.Drawing.Point(578, 37);
+            this.saleAllSearch.Name = "saleAllSearch";
+            this.saleAllSearch.Size = new System.Drawing.Size(87, 28);
+            this.saleAllSearch.TabIndex = 2;
+            this.saleAllSearch.Text = "search order ID";
+            this.saleAllSearch.UseVisualStyleBackColor = true;
             // 
-            // TopToolStripPanel
+            // button1
             // 
-            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopToolStripPanel.Name = "TopToolStripPanel";
-            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // RightToolStripPanel
-            // 
-            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.RightToolStripPanel.Name = "RightToolStripPanel";
-            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // LeftToolStripPanel
-            // 
-            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
-            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ContentPanel.Size = new System.Drawing.Size(1128, 700);
-            // 
-            // toolStripContainer1
-            // 
-            this.toolStripContainer1.BottomToolStripPanelVisible = false;
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(888, 643);
-            this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            // 
-            // toolStripContainer1.LeftToolStripPanel
-            // 
-            this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1128, 643);
-            this.toolStripContainer1.TabIndex = 3;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            this.toolStripContainer1.TopToolStripPanelVisible = false;
+            this.button1.Location = new System.Drawing.Point(32, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 40);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Create Table";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -122,28 +88,107 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Smile Sunshine Toy system";
             // 
-            // panel1
+            // toolStripContainer1
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 57);
-            this.panel1.TabIndex = 2;
+            this.toolStripContainer1.BottomToolStripPanelVisible = false;
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.saleAllFliter);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.saleAllSearch);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.saleSearch);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.button1);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(888, 643);
+            this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            // 
+            // toolStripContainer1.LeftToolStripPanel
+            // 
+            this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.RightToolStripPanelVisible = false;
+            this.toolStripContainer1.Size = new System.Drawing.Size(1128, 643);
+            this.toolStripContainer1.TabIndex = 5;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.toolStripContainer1.TopToolStripPanelVisible = false;
+            // 
+            // saleAllFliter
+            // 
+            this.saleAllFliter.FormattingEnabled = true;
+            this.saleAllFliter.Location = new System.Drawing.Point(271, 39);
+            this.saleAllFliter.Name = "saleAllFliter";
+            this.saleAllFliter.Size = new System.Drawing.Size(107, 26);
+            this.saleAllFliter.TabIndex = 4;
+            this.saleAllFliter.Text = "order ID";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.testDataSetBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(32, 194);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.Size = new System.Drawing.Size(825, 403);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // testDataSetBindingSource
+            // 
+            this.testDataSetBindingSource.DataSource = this.testDataSet;
+            this.testDataSetBindingSource.Position = 0;
+            // 
+            // testDataSet
+            // 
+            this.testDataSet.DataSetName = "testDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // saleSearch
+            // 
+            this.saleSearch.Location = new System.Drawing.Point(374, 37);
+            this.saleSearch.Name = "saleSearch";
+            this.saleSearch.Size = new System.Drawing.Size(207, 28);
+            this.saleSearch.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
+            this.saleOrderToolStripMenuItem,
+            this.inventoryToolStripMenuItem,
+            this.rDToolStripMenuItem,
+            this.financialToolStripMenuItem,
+            this.productionToolStripMenuItem,
+            this.logisticsToolStripMenuItem,
+            this.procurementToolStripMenuItem,
+            this.personnelInformationToolStripMenuItem,
+            this.signOutToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(240, 643);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
             this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // saleOrderToolStripMenuItem
             // 
             this.saleOrderToolStripMenuItem.Name = "saleOrderToolStripMenuItem";
             this.saleOrderToolStripMenuItem.Size = new System.Drawing.Size(119, 29);
             this.saleOrderToolStripMenuItem.Text = "Sale order";
-            this.saleOrderToolStripMenuItem.Click += new System.EventHandler(this.saleOrderToolStripMenuItem_Click);
             // 
             // inventoryToolStripMenuItem
             // 
@@ -156,14 +201,12 @@
             this.rDToolStripMenuItem.Name = "rDToolStripMenuItem";
             this.rDToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
             this.rDToolStripMenuItem.Text = "R&D";
-            this.rDToolStripMenuItem.Click += new System.EventHandler(this.rDToolStripMenuItem_Click);
             // 
             // financialToolStripMenuItem
             // 
             this.financialToolStripMenuItem.Name = "financialToolStripMenuItem";
             this.financialToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
             this.financialToolStripMenuItem.Text = "Financial";
-            this.financialToolStripMenuItem.Click += new System.EventHandler(this.financialToolStripMenuItem_Click);
             // 
             // productionToolStripMenuItem
             // 
@@ -199,33 +242,16 @@
             this.signOutToolStripMenuItem.Text = "sign out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
-            // menuStrip1
+            // panel1
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.saleOrderToolStripMenuItem,
-            this.inventoryToolStripMenuItem,
-            this.rDToolStripMenuItem,
-            this.financialToolStripMenuItem,
-            this.productionToolStripMenuItem,
-            this.logisticsToolStripMenuItem,
-            this.procurementToolStripMenuItem,
-            this.personnelInformationToolStripMenuItem,
-            this.signOutToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(240, 643);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1128, 57);
+            this.panel1.TabIndex = 4;
             // 
-            // dashboard
+            // SalOrderQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,32 +259,34 @@
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "dashboard";
+            this.Name = "SalOrderQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "dashboard";
-            this.Load += new System.EventHandler(this.dashboard_Load);
+            this.Text = "sale_order";
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
-        private System.Windows.Forms.ToolStripContentPanel ContentPanel;
+        private System.Windows.Forms.Button saleAllSearch;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox saleSearch;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saleOrderToolStripMenuItem;
@@ -270,7 +298,9 @@
         private System.Windows.Forms.ToolStripMenuItem procurementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personnelInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox saleAllFliter;
+        private System.Windows.Forms.BindingSource testDataSetBindingSource;
+        private testDataSet testDataSet;
     }
 }
