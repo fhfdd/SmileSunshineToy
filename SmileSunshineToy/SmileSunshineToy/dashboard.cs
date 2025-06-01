@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class dashboard : Form
+    public partial class Dashboard : Form
     {
-        public dashboard()
+        public Dashboard()
         {
             InitializeComponent();
         }
@@ -24,7 +24,8 @@ namespace SmileSunshineToy
 
         private void saleOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new SalOrderQuery().Show();
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,6 +51,21 @@ namespace SmileSunshineToy
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
         }
