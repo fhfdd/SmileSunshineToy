@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class dashboard : Form
+    public partial class Form1 : Form
     {
-        public dashboard()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void rDToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void saleOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,7 +22,7 @@ namespace SmileSunshineToy
 
         }
 
-        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rDToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -37,19 +32,7 @@ namespace SmileSunshineToy
 
         }
 
-        private void dashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if(DialogResult.Yes == MessageBox.Show("Are you sure to sign out?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)){
-                this.Close();
-            }
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
