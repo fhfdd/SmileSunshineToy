@@ -1,0 +1,1086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="testModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="aftersalerequest">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="RequestDate" Type="date" />
+        </EntityType>
+        <EntityType Name="cschat">
+          <Key>
+            <PropertyRef Name="ChatID" />
+          </Key>
+          <Property Name="ChatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" />
+          <Property Name="Response" Type="varchar" MaxLength="100" />
+          <Property Name="Timestamp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Feedback" Type="varchar" MaxLength="500" />
+          <Property Name="Phone" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="feedback">
+          <Key>
+            <PropertyRef Name="FeedbackID" />
+          </Key>
+          <Property Name="FeedbackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="FeedbackText" Type="varchar" MaxLength="500" />
+          <Property Name="FeedbackDate" Type="date" />
+        </EntityType>
+        <EntityType Name="inventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+          </Key>
+          <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="InvoiceDate" Type="date" />
+          <Property Name="TotalAmount" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="logistics">
+          <Key>
+            <PropertyRef Name="logisticsID" />
+          </Key>
+          <Property Name="logisticsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShipmentID" Type="int" />
+          <Property Name="status" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="OrderDate" Type="date" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
+          <Property Name="TotalAmount" Type="int" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceID" Type="int" Nullable="false" />
+          <Property Name="PaymentDate" Type="date" />
+          <Property Name="Amount" Type="varchar" MaxLength="10" />
+          <Property Name="PaymentMethod" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="Price" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="StockQuantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="productionplan">
+          <Key>
+            <PropertyRef Name="planID" />
+          </Key>
+          <Property Name="planID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="startDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Stutas" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="quotation">
+          <Key>
+            <PropertyRef Name="QuotationID" />
+          </Key>
+          <Property Name="QuotationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="returnrequest">
+          <Key>
+            <PropertyRef Name="ExchangeID" />
+          </Key>
+          <Property Name="ExchangeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="UpdatedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="shipment">
+          <Key>
+            <PropertyRef Name="shipmentID" />
+          </Key>
+          <Property Name="shipmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="TrackingNumber" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="30" />
+          <Property Name="EstimatedDeliveryDate" Type="date" />
+        </EntityType>
+        <EntityType Name="supplier">
+          <Key>
+            <PropertyRef Name="SuPPlierID" />
+          </Key>
+          <Property Name="SuPPlierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="contactInfo" Type="varchar" MaxLength="30" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="task">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TaskName" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
+          <Property Name="Duedate" Type="date" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="10" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="workorder">
+          <Key>
+            <PropertyRef Name="WorkOrderID" />
+          </Key>
+          <Property Name="WorkOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productionPlanID" Type="int" />
+          <Property Name="Stutas" Type="varchar" MaxLength="5" />
+          <Property Name="startDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+        </EntityType>
+        <Association Name="aftersalerequest_ibfk_1">
+          <End Role="order" Type="Self.order" Multiplicity="0..1" />
+          <End Role="aftersalerequest" Type="Self.aftersalerequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="aftersalerequest">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cschat_ibfk_1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="cschat" Type="Self.cschat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="cschat">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="feedback_ibfk_1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="feedback" Type="Self.feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="feedback">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="inventory_ibfk_1">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="inventory" Type="Self.inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="inventory">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="invoice_ibfk_1">
+          <End Role="order" Type="Self.order" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="logistics_ibfk_1">
+          <End Role="shipment" Type="Self.shipment" Multiplicity="0..1" />
+          <End Role="logistics" Type="Self.logistics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shipment">
+              <PropertyRef Name="shipmentID" />
+            </Principal>
+            <Dependent Role="logistics">
+              <PropertyRef Name="ShipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_ibfk_1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="payment_ibfk_1">
+          <End Role="invoice" Type="Self.invoice" Multiplicity="1" />
+          <End Role="payment" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoice">
+              <PropertyRef Name="InvoiceID" />
+            </Principal>
+            <Dependent Role="payment">
+              <PropertyRef Name="InvoiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="quotation_ibfk_1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="quotation" Type="Self.quotation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="quotation">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="quotation_ibfk_2">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="quotation" Type="Self.quotation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="quotation">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="returnrequest_ibfk_1">
+          <End Role="order" Type="Self.order" Multiplicity="1" />
+          <End Role="returnrequest" Type="Self.returnrequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="returnrequest">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="returnrequest_ibfk_2">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="returnrequest" Type="Self.returnrequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="returnrequest">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="shipment_ibfk_1">
+          <End Role="order" Type="Self.order" Multiplicity="0..1" />
+          <End Role="shipment" Type="Self.shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="shipment">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="workorder_ibfk_1">
+          <End Role="productionplan" Type="Self.productionplan" Multiplicity="0..1" />
+          <End Role="workorder" Type="Self.workorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productionplan">
+              <PropertyRef Name="planID" />
+            </Principal>
+            <Dependent Role="workorder">
+              <PropertyRef Name="productionPlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="testModelStoreContainer">
+          <EntitySet Name="aftersalerequest" EntityType="Self.aftersalerequest" Schema="test" store:Type="Tables" />
+          <EntitySet Name="cschat" EntityType="Self.cschat" Schema="test" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="test" store:Type="Tables" />
+          <EntitySet Name="feedback" EntityType="Self.feedback" Schema="test" store:Type="Tables" />
+          <EntitySet Name="inventory" EntityType="Self.inventory" Schema="test" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="test" store:Type="Tables" />
+          <EntitySet Name="logistics" EntityType="Self.logistics" Schema="test" store:Type="Tables" />
+          <EntitySet Name="order" EntityType="Self.order" Schema="test" store:Type="Tables" />
+          <EntitySet Name="payment" EntityType="Self.payment" Schema="test" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="test" store:Type="Tables" />
+          <EntitySet Name="productionplan" EntityType="Self.productionplan" Schema="test" store:Type="Tables" />
+          <EntitySet Name="quotation" EntityType="Self.quotation" Schema="test" store:Type="Tables" />
+          <EntitySet Name="returnrequest" EntityType="Self.returnrequest" Schema="test" store:Type="Tables" />
+          <EntitySet Name="shipment" EntityType="Self.shipment" Schema="test" store:Type="Tables" />
+          <EntitySet Name="supplier" EntityType="Self.supplier" Schema="test" store:Type="Tables" />
+          <EntitySet Name="task" EntityType="Self.task" Schema="test" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="test" store:Type="Tables" />
+          <EntitySet Name="workorder" EntityType="Self.workorder" Schema="test" store:Type="Tables" />
+          <AssociationSet Name="aftersalerequest_ibfk_1" Association="Self.aftersalerequest_ibfk_1">
+            <End Role="order" EntitySet="order" />
+            <End Role="aftersalerequest" EntitySet="aftersalerequest" />
+          </AssociationSet>
+          <AssociationSet Name="cschat_ibfk_1" Association="Self.cschat_ibfk_1">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="cschat" EntitySet="cschat" />
+          </AssociationSet>
+          <AssociationSet Name="feedback_ibfk_1" Association="Self.feedback_ibfk_1">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="feedback" EntitySet="feedback" />
+          </AssociationSet>
+          <AssociationSet Name="inventory_ibfk_1" Association="Self.inventory_ibfk_1">
+            <End Role="product" EntitySet="product" />
+            <End Role="inventory" EntitySet="inventory" />
+          </AssociationSet>
+          <AssociationSet Name="invoice_ibfk_1" Association="Self.invoice_ibfk_1">
+            <End Role="order" EntitySet="order" />
+            <End Role="invoice" EntitySet="invoice" />
+          </AssociationSet>
+          <AssociationSet Name="logistics_ibfk_1" Association="Self.logistics_ibfk_1">
+            <End Role="shipment" EntitySet="shipment" />
+            <End Role="logistics" EntitySet="logistics" />
+          </AssociationSet>
+          <AssociationSet Name="order_ibfk_1" Association="Self.order_ibfk_1">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+          <AssociationSet Name="payment_ibfk_1" Association="Self.payment_ibfk_1">
+            <End Role="invoice" EntitySet="invoice" />
+            <End Role="payment" EntitySet="payment" />
+          </AssociationSet>
+          <AssociationSet Name="quotation_ibfk_1" Association="Self.quotation_ibfk_1">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="quotation" EntitySet="quotation" />
+          </AssociationSet>
+          <AssociationSet Name="quotation_ibfk_2" Association="Self.quotation_ibfk_2">
+            <End Role="product" EntitySet="product" />
+            <End Role="quotation" EntitySet="quotation" />
+          </AssociationSet>
+          <AssociationSet Name="returnrequest_ibfk_1" Association="Self.returnrequest_ibfk_1">
+            <End Role="order" EntitySet="order" />
+            <End Role="returnrequest" EntitySet="returnrequest" />
+          </AssociationSet>
+          <AssociationSet Name="returnrequest_ibfk_2" Association="Self.returnrequest_ibfk_2">
+            <End Role="product" EntitySet="product" />
+            <End Role="returnrequest" EntitySet="returnrequest" />
+          </AssociationSet>
+          <AssociationSet Name="shipment_ibfk_1" Association="Self.shipment_ibfk_1">
+            <End Role="order" EntitySet="order" />
+            <End Role="shipment" EntitySet="shipment" />
+          </AssociationSet>
+          <AssociationSet Name="workorder_ibfk_1" Association="Self.workorder_ibfk_1">
+            <End Role="productionplan" EntitySet="productionplan" />
+            <End Role="workorder" EntitySet="workorder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="aftersalerequest">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RequestDate" Type="DateTime" />
+          <NavigationProperty Name="order" Relationship="Self.aftersalerequest_ibfk_1" FromRole="aftersalerequest" ToRole="order" />
+        </EntityType>
+        <EntityType Name="cschat">
+          <Key>
+            <PropertyRef Name="ChatID" />
+          </Key>
+          <Property Name="ChatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Response" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Timestamp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="customer" Relationship="Self.cschat_ibfk_1" FromRole="cschat" ToRole="customer" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Feedback" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cschats" Relationship="Self.cschat_ibfk_1" FromRole="customer" ToRole="cschat" />
+          <NavigationProperty Name="feedbacks" Relationship="Self.feedback_ibfk_1" FromRole="customer" ToRole="feedback" />
+          <NavigationProperty Name="orders" Relationship="Self.order_ibfk_1" FromRole="customer" ToRole="order" />
+          <NavigationProperty Name="quotations" Relationship="Self.quotation_ibfk_1" FromRole="customer" ToRole="quotation" />
+        </EntityType>
+        <EntityType Name="feedback">
+          <Key>
+            <PropertyRef Name="FeedbackID" />
+          </Key>
+          <Property Name="FeedbackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="FeedbackText" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FeedbackDate" Type="DateTime" />
+          <NavigationProperty Name="customer" Relationship="Self.feedback_ibfk_1" FromRole="feedback" ToRole="customer" />
+        </EntityType>
+        <EntityType Name="inventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+          </Key>
+          <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="product" Relationship="Self.inventory_ibfk_1" FromRole="inventory" ToRole="product" />
+        </EntityType>
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="InvoiceDate" Type="DateTime" />
+          <Property Name="TotalAmount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="order" Relationship="Self.invoice_ibfk_1" FromRole="invoice" ToRole="order" />
+          <NavigationProperty Name="payments" Relationship="Self.payment_ibfk_1" FromRole="invoice" ToRole="payment" />
+        </EntityType>
+        <EntityType Name="logistic">
+          <Key>
+            <PropertyRef Name="logisticsID" />
+          </Key>
+          <Property Name="logisticsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShipmentID" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="shipment" Relationship="Self.logistics_ibfk_1" FromRole="logistics" ToRole="shipment" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TotalAmount" Type="Int32" />
+          <NavigationProperty Name="aftersalerequests" Relationship="Self.aftersalerequest_ibfk_1" FromRole="order" ToRole="aftersalerequest" />
+          <NavigationProperty Name="customer" Relationship="Self.order_ibfk_1" FromRole="order" ToRole="customer" />
+          <NavigationProperty Name="invoices" Relationship="Self.invoice_ibfk_1" FromRole="order" ToRole="invoice" />
+          <NavigationProperty Name="returnrequests" Relationship="Self.returnrequest_ibfk_1" FromRole="order" ToRole="returnrequest" />
+          <NavigationProperty Name="shipments" Relationship="Self.shipment_ibfk_1" FromRole="order" ToRole="shipment" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+          <Property Name="PaymentDate" Type="DateTime" />
+          <Property Name="Amount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="invoice" Relationship="Self.payment_ibfk_1" FromRole="payment" ToRole="invoice" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StockQuantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="inventories" Relationship="Self.inventory_ibfk_1" FromRole="product" ToRole="inventory" />
+          <NavigationProperty Name="quotations" Relationship="Self.quotation_ibfk_2" FromRole="product" ToRole="quotation" />
+          <NavigationProperty Name="returnrequests" Relationship="Self.returnrequest_ibfk_2" FromRole="product" ToRole="returnrequest" />
+        </EntityType>
+        <EntityType Name="productionplan">
+          <Key>
+            <PropertyRef Name="planID" />
+          </Key>
+          <Property Name="planID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="startDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="Stutas" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="workorders" Relationship="Self.workorder_ibfk_1" FromRole="productionplan" ToRole="workorder" />
+        </EntityType>
+        <EntityType Name="quotation">
+          <Key>
+            <PropertyRef Name="QuotationID" />
+          </Key>
+          <Property Name="QuotationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.quotation_ibfk_1" FromRole="quotation" ToRole="customer" />
+          <NavigationProperty Name="product" Relationship="Self.quotation_ibfk_2" FromRole="quotation" ToRole="product" />
+        </EntityType>
+        <EntityType Name="returnrequest">
+          <Key>
+            <PropertyRef Name="ExchangeID" />
+          </Key>
+          <Property Name="ExchangeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" />
+          <NavigationProperty Name="order" Relationship="Self.returnrequest_ibfk_1" FromRole="returnrequest" ToRole="order" />
+          <NavigationProperty Name="product" Relationship="Self.returnrequest_ibfk_2" FromRole="returnrequest" ToRole="product" />
+        </EntityType>
+        <EntityType Name="shipment">
+          <Key>
+            <PropertyRef Name="shipmentID" />
+          </Key>
+          <Property Name="shipmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="TrackingNumber" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EstimatedDeliveryDate" Type="DateTime" />
+          <NavigationProperty Name="logistics" Relationship="Self.logistics_ibfk_1" FromRole="shipment" ToRole="logistics" />
+          <NavigationProperty Name="order" Relationship="Self.shipment_ibfk_1" FromRole="shipment" ToRole="order" />
+        </EntityType>
+        <EntityType Name="supplier">
+          <Key>
+            <PropertyRef Name="SuPPlierID" />
+          </Key>
+          <Property Name="SuPPlierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="contactInfo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="task">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaskName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Duedate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="workorder">
+          <Key>
+            <PropertyRef Name="WorkOrderID" />
+          </Key>
+          <Property Name="WorkOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productionPlanID" Type="Int32" />
+          <Property Name="Stutas" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="startDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+          <NavigationProperty Name="productionplan" Relationship="Self.workorder_ibfk_1" FromRole="workorder" ToRole="productionplan" />
+        </EntityType>
+        <Association Name="aftersalerequest_ibfk_1">
+          <End Role="order" Type="Self.order" Multiplicity="0..1" />
+          <End Role="aftersalerequest" Type="Self.aftersalerequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="aftersalerequest">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cschat_ibfk_1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="cschat" Type="Self.cschat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="cschat">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="feedback_ibfk_1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="feedback" Type="Self.feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="feedback">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="order_ibfk_1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="quotation_ibfk_1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="quotation" Type="Self.quotation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="quotation">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="inventory_ibfk_1">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="inventory" Type="Self.inventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="inventory">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="invoice_ibfk_1">
+          <End Role="order" Type="Self.order" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="payment_ibfk_1">
+          <End Role="invoice" Type="Self.invoice" Multiplicity="1" />
+          <End Role="payment" Type="Self.payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoice">
+              <PropertyRef Name="InvoiceID" />
+            </Principal>
+            <Dependent Role="payment">
+              <PropertyRef Name="InvoiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="logistics_ibfk_1">
+          <End Role="shipment" Type="Self.shipment" Multiplicity="0..1" />
+          <End Role="logistics" Type="Self.logistic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shipment">
+              <PropertyRef Name="shipmentID" />
+            </Principal>
+            <Dependent Role="logistics">
+              <PropertyRef Name="ShipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="returnrequest_ibfk_1">
+          <End Role="order" Type="Self.order" Multiplicity="1" />
+          <End Role="returnrequest" Type="Self.returnrequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="returnrequest">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="shipment_ibfk_1">
+          <End Role="order" Type="Self.order" Multiplicity="0..1" />
+          <End Role="shipment" Type="Self.shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="shipment">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="quotation_ibfk_2">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="quotation" Type="Self.quotation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="quotation">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="returnrequest_ibfk_2">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="returnrequest" Type="Self.returnrequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="returnrequest">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="workorder_ibfk_1">
+          <End Role="productionplan" Type="Self.productionplan" Multiplicity="0..1" />
+          <End Role="workorder" Type="Self.workorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productionplan">
+              <PropertyRef Name="planID" />
+            </Principal>
+            <Dependent Role="workorder">
+              <PropertyRef Name="productionPlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="testEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aftersalerequests" EntityType="Self.aftersalerequest" />
+          <EntitySet Name="cschats" EntityType="Self.cschat" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="feedbacks" EntityType="Self.feedback" />
+          <EntitySet Name="inventories" EntityType="Self.inventory" />
+          <EntitySet Name="invoices" EntityType="Self.invoice" />
+          <EntitySet Name="logistics" EntityType="Self.logistic" />
+          <EntitySet Name="orders" EntityType="Self.order" />
+          <EntitySet Name="payments" EntityType="Self.payment" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="productionplans" EntityType="Self.productionplan" />
+          <EntitySet Name="quotations" EntityType="Self.quotation" />
+          <EntitySet Name="returnrequests" EntityType="Self.returnrequest" />
+          <EntitySet Name="shipments" EntityType="Self.shipment" />
+          <EntitySet Name="suppliers" EntityType="Self.supplier" />
+          <EntitySet Name="tasks" EntityType="Self.task" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="workorders" EntityType="Self.workorder" />
+          <AssociationSet Name="aftersalerequest_ibfk_1" Association="Self.aftersalerequest_ibfk_1">
+            <End Role="order" EntitySet="orders" />
+            <End Role="aftersalerequest" EntitySet="aftersalerequests" />
+          </AssociationSet>
+          <AssociationSet Name="cschat_ibfk_1" Association="Self.cschat_ibfk_1">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="cschat" EntitySet="cschats" />
+          </AssociationSet>
+          <AssociationSet Name="feedback_ibfk_1" Association="Self.feedback_ibfk_1">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="feedback" EntitySet="feedbacks" />
+          </AssociationSet>
+          <AssociationSet Name="order_ibfk_1" Association="Self.order_ibfk_1">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="order" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="quotation_ibfk_1" Association="Self.quotation_ibfk_1">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="quotation" EntitySet="quotations" />
+          </AssociationSet>
+          <AssociationSet Name="inventory_ibfk_1" Association="Self.inventory_ibfk_1">
+            <End Role="product" EntitySet="products" />
+            <End Role="inventory" EntitySet="inventories" />
+          </AssociationSet>
+          <AssociationSet Name="invoice_ibfk_1" Association="Self.invoice_ibfk_1">
+            <End Role="order" EntitySet="orders" />
+            <End Role="invoice" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="payment_ibfk_1" Association="Self.payment_ibfk_1">
+            <End Role="invoice" EntitySet="invoices" />
+            <End Role="payment" EntitySet="payments" />
+          </AssociationSet>
+          <AssociationSet Name="logistics_ibfk_1" Association="Self.logistics_ibfk_1">
+            <End Role="shipment" EntitySet="shipments" />
+            <End Role="logistics" EntitySet="logistics" />
+          </AssociationSet>
+          <AssociationSet Name="returnrequest_ibfk_1" Association="Self.returnrequest_ibfk_1">
+            <End Role="order" EntitySet="orders" />
+            <End Role="returnrequest" EntitySet="returnrequests" />
+          </AssociationSet>
+          <AssociationSet Name="shipment_ibfk_1" Association="Self.shipment_ibfk_1">
+            <End Role="order" EntitySet="orders" />
+            <End Role="shipment" EntitySet="shipments" />
+          </AssociationSet>
+          <AssociationSet Name="quotation_ibfk_2" Association="Self.quotation_ibfk_2">
+            <End Role="product" EntitySet="products" />
+            <End Role="quotation" EntitySet="quotations" />
+          </AssociationSet>
+          <AssociationSet Name="returnrequest_ibfk_2" Association="Self.returnrequest_ibfk_2">
+            <End Role="product" EntitySet="products" />
+            <End Role="returnrequest" EntitySet="returnrequests" />
+          </AssociationSet>
+          <AssociationSet Name="workorder_ibfk_1" Association="Self.workorder_ibfk_1">
+            <End Role="productionplan" EntitySet="productionplans" />
+            <End Role="workorder" EntitySet="workorders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="testEntities2">
+          <EntitySetMapping Name="aftersalerequests">
+            <EntityTypeMapping TypeName="testModel.aftersalerequest">
+              <MappingFragment StoreEntitySet="aftersalerequest">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cschats">
+            <EntityTypeMapping TypeName="testModel.cschat">
+              <MappingFragment StoreEntitySet="cschat">
+                <ScalarProperty Name="ChatID" ColumnName="ChatID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="testModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="feedbacks">
+            <EntityTypeMapping TypeName="testModel.feedback">
+              <MappingFragment StoreEntitySet="feedback">
+                <ScalarProperty Name="FeedbackID" ColumnName="FeedbackID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="FeedbackText" ColumnName="FeedbackText" />
+                <ScalarProperty Name="FeedbackDate" ColumnName="FeedbackDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inventories">
+            <EntityTypeMapping TypeName="testModel.inventory">
+              <MappingFragment StoreEntitySet="inventory">
+                <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoices">
+            <EntityTypeMapping TypeName="testModel.invoice">
+              <MappingFragment StoreEntitySet="invoice">
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logistics">
+            <EntityTypeMapping TypeName="testModel.logistic">
+              <MappingFragment StoreEntitySet="logistics">
+                <ScalarProperty Name="logisticsID" ColumnName="logisticsID" />
+                <ScalarProperty Name="ShipmentID" ColumnName="ShipmentID" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="testModel.order">
+              <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payments">
+            <EntityTypeMapping TypeName="testModel.payment">
+              <MappingFragment StoreEntitySet="payment">
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="testModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="StockQuantity" ColumnName="StockQuantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productionplans">
+            <EntityTypeMapping TypeName="testModel.productionplan">
+              <MappingFragment StoreEntitySet="productionplan">
+                <ScalarProperty Name="planID" ColumnName="planID" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Stutas" ColumnName="Stutas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="quotations">
+            <EntityTypeMapping TypeName="testModel.quotation">
+              <MappingFragment StoreEntitySet="quotation">
+                <ScalarProperty Name="QuotationID" ColumnName="QuotationID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="returnrequests">
+            <EntityTypeMapping TypeName="testModel.returnrequest">
+              <MappingFragment StoreEntitySet="returnrequest">
+                <ScalarProperty Name="ExchangeID" ColumnName="ExchangeID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shipments">
+            <EntityTypeMapping TypeName="testModel.shipment">
+              <MappingFragment StoreEntitySet="shipment">
+                <ScalarProperty Name="shipmentID" ColumnName="shipmentID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="TrackingNumber" ColumnName="TrackingNumber" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EstimatedDeliveryDate" ColumnName="EstimatedDeliveryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suppliers">
+            <EntityTypeMapping TypeName="testModel.supplier">
+              <MappingFragment StoreEntitySet="supplier">
+                <ScalarProperty Name="SuPPlierID" ColumnName="SuPPlierID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="contactInfo" ColumnName="contactInfo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tasks">
+            <EntityTypeMapping TypeName="testModel.task">
+              <MappingFragment StoreEntitySet="task">
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Duedate" ColumnName="Duedate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="testModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="workorders">
+            <EntityTypeMapping TypeName="testModel.workorder">
+              <MappingFragment StoreEntitySet="workorder">
+                <ScalarProperty Name="WorkOrderID" ColumnName="WorkOrderID" />
+                <ScalarProperty Name="productionPlanID" ColumnName="productionPlanID" />
+                <ScalarProperty Name="Stutas" ColumnName="Stutas" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
