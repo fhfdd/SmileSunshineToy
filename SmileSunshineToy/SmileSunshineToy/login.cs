@@ -13,10 +13,10 @@ using MySql.Data.MySqlClient;
 
 namespace SmileSunshineToy
 {
-    public partial class login : Form
+    public partial class Login : Form
     {
         private string sqlcon1 = "Server=127.0.0.1;Database=test;Uid=root;Pwd=;";
-        public login()
+        public Login()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace SmileSunshineToy
 
 
           //1.获取账号
-        private void Login() {
+        private void login() {
             int id = int.Parse(userID.Text);
             string pwd = password.Text;
 
@@ -80,7 +80,7 @@ namespace SmileSunshineToy
                                 UserName = reader["Name"].ToString();
                                 MessageBox.Show("Login successful");
                                 this.Hide();
-                                new dashboard().Show();
+                                new Dashboard().Show();
                             }
                             else
                             {
@@ -130,6 +130,11 @@ namespace SmileSunshineToy
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
