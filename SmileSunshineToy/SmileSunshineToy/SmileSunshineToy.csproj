@@ -363,6 +363,24 @@
     <EmbeddedResource Include="InvProOverview.resx">
       <DependentUpon>InvProOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PerCusDetail.resx">
+      <DependentUpon>PerCusDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerCusOverview.resx">
+      <DependentUpon>PerCusOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerStuDetail.resx">
+      <DependentUpon>PerStuDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerStuOverview.resx">
+      <DependentUpon>PerStuOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerSupDetail.resx">
+      <DependentUpon>PerSupDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerSupOverview.resx">
+      <DependentUpon>PerSupOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RD.resx">
       <DependentUpon>RD.cs</DependentUpon>
     </EmbeddedResource>
