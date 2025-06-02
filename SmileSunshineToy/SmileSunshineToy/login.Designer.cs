@@ -133,9 +133,9 @@
             this.label3.Font = new System.Drawing.Font("Noto Sans HK", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(7, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(316, 35);
+            this.label3.Size = new System.Drawing.Size(327, 35);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Smile Sunshine Toy system";
+            this.label3.Text = "Smile&&Sunshine Toy system";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel2
@@ -164,7 +164,7 @@
             this.label4.Text = "forget password";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // login
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,7 +174,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "login";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load_1);
