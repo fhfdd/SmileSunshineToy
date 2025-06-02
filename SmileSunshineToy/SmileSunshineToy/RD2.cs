@@ -162,5 +162,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

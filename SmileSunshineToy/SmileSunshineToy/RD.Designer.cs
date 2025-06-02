@@ -297,6 +297,7 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.leftPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RD";
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
