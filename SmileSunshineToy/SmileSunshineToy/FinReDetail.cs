@@ -41,5 +41,25 @@ namespace SmileSunshineToy
         {
 
         }
+
+        private void FinPayDetail_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelStartDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelManager_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

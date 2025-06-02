@@ -42,7 +42,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -86,17 +86,17 @@
     <Compile Include="feedback.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="FinPayDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FinPayDetail.Designer.cs">
-      <DependentUpon>FinPayDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="FinReDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FinReDetail.Designer.cs">
       <DependentUpon>FinReDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinPayDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinPayDetail.Designer.cs">
+      <DependentUpon>FinPayDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="FinPayOverview.cs">
       <SubType>Form</SubType>
@@ -313,8 +313,20 @@
     <Compile Include="quotation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="RDoverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDoverview.Designer.cs">
+      <DependentUpon>RDoverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="returnrequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRD.Designer.cs">
+      <DependentUpon>RRD.cs</DependentUpon>
     </Compile>
     <Compile Include="SalDetail.cs">
       <SubType>Form</SubType>
@@ -357,14 +369,14 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FinPayDetail.resx">
-      <DependentUpon>FinPayDetail.cs</DependentUpon>
+    <EmbeddedResource Include="FinReDetail.resx">
+      <DependentUpon>FinReDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinPayOverview.resx">
       <DependentUpon>FinPayOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FinReDetail.resx">
-      <DependentUpon>FinReDetail.cs</DependentUpon>
+    <EmbeddedResource Include="FinPayDetail.resx">
+      <DependentUpon>FinPayDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinReOverview.resx">
       <DependentUpon>FinReOverview.cs</DependentUpon>
@@ -459,6 +471,12 @@
     </Compile>
     <EmbeddedResource Include="RD2.resx">
       <DependentUpon>RD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDoverview.resx">
+      <DependentUpon>RDoverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRD.resx">
+      <DependentUpon>RRD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalDetail.resx">
       <DependentUpon>SalDetail.cs</DependentUpon>

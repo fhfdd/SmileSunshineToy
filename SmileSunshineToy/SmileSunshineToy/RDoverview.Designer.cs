@@ -1,7 +1,7 @@
 ﻿
 namespace SmileSunshineToy
 {
-    partial class FinReOverview
+    partial class RDoverview
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,7 @@ namespace SmileSunshineToy
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,25 +55,28 @@ namespace SmileSunshineToy
             this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.colDeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDetailButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRequirement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colManagerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colManagerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.createProjectButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
-            this.Create = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.receivableID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.receivable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaidAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.topPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,9 +85,8 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 57);
+            this.panel1.Size = new System.Drawing.Size(1329, 57);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
@@ -94,6 +97,30 @@ namespace SmileSunshineToy
             this.label3.Size = new System.Drawing.Size(319, 29);
             this.label3.TabIndex = 8;
             this.label3.Text = "Smile&&Sunshine Toy system";
+            // 
+            // toolStripContainer1
+            // 
+            this.toolStripContainer1.BottomToolStripPanelVisible = false;
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.topPanel);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1060, 691);
+            this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            // 
+            // toolStripContainer1.LeftToolStripPanel
+            // 
+            this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.RightToolStripPanelVisible = false;
+            this.toolStripContainer1.Size = new System.Drawing.Size(1329, 691);
+            this.toolStripContainer1.TabIndex = 4;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.toolStripContainer1.TopToolStripPanelVisible = false;
             // 
             // menuStrip1
             // 
@@ -116,8 +143,8 @@ namespace SmileSunshineToy
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(269, 643);
-            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Size = new System.Drawing.Size(269, 691);
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
@@ -271,154 +298,157 @@ namespace SmileSunshineToy
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
             this.signOutToolStripMenuItem.Text = "sign out";
             // 
-            // toolStripContainer1
+            // colDeleteButton
             // 
-            this.toolStripContainer1.BottomToolStripPanelVisible = false;
+            this.colDeleteButton.MinimumWidth = 8;
+            this.colDeleteButton.Name = "colDeleteButton";
+            this.colDeleteButton.Text = "Delete";
+            this.colDeleteButton.UseColumnTextForButtonValue = true;
+            this.colDeleteButton.Width = 150;
             // 
-            // toolStripContainer1.ContentPanel
+            // colDetailButton
             // 
-            this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.Color.White;
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBox1);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.searchButton);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.Create);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(859, 643);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.colDetailButton.MinimumWidth = 8;
+            this.colDetailButton.Name = "colDetailButton";
+            this.colDetailButton.Text = "Detail";
+            this.colDetailButton.UseColumnTextForButtonValue = true;
+            this.colDetailButton.Width = 150;
             // 
-            // toolStripContainer1.LeftToolStripPanel
+            // colStatus
             // 
-            this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1128, 643);
-            this.toolStripContainer1.TabIndex = 5;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            this.toolStripContainer1.TopToolStripPanelVisible = false;
+            this.colStatus.HeaderText = "status";
+            this.colStatus.MinimumWidth = 8;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Width = 150;
             // 
-            // textBox1
+            // colRequirement
             // 
-            this.textBox1.Location = new System.Drawing.Point(270, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 28);
-            this.textBox1.TabIndex = 3;
+            this.colRequirement.HeaderText = "requirement";
+            this.colRequirement.MinimumWidth = 8;
+            this.colRequirement.Name = "colRequirement";
+            this.colRequirement.Width = 150;
+            // 
+            // colManagerName
+            // 
+            this.colManagerName.HeaderText = "manager name";
+            this.colManagerName.MinimumWidth = 8;
+            this.colManagerName.Name = "colManagerName";
+            this.colManagerName.Width = 150;
+            // 
+            // colManagerID
+            // 
+            this.colManagerID.HeaderText = "manager ID";
+            this.colManagerID.MinimumWidth = 8;
+            this.colManagerID.Name = "colManagerID";
+            this.colManagerID.Width = 150;
+            // 
+            // colEndDate
+            // 
+            this.colEndDate.HeaderText = "end Date";
+            this.colEndDate.MinimumWidth = 8;
+            this.colEndDate.Name = "colEndDate";
+            this.colEndDate.Width = 150;
+            // 
+            // colStartDate
+            // 
+            this.colStartDate.HeaderText = "start date";
+            this.colStartDate.MinimumWidth = 8;
+            this.colStartDate.Name = "colStartDate";
+            this.colStartDate.Width = 150;
+            // 
+            // colProjectName
+            // 
+            this.colProjectName.HeaderText = "project name";
+            this.colProjectName.MinimumWidth = 8;
+            this.colProjectName.Name = "colProjectName";
+            this.colProjectName.Width = 150;
+            // 
+            // colProjectID
+            // 
+            this.colProjectID.HeaderText = "project ID";
+            this.colProjectID.MinimumWidth = 8;
+            this.colProjectID.Name = "colProjectID";
+            this.colProjectID.Width = 150;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeight = 34;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProjectID,
+            this.colProjectName,
+            this.colStartDate,
+            this.colEndDate,
+            this.colManagerID,
+            this.colManagerName,
+            this.colRequirement,
+            this.colStatus,
+            this.colDetailButton,
+            this.colDeleteButton});
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 50);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 62;
+            this.dataGridView.Size = new System.Drawing.Size(1060, 641);
+            this.dataGridView.TabIndex = 3;
+            // 
+            // createProjectButton
+            // 
+            this.createProjectButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.createProjectButton.Location = new System.Drawing.Point(0, 0);
+            this.createProjectButton.Name = "createProjectButton";
+            this.createProjectButton.Size = new System.Drawing.Size(75, 50);
+            this.createProjectButton.TabIndex = 2;
+            this.createProjectButton.Text = "Create project";
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(133, 3);
+            this.searchButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.searchButton.Location = new System.Drawing.Point(75, 0);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(120, 70);
-            this.searchButton.TabIndex = 2;
-            this.searchButton.Text = "search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Size = new System.Drawing.Size(75, 50);
+            this.searchButton.TabIndex = 1;
+            this.searchButton.Text = "Search";
             // 
-            // Create
+            // searchTextBox
             // 
-            this.Create.Location = new System.Drawing.Point(3, 0);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(124, 73);
-            this.Create.TabIndex = 1;
-            this.Create.Text = "Create receivable";
-            this.Create.UseVisualStyleBackColor = true;
-            this.Create.Click += new System.EventHandler(this.Create_Click);
+            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.searchTextBox.Location = new System.Drawing.Point(150, 0);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(200, 28);
+            this.searchTextBox.TabIndex = 0;
             // 
-            // dataGridView1
+            // topPanel
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.receivableID,
-            this.customerID,
-            this.customerName,
-            this.receivable,
-            this.PaidAmount,
-            this.createdDate,
-            this.dueDate,
-            this.status});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(855, 569);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.topPanel.Controls.Add(this.searchTextBox);
+            this.topPanel.Controls.Add(this.searchButton);
+            this.topPanel.Controls.Add(this.createProjectButton);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1060, 50);
+            this.topPanel.TabIndex = 4;
             // 
-            // receivableID
-            // 
-            this.receivableID.HeaderText = "receivableID";
-            this.receivableID.MinimumWidth = 8;
-            this.receivableID.Name = "receivableID";
-            this.receivableID.Width = 150;
-            // 
-            // customerID
-            // 
-            this.customerID.HeaderText = "customerID";
-            this.customerID.MinimumWidth = 8;
-            this.customerID.Name = "customerID";
-            this.customerID.Width = 150;
-            // 
-            // customerName
-            // 
-            this.customerName.HeaderText = "customerName";
-            this.customerName.MinimumWidth = 8;
-            this.customerName.Name = "customerName";
-            this.customerName.Width = 150;
-            // 
-            // receivable
-            // 
-            this.receivable.HeaderText = "receivable";
-            this.receivable.MinimumWidth = 8;
-            this.receivable.Name = "receivable";
-            this.receivable.Width = 150;
-            // 
-            // PaidAmount
-            // 
-            this.PaidAmount.HeaderText = "PaidAmount";
-            this.PaidAmount.MinimumWidth = 8;
-            this.PaidAmount.Name = "PaidAmount";
-            this.PaidAmount.Width = 150;
-            // 
-            // createdDate
-            // 
-            this.createdDate.HeaderText = "createdDate";
-            this.createdDate.MinimumWidth = 8;
-            this.createdDate.Name = "createdDate";
-            this.createdDate.Width = 150;
-            // 
-            // dueDate
-            // 
-            this.dueDate.HeaderText = "dueDate";
-            this.dueDate.MinimumWidth = 8;
-            this.dueDate.Name = "dueDate";
-            this.dueDate.Width = 150;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "status";
-            this.status.MinimumWidth = 8;
-            this.status.Name = "status";
-            this.status.Width = 150;
-            // 
-            // FinReOverview
+            // RDoverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 700);
+            this.ClientSize = new System.Drawing.Size(1329, 748);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FinReOverview";
-            this.Text = " ";
+            this.Name = "RDoverview";
+            this.Text = "RDoverview";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -427,6 +457,7 @@ namespace SmileSunshineToy
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saleOrderToolStripMenuItem;
@@ -450,18 +481,20 @@ namespace SmileSunshineToy
         private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stuffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Create;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProjectID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colManagerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colManagerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRequirement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn colDetailButton;
+        private System.Windows.Forms.DataGridViewButtonColumn colDeleteButton;
+        private System.Windows.Forms.Panel topPanel;
+        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn receivableID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn receivable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaidAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dueDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Button createProjectButton;
     }
 }

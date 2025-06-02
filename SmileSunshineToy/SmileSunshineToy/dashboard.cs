@@ -20,7 +20,7 @@ namespace SmileSunshineToy
         private void rDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new RD().Show();
+            new RDoverview().Show();
         }
 
         private void saleOrderToolStripMenuItem_Click(object sender, EventArgs e)

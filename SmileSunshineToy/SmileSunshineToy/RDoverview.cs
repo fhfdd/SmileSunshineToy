@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class PerSupOverview : Form
+    public partial class RDoverview : Form
     {
-        public PerSupOverview()
+        public RDoverview()
         {
             InitializeComponent();
         }
 
-        private void Create_Click(object sender, EventArgs e)
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
         }
