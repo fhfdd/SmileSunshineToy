@@ -55,6 +55,9 @@ namespace SmileSunshineToy
             this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -72,9 +75,6 @@ namespace SmileSunshineToy
             this.saleAllSearch = new System.Windows.Forms.Button();
             this.saleSearch = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -107,6 +107,7 @@ namespace SmileSunshineToy
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
@@ -319,6 +320,32 @@ namespace SmileSunshineToy
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(375, 470);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(212, 65);
+            this.button7.TabIndex = 45;
+            this.button7.Text = "Attachment";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(21, 127);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(207, 28);
+            this.textBox1.TabIndex = 44;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(21, 55);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 26);
+            this.comboBox1.TabIndex = 42;
+            this.comboBox1.Text = "product ID";
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(636, 558);
@@ -496,31 +523,6 @@ namespace SmileSunshineToy
             this.button1.Text = "Add Product";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 26);
-            this.comboBox1.TabIndex = 42;
-            this.comboBox1.Text = "product ID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(21, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 28);
-            this.textBox1.TabIndex = 44;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(375, 470);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(212, 65);
-            this.button7.TabIndex = 45;
-            this.button7.Text = "Attachment";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // InvProDetail
             // 

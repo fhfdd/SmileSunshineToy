@@ -32,6 +32,21 @@ namespace SmileSunshineToy
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.colProjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colManagerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colManagerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRequirement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDetailButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.createProjectButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,28 +70,13 @@ namespace SmileSunshineToy
             this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colDeleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colDetailButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRequirement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colManagerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colManagerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.createProjectButton = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.topPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.topPanel.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -121,6 +121,136 @@ namespace SmileSunshineToy
             this.toolStripContainer1.TabIndex = 4;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeight = 34;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProjectID,
+            this.colProjectName,
+            this.colStartDate,
+            this.colEndDate,
+            this.colManagerID,
+            this.colManagerName,
+            this.colRequirement,
+            this.colStatus,
+            this.colDetailButton,
+            this.colDeleteButton});
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 50);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 62;
+            this.dataGridView.Size = new System.Drawing.Size(1060, 641);
+            this.dataGridView.TabIndex = 3;
+            // 
+            // colProjectID
+            // 
+            this.colProjectID.HeaderText = "project ID";
+            this.colProjectID.MinimumWidth = 8;
+            this.colProjectID.Name = "colProjectID";
+            this.colProjectID.Width = 150;
+            // 
+            // colProjectName
+            // 
+            this.colProjectName.HeaderText = "project name";
+            this.colProjectName.MinimumWidth = 8;
+            this.colProjectName.Name = "colProjectName";
+            this.colProjectName.Width = 150;
+            // 
+            // colStartDate
+            // 
+            this.colStartDate.HeaderText = "start date";
+            this.colStartDate.MinimumWidth = 8;
+            this.colStartDate.Name = "colStartDate";
+            this.colStartDate.Width = 150;
+            // 
+            // colEndDate
+            // 
+            this.colEndDate.HeaderText = "end Date";
+            this.colEndDate.MinimumWidth = 8;
+            this.colEndDate.Name = "colEndDate";
+            this.colEndDate.Width = 150;
+            // 
+            // colManagerID
+            // 
+            this.colManagerID.HeaderText = "manager ID";
+            this.colManagerID.MinimumWidth = 8;
+            this.colManagerID.Name = "colManagerID";
+            this.colManagerID.Width = 150;
+            // 
+            // colManagerName
+            // 
+            this.colManagerName.HeaderText = "manager name";
+            this.colManagerName.MinimumWidth = 8;
+            this.colManagerName.Name = "colManagerName";
+            this.colManagerName.Width = 150;
+            // 
+            // colRequirement
+            // 
+            this.colRequirement.HeaderText = "requirement";
+            this.colRequirement.MinimumWidth = 8;
+            this.colRequirement.Name = "colRequirement";
+            this.colRequirement.Width = 150;
+            // 
+            // colStatus
+            // 
+            this.colStatus.HeaderText = "status";
+            this.colStatus.MinimumWidth = 8;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Width = 150;
+            // 
+            // colDetailButton
+            // 
+            this.colDetailButton.MinimumWidth = 8;
+            this.colDetailButton.Name = "colDetailButton";
+            this.colDetailButton.Text = "Detail";
+            this.colDetailButton.UseColumnTextForButtonValue = true;
+            this.colDetailButton.Width = 150;
+            // 
+            // colDeleteButton
+            // 
+            this.colDeleteButton.MinimumWidth = 8;
+            this.colDeleteButton.Name = "colDeleteButton";
+            this.colDeleteButton.Text = "Delete";
+            this.colDeleteButton.UseColumnTextForButtonValue = true;
+            this.colDeleteButton.Width = 150;
+            // 
+            // topPanel
+            // 
+            this.topPanel.Controls.Add(this.searchTextBox);
+            this.topPanel.Controls.Add(this.searchButton);
+            this.topPanel.Controls.Add(this.createProjectButton);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1060, 50);
+            this.topPanel.TabIndex = 4;
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.searchTextBox.Location = new System.Drawing.Point(150, 0);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(200, 28);
+            this.searchTextBox.TabIndex = 0;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.searchButton.Location = new System.Drawing.Point(75, 0);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 50);
+            this.searchButton.TabIndex = 1;
+            this.searchButton.Text = "Search";
+            // 
+            // createProjectButton
+            // 
+            this.createProjectButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.createProjectButton.Location = new System.Drawing.Point(0, 0);
+            this.createProjectButton.Name = "createProjectButton";
+            this.createProjectButton.Size = new System.Drawing.Size(75, 50);
+            this.createProjectButton.TabIndex = 2;
+            this.createProjectButton.Text = "Create project";
             // 
             // menuStrip1
             // 
@@ -298,136 +428,6 @@ namespace SmileSunshineToy
             this.signOutToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
             this.signOutToolStripMenuItem.Text = "sign out";
             // 
-            // colDeleteButton
-            // 
-            this.colDeleteButton.MinimumWidth = 8;
-            this.colDeleteButton.Name = "colDeleteButton";
-            this.colDeleteButton.Text = "Delete";
-            this.colDeleteButton.UseColumnTextForButtonValue = true;
-            this.colDeleteButton.Width = 150;
-            // 
-            // colDetailButton
-            // 
-            this.colDetailButton.MinimumWidth = 8;
-            this.colDetailButton.Name = "colDetailButton";
-            this.colDetailButton.Text = "Detail";
-            this.colDetailButton.UseColumnTextForButtonValue = true;
-            this.colDetailButton.Width = 150;
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "status";
-            this.colStatus.MinimumWidth = 8;
-            this.colStatus.Name = "colStatus";
-            this.colStatus.Width = 150;
-            // 
-            // colRequirement
-            // 
-            this.colRequirement.HeaderText = "requirement";
-            this.colRequirement.MinimumWidth = 8;
-            this.colRequirement.Name = "colRequirement";
-            this.colRequirement.Width = 150;
-            // 
-            // colManagerName
-            // 
-            this.colManagerName.HeaderText = "manager name";
-            this.colManagerName.MinimumWidth = 8;
-            this.colManagerName.Name = "colManagerName";
-            this.colManagerName.Width = 150;
-            // 
-            // colManagerID
-            // 
-            this.colManagerID.HeaderText = "manager ID";
-            this.colManagerID.MinimumWidth = 8;
-            this.colManagerID.Name = "colManagerID";
-            this.colManagerID.Width = 150;
-            // 
-            // colEndDate
-            // 
-            this.colEndDate.HeaderText = "end Date";
-            this.colEndDate.MinimumWidth = 8;
-            this.colEndDate.Name = "colEndDate";
-            this.colEndDate.Width = 150;
-            // 
-            // colStartDate
-            // 
-            this.colStartDate.HeaderText = "start date";
-            this.colStartDate.MinimumWidth = 8;
-            this.colStartDate.Name = "colStartDate";
-            this.colStartDate.Width = 150;
-            // 
-            // colProjectName
-            // 
-            this.colProjectName.HeaderText = "project name";
-            this.colProjectName.MinimumWidth = 8;
-            this.colProjectName.Name = "colProjectName";
-            this.colProjectName.Width = 150;
-            // 
-            // colProjectID
-            // 
-            this.colProjectID.HeaderText = "project ID";
-            this.colProjectID.MinimumWidth = 8;
-            this.colProjectID.Name = "colProjectID";
-            this.colProjectID.Width = 150;
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.ColumnHeadersHeight = 34;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colProjectID,
-            this.colProjectName,
-            this.colStartDate,
-            this.colEndDate,
-            this.colManagerID,
-            this.colManagerName,
-            this.colRequirement,
-            this.colStatus,
-            this.colDetailButton,
-            this.colDeleteButton});
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 50);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersWidth = 62;
-            this.dataGridView.Size = new System.Drawing.Size(1060, 641);
-            this.dataGridView.TabIndex = 3;
-            // 
-            // createProjectButton
-            // 
-            this.createProjectButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.createProjectButton.Location = new System.Drawing.Point(0, 0);
-            this.createProjectButton.Name = "createProjectButton";
-            this.createProjectButton.Size = new System.Drawing.Size(75, 50);
-            this.createProjectButton.TabIndex = 2;
-            this.createProjectButton.Text = "Create project";
-            // 
-            // searchButton
-            // 
-            this.searchButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.searchButton.Location = new System.Drawing.Point(75, 0);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 50);
-            this.searchButton.TabIndex = 1;
-            this.searchButton.Text = "Search";
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.searchTextBox.Location = new System.Drawing.Point(150, 0);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(200, 28);
-            this.searchTextBox.TabIndex = 0;
-            // 
-            // topPanel
-            // 
-            this.topPanel.Controls.Add(this.searchTextBox);
-            this.topPanel.Controls.Add(this.searchButton);
-            this.topPanel.Controls.Add(this.createProjectButton);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(0, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1060, 50);
-            this.topPanel.TabIndex = 4;
-            // 
             // RDoverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -444,11 +444,11 @@ namespace SmileSunshineToy
             this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }

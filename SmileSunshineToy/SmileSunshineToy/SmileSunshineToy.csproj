@@ -254,12 +254,6 @@
     <Compile Include="ProdPlanOverview.Designer.cs">
       <DependentUpon>ProdPlanOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="RD2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RD2.Designer.cs">
-      <DependentUpon>RD2.cs</DependentUpon>
-    </Compile>
     <Compile Include="RD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,9 +463,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RD2.resx">
-      <DependentUpon>RD2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RDoverview.resx">
       <DependentUpon>RDoverview.cs</DependentUpon>
     </EmbeddedResource>
