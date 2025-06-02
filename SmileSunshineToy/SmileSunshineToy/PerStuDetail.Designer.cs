@@ -261,10 +261,10 @@ namespace SmileSunshineToy
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Noto Sans HK", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 35);
+            this.label3.Size = new System.Drawing.Size(319, 29);
             this.label3.TabIndex = 8;
             this.label3.Text = "Smile&&Sunshine Toy system";
             // 

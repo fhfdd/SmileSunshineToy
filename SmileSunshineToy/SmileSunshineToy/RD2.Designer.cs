@@ -572,12 +572,13 @@ namespace WindowsFormsApp1
             // 
             this.labelSchemeInfo.AutoSize = true;
             this.labelSchemeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSchemeInfo.Location = new System.Drawing.Point(18, 43);
+            this.labelSchemeInfo.Location = new System.Drawing.Point(52, 83);
             this.labelSchemeInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSchemeInfo.Name = "labelSchemeInfo";
             this.labelSchemeInfo.Size = new System.Drawing.Size(119, 20);
             this.labelSchemeInfo.TabIndex = 15;
             this.labelSchemeInfo.Text = "Scheme Info:";
+            this.labelSchemeInfo.Click += new System.EventHandler(this.labelSchemeInfo_Click);
             // 
             // dateTimePickerEnd
             // 
@@ -665,12 +666,13 @@ namespace WindowsFormsApp1
             // labelProjectID
             // 
             this.labelProjectID.AutoSize = true;
-            this.labelProjectID.Location = new System.Drawing.Point(100, 11);
+            this.labelProjectID.Location = new System.Drawing.Point(64, 17);
             this.labelProjectID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProjectID.Name = "labelProjectID";
             this.labelProjectID.Size = new System.Drawing.Size(107, 18);
             this.labelProjectID.TabIndex = 5;
             this.labelProjectID.Text = "Project ID:";
+            this.labelProjectID.Click += new System.EventHandler(this.labelProjectID_Click);
             // 
             // RD2
             // 

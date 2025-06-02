@@ -167,5 +167,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void labelProjectID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSchemeInfo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

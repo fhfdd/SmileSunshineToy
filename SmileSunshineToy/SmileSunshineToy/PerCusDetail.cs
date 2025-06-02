@@ -16,5 +16,20 @@ namespace SmileSunshineToy
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
