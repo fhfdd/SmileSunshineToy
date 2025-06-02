@@ -55,10 +55,15 @@ namespace SmileSunshineToy
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -68,6 +73,9 @@ namespace SmileSunshineToy
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.searchButton);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.button1);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(837, 587);
             this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -271,12 +279,41 @@ namespace SmileSunshineToy
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Noto Sans HK", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 35);
+            this.label3.Size = new System.Drawing.Size(319, 29);
             this.label3.TabIndex = 8;
             this.label3.Text = "Smile&&Sunshine Toy system";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 6);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button1.Size = new System.Drawing.Size(110, 62);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "product inbound order";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(128, 6);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(112, 62);
+            this.searchButton.TabIndex = 3;
+            this.searchButton.Text = "search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 87);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.Size = new System.Drawing.Size(834, 497);
+            this.dataGridView1.TabIndex = 4;
             // 
             // FinPayOverview
             // 
@@ -288,6 +325,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FinPayOverview";
             this.Text = "FinPayOverview";
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
@@ -296,6 +334,7 @@ namespace SmileSunshineToy
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,5 +367,8 @@ namespace SmileSunshineToy
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button searchButton;
     }
 }
