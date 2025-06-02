@@ -86,6 +86,174 @@
     <Compile Include="feedback.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="FinPayDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinPayDetail.Designer.cs">
+      <DependentUpon>FinPayDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinReDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinReDetail.Designer.cs">
+      <DependentUpon>FinReDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinPayOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinPayOverview.Designer.cs">
+      <DependentUpon>FinPayOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinReOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinReOverview.Designer.cs">
+      <DependentUpon>FinReOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvMaDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvMaDetail.Designer.cs">
+      <DependentUpon>InvMaDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvMaOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvMaOverview.Designer.cs">
+      <DependentUpon>InvMaOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvMoutDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvMoutDetail.Designer.cs">
+      <DependentUpon>InvMoutDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvMoutOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvMoutOverview.Designer.cs">
+      <DependentUpon>InvMoutOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvPoutDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvPoutDetail.Designer.cs">
+      <DependentUpon>InvPoutDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvPoutOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvPoutOverview.Designer.cs">
+      <DependentUpon>InvPoutOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvProDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvProDetail.Designer.cs">
+      <DependentUpon>InvProDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvProOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvProOverview.Designer.cs">
+      <DependentUpon>InvProOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvWaDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvWaDetail.Designer.cs">
+      <DependentUpon>InvWaDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvWaOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvWaOverview.Designer.cs">
+      <DependentUpon>InvWaOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoDetail.Designer.cs">
+      <DependentUpon>LoDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoOverview.Designer.cs">
+      <DependentUpon>LoOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerCusDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerCusDetail.Designer.cs">
+      <DependentUpon>PerCusDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerCusOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerCusOverview.Designer.cs">
+      <DependentUpon>PerCusOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerStuDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerStuDetail.Designer.cs">
+      <DependentUpon>PerStuDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerStuOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerStuOverview.Designer.cs">
+      <DependentUpon>PerStuOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerSupDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerSupDetail.Designer.cs">
+      <DependentUpon>PerSupDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerSupOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerSupOverview.Designer.cs">
+      <DependentUpon>PerSupOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcDetail.Designer.cs">
+      <DependentUpon>ProcDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcOverview.Designer.cs">
+      <DependentUpon>ProcOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdInDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdInDetail.Designer.cs">
+      <DependentUpon>ProdInDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdInOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdInOverview.Designer.cs">
+      <DependentUpon>ProdInOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdPlanDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlanDetail.Designer.cs">
+      <DependentUpon>ProdPlanDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdPlanOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlanOverview.Designer.cs">
+      <DependentUpon>ProdPlanOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="RD2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +356,12 @@
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvProDetail.resx">
+      <DependentUpon>InvProDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvProOverview.resx">
+      <DependentUpon>InvProOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RD.resx">
       <DependentUpon>RD.cs</DependentUpon>
