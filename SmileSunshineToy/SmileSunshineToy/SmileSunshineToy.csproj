@@ -86,6 +86,12 @@
     <Compile Include="feedback.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="logistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logistics.Designer.cs">
+      <DependentUpon>logistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="RD2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logistics.resx">
+      <DependentUpon>logistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RD.resx">
       <DependentUpon>RD.cs</DependentUpon>
