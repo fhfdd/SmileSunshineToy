@@ -55,10 +55,10 @@ namespace SmileSunshineToy
             this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Create = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.Create = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.receivableID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -296,6 +296,31 @@ namespace SmileSunshineToy
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(270, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 28);
+            this.textBox1.TabIndex = 3;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(133, 3);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(120, 70);
+            this.searchButton.TabIndex = 2;
+            this.searchButton.Text = "search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
+            // Create
+            // 
+            this.Create.Location = new System.Drawing.Point(3, 0);
+            this.Create.Name = "Create";
+            this.Create.Size = new System.Drawing.Size(124, 73);
+            this.Create.TabIndex = 1;
+            this.Create.Text = "Create receivable";
+            this.Create.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -316,78 +341,61 @@ namespace SmileSunshineToy
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Create
-            // 
-            this.Create.Location = new System.Drawing.Point(3, 0);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(124, 73);
-            this.Create.TabIndex = 1;
-            this.Create.Text = "Create receivable";
-            this.Create.UseVisualStyleBackColor = true;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(133, 3);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(120, 70);
-            this.searchButton.TabIndex = 2;
-            this.searchButton.Text = "search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(270, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 28);
-            this.textBox1.TabIndex = 3;
-            // 
             // receivableID
             // 
             this.receivableID.HeaderText = "receivableID";
             this.receivableID.MinimumWidth = 8;
             this.receivableID.Name = "receivableID";
+            this.receivableID.Width = 150;
             // 
             // customerID
             // 
             this.customerID.HeaderText = "customerID";
             this.customerID.MinimumWidth = 8;
             this.customerID.Name = "customerID";
+            this.customerID.Width = 150;
             // 
             // customerName
             // 
             this.customerName.HeaderText = "customerName";
             this.customerName.MinimumWidth = 8;
             this.customerName.Name = "customerName";
+            this.customerName.Width = 150;
             // 
             // receivable
             // 
             this.receivable.HeaderText = "receivable";
             this.receivable.MinimumWidth = 8;
             this.receivable.Name = "receivable";
+            this.receivable.Width = 150;
             // 
             // PaidAmount
             // 
             this.PaidAmount.HeaderText = "PaidAmount";
             this.PaidAmount.MinimumWidth = 8;
             this.PaidAmount.Name = "PaidAmount";
+            this.PaidAmount.Width = 150;
             // 
             // createdDate
             // 
             this.createdDate.HeaderText = "createdDate";
             this.createdDate.MinimumWidth = 8;
             this.createdDate.Name = "createdDate";
+            this.createdDate.Width = 150;
             // 
             // dueDate
             // 
             this.dueDate.HeaderText = "dueDate";
             this.dueDate.MinimumWidth = 8;
             this.dueDate.Name = "dueDate";
+            this.dueDate.Width = 150;
             // 
             // status
             // 
             this.status.HeaderText = "status";
             this.status.MinimumWidth = 8;
             this.status.Name = "status";
+            this.status.Width = 150;
             // 
             // FinReOverview
             // 
@@ -398,7 +406,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FinReOverview";
-            this.Text = "FinOverview";
+            this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

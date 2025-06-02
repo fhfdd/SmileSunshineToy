@@ -360,14 +360,50 @@
     <EmbeddedResource Include="FinPayDetail.resx">
       <DependentUpon>FinPayDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FinPayOverview.resx">
+      <DependentUpon>FinPayOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinReDetail.resx">
+      <DependentUpon>FinReDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinReOverview.resx">
       <DependentUpon>FinReOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvMaDetail.resx">
+      <DependentUpon>InvMaDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvMaOverview.resx">
+      <DependentUpon>InvMaOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvMoutDetail.resx">
+      <DependentUpon>InvMoutDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvMoutOverview.resx">
+      <DependentUpon>InvMoutOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvPoutDetail.resx">
+      <DependentUpon>InvPoutDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvPoutOverview.resx">
+      <DependentUpon>InvPoutOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvProDetail.resx">
       <DependentUpon>InvProDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvProOverview.resx">
       <DependentUpon>InvProOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvWaDetail.resx">
+      <DependentUpon>InvWaDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvWaOverview.resx">
+      <DependentUpon>InvWaOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoDetail.resx">
+      <DependentUpon>LoDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoOverview.resx">
+      <DependentUpon>LoOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerCusDetail.resx">
       <DependentUpon>PerCusDetail.cs</DependentUpon>
@@ -386,6 +422,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PerSupOverview.resx">
       <DependentUpon>PerSupOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcDetail.resx">
+      <DependentUpon>ProcDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcOverview.resx">
+      <DependentUpon>ProcOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdInDetail.resx">
+      <DependentUpon>ProdInDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdInOverview.resx">
+      <DependentUpon>ProdInOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlanDetail.resx">
+      <DependentUpon>ProdPlanDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlanOverview.resx">
+      <DependentUpon>ProdPlanOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RD.resx">
       <DependentUpon>RD.cs</DependentUpon>
