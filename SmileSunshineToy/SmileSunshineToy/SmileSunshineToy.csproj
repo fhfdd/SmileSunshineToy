@@ -357,6 +357,12 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FinPayDetail.resx">
+      <DependentUpon>FinPayDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinReOverview.resx">
+      <DependentUpon>FinReOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvProDetail.resx">
       <DependentUpon>InvProDetail.cs</DependentUpon>
     </EmbeddedResource>
