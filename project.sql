@@ -163,3 +163,37 @@ CREATE TABLE IF NOT EXISTS WorkOrder (
     EndDate DATE,
     FOREIGN KEY (productionPlanID) REFERENCES productionPlan(planID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `User` (UserID, Role, Name, Email, Password) VALUES
+(1, 'Admin', 'John Doe', 'admin@example.com', 'Aa123'), -- 管理员
+(2, 'Sales', 'Alice Smith', 'sales@example.com', 'Bb123'); -- 普通用户
+
+INSERT INTO Product (ProductID, Name, Description, Price, StockQuantity) VALUES
+(1, 'Laptop', '15-inch MacBook Pro', '1999.99', 50), -- 修正Price为DECIMAL类型
+(2, 'Monitor', '27-inch 4K Display', '499.99', 80);
+
+ALTER TABLE Inventory 
+CHANGE COLUMN Location WarehouseName VARCHAR(50),
+ADD COLUMN MinStock INT DEFAULT 10;
+
+ALTER TABLE `User` 
+MODIFY COLUMN Role ENUM('Admin', 'Sales', 'Warehouse', 'CustomerService') NOT NULL;
+
+INSERT INTO Product (ProductID, Name, Category, AgeRange, Brand, Description, Price, StockQuantity) VALUES
+(1, 'Smart Blocks', 'Building Blocks', '6-12 Years', 'Little鲁班', 'APP-controlled building set', 299.99, 150),
+(2, 'Princess Doll', 'Dolls', '3-8 Years', 'DreamLand', 'Dress-up Barbie doll', 199.99, 200),
+(3, 'RC Racing Car', 'Remote Control', '8-15 Years', 'SpeedX', '2.4G wireless racing car', 399.99, 100);
+
+INSERT INTO Inventory (InventoryID, ProductID, WarehouseName, Quantity, MinStock) VALUES
+(1, 1, 'Hong Kong Warehouse', 80, 50),
+(2, 1, 'Shenzhen Warehouse', 70, 50),
+(3, 2, 'Hong Kong Warehouse', 120, 80);
+
+INSERT INTO `Order` (OrderID, CustomerID, OrderDate, Status, TotalAmount, ShippingAddress, Discount) VALUES
+(1001, 1, '2025-06-01', 'Confirmed', 299.99, '123 Kowloon Tong Road, Hong Kong', 0),
+(1002, 2, '2025-06-02', 'Shipped', 379.98, 'Room 501, XX Building, Nanshan, Shenzhen', 0.1);
+
+INSERT INTO `User` (UserID, Role, Name, Email, Password) VALUES
+(1, 'Admin', 'Zhang Manager', 'manager@toycorp.com', '$2a$10$admin_hash'),
+(2, 'Sales', 'Li Sales', 'sales_li@toycorp.com', '$2a$10$sales_hash'),
+(3, 'Warehouse', 'Wang Warehouse', 'warehouse_wang@toycorp.com', '$2a$10$warehouse_hash');
