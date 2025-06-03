@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace SmileSunshineToy
 {
     partial class PerCusDetail
@@ -55,8 +57,25 @@ namespace SmileSunshineToy
             this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.labelProjectID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxAmount = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
@@ -264,7 +283,24 @@ namespace SmileSunshineToy
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.Color.White;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBox7);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.label8);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBox6);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBox5);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBox4);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.label7);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.label6);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.label5);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.label4);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBox3);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBox2);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBox1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.textBoxAmount);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.label2);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.label1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.labelProjectID);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(837, 587);
+            this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
@@ -277,6 +313,153 @@ namespace SmileSunshineToy
             this.toolStripContainer1.TabIndex = 5;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
+            // 
+            // labelProjectID
+            // 
+            this.labelProjectID.AutoSize = true;
+            this.labelProjectID.Location = new System.Drawing.Point(20, 39);
+            this.labelProjectID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProjectID.Name = "labelProjectID";
+            this.labelProjectID.Size = new System.Drawing.Size(98, 18);
+            this.labelProjectID.TabIndex = 6;
+            this.labelProjectID.Text = "customerID";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 302);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 18);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "address";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 186);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "contact number";
+            // 
+            // textBoxAmount
+            // 
+            this.textBoxAmount.Location = new System.Drawing.Point(23, 78);
+            this.textBoxAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAmount.Name = "textBoxAmount";
+            this.textBoxAmount.Size = new System.Drawing.Size(263, 28);
+            this.textBoxAmount.TabIndex = 33;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(23, 229);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(263, 28);
+            this.textBox1.TabIndex = 34;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(23, 343);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(263, 28);
+            this.textBox2.TabIndex = 35;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(453, 78);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(299, 28);
+            this.textBox3.TabIndex = 36;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(450, 39);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 18);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "customer name:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(450, 388);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 18);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "createDate";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(450, 302);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 18);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "history order ID";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(450, 186);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 18);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "customer name:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(453, 229);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(299, 28);
+            this.textBox4.TabIndex = 41;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(453, 343);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(299, 28);
+            this.textBox5.TabIndex = 42;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(453, 431);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(299, 28);
+            this.textBox6.TabIndex = 43;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 400);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 18);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "createDate";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(23, 431);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(377, 143);
+            this.textBox7.TabIndex = 45;
             // 
             // PerCusDetail
             // 
@@ -292,12 +475,29 @@ namespace SmileSunshineToy
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -328,5 +528,21 @@ namespace SmileSunshineToy
         private System.Windows.Forms.ToolStripMenuItem stuffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelProjectID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAmount;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
