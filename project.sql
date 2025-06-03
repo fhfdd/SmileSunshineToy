@@ -163,3 +163,18 @@ CREATE TABLE IF NOT EXISTS WorkOrder (
     EndDate DATE,
     FOREIGN KEY (productionPlanID) REFERENCES productionPlan(planID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO Warehouse (WarehouseName, Location) VALUES
+('Main Warehouse', 'Hong Kong'),
+('Branch Warehouse', 'Shenzhen'),
+('Distribution Center', 'Guangzhou');
+
+INSERT INTO Product (ProductID, Name, Description, Price, StockQuantity, Category) VALUES
+(1001, 'Smart Building Blocks', 'APP-connected educational toys', 299.99, 500, 'Educational'),
+(1002, 'Remote Control Car', '2.4GHz high-speed racing car', 199.99, 300, 'Toys'),
+(1003, 'Doll Set', 'Fashion doll with interchangeable outfits', 149.99, 400, 'Dolls');
+
+INSERT INTO Material (MaterialID, MaterialName, Specification, ProductionID) VALUES
+(2001, 'ABS Plastic', 'Food-grade, 2mm thickness', 1), -- Linked to production plan ID=1
+(2002, 'Electronic Circuit Board', 'Bluetooth-enabled', 2), -- Linked to production plan ID=2
+(2003, 'Cotton Fabric', '100% organic', 3); -- Linked to production plan ID=3
