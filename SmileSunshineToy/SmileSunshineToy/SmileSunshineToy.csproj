@@ -515,6 +515,15 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\home.png" />
+    <None Include="Resources\order.png" />
+    <None Include="Resources\product-management.png" />
+    <None Include="Resources\analysis.png" />
+    <None Include="Resources\deposit.png" />
+    <None Include="Resources\production-line.png" />
+    <None Include="Resources\delivery-truck.png" />
+    <None Include="Resources\procurement.png" />
+    <None Include="Resources\customer.png" />
     <None Include="Resources\sstoylogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

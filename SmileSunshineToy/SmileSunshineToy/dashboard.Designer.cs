@@ -28,386 +28,370 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saleOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.financialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.procurementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personnelInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.warehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productOutboundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialOutboundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountsReceivableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountsPayableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productionPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inboundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerAftersalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.btn_inv = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.btn_person = new System.Windows.Forms.Button();
+            this.btn_proc = new System.Windows.Forms.Button();
+            this.btn_log = new System.Windows.Forms.Button();
+            this.btn_prod = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btn_fin = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_rd = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logout = new System.Windows.Forms.Button();
+            this.order = new System.Windows.Forms.Button();
+            this.Home = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // BottomToolStripPanel
+            // panel3
             // 
-            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
-            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            this.BottomToolStripPanel.Click += new System.EventHandler(this.BottomToolStripPanel_Click);
-            // 
-            // TopToolStripPanel
-            // 
-            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopToolStripPanel.Name = "TopToolStripPanel";
-            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            this.TopToolStripPanel.Click += new System.EventHandler(this.TopToolStripPanel_Click);
-            // 
-            // RightToolStripPanel
-            // 
-            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.RightToolStripPanel.Name = "RightToolStripPanel";
-            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            this.RightToolStripPanel.Click += new System.EventHandler(this.RightToolStripPanel_Click);
-            // 
-            // LeftToolStripPanel
-            // 
-            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
-            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            this.LeftToolStripPanel.Click += new System.EventHandler(this.LeftToolStripPanel_Click);
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ContentPanel.Size = new System.Drawing.Size(1128, 700);
-            this.ContentPanel.Load += new System.EventHandler(this.ContentPanel_Load);
-            // 
-            // toolStripContainer1
-            // 
-            this.toolStripContainer1.BottomToolStripPanelVisible = false;
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(859, 643);
-            this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            // 
-            // toolStripContainer1.LeftToolStripPanel
-            // 
-            this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1128, 643);
-            this.toolStripContainer1.TabIndex = 3;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            this.toolStripContainer1.TopToolStripPanelVisible = false;
-            this.toolStripContainer1.Click += new System.EventHandler(this.toolStripContainer1_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.saleOrderToolStripMenuItem,
-            this.inventoryToolStripMenuItem,
-            this.rDToolStripMenuItem,
-            this.financialToolStripMenuItem,
-            this.productionToolStripMenuItem,
-            this.logisticsToolStripMenuItem,
-            this.procurementToolStripMenuItem,
-            this.personnelInformationToolStripMenuItem,
-            this.signOutToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(269, 643);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
-            this.homeToolStripMenuItem.Text = "Home(&H)";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
-            // saleOrderToolStripMenuItem
-            // 
-            this.saleOrderToolStripMenuItem.Name = "saleOrderToolStripMenuItem";
-            this.saleOrderToolStripMenuItem.Size = new System.Drawing.Size(144, 29);
-            this.saleOrderToolStripMenuItem.Text = "Sale order(&S)";
-            this.saleOrderToolStripMenuItem.Click += new System.EventHandler(this.saleOrderToolStripMenuItem_Click);
-            // 
-            // inventoryToolStripMenuItem
-            // 
-            this.inventoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productToolStripMenuItem,
-            this.materialToolStripMenuItem,
-            this.warehouseToolStripMenuItem,
-            this.productOutboundToolStripMenuItem,
-            this.materialOutboundToolStripMenuItem});
-            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(135, 29);
-            this.inventoryToolStripMenuItem.Text = "Inventory(&I)";
-            this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
-            // 
-            // rDToolStripMenuItem
-            // 
-            this.rDToolStripMenuItem.Name = "rDToolStripMenuItem";
-            this.rDToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
-            this.rDToolStripMenuItem.Text = "R&&D(&R)";
-            this.rDToolStripMenuItem.Click += new System.EventHandler(this.rDToolStripMenuItem_Click);
-            // 
-            // financialToolStripMenuItem
-            // 
-            this.financialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accountsReceivableToolStripMenuItem,
-            this.accountsPayableToolStripMenuItem});
-            this.financialToolStripMenuItem.Name = "financialToolStripMenuItem";
-            this.financialToolStripMenuItem.Size = new System.Drawing.Size(130, 29);
-            this.financialToolStripMenuItem.Text = "Financial(&F)";
-            this.financialToolStripMenuItem.Click += new System.EventHandler(this.financialToolStripMenuItem_Click);
-            // 
-            // productionToolStripMenuItem
-            // 
-            this.productionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productionPlanToolStripMenuItem,
-            this.inboundToolStripMenuItem});
-            this.productionToolStripMenuItem.Name = "productionToolStripMenuItem";
-            this.productionToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
-            this.productionToolStripMenuItem.Text = "Production(&M)";
-            this.productionToolStripMenuItem.Click += new System.EventHandler(this.productionToolStripMenuItem_Click);
-            // 
-            // logisticsToolStripMenuItem
-            // 
-            this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
-            this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(130, 29);
-            this.logisticsToolStripMenuItem.Text = "Logistics(&L)";
-            this.logisticsToolStripMenuItem.Click += new System.EventHandler(this.logisticsToolStripMenuItem_Click);
-            // 
-            // procurementToolStripMenuItem
-            // 
-            this.procurementToolStripMenuItem.Name = "procurementToolStripMenuItem";
-            this.procurementToolStripMenuItem.Size = new System.Drawing.Size(175, 29);
-            this.procurementToolStripMenuItem.Text = "Procurement(&O)";
-            this.procurementToolStripMenuItem.Click += new System.EventHandler(this.procurementToolStripMenuItem_Click);
-            // 
-            // personnelInformationToolStripMenuItem
-            // 
-            this.personnelInformationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customerAftersalesToolStripMenuItem,
-            this.supplierToolStripMenuItem,
-            this.stuffToolStripMenuItem});
-            this.personnelInformationToolStripMenuItem.Name = "personnelInformationToolStripMenuItem";
-            this.personnelInformationToolStripMenuItem.Size = new System.Drawing.Size(260, 29);
-            this.personnelInformationToolStripMenuItem.Text = "Personnel information(N)";
-            this.personnelInformationToolStripMenuItem.Click += new System.EventHandler(this.personnelInformationToolStripMenuItem_Click);
-            // 
-            // signOutToolStripMenuItem
-            // 
-            this.signOutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.signOutToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.signOutToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 150, 0, 0);
-            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
-            this.signOutToolStripMenuItem.Text = "sign out";
-            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Noto Sans HK", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 35);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Smile&&Sunshine Toy system";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.panel3.BackColor = System.Drawing.Color.Bisque;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1825, 156);
+            this.panel3.TabIndex = 9;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.BackColor = System.Drawing.Color.Bisque;
+            this.panel1.Controls.Add(this.pictureBox9);
+            this.panel1.Controls.Add(this.btn_inv);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.pictureBox7);
+            this.panel1.Controls.Add(this.pictureBox8);
+            this.panel1.Controls.Add(this.btn_person);
+            this.panel1.Controls.Add(this.btn_proc);
+            this.panel1.Controls.Add(this.btn_log);
+            this.panel1.Controls.Add(this.btn_prod);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.btn_fin);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.btn_rd);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.logout);
+            this.panel1.Controls.Add(this.order);
+            this.panel1.Controls.Add(this.Home);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 57);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Size = new System.Drawing.Size(472, 829);
+            this.panel1.TabIndex = 11;
             // 
-            // materialToolStripMenuItem
+            // pictureBox9
             // 
-            this.materialToolStripMenuItem.Name = "materialToolStripMenuItem";
-            this.materialToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.materialToolStripMenuItem.Text = "material";
-            this.materialToolStripMenuItem.Click += new System.EventHandler(this.materialToolStripMenuItem_Click);
+            this.pictureBox9.Image = global::SmileSunshineToy.Properties.Resources.product_management;
+            this.pictureBox9.Location = new System.Drawing.Point(3, 700);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 27;
+            this.pictureBox9.TabStop = false;
             // 
-            // warehouseToolStripMenuItem
+            // btn_inv
             // 
-            this.warehouseToolStripMenuItem.Name = "warehouseToolStripMenuItem";
-            this.warehouseToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.warehouseToolStripMenuItem.Text = "warehouse";
-            this.warehouseToolStripMenuItem.Click += new System.EventHandler(this.warehouseToolStripMenuItem_Click);
+            this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_inv.FlatAppearance.BorderSize = 0;
+            this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.ForeColor = System.Drawing.Color.Black;
+            this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inv.Location = new System.Drawing.Point(0, 694);
+            this.btn_inv.Name = "btn_inv";
+            this.btn_inv.Size = new System.Drawing.Size(472, 87);
+            this.btn_inv.TabIndex = 26;
+            this.btn_inv.Text = "Inventory";
+            this.btn_inv.UseVisualStyleBackColor = true;
             // 
-            // productOutboundToolStripMenuItem
+            // pictureBox5
             // 
-            this.productOutboundToolStripMenuItem.Name = "productOutboundToolStripMenuItem";
-            this.productOutboundToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.productOutboundToolStripMenuItem.Text = "product outbound";
-            this.productOutboundToolStripMenuItem.Click += new System.EventHandler(this.productOutboundToolStripMenuItem_Click);
+            this.pictureBox5.Image = global::SmileSunshineToy.Properties.Resources.customer;
+            this.pictureBox5.Location = new System.Drawing.Point(3, 611);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 25;
+            this.pictureBox5.TabStop = false;
             // 
-            // materialOutboundToolStripMenuItem
+            // pictureBox6
             // 
-            this.materialOutboundToolStripMenuItem.Name = "materialOutboundToolStripMenuItem";
-            this.materialOutboundToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.materialOutboundToolStripMenuItem.Text = "material outbound";
-            this.materialOutboundToolStripMenuItem.Click += new System.EventHandler(this.materialOutboundToolStripMenuItem_Click);
+            this.pictureBox6.Image = global::SmileSunshineToy.Properties.Resources.procurement;
+            this.pictureBox6.Location = new System.Drawing.Point(3, 528);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 24;
+            this.pictureBox6.TabStop = false;
             // 
-            // productToolStripMenuItem
+            // pictureBox7
             // 
-            this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.productToolStripMenuItem.Text = "product";
-            this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
+            this.pictureBox7.Image = global::SmileSunshineToy.Properties.Resources.delivery_truck;
+            this.pictureBox7.Location = new System.Drawing.Point(3, 448);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 23;
+            this.pictureBox7.TabStop = false;
             // 
-            // accountsReceivableToolStripMenuItem
+            // pictureBox8
             // 
-            this.accountsReceivableToolStripMenuItem.Name = "accountsReceivableToolStripMenuItem";
-            this.accountsReceivableToolStripMenuItem.Size = new System.Drawing.Size(292, 34);
-            this.accountsReceivableToolStripMenuItem.Text = "Accounts receivable";
-            this.accountsReceivableToolStripMenuItem.Click += new System.EventHandler(this.accountsReceivableToolStripMenuItem_Click);
+            this.pictureBox8.Image = global::SmileSunshineToy.Properties.Resources.production_line;
+            this.pictureBox8.Location = new System.Drawing.Point(3, 357);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 22;
+            this.pictureBox8.TabStop = false;
             // 
-            // accountsPayableToolStripMenuItem
+            // btn_person
             // 
-            this.accountsPayableToolStripMenuItem.Name = "accountsPayableToolStripMenuItem";
-            this.accountsPayableToolStripMenuItem.Size = new System.Drawing.Size(292, 34);
-            this.accountsPayableToolStripMenuItem.Text = "Accounts payable";
-            this.accountsPayableToolStripMenuItem.Click += new System.EventHandler(this.accountsPayableToolStripMenuItem_Click);
+            this.btn_person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_person.FlatAppearance.BorderSize = 0;
+            this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_person.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.ForeColor = System.Drawing.Color.Black;
+            this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_person.Location = new System.Drawing.Point(0, 607);
+            this.btn_person.Name = "btn_person";
+            this.btn_person.Size = new System.Drawing.Size(472, 87);
+            this.btn_person.TabIndex = 20;
+            this.btn_person.Text = "Personnel information";
+            this.btn_person.UseVisualStyleBackColor = true;
             // 
-            // productionPlanToolStripMenuItem
+            // btn_proc
             // 
-            this.productionPlanToolStripMenuItem.Name = "productionPlanToolStripMenuItem";
-            this.productionPlanToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.productionPlanToolStripMenuItem.Text = "Production Plan";
-            this.productionPlanToolStripMenuItem.Click += new System.EventHandler(this.productionPlanToolStripMenuItem_Click);
+            this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_proc.FlatAppearance.BorderSize = 0;
+            this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_proc.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.ForeColor = System.Drawing.Color.Black;
+            this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_proc.Location = new System.Drawing.Point(0, 520);
+            this.btn_proc.Name = "btn_proc";
+            this.btn_proc.Size = new System.Drawing.Size(472, 87);
+            this.btn_proc.TabIndex = 19;
+            this.btn_proc.Text = "Procurement";
+            this.btn_proc.UseVisualStyleBackColor = true;
             // 
-            // inboundToolStripMenuItem
+            // btn_log
             // 
-            this.inboundToolStripMenuItem.Name = "inboundToolStripMenuItem";
-            this.inboundToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.inboundToolStripMenuItem.Text = "Inbound";
-            this.inboundToolStripMenuItem.Click += new System.EventHandler(this.inboundToolStripMenuItem_Click);
+            this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_log.FlatAppearance.BorderSize = 0;
+            this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_log.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.ForeColor = System.Drawing.Color.Black;
+            this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_log.Location = new System.Drawing.Point(0, 433);
+            this.btn_log.Name = "btn_log";
+            this.btn_log.Size = new System.Drawing.Size(472, 87);
+            this.btn_log.TabIndex = 18;
+            this.btn_log.Text = "Logistics";
+            this.btn_log.UseVisualStyleBackColor = true;
             // 
-            // customerAftersalesToolStripMenuItem
+            // btn_prod
             // 
-            this.customerAftersalesToolStripMenuItem.Name = "customerAftersalesToolStripMenuItem";
-            this.customerAftersalesToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
-            this.customerAftersalesToolStripMenuItem.Text = "Customer Aftersales";
-            this.customerAftersalesToolStripMenuItem.Click += new System.EventHandler(this.customerAftersalesToolStripMenuItem_Click);
+            this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_prod.FlatAppearance.BorderSize = 0;
+            this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prod.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.ForeColor = System.Drawing.Color.Black;
+            this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_prod.Location = new System.Drawing.Point(0, 346);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(472, 87);
+            this.btn_prod.TabIndex = 17;
+            this.btn_prod.Text = "Production";
+            this.btn_prod.UseVisualStyleBackColor = true;
             // 
-            // supplierToolStripMenuItem
+            // pictureBox4
             // 
-            this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
-            this.supplierToolStripMenuItem.Text = "Supplier";
-            this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
+            this.pictureBox4.Image = global::SmileSunshineToy.Properties.Resources.deposit;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 279);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
             // 
-            // stuffToolStripMenuItem
+            // btn_fin
             // 
-            this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
-            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
-            this.stuffToolStripMenuItem.Text = "Stuff";
-            this.stuffToolStripMenuItem.Click += new System.EventHandler(this.stuffToolStripMenuItem_Click);
+            this.btn_fin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_fin.FlatAppearance.BorderSize = 0;
+            this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fin.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.ForeColor = System.Drawing.Color.Black;
+            this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_fin.Location = new System.Drawing.Point(0, 259);
+            this.btn_fin.Name = "btn_fin";
+            this.btn_fin.Size = new System.Drawing.Size(472, 87);
+            this.btn_fin.TabIndex = 15;
+            this.btn_fin.Text = "Financial";
+            this.btn_fin.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SmileSunshineToy.Properties.Resources.analysis;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 193);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btn_rd
+            // 
+            this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_rd.FlatAppearance.BorderSize = 0;
+            this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rd.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.ForeColor = System.Drawing.Color.Black;
+            this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_rd.Location = new System.Drawing.Point(0, 172);
+            this.btn_rd.Name = "btn_rd";
+            this.btn_rd.Size = new System.Drawing.Size(472, 87);
+            this.btn_rd.TabIndex = 13;
+            this.btn_rd.Text = "R&&D";
+            this.btn_rd.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SmileSunshineToy.Properties.Resources.order;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 105);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SmileSunshineToy.Properties.Resources.home;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // logout
+            // 
+            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.ForeColor = System.Drawing.Color.Black;
+            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.Location = new System.Drawing.Point(0, 739);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(472, 90);
+            this.logout.TabIndex = 4;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            // 
+            // order
+            // 
+            this.order.Dock = System.Windows.Forms.DockStyle.Top;
+            this.order.FlatAppearance.BorderSize = 0;
+            this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.order.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order.ForeColor = System.Drawing.Color.Black;
+            this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.order.Location = new System.Drawing.Point(0, 85);
+            this.order.Name = "order";
+            this.order.Size = new System.Drawing.Size(472, 87);
+            this.order.TabIndex = 2;
+            this.order.Text = "Sale Order";
+            this.order.UseVisualStyleBackColor = true;
+            // 
+            // Home
+            // 
+            this.Home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home.ForeColor = System.Drawing.Color.Black;
+            this.Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Home.Location = new System.Drawing.Point(0, 0);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(472, 85);
+            this.Home.TabIndex = 1;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 700);
-            this.Controls.Add(this.toolStripContainer1);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackgroundImage = global::SmileSunshineToy.Properties.Resources.sstoylogo;
+            this.ClientSize = new System.Drawing.Size(1825, 985);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.dashboard_Load);
-            this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
-        private System.Windows.Forms.ToolStripContentPanel ContentPanel;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saleOrderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem financialToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logisticsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem procurementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem personnelInformationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem materialToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem warehouseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productOutboundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem materialOutboundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountsReceivableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountsPayableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productionPlanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inboundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerAftersalesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stuffToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Button btn_inv;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button btn_person;
+        private System.Windows.Forms.Button btn_proc;
+        private System.Windows.Forms.Button btn_log;
+        private System.Windows.Forms.Button btn_prod;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btn_fin;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btn_rd;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.Button order;
+        private System.Windows.Forms.Button Home;
     }
 }

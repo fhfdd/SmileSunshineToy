@@ -207,5 +207,110 @@ namespace SmileSunshineToy
             this.Hide();
             new PerStuOverview().Show();
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_inv_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_person_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_proc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_log_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_prod_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_fin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_rd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void order_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
