@@ -30,6 +30,9 @@ namespace SmileSunshineToy
         private void InitializeComponent()
         {
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.Create = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,15 +58,14 @@ namespace SmileSunshineToy
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Create = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -73,23 +75,53 @@ namespace SmileSunshineToy
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.checkBox2);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.checkBox1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.searchButton);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.Create);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(837, 587);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(837, 653);
             this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
             // 
             this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 63);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1106, 587);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1106, 653);
             this.toolStripContainer1.TabIndex = 5;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(146, 16);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(120, 78);
+            this.searchButton.TabIndex = 8;
+            this.searchButton.Text = "search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
+            // Create
+            // 
+            this.Create.Location = new System.Drawing.Point(16, 12);
+            this.Create.Name = "Create";
+            this.Create.Size = new System.Drawing.Size(124, 81);
+            this.Create.TabIndex = 7;
+            this.Create.Text = "Create";
+            this.Create.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 100);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.Size = new System.Drawing.Size(834, 552);
+            this.dataGridView1.TabIndex = 5;
             // 
             // menuStrip1
             // 
@@ -112,7 +144,7 @@ namespace SmileSunshineToy
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(269, 587);
+            this.menuStrip1.Size = new System.Drawing.Size(269, 653);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -273,67 +305,60 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1106, 57);
+            this.panel1.Size = new System.Drawing.Size(1106, 63);
             this.panel1.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Location = new System.Drawing.Point(12, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(319, 29);
             this.label3.TabIndex = 8;
             this.label3.Text = "Smile&&Sunshine Toy system";
             // 
-            // dataGridView1
+            // checkBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(834, 497);
-            this.dataGridView1.TabIndex = 5;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(206, 214);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(113, 24);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // Create
+            // checkBox2
             // 
-            this.Create.Location = new System.Drawing.Point(16, 11);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(124, 73);
-            this.Create.TabIndex = 7;
-            this.Create.Text = "Create";
-            this.Create.UseVisualStyleBackColor = true;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(146, 14);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(120, 70);
-            this.searchButton.TabIndex = 8;
-            this.searchButton.Text = "search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(206, 265);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(113, 24);
+            this.checkBox2.TabIndex = 10;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // ProcOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 644);
+            this.ClientSize = new System.Drawing.Size(1106, 716);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProcOverview";
             this.Text = "ProcOverview";
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,5 +394,7 @@ namespace SmileSunshineToy
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Create;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
