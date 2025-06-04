@@ -29,7 +29,11 @@ namespace SmileSunshineToy
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.Create = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,15 +59,21 @@ namespace SmileSunshineToy
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Create = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
+            this.testDataSet = new SmileSunshineToy.testDataSet();
+            this.productionplanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productionplanTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productionplanTableAdapter();
+            this.planIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stutasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -90,6 +100,42 @@ namespace SmileSunshineToy
             this.toolStripContainer1.TabIndex = 5;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(153, 14);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(120, 70);
+            this.searchButton.TabIndex = 7;
+            this.searchButton.Text = "search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
+            // Create
+            // 
+            this.Create.Location = new System.Drawing.Point(12, 11);
+            this.Create.Name = "Create";
+            this.Create.Size = new System.Drawing.Size(124, 73);
+            this.Create.TabIndex = 6;
+            this.Create.Text = "Create";
+            this.Create.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.planIDDataGridViewTextBoxColumn,
+            this.startDateDataGridViewTextBoxColumn,
+            this.endDateDataGridViewTextBoxColumn,
+            this.stutasDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.productionplanBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 90);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.Size = new System.Drawing.Size(834, 497);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -286,33 +332,51 @@ namespace SmileSunshineToy
             this.label3.TabIndex = 8;
             this.label3.Text = "Smile&&Sunshine Toy system";
             // 
-            // dataGridView1
+            // testDataSet
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(834, 497);
-            this.dataGridView1.TabIndex = 5;
+            this.testDataSet.DataSetName = "testDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Create
+            // productionplanBindingSource
             // 
-            this.Create.Location = new System.Drawing.Point(12, 11);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(124, 73);
-            this.Create.TabIndex = 6;
-            this.Create.Text = "Create";
-            this.Create.UseVisualStyleBackColor = true;
+            this.productionplanBindingSource.DataMember = "productionplan";
+            this.productionplanBindingSource.DataSource = this.testDataSet;
             // 
-            // searchButton
+            // productionplanTableAdapter
             // 
-            this.searchButton.Location = new System.Drawing.Point(153, 14);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(120, 70);
-            this.searchButton.TabIndex = 7;
-            this.searchButton.Text = "search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.productionplanTableAdapter.ClearBeforeFill = true;
+            // 
+            // planIDDataGridViewTextBoxColumn
+            // 
+            this.planIDDataGridViewTextBoxColumn.DataPropertyName = "planID";
+            this.planIDDataGridViewTextBoxColumn.HeaderText = "planID";
+            this.planIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.planIDDataGridViewTextBoxColumn.Name = "planIDDataGridViewTextBoxColumn";
+            this.planIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "startDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "startDate";
+            this.startDateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            this.startDateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            this.endDateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // stutasDataGridViewTextBoxColumn
+            // 
+            this.stutasDataGridViewTextBoxColumn.DataPropertyName = "Stutas";
+            this.stutasDataGridViewTextBoxColumn.HeaderText = "Stutas";
+            this.stutasDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.stutasDataGridViewTextBoxColumn.Name = "stutasDataGridViewTextBoxColumn";
+            this.stutasDataGridViewTextBoxColumn.Width = 150;
             // 
             // ProdPlanOverview
             // 
@@ -324,16 +388,19 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProdPlanOverview";
             this.Text = "ProOverview";
+            this.Load += new System.EventHandler(this.ProdPlanOverview_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,5 +436,12 @@ namespace SmileSunshineToy
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Create;
         private System.Windows.Forms.Button searchButton;
+        private testDataSet testDataSet;
+        private System.Windows.Forms.BindingSource productionplanBindingSource;
+        private testDataSetTableAdapters.productionplanTableAdapter productionplanTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stutasDataGridViewTextBoxColumn;
     }
 }
