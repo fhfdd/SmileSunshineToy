@@ -71,6 +71,9 @@
     <Compile Include="aftersalerequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="cschat.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -121,6 +124,12 @@
     </Compile>
     <Compile Include="InvMaOverview.Designer.cs">
       <DependentUpon>InvMaOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvMaterial.Designer.cs">
+      <DependentUpon>InvMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="InvMoutDetail.cs">
       <SubType>Form</SubType>
@@ -357,6 +366,9 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataGridViewForm.resx">
+      <DependentUpon>DataGridViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinReDetail.resx">
       <DependentUpon>FinReDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InvMaOverview.resx">
       <DependentUpon>InvMaOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvMaterial.resx">
+      <DependentUpon>InvMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvMoutDetail.resx">
       <DependentUpon>InvMoutDetail.cs</DependentUpon>
