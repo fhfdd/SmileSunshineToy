@@ -16,6 +16,7 @@ namespace SmileSunshineToy
 
         private string connectionString = "Server=localhost;Database=test;Uid=root;Pwd=;";
         private int _orderId;
+        private int _customerId;
 
         public SalDetail()
         {
@@ -24,12 +25,13 @@ namespace SmileSunshineToy
 
         }
 
-        public SalDetail(int orderId)
+        public SalDetail(int orderId,int customerId)
         {
             InitializeComponent();
             _orderId = orderId;
+            _customerId = customerId;
             LoadDetailData(orderId);
-            LoadCustomerData(orderId);
+            LoadCustomerData(customerId);
             LoadProductData(orderId);
         }
 
@@ -66,21 +68,18 @@ namespace SmileSunshineToy
             }
         }
 
-        private void LoadCustomerData(int orderId)
+        private void LoadCustomerData(int customerId)
         {
-            string connectionString = "Server=localhost;Database=test;Uid=root;Pwd=;";
-            string query = "SELECT * FROM `customer`";
-
+            string query = "SELECT * FROM `customer` WHERE CustomerID = @CustomerID";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                    adapter.SelectCommand.Parameters.AddWithValue("@CustomerID", _customerId);
 
                     DataTable dataTable = new DataTable("customer");
-
                     adapter.Fill(dataTable);
-
                     customerGrid.DataSource = dataTable;
                 }
                 catch (Exception ex)
@@ -92,8 +91,12 @@ namespace SmileSunshineToy
 
         private void LoadProductData(int orderId)
         {
-            string connectionString = "Server=localhost;Database=test;Uid=root;Pwd=;";
-            string query = "SELECT * FROM `product`";
+            string query = @"
+        SELECT p.* 
+        FROM `product` p
+        JOIN `order_product` op ON p.ProductID = op.ProductID  
+        JOIN `order` o ON op.OrderID = o.OrderID
+        WHERE o.OrderID = @OrderID";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -192,10 +195,8 @@ namespace SmileSunshineToy
 
         private void btn_cancel(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Are you sure to cancel?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
-                this.Close();
-            }
+            this.Hide();
+            new SalOrderQuery().Show();
         }
 
         private void productionGrid(object sender, DataGridViewCellEventArgs e)
