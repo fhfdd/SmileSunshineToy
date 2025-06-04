@@ -18,7 +18,6 @@ namespace SmileSunshineToy
             InitializeComponent();
         }
 
-        MySqlConnection connection;
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
@@ -40,16 +39,12 @@ namespace SmileSunshineToy
             {
                 try
                 {
-                    // 创建数据适配器
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
 
-                    // 创建 DataTable
                     DataTable dataTable = new DataTable("productionplan");
 
-                    // 填充数据
                     adapter.Fill(dataTable);
 
-                    // 绑定到 DataGridView
                     dataGridView1.DataSource = dataTable;
                 }
                 catch (Exception ex)
