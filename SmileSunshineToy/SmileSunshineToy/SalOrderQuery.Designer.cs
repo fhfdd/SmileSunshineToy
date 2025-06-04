@@ -52,12 +52,14 @@
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.orderTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.orderTableAdapter();
-            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.delect_col = new System.Windows.Forms.Button();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -67,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // saleAllSearch
@@ -104,6 +107,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.delect_col);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.saleAllFliter);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.saleAllSearch);
@@ -126,12 +130,13 @@
             // 
             // saleAllFliter
             // 
+            this.saleAllFliter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.saleAllFliter.FormattingEnabled = true;
             this.saleAllFliter.Location = new System.Drawing.Point(271, 39);
             this.saleAllFliter.Name = "saleAllFliter";
             this.saleAllFliter.Size = new System.Drawing.Size(107, 26);
             this.saleAllFliter.TabIndex = 4;
-            this.saleAllFliter.Text = "order ID";
+            this.saleAllFliter.SelectedIndexChanged += new System.EventHandler(this.saleAllFliter_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -277,6 +282,53 @@
             // 
             this.orderTableAdapter.ClearBeforeFill = true;
             // 
+            // orderBindingSource1
+            // 
+            this.orderBindingSource1.DataMember = "order";
+            this.orderBindingSource1.DataSource = this.testDataSetBindingSource;
+            // 
+            // totalAmountDataGridViewTextBoxColumn
+            // 
+            this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
+            this.totalAmountDataGridViewTextBoxColumn.HeaderText = "TotalAmount";
+            this.totalAmountDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
+            this.totalAmountDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.statusDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // orderDateDataGridViewTextBoxColumn
+            // 
+            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
+            this.orderDateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // customerIDDataGridViewTextBoxColumn
+            // 
+            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
+            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
+            this.customerIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // orderIDDataGridViewTextBoxColumn
+            // 
+            this.orderIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
+            this.orderIDDataGridViewTextBoxColumn.Width = 107;
+            // 
             // Detail
             // 
             this.Detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -288,46 +340,15 @@
             this.Detail.UseColumnTextForButtonValue = true;
             this.Detail.Width = 68;
             // 
-            // orderIDDataGridViewTextBoxColumn
+            // delect_col
             // 
-            this.orderIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // customerIDDataGridViewTextBoxColumn
-            // 
-            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
-            this.customerIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            this.orderDateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // totalAmountDataGridViewTextBoxColumn
-            // 
-            this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.HeaderText = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
-            this.totalAmountDataGridViewTextBoxColumn.Width = 150;
+            this.delect_col.Location = new System.Drawing.Point(32, 115);
+            this.delect_col.Name = "delect_col";
+            this.delect_col.Size = new System.Drawing.Size(192, 40);
+            this.delect_col.TabIndex = 5;
+            this.delect_col.Text = "Delect";
+            this.delect_col.UseVisualStyleBackColor = true;
+            this.delect_col.Click += new System.EventHandler(this.delect_col_Click);
             // 
             // SalOrderQuery
             // 
@@ -355,6 +376,7 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -384,11 +406,13 @@
         private testDataSet testDataSet;
         private System.Windows.Forms.BindingSource orderBindingSource;
         private testDataSetTableAdapters.orderTableAdapter orderTableAdapter;
+        private System.Windows.Forms.BindingSource orderBindingSource1;
         private System.Windows.Forms.DataGridViewButtonColumn Detail;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button delect_col;
     }
 }

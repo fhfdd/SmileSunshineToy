@@ -69,6 +69,7 @@ namespace SmileSunshineToy
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedbackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).BeginInit();
@@ -116,6 +117,7 @@ namespace SmileSunshineToy
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.comboBox1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.button6);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.button5);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.button4);
@@ -148,7 +150,7 @@ namespace SmileSunshineToy
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(947, 733);
+            this.button6.Location = new System.Drawing.Point(998, 734);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(191, 40);
             this.button6.TabIndex = 20;
@@ -158,7 +160,7 @@ namespace SmileSunshineToy
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(741, 733);
+            this.button5.Location = new System.Drawing.Point(792, 734);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(191, 40);
             this.button5.TabIndex = 19;
@@ -167,7 +169,7 @@ namespace SmileSunshineToy
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(626, 733);
+            this.button4.Location = new System.Drawing.Point(677, 734);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(95, 40);
             this.button4.TabIndex = 18;
@@ -177,7 +179,7 @@ namespace SmileSunshineToy
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(493, 733);
+            this.button3.Location = new System.Drawing.Point(544, 734);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(95, 40);
             this.button3.TabIndex = 17;
@@ -186,7 +188,7 @@ namespace SmileSunshineToy
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(357, 733);
+            this.button2.Location = new System.Drawing.Point(408, 734);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 40);
             this.button2.TabIndex = 16;
@@ -235,11 +237,11 @@ namespace SmileSunshineToy
             this.feedbackDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn});
             this.customerGrid.DataSource = this.customerBindingSource;
-            this.customerGrid.Location = new System.Drawing.Point(25, 188);
+            this.customerGrid.Location = new System.Drawing.Point(18, 285);
             this.customerGrid.Name = "customerGrid";
             this.customerGrid.RowHeadersWidth = 62;
             this.customerGrid.RowTemplate.Height = 30;
-            this.customerGrid.Size = new System.Drawing.Size(956, 460);
+            this.customerGrid.Size = new System.Drawing.Size(934, 277);
             this.customerGrid.TabIndex = 12;
             this.customerGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -452,6 +454,15 @@ namespace SmileSunshineToy
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             this.phoneDataGridViewTextBoxColumn.Width = 150;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(33, 228);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(162, 26);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "customer select";
+            // 
             // SalDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -521,5 +532,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn feedbackDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
