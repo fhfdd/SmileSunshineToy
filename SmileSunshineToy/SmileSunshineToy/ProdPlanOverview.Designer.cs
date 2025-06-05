@@ -42,7 +42,6 @@ namespace SmileSunshineToy
             this.logout = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.btn_material = new System.Windows.Forms.Button();
             this.btn_product = new System.Windows.Forms.Button();
             this.order = new System.Windows.Forms.Button();
@@ -245,7 +244,6 @@ namespace SmileSunshineToy
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Bisque;
-            this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.btn_material);
             this.panel3.Controls.Add(this.btn_product);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -253,21 +251,6 @@ namespace SmileSunshineToy
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(262, 961);
             this.panel3.TabIndex = 59;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 154);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(262, 78);
-            this.button7.TabIndex = 13;
-            this.button7.Text = "Warehouse";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // btn_material
             // 
@@ -281,7 +264,7 @@ namespace SmileSunshineToy
             this.btn_material.Name = "btn_material";
             this.btn_material.Size = new System.Drawing.Size(262, 78);
             this.btn_material.TabIndex = 2;
-            this.btn_material.Text = "Material";
+            this.btn_material.Text = "Inbound";
             this.btn_material.UseVisualStyleBackColor = true;
             // 
             // btn_product
@@ -296,7 +279,7 @@ namespace SmileSunshineToy
             this.btn_product.Name = "btn_product";
             this.btn_product.Size = new System.Drawing.Size(262, 76);
             this.btn_product.TabIndex = 1;
-            this.btn_product.Text = "Product";
+            this.btn_product.Text = "Product Plan";
             this.btn_product.UseVisualStyleBackColor = true;
             // 
             // order
@@ -551,7 +534,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btn_material;
         private System.Windows.Forms.Button btn_product;
         private System.Windows.Forms.Button order;

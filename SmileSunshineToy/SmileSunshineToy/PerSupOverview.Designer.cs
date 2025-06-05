@@ -266,7 +266,7 @@ namespace SmileSunshineToy
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(262, 78);
             this.button7.TabIndex = 13;
-            this.button7.Text = "Warehouse";
+            this.button7.Text = "Stuff";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // btn_material
@@ -281,7 +281,7 @@ namespace SmileSunshineToy
             this.btn_material.Name = "btn_material";
             this.btn_material.Size = new System.Drawing.Size(262, 78);
             this.btn_material.TabIndex = 2;
-            this.btn_material.Text = "Material";
+            this.btn_material.Text = "Supplier";
             this.btn_material.UseVisualStyleBackColor = true;
             // 
             // btn_product
@@ -296,7 +296,7 @@ namespace SmileSunshineToy
             this.btn_product.Name = "btn_product";
             this.btn_product.Size = new System.Drawing.Size(262, 76);
             this.btn_product.TabIndex = 1;
-            this.btn_product.Text = "Product";
+            this.btn_product.Text = "Customer";
             this.btn_product.UseVisualStyleBackColor = true;
             // 
             // order

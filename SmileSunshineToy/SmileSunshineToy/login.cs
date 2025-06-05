@@ -74,7 +74,7 @@ namespace SmileSunshineToy
                             // 6. Navigate to dashboard
                             MessageBox.Show("Login successful!");
                             this.Hide();
-                            new Dashboard(UserSession.Role).Show();
+                            new Dashboard().Show();
                         }
                         else // No matching user found
                         {

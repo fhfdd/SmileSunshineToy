@@ -288,6 +288,7 @@ namespace SmileSunshineToy
             this.user.Size = new System.Drawing.Size(140, 140);
             this.user.TabIndex = 28;
             this.user.UseVisualStyleBackColor = true;
+            this.user.Click += new System.EventHandler(this.btn_user_Click);
             // 
             // Dashboard
             // 
