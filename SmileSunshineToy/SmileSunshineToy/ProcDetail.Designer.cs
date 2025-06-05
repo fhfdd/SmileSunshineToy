@@ -68,17 +68,17 @@ namespace SmileSunshineToy
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(837, 587);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(837, 653);
             this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
             // 
             this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 63);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1106, 587);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1106, 653);
             this.toolStripContainer1.TabIndex = 5;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
@@ -104,7 +104,7 @@ namespace SmileSunshineToy
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(269, 587);
+            this.menuStrip1.Size = new System.Drawing.Size(269, 653);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -265,29 +265,30 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1106, 57);
+            this.panel1.Size = new System.Drawing.Size(1106, 63);
             this.panel1.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Noto Sans HK", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 35);
+            this.label3.Size = new System.Drawing.Size(319, 29);
             this.label3.TabIndex = 8;
             this.label3.Text = "Smile&&Sunshine Toy system";
             // 
             // ProcDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 644);
+            this.ClientSize = new System.Drawing.Size(1106, 716);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProcDetail";
             this.Text = "ProcDetail";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
