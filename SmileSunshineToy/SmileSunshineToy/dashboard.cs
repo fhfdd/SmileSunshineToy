@@ -12,305 +12,144 @@ namespace SmileSunshineToy
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public Dashboard(UserRole userRole)
         {
             InitializeComponent();
+            // 根据角色配置 UI
+            ConfigureUIByRole(userRole);
         }
 
-        private void rDToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new RDoverview().Show();
-        }
-
-        private void saleOrderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new SalOrderQuery().Show();
-        }
-
-        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Dashboard_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void financialToolStripMenuItem_Click(object sender, EventArgs e)
+        // 核心逻辑：根据角色显示/隐藏按钮
+        private void ConfigureUIByRole(UserRole role)
         {
+            // 1. 先隐藏所有功能按钮（注销和主页默认显示，需确保设计器中已设为可见）
+            btn_inv.Visible = false;
+            btn_person.Visible = false;
+            btn_proc.Visible = false;
+            btn_log.Visible = false;
+            btn_prod.Visible = false;
+            btn_fin.Visible = false;
+            btn_rd.Visible = false;
+            order.Visible = false; // 销售订单按钮
 
-        }
-
-        private void dashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if(DialogResult.Yes == MessageBox.Show("Are you sure to sign out?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)){
-                this.Close();
+            // 2. 根据角色显示对应按钮
+            switch (role)
+            {
+                case UserRole.Admin:
+                    ShowAllButtons(); // 管理员显示所有按钮
+                    break;
+                case UserRole.Inventory:
+                    btn_inv.Visible = true;
+                    break;
+                case UserRole.Finance:
+                    btn_fin.Visible = true;
+                    break;
+                case UserRole.Production:
+                    btn_prod.Visible = true;
+                    break;
+                case UserRole.Logistics:
+                    btn_log.Visible = true;
+                    break;
+                case UserRole.Procurement:
+                    btn_proc.Visible = true;
+                    break;
+                case UserRole.Personnel:
+                    btn_person.Visible = true;
+                    break;
+                case UserRole.RD:
+                    btn_rd.Visible = true;
+                    break;
+                case UserRole.Sales:
+                    order.Visible = true; // 销售订单按钮
+                    break;
             }
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        // 辅助方法：管理员显示所有按钮
+        private void ShowAllButtons()
         {
-
+            btn_inv.Visible = true;
+            btn_person.Visible = true;
+            btn_proc.Visible = true;
+            btn_log.Visible = true;
+            btn_prod.Visible = true;
+            btn_fin.Visible = true;
+            btn_rd.Visible = true;
+            order.Visible = true;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new InvProOverview().Show();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TopToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RightToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LeftToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripContainer1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BottomToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logisticsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void procurementToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void personnelInformationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new InvMaOverview().Show();
-        }
-
-        private void warehouseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new InvWaOverview().Show();
-        }
-
-        private void productOutboundToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new InvPoutOverview().Show();
-        }
-
-        private void materialOutboundToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new InvMoutOverview().Show();
-        }
-
-        private void accountsReceivableToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new FinReOverview().Show();
-        }
-
-        private void accountsPayableToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new FinPayOverview().Show();
-        }
-
-        private void productionPlanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new ProdPlanOverview().Show();
-        }
-
-        private void inboundToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new ProdInOverview().Show();
-        }
-
-        private void customerAftersalesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new PerCusOverview().Show();
-        }
-
-        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new PerSupOverview().Show();
-        }
-
-        private void stuffToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new PerStuOverview().Show();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        // ------------------- 以下是按钮点击事件（跳转到对应窗体） ------------------- //
         private void btn_inv_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_person_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_proc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_log_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_prod_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_fin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_rd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logout_Click(object sender, EventArgs e)
-        {
-
+            new InvMaterial().Show(); // 库存管理窗体
+            this.Hide();
         }
 
         private void order_Click(object sender, EventArgs e)
         {
-
+            new SalOrderQuery().Show(); // 销售订单窗体
+            this.Hide();
         }
 
-        private void Home_Click(object sender, EventArgs e)
+        private void btn_person_Click(object sender, EventArgs e)
         {
-
+            new PerCusOverview().Show(); // 人事管理窗体
+            this.Hide();
         }
 
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        private void btn_proc_Click(object sender, EventArgs e)
         {
-
+            new ProcOverview().Show(); // 采购管理窗体
+            this.Hide();
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void btn_log_Click(object sender, EventArgs e)
         {
-
+            new LoOverview().Show(); // 物流管理窗体
+            this.Hide();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void btn_prod_Click(object sender, EventArgs e)
         {
-
+            new ProdInOverview().Show(); // 生产管理窗体
+            this.Hide();
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void btn_fin_Click(object sender, EventArgs e)
         {
-
+            new FinPayOverview().Show(); // 财务管理窗体
+            this.Hide();
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void btn_rd_Click(object sender, EventArgs e)
         {
-
+            new RDoverview().Show(); // 研发管理窗体
+            this.Hide();
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void logout_Click(object sender, EventArgs e)
         {
-
+            // 退出逻辑（同之前）
+            if (MessageBox.Show("确认退出？", "退出", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+                new Login().Show();
+            }
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        // 主页按钮点击事件：确保Dashboard始终可见并激活
+        private void btn_home_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            // 显示窗体（若被隐藏）
+            this.Show();
+            // 激活窗体（置于最前）
+            this.Activate();
         }
     }
 }
+

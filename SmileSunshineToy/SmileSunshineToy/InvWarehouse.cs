@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class InvPoutDetail : Form
+    public partial class InvWarehouse : Form
     {
-        public InvPoutDetail()
+        public InvWarehouse()
         {
             InitializeComponent();
         }
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

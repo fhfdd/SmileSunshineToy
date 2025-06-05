@@ -81,7 +81,7 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 57);
+            this.panel1.Size = new System.Drawing.Size(1626, 57);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -116,7 +116,7 @@ namespace SmileSunshineToy
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(269, 643);
+            this.menuStrip1.Size = new System.Drawing.Size(269, 716);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -282,7 +282,7 @@ namespace SmileSunshineToy
             this.toolStripContainer1.ContentPanel.Controls.Add(this.searchButton);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.Create);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(859, 643);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1357, 716);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
@@ -291,7 +291,7 @@ namespace SmileSunshineToy
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1128, 643);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1626, 716);
             this.toolStripContainer1.TabIndex = 5;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
@@ -334,11 +334,11 @@ namespace SmileSunshineToy
             this.createdDate,
             this.dueDate,
             this.status});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 74);
+            this.dataGridView1.Location = new System.Drawing.Point(79, 117);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(855, 569);
+            this.dataGridView1.Size = new System.Drawing.Size(1248, 570);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -402,7 +402,7 @@ namespace SmileSunshineToy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 700);
+            this.ClientSize = new System.Drawing.Size(1626, 773);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
