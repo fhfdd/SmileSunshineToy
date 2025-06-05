@@ -291,12 +291,6 @@
     <Compile Include="returnrequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="RRD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RRD.Designer.cs">
-      <DependentUpon>RRD.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalOrderQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -419,9 +413,6 @@
     </Compile>
     <EmbeddedResource Include="RDoverview.resx">
       <DependentUpon>RDoverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RRD.resx">
-      <DependentUpon>RRD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalOrderQuery.resx">
       <DependentUpon>SalOrderQuery.cs</DependentUpon>
