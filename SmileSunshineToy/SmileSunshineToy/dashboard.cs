@@ -150,6 +150,12 @@ namespace SmileSunshineToy
             // 激活窗体（置于最前）
             this.Activate();
         }
+
+        private void btn_fin_Click_1(object sender, EventArgs e)
+        {
+            FinPayOverview finPayOverview = new FinPayOverview();
+            FinPayOverview.Show();
+        }
     }
 }
 
