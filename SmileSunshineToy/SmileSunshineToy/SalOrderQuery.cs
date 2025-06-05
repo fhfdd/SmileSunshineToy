@@ -23,11 +23,6 @@ namespace SmileSunshineToy
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("Are you sure to sign out?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
@@ -58,9 +53,9 @@ namespace SmileSunshineToy
 
                     dataGridView1.DataSource = dataTable;
 
-                    saleAllFliter.Items.Clear();
-                    saleAllFliter.Items.Add("OrderID");
-                    saleAllFliter.Items.Add("Status");
+                    filterComboBox.Items.Clear();
+                    filterComboBox.Items.Add("OrderID");
+                    filterComboBox.Items.Add("Status");
                 }
                 catch (Exception ex)
                 {
@@ -84,7 +79,7 @@ namespace SmileSunshineToy
 
         private void saleAllFliter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (saleAllFliter.SelectedItem.ToString())
+            switch (filterComboBox.SelectedItem.ToString())
             {
 
                 case "OrderID": MessageBox.Show("OrderID"); break;

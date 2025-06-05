@@ -297,12 +297,6 @@
     <Compile Include="RRD.Designer.cs">
       <DependentUpon>RRD.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SalDetail.Designer.cs">
-      <DependentUpon>SalDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalOrderQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,9 +422,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RRD.resx">
       <DependentUpon>RRD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalDetail.resx">
-      <DependentUpon>SalDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalOrderQuery.resx">
       <DependentUpon>SalOrderQuery.cs</DependentUpon>
