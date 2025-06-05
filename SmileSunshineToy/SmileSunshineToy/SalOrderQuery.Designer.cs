@@ -471,6 +471,7 @@
             this.Name = "SalOrderQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sale_order";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SalOrderQuery_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
