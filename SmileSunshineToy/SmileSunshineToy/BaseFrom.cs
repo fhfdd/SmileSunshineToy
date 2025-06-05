@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class PerSupDetail : Form
+    public partial class using_System : Form
     {
-        public PerSupDetail()
+        public using_System()
         {
             InitializeComponent();
         }

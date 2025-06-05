@@ -74,7 +74,7 @@ namespace SmileSunshineToy
                             // 6. Navigate to dashboard
                             MessageBox.Show("Login successful!");
                             this.Hide();
-                            new Dashboard(UserSession.Role).Show();
+                            new Dashboard().Show();
                         }
                         else // No matching user found
                         {
@@ -124,6 +124,21 @@ namespace SmileSunshineToy
         private void panel2_Paint(object sender, PaintEventArgs e) { }
         private void label3_Click(object sender, EventArgs e) { }
         private void label4_Click(object sender, EventArgs e) { }
+
+        private void userID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
         //endregion
     }
 }

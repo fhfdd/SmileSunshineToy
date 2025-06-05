@@ -53,22 +53,22 @@ namespace SmileSunshineToy
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnSearchUser = new System.Windows.Forms.Button();
             this.dataGridView1User = new System.Windows.Forms.DataGridView();
-            this.testDataSet = new SmileSunshineToy.testDataSet();
-            this.testDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.userTableAdapter();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new SmileSunshineToy.testDataSet();
+            this.testDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.userTableAdapter();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_user)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1User)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -120,6 +120,7 @@ namespace SmileSunshineToy
             this.logout.TabIndex = 4;
             this.logout.Text = "Logout";
             this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // panel1
             // 
@@ -156,6 +157,7 @@ namespace SmileSunshineToy
             this.btn_inv.TabIndex = 26;
             this.btn_inv.Text = "Inventory";
             this.btn_inv.UseVisualStyleBackColor = true;
+            this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
             // 
             // btn_person
             // 
@@ -174,6 +176,7 @@ namespace SmileSunshineToy
             this.btn_person.TabIndex = 20;
             this.btn_person.Text = "Personnel information";
             this.btn_person.UseVisualStyleBackColor = true;
+            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
             // 
             // btn_proc
             // 
@@ -191,6 +194,7 @@ namespace SmileSunshineToy
             this.btn_proc.TabIndex = 19;
             this.btn_proc.Text = "Procurement";
             this.btn_proc.UseVisualStyleBackColor = true;
+            this.btn_proc.Click += new System.EventHandler(this.btn_proc_Click);
             // 
             // btn_log
             // 
@@ -208,6 +212,7 @@ namespace SmileSunshineToy
             this.btn_log.TabIndex = 18;
             this.btn_log.Text = "Logistics";
             this.btn_log.UseVisualStyleBackColor = true;
+            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
             // 
             // btn_prod
             // 
@@ -225,6 +230,7 @@ namespace SmileSunshineToy
             this.btn_prod.TabIndex = 17;
             this.btn_prod.Text = "Production";
             this.btn_prod.UseVisualStyleBackColor = true;
+            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
             // 
             // btn_fin
             // 
@@ -243,6 +249,7 @@ namespace SmileSunshineToy
             this.btn_fin.TabIndex = 15;
             this.btn_fin.Text = "Financial";
             this.btn_fin.UseVisualStyleBackColor = true;
+            this.btn_fin.Click += new System.EventHandler(this.btn_fin_Click);
             // 
             // btn_rd
             // 
@@ -260,6 +267,7 @@ namespace SmileSunshineToy
             this.btn_rd.TabIndex = 13;
             this.btn_rd.Text = "R&&D";
             this.btn_rd.UseVisualStyleBackColor = true;
+            this.btn_rd.Click += new System.EventHandler(this.btn_rd_Click);
             // 
             // btn_sale
             // 
@@ -278,6 +286,7 @@ namespace SmileSunshineToy
             this.btn_sale.TabIndex = 2;
             this.btn_sale.Text = "Sale Order";
             this.btn_sale.UseVisualStyleBackColor = true;
+            this.btn_sale.Click += new System.EventHandler(this.order_Click);
             // 
             // btn_home
             // 
@@ -296,6 +305,7 @@ namespace SmileSunshineToy
             this.btn_home.TabIndex = 1;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // filterComboBoxUser
             // 
@@ -377,25 +387,6 @@ namespace SmileSunshineToy
             this.dataGridView1User.TabIndex = 23;
             this.dataGridView1User.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "testDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // testDataSetBindingSource
-            // 
-            this.testDataSetBindingSource.DataSource = this.testDataSet;
-            this.testDataSetBindingSource.Position = 0;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "user";
-            this.userBindingSource.DataSource = this.testDataSet;
-            // 
-            // userTableAdapter
-            // 
-            this.userTableAdapter.ClearBeforeFill = true;
-            // 
             // userIDDataGridViewTextBoxColumn
             // 
             this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
@@ -436,6 +427,25 @@ namespace SmileSunshineToy
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.Width = 150;
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "user";
+            this.userBindingSource.DataSource = this.testDataSet;
+            // 
+            // testDataSet
+            // 
+            this.testDataSet.DataSetName = "testDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // testDataSetBindingSource
+            // 
+            this.testDataSetBindingSource.DataSource = this.testDataSet;
+            this.testDataSetBindingSource.Position = 0;
+            // 
+            // userTableAdapter
+            // 
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
             // UserProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -459,9 +469,9 @@ namespace SmileSunshineToy
             ((System.ComponentModel.ISupportInitialize)(this.btn_user)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1User)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

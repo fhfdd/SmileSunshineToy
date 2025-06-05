@@ -12,17 +12,17 @@ namespace SmileSunshineToy
 {
     public partial class Dashboard : Form
     {
-        public Dashboard(UserRole userRole)
+        public Dashboard() // 移除角色参数
         {
             InitializeComponent();
-            // 根据角色配置 UI
-            ConfigureUIByRole(userRole);
+            ShowAllButtons(); // 直接显示所有按钮
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
 
         }
+
 
         // 核心逻辑：根据角色显示/隐藏按钮
         private void ConfigureUIByRole(UserRole role)
@@ -128,7 +128,7 @@ namespace SmileSunshineToy
 
         private void btn_rd_Click(object sender, EventArgs e)
         {
-            new RDoverview().Show(); // 研发管理窗体
+            new RDdash().Show(); // 研发管理窗体
             this.Hide();
         }
 
@@ -153,8 +153,17 @@ namespace SmileSunshineToy
 
         private void btn_fin_Click_1(object sender, EventArgs e)
         {
-            FinPayOverview finPayOverview = new FinPayOverview();
-            FinPayOverview.Show();
+            FinPayOverview finPayForm = new FinPayOverview(); // 创建实例
+            finPayForm.Show(); // 调用实例方法
+            this.Hide(); ;
+        }
+
+        private void btn_user_Click(object sender, EventArgs e)
+        {
+
+                new UserProfileForm().Show(); // 研发管理窗体
+                this.Hide();
+            
         }
     }
 }

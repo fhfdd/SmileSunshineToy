@@ -1,7 +1,7 @@
 ﻿
 namespace SmileSunshineToy
 {
-    partial class LoOverview
+    partial class RDdash
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace SmileSunshineToy
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoOverview));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RDdash));
             this.btn_inv = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_person = new System.Windows.Forms.Button();
@@ -121,6 +121,7 @@ namespace SmileSunshineToy
             this.btn_person.TabIndex = 20;
             this.btn_person.Text = "Personnel information";
             this.btn_person.UseVisualStyleBackColor = true;
+            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
             // 
             // btn_proc
             // 
@@ -216,12 +217,13 @@ namespace SmileSunshineToy
             this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 940);
+            this.logout.Location = new System.Drawing.Point(0, 859);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(472, 81);
             this.logout.TabIndex = 4;
             this.logout.Text = "Logout";
             this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // button1
             // 
@@ -232,7 +234,7 @@ namespace SmileSunshineToy
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageKey = "profile-user.png";
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1741, 0);
+            this.button1.Location = new System.Drawing.Point(1748, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 140);
             this.button1.TabIndex = 27;
@@ -271,7 +273,6 @@ namespace SmileSunshineToy
             this.btn_home.TabIndex = 1;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = true;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // panel4
             // 
@@ -280,7 +281,7 @@ namespace SmileSunshineToy
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1881, 140);
+            this.panel4.Size = new System.Drawing.Size(1888, 140);
             this.panel4.TabIndex = 17;
             // 
             // panel1
@@ -299,7 +300,7 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 1021);
+            this.panel1.Size = new System.Drawing.Size(472, 940);
             this.panel1.TabIndex = 58;
             // 
             // panel2
@@ -309,7 +310,7 @@ namespace SmileSunshineToy
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1881, 140);
+            this.panel2.Size = new System.Drawing.Size(1888, 140);
             this.panel2.TabIndex = 57;
             // 
             // productTableAdapter
@@ -445,12 +446,11 @@ namespace SmileSunshineToy
             this.btnSearch.Text = "search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // LoOverview
+            // RDdash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1881, 1161);
+            this.ClientSize = new System.Drawing.Size(1888, 1080);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.filterComboBox);
@@ -462,10 +462,10 @@ namespace SmileSunshineToy
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LoOverview";
-            this.Text = "LoOverview";
+            this.Name = "RDdash";
+            this.Text = "RDdash";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.LoOverview_Load);
+            this.Load += new System.EventHandler(this.RDdash_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

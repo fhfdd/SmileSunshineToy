@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class LoOverview : Form
+    public partial class RDdash : Form
     {
-        public LoOverview()
+        public RDdash()
         {
             InitializeComponent();
         }
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoOverview_Load(object sender, EventArgs e)
+        private void RDdash_Load(object sender, EventArgs e)
         {
 
         }

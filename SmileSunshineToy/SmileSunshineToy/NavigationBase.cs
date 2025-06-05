@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class PerCusDetail : Form
+    public partial class NavigationBase : Form
     {
-        public PerCusDetail()
+        public NavigationBase()
         {
             InitializeComponent();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-
-        {
-
         }
     }
 }
