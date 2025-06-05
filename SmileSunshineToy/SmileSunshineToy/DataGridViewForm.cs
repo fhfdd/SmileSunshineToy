@@ -50,10 +50,14 @@ namespace SmileSunshineToy
         protected virtual void InitializeComponent()
         {
             this.SuspendLayout();
+            // 
+            // DataGridViewForm
+            // 
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Name = "DataGridViewForm";
-            this.Load += DataGridViewForm_Load;
+            this.Load += new System.EventHandler(this.DataGridViewForm_Load_1);
             this.ResumeLayout(false);
+
         }
 
         // Load data from DB into DataGridView.
@@ -236,6 +240,11 @@ namespace SmileSunshineToy
             {
                 LoadData();
             }
+        }
+
+        private void DataGridViewForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

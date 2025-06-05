@@ -71,6 +71,19 @@
     <Compile Include="aftersalerequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfileForm.Designer.cs">
+      <DependentUpon>UserProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSession.cs" />
     <Compile Include="DataGridViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,12 +92,6 @@
     </Compile>
     <Compile Include="customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="feedback.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -113,71 +120,36 @@
     <Compile Include="FinReOverview.Designer.cs">
       <DependentUpon>FinReOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvMaDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InvMaDetail.Designer.cs">
-      <DependentUpon>InvMaDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvMaOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InvMaOverview.Designer.cs">
-      <DependentUpon>InvMaOverview.cs</DependentUpon>
-    </Compile>
     <Compile Include="InvMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InvMaterial.Designer.cs">
       <DependentUpon>InvMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvMoutDetail.cs">
+    <Compile Include="InvProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvMoutDetail.Designer.cs">
-      <DependentUpon>InvMoutDetail.cs</DependentUpon>
+    <Compile Include="InvProduct.Designer.cs">
+      <DependentUpon>InvProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvMoutOverview.cs">
+    <Compile Include="InvWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvMoutOverview.Designer.cs">
-      <DependentUpon>InvMoutOverview.cs</DependentUpon>
+    <Compile Include="InvWarehouse.Designer.cs">
+      <DependentUpon>InvWarehouse.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvPoutDetail.cs">
+    <Compile Include=".cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvPoutDetail.Designer.cs">
-      <DependentUpon>InvPoutDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvPoutOverview.cs">
+    <Compile Include=".Designer.cs">
+      <DependentUpon>.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvPoutOverview.Designer.cs">
-      <DependentUpon>InvPoutOverview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvProDetail.cs">
+    <Compile Include="Invall.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvProDetail.Designer.cs">
-      <DependentUpon>InvProDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvProOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InvProOverview.Designer.cs">
-      <DependentUpon>InvProOverview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvWaDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InvWaDetail.Designer.cs">
-      <DependentUpon>InvWaDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvWaOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InvWaOverview.Designer.cs">
-      <DependentUpon>InvWaOverview.cs</DependentUpon>
+    <Compile Include="Invall.Designer.cs">
+      <DependentUpon>Invall.cs</DependentUpon>
     </Compile>
     <Compile Include="LoDetail.cs">
       <SubType>Form</SubType>
@@ -319,18 +291,6 @@
     <Compile Include="returnrequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="RRD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RRD.Designer.cs">
-      <DependentUpon>RRD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SalDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SalDetail.Designer.cs">
-      <DependentUpon>SalDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalOrderQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,38 +341,20 @@
     <EmbeddedResource Include="FinReOverview.resx">
       <DependentUpon>FinReOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvMaDetail.resx">
-      <DependentUpon>InvMaDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InvMaOverview.resx">
-      <DependentUpon>InvMaOverview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InvMaterial.resx">
       <DependentUpon>InvMaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvMoutDetail.resx">
-      <DependentUpon>InvMoutDetail.cs</DependentUpon>
+    <EmbeddedResource Include="InvProduct.resx">
+      <DependentUpon>InvProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvMoutOverview.resx">
-      <DependentUpon>InvMoutOverview.cs</DependentUpon>
+    <EmbeddedResource Include="InvWarehouse.resx">
+      <DependentUpon>InvWarehouse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvPoutDetail.resx">
-      <DependentUpon>InvPoutDetail.cs</DependentUpon>
+    <EmbeddedResource Include=".resx">
+      <DependentUpon>.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvPoutOverview.resx">
-      <DependentUpon>InvPoutOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InvProDetail.resx">
-      <DependentUpon>InvProDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InvProOverview.resx">
-      <DependentUpon>InvProOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InvWaDetail.resx">
-      <DependentUpon>InvWaDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InvWaOverview.resx">
-      <DependentUpon>InvWaOverview.cs</DependentUpon>
+    <EmbeddedResource Include="Invall.resx">
+      <DependentUpon>Invall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoDetail.resx">
       <DependentUpon>LoDetail.cs</DependentUpon>
@@ -472,17 +414,14 @@
     <EmbeddedResource Include="RDoverview.resx">
       <DependentUpon>RDoverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RRD.resx">
-      <DependentUpon>RRD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalDetail.resx">
-      <DependentUpon>SalDetail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SalOrderQuery.resx">
       <DependentUpon>SalOrderQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalPrint.resx">
       <DependentUpon>SalPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfileForm.resx">
+      <DependentUpon>UserProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -530,6 +469,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\profile-user.png" />
+    <None Include="Resources\user.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\order.png" />
     <None Include="Resources\product-management.png" />

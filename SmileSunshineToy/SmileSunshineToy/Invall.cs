@@ -10,14 +10,29 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class RRD : Form
+    public partial class Invall : Form
     {
-        public RRD()
+        public Invall()
         {
             InitializeComponent();
         }
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InvWaOverview_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

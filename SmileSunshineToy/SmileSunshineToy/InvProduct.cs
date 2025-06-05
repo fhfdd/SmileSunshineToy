@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class InvMoutOverview : Form
+    public partial class InvProduct : Form
     {
-        public InvMoutOverview()
+        public InvProduct()
         {
             InitializeComponent();
         }

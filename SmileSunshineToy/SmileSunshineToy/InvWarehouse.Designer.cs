@@ -1,6 +1,7 @@
-﻿namespace SmileSunshineToy
+﻿
+namespace SmileSunshineToy
 {
-    partial class SalOrderQuery
+    partial class InvWarehouse
     {
         /// <summary>
         /// Required designer variable.
@@ -187,7 +188,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(472, 156);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 968);
+            this.panel2.Size = new System.Drawing.Size(262, 956);
             this.panel2.TabIndex = 34;
             // 
             // button7
@@ -452,7 +453,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(472, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1428, 156);
+            this.panel3.Size = new System.Drawing.Size(1369, 156);
             this.panel3.TabIndex = 24;
             // 
             // panel1
@@ -480,7 +481,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 1124);
+            this.panel1.Size = new System.Drawing.Size(472, 1112);
             this.panel1.TabIndex = 25;
             // 
             // logout
@@ -491,7 +492,7 @@
             this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 1034);
+            this.logout.Location = new System.Drawing.Point(0, 1022);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(472, 90);
             this.logout.TabIndex = 4;
@@ -555,11 +556,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(1022, 642);
             this.dataGridView1.TabIndex = 26;
             // 
-            // SalOrderQuery
+            // InvWarehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1900, 1124);
+            this.ClientSize = new System.Drawing.Size(1841, 1112);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
@@ -572,10 +573,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SalOrderQuery";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "sale_order";
-            this.Load += new System.EventHandler(this.SalOrderQuery_Load);
+            this.Name = "InvWarehouse";
+            this.Text = "InvMoutOverview";
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();

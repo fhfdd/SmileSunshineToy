@@ -1,6 +1,7 @@
-﻿namespace SmileSunshineToy
+﻿
+namespace SmileSunshineToy
 {
-    partial class SalOrderQuery
+    partial class InvProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -117,7 +118,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(1292, 349);
+            this.btnCancel.Location = new System.Drawing.Point(1282, 345);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(124, 73);
             this.btnCancel.TabIndex = 31;
@@ -126,7 +127,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1125, 349);
+            this.btnSave.Location = new System.Drawing.Point(1115, 345);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(124, 73);
             this.btnSave.TabIndex = 30;
@@ -135,7 +136,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(965, 349);
+            this.btnDelete.Location = new System.Drawing.Point(955, 345);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(124, 73);
             this.btnDelete.TabIndex = 29;
@@ -144,7 +145,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(793, 349);
+            this.btnAdd.Location = new System.Drawing.Point(783, 345);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(124, 73);
             this.btnAdd.TabIndex = 28;
@@ -163,7 +164,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(985, 238);
+            this.txtSearch.Location = new System.Drawing.Point(975, 234);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(431, 28);
             this.txtSearch.TabIndex = 32;
@@ -187,7 +188,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(472, 156);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 968);
+            this.panel2.Size = new System.Drawing.Size(262, 913);
             this.panel2.TabIndex = 34;
             // 
             // button7
@@ -390,7 +391,7 @@
             // filterComboBox
             // 
             this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(1410, 238);
+            this.filterComboBox.Location = new System.Drawing.Point(1400, 234);
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(130, 26);
             this.filterComboBox.TabIndex = 33;
@@ -439,7 +440,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(855, 233);
+            this.btnSearch.Location = new System.Drawing.Point(845, 229);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(134, 33);
             this.btnSearch.TabIndex = 27;
@@ -452,7 +453,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(472, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1428, 156);
+            this.panel3.Size = new System.Drawing.Size(1297, 156);
             this.panel3.TabIndex = 24;
             // 
             // panel1
@@ -480,7 +481,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 1124);
+            this.panel1.Size = new System.Drawing.Size(472, 1069);
             this.panel1.TabIndex = 25;
             // 
             // logout
@@ -491,7 +492,7 @@
             this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 1034);
+            this.logout.Location = new System.Drawing.Point(0, 979);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(472, 90);
             this.logout.TabIndex = 4;
@@ -548,18 +549,18 @@
             this.priceDataGridViewTextBoxColumn,
             this.stockQuantityDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(767, 435);
+            this.dataGridView1.Location = new System.Drawing.Point(757, 431);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(1022, 642);
             this.dataGridView1.TabIndex = 26;
             // 
-            // SalOrderQuery
+            // InvProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1900, 1124);
+            this.ClientSize = new System.Drawing.Size(1769, 1069);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
@@ -572,10 +573,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SalOrderQuery";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "sale_order";
-            this.Load += new System.EventHandler(this.SalOrderQuery_Load);
+            this.Name = "InvProduct";
+            this.Text = "InvMoutDetail";
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
