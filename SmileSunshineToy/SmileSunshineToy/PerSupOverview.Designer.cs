@@ -125,6 +125,7 @@ namespace SmileSunshineToy
             this.btn_person.TabIndex = 20;
             this.btn_person.Text = "Personnel information";
             this.btn_person.UseVisualStyleBackColor = true;
+            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
             // 
             // btn_proc
             // 

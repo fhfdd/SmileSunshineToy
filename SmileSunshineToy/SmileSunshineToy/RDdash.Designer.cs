@@ -86,6 +86,7 @@ namespace SmileSunshineToy
             this.btn_inv.TabIndex = 26;
             this.btn_inv.Text = "Inventory";
             this.btn_inv.UseVisualStyleBackColor = true;
+            this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
             // 
             // imageList1
             // 
@@ -120,6 +121,7 @@ namespace SmileSunshineToy
             this.btn_person.TabIndex = 20;
             this.btn_person.Text = "Personnel information";
             this.btn_person.UseVisualStyleBackColor = true;
+            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
             // 
             // btn_proc
             // 

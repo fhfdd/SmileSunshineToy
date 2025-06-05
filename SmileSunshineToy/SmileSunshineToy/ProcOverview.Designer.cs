@@ -86,6 +86,7 @@ namespace SmileSunshineToy
             this.btn_inv.TabIndex = 26;
             this.btn_inv.Text = "Inventory";
             this.btn_inv.UseVisualStyleBackColor = true;
+            this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
             // 
             // imageList1
             // 
@@ -120,6 +121,7 @@ namespace SmileSunshineToy
             this.btn_person.TabIndex = 20;
             this.btn_person.Text = "Personnel information";
             this.btn_person.UseVisualStyleBackColor = true;
+            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
             // 
             // btn_proc
             // 
@@ -137,6 +139,7 @@ namespace SmileSunshineToy
             this.btn_proc.TabIndex = 19;
             this.btn_proc.Text = "Procurement";
             this.btn_proc.UseVisualStyleBackColor = true;
+            this.btn_proc.Click += new System.EventHandler(this.btn_proc_Click);
             // 
             // btn_log
             // 
@@ -154,6 +157,7 @@ namespace SmileSunshineToy
             this.btn_log.TabIndex = 18;
             this.btn_log.Text = "Logistics";
             this.btn_log.UseVisualStyleBackColor = true;
+            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
             // 
             // btn_prod
             // 
@@ -171,6 +175,7 @@ namespace SmileSunshineToy
             this.btn_prod.TabIndex = 17;
             this.btn_prod.Text = "Production";
             this.btn_prod.UseVisualStyleBackColor = true;
+            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
             // 
             // btn_fin
             // 
@@ -189,6 +194,7 @@ namespace SmileSunshineToy
             this.btn_fin.TabIndex = 15;
             this.btn_fin.Text = "Financial";
             this.btn_fin.UseVisualStyleBackColor = true;
+            this.btn_fin.Click += new System.EventHandler(this.btn_fin_Click_1);
             // 
             // btn_rd
             // 
@@ -206,6 +212,7 @@ namespace SmileSunshineToy
             this.btn_rd.TabIndex = 13;
             this.btn_rd.Text = "R&&D";
             this.btn_rd.UseVisualStyleBackColor = true;
+            this.btn_rd.Click += new System.EventHandler(this.btn_rd_Click);
             // 
             // logout
             // 
@@ -254,6 +261,7 @@ namespace SmileSunshineToy
             this.order.TabIndex = 2;
             this.order.Text = "Sale Order";
             this.order.UseVisualStyleBackColor = true;
+            this.order.Click += new System.EventHandler(this.order_Click);
             // 
             // btn_home
             // 
@@ -271,6 +279,7 @@ namespace SmileSunshineToy
             this.btn_home.TabIndex = 1;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // panel4
             // 
