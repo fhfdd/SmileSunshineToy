@@ -29,344 +29,613 @@ namespace SmileSunshineToy
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saleOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.warehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productOutboundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialOutboundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.financialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountsReceivableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountsPayableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productionPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inboundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.procurementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personnelInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerAftersalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.searchButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
+            this.filterComboBox = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.btn_inv = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btn_material = new System.Windows.Forms.Button();
+            this.btn_product = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Create = new System.Windows.Forms.Button();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new SmileSunshineToy.testDataSet();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.btn_person = new System.Windows.Forms.Button();
+            this.btn_proc = new System.Windows.Forms.Button();
+            this.btn_log = new System.Windows.Forms.Button();
+            this.btn_prod = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btn_fin = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_rd = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
+            this.order = new System.Windows.Forms.Button();
+            this.Home = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStripContainer1
+            // productTableAdapter
             // 
-            this.toolStripContainer1.BottomToolStripPanelVisible = false;
+            this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // toolStripContainer1.ContentPanel
+            // filterComboBox
             // 
-            this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.Color.White;
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.Create);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.searchButton);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(837, 587);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filterComboBox.FormattingEnabled = true;
+            this.filterComboBox.Location = new System.Drawing.Point(1317, 208);
+            this.filterComboBox.Name = "filterComboBox";
+            this.filterComboBox.Size = new System.Drawing.Size(130, 26);
+            this.filterComboBox.TabIndex = 45;
             // 
-            // toolStripContainer1.LeftToolStripPanel
+            // txtSearch
             // 
-            this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1106, 587);
-            this.toolStripContainer1.TabIndex = 7;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            this.toolStripContainer1.TopToolStripPanelVisible = false;
+            this.txtSearch.Location = new System.Drawing.Point(892, 208);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(431, 28);
+            this.txtSearch.TabIndex = 44;
             // 
-            // menuStrip1
+            // pictureBox9
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.saleOrderToolStripMenuItem,
-            this.inventoryToolStripMenuItem,
-            this.rDToolStripMenuItem,
-            this.financialToolStripMenuItem,
-            this.productionToolStripMenuItem,
-            this.logisticsToolStripMenuItem,
-            this.procurementToolStripMenuItem,
-            this.personnelInformationToolStripMenuItem,
-            this.signOutToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(269, 587);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            this.pictureBox9.Image = global::SmileSunshineToy.Properties.Resources.product_management;
+            this.pictureBox9.Location = new System.Drawing.Point(3, 700);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 27;
+            this.pictureBox9.TabStop = false;
             // 
-            // homeToolStripMenuItem
+            // btn_inv
             // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
-            this.homeToolStripMenuItem.Text = "Home(&H)";
+            this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_inv.FlatAppearance.BorderSize = 0;
+            this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.ForeColor = System.Drawing.Color.Black;
+            this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inv.Location = new System.Drawing.Point(0, 694);
+            this.btn_inv.Name = "btn_inv";
+            this.btn_inv.Size = new System.Drawing.Size(472, 87);
+            this.btn_inv.TabIndex = 26;
+            this.btn_inv.Text = "Inventory";
+            this.btn_inv.UseVisualStyleBackColor = true;
             // 
-            // saleOrderToolStripMenuItem
+            // btnCancel
             // 
-            this.saleOrderToolStripMenuItem.Name = "saleOrderToolStripMenuItem";
-            this.saleOrderToolStripMenuItem.Size = new System.Drawing.Size(144, 29);
-            this.saleOrderToolStripMenuItem.Text = "Sale order(&S)";
+            this.btnCancel.Location = new System.Drawing.Point(1199, 308);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(124, 73);
+            this.btnCancel.TabIndex = 43;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // inventoryToolStripMenuItem
+            // btnSave
             // 
-            this.inventoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productToolStripMenuItem,
-            this.materialToolStripMenuItem,
-            this.warehouseToolStripMenuItem,
-            this.productOutboundToolStripMenuItem,
-            this.materialOutboundToolStripMenuItem});
-            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(135, 29);
-            this.inventoryToolStripMenuItem.Text = "Inventory(&I)";
+            this.btnSave.Location = new System.Drawing.Point(1032, 308);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(124, 73);
+            this.btnSave.TabIndex = 42;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // productToolStripMenuItem
+            // pictureBox5
             // 
-            this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.productToolStripMenuItem.Text = "product";
+            this.pictureBox5.Image = global::SmileSunshineToy.Properties.Resources.customer;
+            this.pictureBox5.Location = new System.Drawing.Point(3, 611);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 25;
+            this.pictureBox5.TabStop = false;
             // 
-            // materialToolStripMenuItem
+            // panel2
             // 
-            this.materialToolStripMenuItem.Name = "materialToolStripMenuItem";
-            this.materialToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.materialToolStripMenuItem.Text = "material";
+            this.panel2.BackColor = System.Drawing.Color.Bisque;
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.btn_material);
+            this.panel2.Controls.Add(this.btn_product);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(472, 156);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(262, 900);
+            this.panel2.TabIndex = 46;
             // 
-            // warehouseToolStripMenuItem
+            // button7
             // 
-            this.warehouseToolStripMenuItem.Name = "warehouseToolStripMenuItem";
-            this.warehouseToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.warehouseToolStripMenuItem.Text = "warehouse";
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(0, 154);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(262, 78);
+            this.button7.TabIndex = 13;
+            this.button7.Text = "Warehouse";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // productOutboundToolStripMenuItem
+            // btn_material
             // 
-            this.productOutboundToolStripMenuItem.Name = "productOutboundToolStripMenuItem";
-            this.productOutboundToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.productOutboundToolStripMenuItem.Text = "product outbound";
+            this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_material.FlatAppearance.BorderSize = 0;
+            this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_material.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_material.ForeColor = System.Drawing.Color.Black;
+            this.btn_material.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_material.Location = new System.Drawing.Point(0, 76);
+            this.btn_material.Name = "btn_material";
+            this.btn_material.Size = new System.Drawing.Size(262, 78);
+            this.btn_material.TabIndex = 2;
+            this.btn_material.Text = "Material";
+            this.btn_material.UseVisualStyleBackColor = true;
             // 
-            // materialOutboundToolStripMenuItem
+            // btn_product
             // 
-            this.materialOutboundToolStripMenuItem.Name = "materialOutboundToolStripMenuItem";
-            this.materialOutboundToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.materialOutboundToolStripMenuItem.Text = "material outbound";
+            this.btn_product.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_product.FlatAppearance.BorderSize = 0;
+            this.btn_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_product.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_product.ForeColor = System.Drawing.Color.Black;
+            this.btn_product.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_product.Location = new System.Drawing.Point(0, 0);
+            this.btn_product.Name = "btn_product";
+            this.btn_product.Size = new System.Drawing.Size(262, 76);
+            this.btn_product.TabIndex = 1;
+            this.btn_product.Text = "Product";
+            this.btn_product.UseVisualStyleBackColor = true;
             // 
-            // rDToolStripMenuItem
+            // btnAdd
             // 
-            this.rDToolStripMenuItem.Name = "rDToolStripMenuItem";
-            this.rDToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
-            this.rDToolStripMenuItem.Text = "R&&D(&R)";
-            // 
-            // financialToolStripMenuItem
-            // 
-            this.financialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accountsReceivableToolStripMenuItem,
-            this.accountsPayableToolStripMenuItem});
-            this.financialToolStripMenuItem.Name = "financialToolStripMenuItem";
-            this.financialToolStripMenuItem.Size = new System.Drawing.Size(130, 29);
-            this.financialToolStripMenuItem.Text = "Financial(&F)";
-            // 
-            // accountsReceivableToolStripMenuItem
-            // 
-            this.accountsReceivableToolStripMenuItem.Name = "accountsReceivableToolStripMenuItem";
-            this.accountsReceivableToolStripMenuItem.Size = new System.Drawing.Size(292, 34);
-            this.accountsReceivableToolStripMenuItem.Text = "Accounts receivable";
-            // 
-            // accountsPayableToolStripMenuItem
-            // 
-            this.accountsPayableToolStripMenuItem.Name = "accountsPayableToolStripMenuItem";
-            this.accountsPayableToolStripMenuItem.Size = new System.Drawing.Size(292, 34);
-            this.accountsPayableToolStripMenuItem.Text = "Accounts payable";
-            // 
-            // productionToolStripMenuItem
-            // 
-            this.productionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productionPlanToolStripMenuItem,
-            this.inboundToolStripMenuItem});
-            this.productionToolStripMenuItem.Name = "productionToolStripMenuItem";
-            this.productionToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
-            this.productionToolStripMenuItem.Text = "Production(&M)";
-            // 
-            // productionPlanToolStripMenuItem
-            // 
-            this.productionPlanToolStripMenuItem.Name = "productionPlanToolStripMenuItem";
-            this.productionPlanToolStripMenuItem.Size = new System.Drawing.Size(259, 34);
-            this.productionPlanToolStripMenuItem.Text = "Production Plan";
-            // 
-            // inboundToolStripMenuItem
-            // 
-            this.inboundToolStripMenuItem.Name = "inboundToolStripMenuItem";
-            this.inboundToolStripMenuItem.Size = new System.Drawing.Size(259, 34);
-            this.inboundToolStripMenuItem.Text = "Inbound";
-            // 
-            // logisticsToolStripMenuItem
-            // 
-            this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
-            this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(130, 29);
-            this.logisticsToolStripMenuItem.Text = "Logistics(&L)";
-            // 
-            // procurementToolStripMenuItem
-            // 
-            this.procurementToolStripMenuItem.Name = "procurementToolStripMenuItem";
-            this.procurementToolStripMenuItem.Size = new System.Drawing.Size(175, 29);
-            this.procurementToolStripMenuItem.Text = "Procurement(&O)";
-            // 
-            // personnelInformationToolStripMenuItem
-            // 
-            this.personnelInformationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customerAftersalesToolStripMenuItem,
-            this.supplierToolStripMenuItem,
-            this.stuffToolStripMenuItem});
-            this.personnelInformationToolStripMenuItem.Name = "personnelInformationToolStripMenuItem";
-            this.personnelInformationToolStripMenuItem.Size = new System.Drawing.Size(260, 29);
-            this.personnelInformationToolStripMenuItem.Text = "Personnel information(N)";
-            // 
-            // customerAftersalesToolStripMenuItem
-            // 
-            this.customerAftersalesToolStripMenuItem.Name = "customerAftersalesToolStripMenuItem";
-            this.customerAftersalesToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
-            this.customerAftersalesToolStripMenuItem.Text = "Customer Aftersales";
-            // 
-            // supplierToolStripMenuItem
-            // 
-            this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
-            this.supplierToolStripMenuItem.Text = "Supplier";
-            // 
-            // stuffToolStripMenuItem
-            // 
-            this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
-            this.stuffToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
-            this.stuffToolStripMenuItem.Text = "Stuff";
-            // 
-            // signOutToolStripMenuItem
-            // 
-            this.signOutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.signOutToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.signOutToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 150, 0, 0);
-            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
-            this.signOutToolStripMenuItem.Text = "sign out";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(319, 29);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Smile&&Sunshine Toy system";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1106, 57);
-            this.panel1.TabIndex = 6;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(152, 11);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(120, 70);
-            this.searchButton.TabIndex = 3;
-            this.searchButton.Text = "search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(700, 308);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(124, 73);
+            this.btnAdd.TabIndex = 40;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 90);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.stockQuantityDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.productBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(674, 385);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(834, 497);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.Size = new System.Drawing.Size(1022, 578);
+            this.dataGridView1.TabIndex = 38;
             // 
-            // Create
+            // productIDDataGridViewTextBoxColumn
             // 
-            this.Create.Location = new System.Drawing.Point(13, 11);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(124, 73);
-            this.Create.TabIndex = 8;
-            this.Create.Text = "Create";
-            this.Create.UseVisualStyleBackColor = true;
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // stockQuantityDataGridViewTextBoxColumn
+            // 
+            this.stockQuantityDataGridViewTextBoxColumn.DataPropertyName = "StockQuantity";
+            this.stockQuantityDataGridViewTextBoxColumn.HeaderText = "StockQuantity";
+            this.stockQuantityDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.stockQuantityDataGridViewTextBoxColumn.Name = "stockQuantityDataGridViewTextBoxColumn";
+            this.stockQuantityDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "product";
+            this.productBindingSource.DataSource = this.testDataSet;
+            // 
+            // testDataSet
+            // 
+            this.testDataSet.DataSetName = "testDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Bisque;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(472, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1131, 156);
+            this.panel3.TabIndex = 36;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::SmileSunshineToy.Properties.Resources.procurement;
+            this.pictureBox6.Location = new System.Drawing.Point(3, 528);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 24;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SmileSunshineToy.Properties.Resources.delivery_truck;
+            this.pictureBox7.Location = new System.Drawing.Point(3, 448);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 23;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::SmileSunshineToy.Properties.Resources.production_line;
+            this.pictureBox8.Location = new System.Drawing.Point(3, 357);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 22;
+            this.pictureBox8.TabStop = false;
+            // 
+            // btn_person
+            // 
+            this.btn_person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_person.FlatAppearance.BorderSize = 0;
+            this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_person.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.ForeColor = System.Drawing.Color.Black;
+            this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_person.Location = new System.Drawing.Point(0, 607);
+            this.btn_person.Name = "btn_person";
+            this.btn_person.Size = new System.Drawing.Size(472, 87);
+            this.btn_person.TabIndex = 20;
+            this.btn_person.Text = "Personnel information";
+            this.btn_person.UseVisualStyleBackColor = true;
+            // 
+            // btn_proc
+            // 
+            this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_proc.FlatAppearance.BorderSize = 0;
+            this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_proc.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.ForeColor = System.Drawing.Color.Black;
+            this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_proc.Location = new System.Drawing.Point(0, 520);
+            this.btn_proc.Name = "btn_proc";
+            this.btn_proc.Size = new System.Drawing.Size(472, 87);
+            this.btn_proc.TabIndex = 19;
+            this.btn_proc.Text = "Procurement";
+            this.btn_proc.UseVisualStyleBackColor = true;
+            // 
+            // btn_log
+            // 
+            this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_log.FlatAppearance.BorderSize = 0;
+            this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_log.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.ForeColor = System.Drawing.Color.Black;
+            this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_log.Location = new System.Drawing.Point(0, 433);
+            this.btn_log.Name = "btn_log";
+            this.btn_log.Size = new System.Drawing.Size(472, 87);
+            this.btn_log.TabIndex = 18;
+            this.btn_log.Text = "Logistics";
+            this.btn_log.UseVisualStyleBackColor = true;
+            // 
+            // btn_prod
+            // 
+            this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_prod.FlatAppearance.BorderSize = 0;
+            this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prod.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.ForeColor = System.Drawing.Color.Black;
+            this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_prod.Location = new System.Drawing.Point(0, 346);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(472, 87);
+            this.btn_prod.TabIndex = 17;
+            this.btn_prod.Text = "Production";
+            this.btn_prod.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SmileSunshineToy.Properties.Resources.deposit;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 279);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(872, 308);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(124, 73);
+            this.btnDelete.TabIndex = 41;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btn_fin
+            // 
+            this.btn_fin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_fin.FlatAppearance.BorderSize = 0;
+            this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fin.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.ForeColor = System.Drawing.Color.Black;
+            this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_fin.Location = new System.Drawing.Point(0, 259);
+            this.btn_fin.Name = "btn_fin";
+            this.btn_fin.Size = new System.Drawing.Size(472, 87);
+            this.btn_fin.TabIndex = 15;
+            this.btn_fin.Text = "Financial";
+            this.btn_fin.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(762, 204);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(134, 33);
+            this.btnSearch.TabIndex = 39;
+            this.btnSearch.Text = "search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SmileSunshineToy.Properties.Resources.order;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 105);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SmileSunshineToy.Properties.Resources.analysis;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 193);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 46);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btn_rd
+            // 
+            this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_rd.FlatAppearance.BorderSize = 0;
+            this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rd.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.ForeColor = System.Drawing.Color.Black;
+            this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_rd.Location = new System.Drawing.Point(0, 172);
+            this.btn_rd.Name = "btn_rd";
+            this.btn_rd.Size = new System.Drawing.Size(472, 87);
+            this.btn_rd.TabIndex = 13;
+            this.btn_rd.Text = "R&&D";
+            this.btn_rd.UseVisualStyleBackColor = true;
+            // 
+            // logout
+            // 
+            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.ForeColor = System.Drawing.Color.Black;
+            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.Location = new System.Drawing.Point(0, 966);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(472, 90);
+            this.logout.TabIndex = 4;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            // 
+            // order
+            // 
+            this.order.Dock = System.Windows.Forms.DockStyle.Top;
+            this.order.FlatAppearance.BorderSize = 0;
+            this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.order.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order.ForeColor = System.Drawing.Color.Black;
+            this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.order.Location = new System.Drawing.Point(0, 85);
+            this.order.Name = "order";
+            this.order.Size = new System.Drawing.Size(472, 87);
+            this.order.TabIndex = 2;
+            this.order.Text = "Sale Order";
+            this.order.UseVisualStyleBackColor = true;
+            // 
+            // Home
+            // 
+            this.Home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home.ForeColor = System.Drawing.Color.Black;
+            this.Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Home.Location = new System.Drawing.Point(0, 0);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(472, 85);
+            this.Home.TabIndex = 1;
+            this.Home.Text = "Home";
+            this.Home.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Bisque;
+            this.panel1.Controls.Add(this.pictureBox9);
+            this.panel1.Controls.Add(this.btn_inv);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.pictureBox7);
+            this.panel1.Controls.Add(this.pictureBox8);
+            this.panel1.Controls.Add(this.btn_person);
+            this.panel1.Controls.Add(this.btn_proc);
+            this.panel1.Controls.Add(this.btn_log);
+            this.panel1.Controls.Add(this.btn_prod);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.btn_fin);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.btn_rd);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.logout);
+            this.panel1.Controls.Add(this.order);
+            this.panel1.Controls.Add(this.Home);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(472, 1056);
+            this.panel1.TabIndex = 37;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SmileSunshineToy.Properties.Resources.home;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // PerStuOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 644);
-            this.Controls.Add(this.toolStripContainer1);
+            this.ClientSize = new System.Drawing.Size(1603, 1056);
+            this.Controls.Add(this.filterComboBox);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PerStuOverview";
             this.Text = "PerStuOverview";
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.LeftToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.LeftToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saleOrderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem materialToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem warehouseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productOutboundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem materialOutboundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem financialToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountsReceivableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountsPayableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productionPlanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inboundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logisticsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem procurementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem personnelInformationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerAftersalesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stuffToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button searchButton;
+        private testDataSetTableAdapters.productTableAdapter productTableAdapter;
+        private System.Windows.Forms.ComboBox filterComboBox;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Button btn_inv;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_material;
+        private System.Windows.Forms.Button btn_product;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Create;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private testDataSet testDataSet;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button btn_person;
+        private System.Windows.Forms.Button btn_proc;
+        private System.Windows.Forms.Button btn_log;
+        private System.Windows.Forms.Button btn_prod;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btn_fin;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btn_rd;
+        private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.Button order;
+        private System.Windows.Forms.Button Home;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

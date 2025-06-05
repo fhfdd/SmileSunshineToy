@@ -63,6 +63,7 @@
             this.userID.Name = "userID";
             this.userID.Size = new System.Drawing.Size(371, 59);
             this.userID.TabIndex = 2;
+            this.userID.TextChanged += new System.EventHandler(this.userID_TextChanged);
             // 
             // password
             // 
@@ -72,6 +73,7 @@
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(371, 59);
             this.password.TabIndex = 4;
+            this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // label1
             // 
@@ -126,6 +128,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label3
             // 
