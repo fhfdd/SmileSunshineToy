@@ -21,5 +21,11 @@ namespace SmileSunshineToy
         {
 
         }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            Dashboard.Show();
+        }
     }
 }

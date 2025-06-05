@@ -312,5 +312,11 @@ namespace SmileSunshineToy
         {
 
         }
+
+        private void btn_fin_Click_1(object sender, EventArgs e)
+        {
+            FinPayOverview finPayOverview = new FinPayOverview();
+            FinPayOverview.Show();
+        }
     }
 }

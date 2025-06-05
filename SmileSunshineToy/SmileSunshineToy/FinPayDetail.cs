@@ -81,5 +81,10 @@ namespace SmileSunshineToy
         {
 
         }
+
+        private void financialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
