@@ -464,6 +464,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoOverview";
             this.Text = "LoOverview";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LoOverview_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

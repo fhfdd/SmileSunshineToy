@@ -510,6 +510,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProdInOverview";
             this.Text = "ProdInOverview";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProdInOverview_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

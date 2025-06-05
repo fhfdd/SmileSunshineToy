@@ -538,7 +538,7 @@ namespace SmileSunshineToy
             this.button7.TabIndex = 13;
             this.button7.Text = "Warehouse";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.logout_Click);
+            this.button7.Click += new System.EventHandler(this.btn_sub3_Click);
             // 
             // btn_material
             // 
@@ -591,6 +591,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InvMaterial";
             this.Text = "InvMaterial";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.InvMaterial_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();

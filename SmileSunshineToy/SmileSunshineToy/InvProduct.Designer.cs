@@ -528,6 +528,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InvProduct";
             this.Text = "InvMoutDetail";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.InvProduct_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

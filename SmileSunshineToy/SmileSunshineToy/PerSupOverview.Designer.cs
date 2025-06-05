@@ -526,6 +526,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PerSupOverview";
             this.Text = "PerSupOverview";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PerSupOverview_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

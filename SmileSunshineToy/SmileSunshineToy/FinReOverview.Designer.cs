@@ -519,6 +519,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FinReOverview";
             this.Text = " ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FinReOverview_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

@@ -471,6 +471,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProcOverview";
             this.Text = "ProcOverview";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProcOverview_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
