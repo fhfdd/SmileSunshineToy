@@ -107,17 +107,17 @@ namespace SmileSunshineToy
             // 
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panel2);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1226, 814);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1226, 905);
             this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
             // 
             this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 57);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 63);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1495, 814);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1495, 905);
             this.toolStripContainer1.TabIndex = 5;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
@@ -159,74 +159,74 @@ namespace SmileSunshineToy
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1226, 814);
+            this.panel2.Size = new System.Drawing.Size(1226, 905);
             this.panel2.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(776, 82);
+            this.label1.Location = new System.Drawing.Point(776, 91);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 18);
+            this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 41;
             this.label1.Text = "Attachment:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(882, 72);
+            this.textBox1.Location = new System.Drawing.Point(882, 80);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 28);
+            this.textBox1.Size = new System.Drawing.Size(294, 26);
             this.textBox1.TabIndex = 40;
             // 
             // buttonCreateReport
             // 
-            this.buttonCreateReport.Location = new System.Drawing.Point(949, 721);
+            this.buttonCreateReport.Location = new System.Drawing.Point(949, 801);
             this.buttonCreateReport.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateReport.Name = "buttonCreateReport";
-            this.buttonCreateReport.Size = new System.Drawing.Size(144, 32);
+            this.buttonCreateReport.Size = new System.Drawing.Size(144, 36);
             this.buttonCreateReport.TabIndex = 39;
             this.buttonCreateReport.Text = "Create Report";
             this.buttonCreateReport.UseVisualStyleBackColor = true;
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.Location = new System.Drawing.Point(720, 721);
+            this.buttonSubmit.Location = new System.Drawing.Point(720, 801);
             this.buttonSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(144, 32);
+            this.buttonSubmit.Size = new System.Drawing.Size(144, 36);
             this.buttonSubmit.TabIndex = 38;
             this.buttonSubmit.Text = "Submit for Approval";
             this.buttonSubmit.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(490, 721);
+            this.buttonCancel.Location = new System.Drawing.Point(490, 801);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(144, 32);
+            this.buttonCancel.Size = new System.Drawing.Size(144, 36);
             this.buttonCancel.TabIndex = 37;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonExport
             // 
-            this.buttonExport.Location = new System.Drawing.Point(272, 721);
+            this.buttonExport.Location = new System.Drawing.Point(272, 801);
             this.buttonExport.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(144, 32);
+            this.buttonExport.Size = new System.Drawing.Size(144, 36);
             this.buttonExport.TabIndex = 36;
             this.buttonExport.Text = "Export";
             this.buttonExport.UseVisualStyleBackColor = true;
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(51, 721);
+            this.buttonSave.Location = new System.Drawing.Point(51, 801);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(144, 32);
+            this.buttonSave.Size = new System.Drawing.Size(144, 36);
             this.buttonSave.TabIndex = 35;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -239,7 +239,7 @@ namespace SmileSunshineToy
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dataGridViewPrototype.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewPrototype.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPrototype.Location = new System.Drawing.Point(45, 372);
+            this.dataGridViewPrototype.Location = new System.Drawing.Point(45, 413);
             this.dataGridViewPrototype.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewPrototype.Name = "dataGridViewPrototype";
             this.dataGridViewPrototype.ReadOnly = true;
@@ -256,220 +256,220 @@ namespace SmileSunshineToy
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewPrototype.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewPrototype.RowTemplate.Height = 23;
-            this.dataGridViewPrototype.Size = new System.Drawing.Size(1131, 341);
+            this.dataGridViewPrototype.Size = new System.Drawing.Size(1131, 379);
             this.dataGridViewPrototype.TabIndex = 34;
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(1048, 339);
+            this.buttonAdd.Location = new System.Drawing.Point(1048, 377);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(128, 32);
+            this.buttonAdd.Size = new System.Drawing.Size(128, 36);
             this.buttonAdd.TabIndex = 33;
             this.buttonAdd.Text = "Add Prototype";
             this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // textBoxAmount
             // 
-            this.textBoxAmount.Location = new System.Drawing.Point(189, 259);
+            this.textBoxAmount.Location = new System.Drawing.Point(189, 288);
             this.textBoxAmount.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(148, 28);
+            this.textBoxAmount.Size = new System.Drawing.Size(148, 26);
             this.textBoxAmount.TabIndex = 32;
             // 
             // labelAmount
             // 
             this.labelAmount.AutoSize = true;
-            this.labelAmount.Location = new System.Drawing.Point(65, 262);
+            this.labelAmount.Location = new System.Drawing.Point(65, 291);
             this.labelAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAmount.Name = "labelAmount";
-            this.labelAmount.Size = new System.Drawing.Size(116, 18);
+            this.labelAmount.Size = new System.Drawing.Size(90, 20);
             this.labelAmount.TabIndex = 31;
             this.labelAmount.Text = "description:";
             this.labelAmount.Click += new System.EventHandler(this.labelAmount_Click);
             // 
             // textBoxAttachment
             // 
-            this.textBoxAttachment.Location = new System.Drawing.Point(189, 223);
+            this.textBoxAttachment.Location = new System.Drawing.Point(189, 248);
             this.textBoxAttachment.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAttachment.Name = "textBoxAttachment";
-            this.textBoxAttachment.Size = new System.Drawing.Size(529, 28);
+            this.textBoxAttachment.Size = new System.Drawing.Size(529, 26);
             this.textBoxAttachment.TabIndex = 30;
             // 
             // labelAttachment
             // 
             this.labelAttachment.AutoSize = true;
-            this.labelAttachment.Location = new System.Drawing.Point(51, 226);
+            this.labelAttachment.Location = new System.Drawing.Point(51, 251);
             this.labelAttachment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAttachment.Name = "labelAttachment";
-            this.labelAttachment.Size = new System.Drawing.Size(134, 18);
+            this.labelAttachment.Size = new System.Drawing.Size(123, 20);
             this.labelAttachment.TabIndex = 29;
             this.labelAttachment.Text = "Payment Terms:";
             // 
             // textBoxRemark
             // 
-            this.textBoxRemark.Location = new System.Drawing.Point(189, 187);
+            this.textBoxRemark.Location = new System.Drawing.Point(189, 208);
             this.textBoxRemark.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxRemark.Name = "textBoxRemark";
-            this.textBoxRemark.Size = new System.Drawing.Size(529, 28);
+            this.textBoxRemark.Size = new System.Drawing.Size(529, 26);
             this.textBoxRemark.TabIndex = 28;
             // 
             // labelRemark
             // 
             this.labelRemark.AutoSize = true;
-            this.labelRemark.Location = new System.Drawing.Point(55, 197);
+            this.labelRemark.Location = new System.Drawing.Point(55, 219);
             this.labelRemark.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRemark.Name = "labelRemark";
-            this.labelRemark.Size = new System.Drawing.Size(134, 18);
+            this.labelRemark.Size = new System.Drawing.Size(112, 20);
             this.labelRemark.TabIndex = 27;
             this.labelRemark.Text = "supplier name:";
             this.labelRemark.Click += new System.EventHandler(this.labelRemark_Click);
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(189, 151);
+            this.textBoxDescription.Location = new System.Drawing.Point(189, 168);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(529, 28);
+            this.textBoxDescription.Size = new System.Drawing.Size(529, 26);
             this.textBoxDescription.TabIndex = 26;
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(70, 155);
+            this.labelDescription.Location = new System.Drawing.Point(70, 172);
             this.labelDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(116, 18);
+            this.labelDescription.Size = new System.Drawing.Size(89, 20);
             this.labelDescription.TabIndex = 25;
             this.labelDescription.Text = "supplier ID:";
             this.labelDescription.Click += new System.EventHandler(this.labelDescription_Click);
             // 
             // textBoxRequirement
             // 
-            this.textBoxRequirement.Location = new System.Drawing.Point(189, 115);
+            this.textBoxRequirement.Location = new System.Drawing.Point(189, 128);
             this.textBoxRequirement.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxRequirement.Name = "textBoxRequirement";
-            this.textBoxRequirement.Size = new System.Drawing.Size(529, 28);
+            this.textBoxRequirement.Size = new System.Drawing.Size(529, 26);
             this.textBoxRequirement.TabIndex = 24;
             // 
             // labelRequirement
             // 
             this.labelRequirement.AutoSize = true;
-            this.labelRequirement.Location = new System.Drawing.Point(-11, 118);
+            this.labelRequirement.Location = new System.Drawing.Point(-11, 131);
             this.labelRequirement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRequirement.Name = "labelRequirement";
-            this.labelRequirement.Size = new System.Drawing.Size(206, 18);
+            this.labelRequirement.Size = new System.Drawing.Size(155, 20);
             this.labelRequirement.TabIndex = 23;
             this.labelRequirement.Text = "supplier information: ";
             this.labelRequirement.Click += new System.EventHandler(this.labelRequirement_Click);
             // 
             // textBoxSchemeName
             // 
-            this.textBoxSchemeName.Location = new System.Drawing.Point(189, 336);
+            this.textBoxSchemeName.Location = new System.Drawing.Point(189, 373);
             this.textBoxSchemeName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSchemeName.Name = "textBoxSchemeName";
-            this.textBoxSchemeName.Size = new System.Drawing.Size(180, 28);
+            this.textBoxSchemeName.Size = new System.Drawing.Size(180, 26);
             this.textBoxSchemeName.TabIndex = 20;
             // 
             // labelSchemeName
             // 
             this.labelSchemeName.AutoSize = true;
-            this.labelSchemeName.Location = new System.Drawing.Point(70, 346);
+            this.labelSchemeName.Location = new System.Drawing.Point(70, 384);
             this.labelSchemeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSchemeName.Name = "labelSchemeName";
-            this.labelSchemeName.Size = new System.Drawing.Size(116, 18);
+            this.labelSchemeName.Size = new System.Drawing.Size(104, 20);
             this.labelSchemeName.TabIndex = 19;
             this.labelSchemeName.Text = "Paid Amount:";
             // 
             // textBoxSchemeID
             // 
-            this.textBoxSchemeID.Location = new System.Drawing.Point(189, 300);
+            this.textBoxSchemeID.Location = new System.Drawing.Point(189, 333);
             this.textBoxSchemeID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSchemeID.Name = "textBoxSchemeID";
-            this.textBoxSchemeID.Size = new System.Drawing.Size(180, 28);
+            this.textBoxSchemeID.Size = new System.Drawing.Size(180, 26);
             this.textBoxSchemeID.TabIndex = 18;
             // 
             // labelSchemeID
             // 
             this.labelSchemeID.AutoSize = true;
-            this.labelSchemeID.Location = new System.Drawing.Point(42, 310);
+            this.labelSchemeID.Location = new System.Drawing.Point(42, 344);
             this.labelSchemeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSchemeID.Name = "labelSchemeID";
-            this.labelSchemeID.Size = new System.Drawing.Size(143, 18);
+            this.labelSchemeID.Size = new System.Drawing.Size(129, 20);
             this.labelSchemeID.TabIndex = 17;
             this.labelSchemeID.Text = "Amount Payable:";
             // 
             // dateTimePickerEnd
             // 
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(189, 82);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(189, 91);
             this.dateTimePickerEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(298, 28);
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(298, 26);
             this.dateTimePickerEnd.TabIndex = 14;
             // 
             // labelEndDate
             // 
             this.labelEndDate.AutoSize = true;
-            this.labelEndDate.Location = new System.Drawing.Point(60, 89);
+            this.labelEndDate.Location = new System.Drawing.Point(60, 99);
             this.labelEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEndDate.Name = "labelEndDate";
-            this.labelEndDate.Size = new System.Drawing.Size(125, 18);
+            this.labelEndDate.Size = new System.Drawing.Size(113, 20);
             this.labelEndDate.TabIndex = 13;
             this.labelEndDate.Text = "payment Date:";
             // 
             // textBoxStatus
             // 
-            this.textBoxStatus.Location = new System.Drawing.Point(600, 79);
+            this.textBoxStatus.Location = new System.Drawing.Point(600, 88);
             this.textBoxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(148, 28);
+            this.textBoxStatus.Size = new System.Drawing.Size(148, 26);
             this.textBoxStatus.TabIndex = 12;
             // 
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(521, 82);
+            this.labelStatus.Location = new System.Drawing.Point(521, 91);
             this.labelStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(71, 18);
+            this.labelStatus.Size = new System.Drawing.Size(60, 20);
             this.labelStatus.TabIndex = 11;
             this.labelStatus.Text = "Status:";
             // 
             // dateTimePickerStart
             // 
-            this.dateTimePickerStart.Location = new System.Drawing.Point(189, 47);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(189, 52);
             this.dateTimePickerStart.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(298, 28);
+            this.dateTimePickerStart.Size = new System.Drawing.Size(298, 26);
             this.dateTimePickerStart.TabIndex = 10;
             // 
             // labelStartDate
             // 
             this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Location = new System.Drawing.Point(55, 57);
+            this.labelStartDate.Location = new System.Drawing.Point(55, 63);
             this.labelStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(125, 18);
+            this.labelStartDate.Size = new System.Drawing.Size(109, 20);
             this.labelStartDate.TabIndex = 9;
             this.labelStartDate.Text = "Created Date:";
             this.labelStartDate.Click += new System.EventHandler(this.labelStartDate_Click);
             // 
             // textBoxProjectID
             // 
-            this.textBoxProjectID.Location = new System.Drawing.Point(189, 7);
+            this.textBoxProjectID.Location = new System.Drawing.Point(189, 8);
             this.textBoxProjectID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProjectID.Name = "textBoxProjectID";
-            this.textBoxProjectID.Size = new System.Drawing.Size(180, 28);
+            this.textBoxProjectID.Size = new System.Drawing.Size(180, 26);
             this.textBoxProjectID.TabIndex = 6;
             this.textBoxProjectID.Text = "202504050001";
             // 
             // labelProjectID
             // 
             this.labelProjectID.AutoSize = true;
-            this.labelProjectID.Location = new System.Drawing.Point(73, 14);
+            this.labelProjectID.Location = new System.Drawing.Point(73, 16);
             this.labelProjectID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProjectID.Name = "labelProjectID";
-            this.labelProjectID.Size = new System.Drawing.Size(107, 18);
+            this.labelProjectID.Size = new System.Drawing.Size(83, 20);
             this.labelProjectID.TabIndex = 5;
             this.labelProjectID.Text = "Project ID:";
             // 
@@ -477,6 +477,7 @@ namespace SmileSunshineToy
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
@@ -493,7 +494,7 @@ namespace SmileSunshineToy
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 30, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(269, 814);
+            this.menuStrip1.Size = new System.Drawing.Size(269, 905);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -565,6 +566,7 @@ namespace SmileSunshineToy
             this.financialToolStripMenuItem.Name = "financialToolStripMenuItem";
             this.financialToolStripMenuItem.Size = new System.Drawing.Size(130, 29);
             this.financialToolStripMenuItem.Text = "Financial(&F)";
+            this.financialToolStripMenuItem.Click += new System.EventHandler(this.financialToolStripMenuItem_Click);
             // 
             // accountsReceivableToolStripMenuItem
             // 
@@ -654,14 +656,14 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1495, 57);
+            this.panel1.Size = new System.Drawing.Size(1495, 63);
             this.panel1.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Location = new System.Drawing.Point(12, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(319, 29);
             this.label3.TabIndex = 8;
@@ -669,9 +671,9 @@ namespace SmileSunshineToy
             // 
             // FinPayDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1495, 871);
+            this.ClientSize = new System.Drawing.Size(1495, 968);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
