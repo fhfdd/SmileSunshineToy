@@ -71,6 +71,19 @@
     <Compile Include="aftersalerequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfileForm.Designer.cs">
+      <DependentUpon>UserProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSession.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataGridViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,12 +92,6 @@
     </Compile>
     <Compile Include="customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="feedback.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -112,18 +119,6 @@
     </Compile>
     <Compile Include="FinReOverview.Designer.cs">
       <DependentUpon>FinReOverview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvMaDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InvMaDetail.Designer.cs">
-      <DependentUpon>InvMaDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InvMaOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InvMaOverview.Designer.cs">
-      <DependentUpon>InvMaOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="InvMaterial.cs">
       <SubType>Form</SubType>
@@ -190,6 +185,12 @@
     </Compile>
     <Compile Include="LoOverview.Designer.cs">
       <DependentUpon>LoOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NavigationBaseForm.Designer.cs">
+      <DependentUpon>NavigationBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PerCusDetail.cs">
       <SubType>Form</SubType>
@@ -381,12 +382,6 @@
     <EmbeddedResource Include="FinReOverview.resx">
       <DependentUpon>FinReOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvMaDetail.resx">
-      <DependentUpon>InvMaDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InvMaOverview.resx">
-      <DependentUpon>InvMaOverview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InvMaterial.resx">
       <DependentUpon>InvMaterial.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoOverview.resx">
       <DependentUpon>LoOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBaseForm.resx">
+      <DependentUpon>NavigationBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerCusDetail.resx">
       <DependentUpon>PerCusDetail.cs</DependentUpon>
@@ -484,6 +482,9 @@
     <EmbeddedResource Include="SalPrint.resx">
       <DependentUpon>SalPrint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserProfileForm.resx">
+      <DependentUpon>UserProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -530,6 +531,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\profile-user.png" />
+    <None Include="Resources\user.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\order.png" />
     <None Include="Resources\product-management.png" />

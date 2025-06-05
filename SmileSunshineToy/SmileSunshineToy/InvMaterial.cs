@@ -40,5 +40,10 @@ namespace SmileSunshineToy
         private void saveBtn_Click(object sender, EventArgs e) => SaveChanges();
         private void cancelBtn_Click(object sender, EventArgs e) => CancelChanges();
         private void searchBtn_Click(object sender, EventArgs e) => SearchRecords();
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

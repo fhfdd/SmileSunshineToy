@@ -21,5 +21,15 @@ namespace SmileSunshineToy
         {
 
         }
+
+        private void InvWaOverview_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
