@@ -242,6 +242,7 @@ namespace SmileSunshineToy
             this.button1.Size = new System.Drawing.Size(140, 140);
             this.button1.TabIndex = 27;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_user_Click);
             // 
             // panel3
             // 
