@@ -11,13 +11,32 @@ using MySql.Data.MySqlClient;
 
 namespace SmileSunshineToy
 {
-    public partial class SalOrderQuery : Form
+    public partial class SalOrderQuery : DataGridViewForm
     {
-        public SalOrderQuery()
+
+        public SalOrderQuery() : base()
         {
             InitializeComponent();
-        }
 
+            base.TableName = "product";
+            base.PrimaryKey = "ProductID";
+            base.DataGridView = dataGridView1;
+            base.FilterComboBox = filterComboBox;
+            base.SearchTextBox = txtSearch;
+            base.AddButton = btnAdd;
+            base.DeleteButton = btnDelete;
+            base.SaveButton = btnSave;
+            base.CancelButton = btnSave;
+            base.SearchButton = btnSearch;
+
+
+            filterComboBox.Items.Add("ProductID");
+            filterComboBox.Items.Add("name");
+            filterComboBox.Items.Add("price");
+            filterComboBox.SelectedIndex = 0;
+
+            LoadData();
+        }
 
 
 
@@ -65,8 +84,9 @@ namespace SmileSunshineToy
         private void btn_sub1_Click(object sender, EventArgs e) { new InvProduct().Show(); this.Hide(); }
         private void btn_sub2_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
         private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
-
-
     }
+
+
+
 }
 

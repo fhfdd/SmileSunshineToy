@@ -241,6 +241,7 @@ namespace SmileSunshineToy
             this.Home.TabIndex = 1;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // panel1
             // 

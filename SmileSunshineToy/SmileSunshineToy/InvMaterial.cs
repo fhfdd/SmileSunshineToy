@@ -30,7 +30,6 @@ namespace SmileSunshineToy
         }
 
         private void btn_inv_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
-        private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
         private void btn_person_Click(object sender, EventArgs e) { new PerCusOverview().Show(); this.Hide(); }
         private void btn_proc_Click(object sender, EventArgs e) { new ProcOverview().Show(); this.Hide(); }
         private void btn_log_Click(object sender, EventArgs e) { new LoOverview().Show(); this.Hide(); }
