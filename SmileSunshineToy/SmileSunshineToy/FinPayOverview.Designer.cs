@@ -483,6 +483,7 @@ namespace SmileSunshineToy
             this.btn_material.TabIndex = 2;
             this.btn_material.Text = "Payable";
             this.btn_material.UseVisualStyleBackColor = true;
+            this.btn_material.Click += new System.EventHandler(this.btn_sub1_Click);
             // 
             // btn_product
             // 
@@ -498,6 +499,7 @@ namespace SmileSunshineToy
             this.btn_product.TabIndex = 1;
             this.btn_product.Text = "Receivable";
             this.btn_product.UseVisualStyleBackColor = true;
+            this.btn_product.Click += new System.EventHandler(this.btn_sub2_Click);
             // 
             // FinPayOverview
             // 

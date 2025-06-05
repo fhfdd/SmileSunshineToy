@@ -139,12 +139,6 @@
       <DependentUpon>.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Invall.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Invall.Designer.cs">
-      <DependentUpon>Invall.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,9 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include=".resx">
       <DependentUpon>.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Invall.resx">
-      <DependentUpon>Invall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoOverview.resx">
       <DependentUpon>LoOverview.cs</DependentUpon>

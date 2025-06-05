@@ -226,6 +226,7 @@ namespace SmileSunshineToy
             this.logout.TabIndex = 4;
             this.logout.Text = "Logout";
             this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // button1
             // 
@@ -268,6 +269,7 @@ namespace SmileSunshineToy
             this.button7.TabIndex = 13;
             this.button7.Text = "Warehouse";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btn_sub3_Click);
             // 
             // btn_material
             // 
@@ -283,6 +285,7 @@ namespace SmileSunshineToy
             this.btn_material.TabIndex = 2;
             this.btn_material.Text = "Material";
             this.btn_material.UseVisualStyleBackColor = true;
+            this.btn_material.Click += new System.EventHandler(this.btn_sub2_Click);
             // 
             // btn_product
             // 
@@ -298,6 +301,7 @@ namespace SmileSunshineToy
             this.btn_product.TabIndex = 1;
             this.btn_product.Text = "Product";
             this.btn_product.UseVisualStyleBackColor = true;
+            this.btn_product.Click += new System.EventHandler(this.btn_sub1_Click);
             // 
             // order
             // 
@@ -524,6 +528,7 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InvProduct";
             this.Text = "InvMoutDetail";
+            this.Load += new System.EventHandler(this.InvProduct_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

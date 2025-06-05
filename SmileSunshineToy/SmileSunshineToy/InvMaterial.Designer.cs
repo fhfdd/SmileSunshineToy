@@ -271,7 +271,7 @@ namespace SmileSunshineToy
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox9S
+            // pictureBox9
             // 
             this.pictureBox9.Image = global::SmileSunshineToy.Properties.Resources.product_management;
             this.pictureBox9.Location = new System.Drawing.Point(3, 700);
@@ -538,6 +538,7 @@ namespace SmileSunshineToy
             this.button7.TabIndex = 13;
             this.button7.Text = "Warehouse";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.logout_Click);
             // 
             // btn_material
             // 
@@ -553,6 +554,7 @@ namespace SmileSunshineToy
             this.btn_material.TabIndex = 2;
             this.btn_material.Text = "Material";
             this.btn_material.UseVisualStyleBackColor = true;
+            this.btn_material.Click += new System.EventHandler(this.btn_sub2_Click);
             // 
             // btn_product
             // 
@@ -568,6 +570,7 @@ namespace SmileSunshineToy
             this.btn_product.TabIndex = 1;
             this.btn_product.Text = "Product";
             this.btn_product.UseVisualStyleBackColor = true;
+            this.btn_product.Click += new System.EventHandler(this.btn_sub1_Click);
             // 
             // InvMaterial
             // 
