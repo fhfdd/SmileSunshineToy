@@ -65,30 +65,8 @@ namespace SmileSunshineToy
 
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Detail")
-            {
-                int orderId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
-                int customerId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
 
-                SalDetail sal_detail = new SalDetail(orderId, customerId);
-                sal_detail.ShowDialog(); 
-            }
-        }
 
-        private void saleAllFliter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (filterComboBox.SelectedItem.ToString())
-            {
-
-                case "OrderID": MessageBox.Show("OrderID"); break;
-
-                case "Status": MessageBox.Show("Status"); break;
-
-            }
-
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
