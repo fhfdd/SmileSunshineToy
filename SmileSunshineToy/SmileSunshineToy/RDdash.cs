@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class ProdPlanDetail : Form
+    public partial class RDdash : Form
     {
-        public ProdPlanDetail()
+        public RDdash()
         {
             InitializeComponent();
-        }
-
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
