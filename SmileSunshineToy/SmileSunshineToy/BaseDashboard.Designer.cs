@@ -1,7 +1,7 @@
 ﻿
 namespace SmileSunshineToy
 {
-    partial class Invall
+    partial class BaseDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,10 @@ namespace SmileSunshineToy
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invall));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseDashboard));
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.logout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btn_material = new System.Windows.Forms.Button();
-            this.btn_product = new System.Windows.Forms.Button();
             this.btn_inv = new System.Windows.Forms.Button();
             this.btn_person = new System.Windows.Forms.Button();
             this.btn_proc = new System.Windows.Forms.Button();
@@ -48,45 +43,13 @@ namespace SmileSunshineToy
             this.btn_rd = new System.Windows.Forms.Button();
             this.order = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.user = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // logout
-            // 
-            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logout.FlatAppearance.BorderSize = 0;
-            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.ForeColor = System.Drawing.Color.Black;
-            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 865);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(472, 90);
-            this.logout.TabIndex = 4;
-            this.logout.Text = "Logout";
-            this.logout.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Bisque;
-            this.panel1.Controls.Add(this.btn_inv);
-            this.panel1.Controls.Add(this.btn_person);
-            this.panel1.Controls.Add(this.btn_proc);
-            this.panel1.Controls.Add(this.btn_log);
-            this.panel1.Controls.Add(this.btn_prod);
-            this.panel1.Controls.Add(this.btn_fin);
-            this.panel1.Controls.Add(this.btn_rd);
-            this.panel1.Controls.Add(this.logout);
-            this.panel1.Controls.Add(this.order);
-            this.panel1.Controls.Add(this.btn_home);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 156);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 955);
-            this.panel1.TabIndex = 15;
             // 
             // imageList1
             // 
@@ -104,77 +67,40 @@ namespace SmileSunshineToy
             this.imageList1.Images.SetKeyName(9, "order.png");
             this.imageList1.Images.SetKeyName(10, "home.png");
             // 
-            // panel3
+            // logout
             // 
-            this.panel3.BackColor = System.Drawing.Color.Bisque;
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(2005, 156);
-            this.panel3.TabIndex = 14;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.ForeColor = System.Drawing.Color.Black;
+            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.Location = new System.Drawing.Point(0, 929);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(472, 81);
+            this.logout.TabIndex = 4;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.BackColor = System.Drawing.Color.Bisque;
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.btn_material);
-            this.panel2.Controls.Add(this.btn_product);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(472, 156);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 955);
-            this.panel2.TabIndex = 16;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.ImageList = this.imageList1;
-            this.button7.Location = new System.Drawing.Point(0, 172);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(262, 87);
-            this.button7.TabIndex = 13;
-            this.button7.Text = "Warehouse";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // btn_material
-            // 
-            this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_material.FlatAppearance.BorderSize = 0;
-            this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_material.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_material.ForeColor = System.Drawing.Color.Black;
-            this.btn_material.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_material.ImageList = this.imageList1;
-            this.btn_material.Location = new System.Drawing.Point(0, 85);
-            this.btn_material.Name = "btn_material";
-            this.btn_material.Size = new System.Drawing.Size(262, 87);
-            this.btn_material.TabIndex = 2;
-            this.btn_material.Text = "Material";
-            this.btn_material.UseVisualStyleBackColor = true;
-            // 
-            // btn_product
-            // 
-            this.btn_product.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_product.FlatAppearance.BorderSize = 0;
-            this.btn_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_product.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_product.ForeColor = System.Drawing.Color.Black;
-            this.btn_product.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_product.ImageList = this.imageList1;
-            this.btn_product.Location = new System.Drawing.Point(0, 0);
-            this.btn_product.Name = "btn_product";
-            this.btn_product.Size = new System.Drawing.Size(262, 85);
-            this.btn_product.TabIndex = 1;
-            this.btn_product.Text = "Product";
-            this.btn_product.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.Bisque;
+            this.panel1.Controls.Add(this.btn_inv);
+            this.panel1.Controls.Add(this.btn_person);
+            this.panel1.Controls.Add(this.btn_proc);
+            this.panel1.Controls.Add(this.btn_log);
+            this.panel1.Controls.Add(this.btn_prod);
+            this.panel1.Controls.Add(this.btn_fin);
+            this.panel1.Controls.Add(this.btn_rd);
+            this.panel1.Controls.Add(this.logout);
+            this.panel1.Controls.Add(this.order);
+            this.panel1.Controls.Add(this.btn_home);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 140);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(472, 1010);
+            this.panel1.TabIndex = 19;
             // 
             // btn_inv
             // 
@@ -186,7 +112,7 @@ namespace SmileSunshineToy
             this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_inv.ImageKey = "product-management.png";
             this.btn_inv.ImageList = this.imageList1;
-            this.btn_inv.Location = new System.Drawing.Point(0, 694);
+            this.btn_inv.Location = new System.Drawing.Point(0, 685);
             this.btn_inv.Name = "btn_inv";
             this.btn_inv.Size = new System.Drawing.Size(472, 87);
             this.btn_inv.TabIndex = 26;
@@ -204,7 +130,7 @@ namespace SmileSunshineToy
             this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_person.ImageKey = "customer.png";
             this.btn_person.ImageList = this.imageList1;
-            this.btn_person.Location = new System.Drawing.Point(0, 607);
+            this.btn_person.Location = new System.Drawing.Point(0, 598);
             this.btn_person.Name = "btn_person";
             this.btn_person.Size = new System.Drawing.Size(472, 87);
             this.btn_person.TabIndex = 20;
@@ -221,7 +147,7 @@ namespace SmileSunshineToy
             this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_proc.ImageKey = "procurement.png";
             this.btn_proc.ImageList = this.imageList1;
-            this.btn_proc.Location = new System.Drawing.Point(0, 520);
+            this.btn_proc.Location = new System.Drawing.Point(0, 511);
             this.btn_proc.Name = "btn_proc";
             this.btn_proc.Size = new System.Drawing.Size(472, 87);
             this.btn_proc.TabIndex = 19;
@@ -238,7 +164,7 @@ namespace SmileSunshineToy
             this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_log.ImageKey = "delivery-truck.png";
             this.btn_log.ImageList = this.imageList1;
-            this.btn_log.Location = new System.Drawing.Point(0, 433);
+            this.btn_log.Location = new System.Drawing.Point(0, 424);
             this.btn_log.Name = "btn_log";
             this.btn_log.Size = new System.Drawing.Size(472, 87);
             this.btn_log.TabIndex = 18;
@@ -255,7 +181,7 @@ namespace SmileSunshineToy
             this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_prod.ImageKey = "production-line.png";
             this.btn_prod.ImageList = this.imageList1;
-            this.btn_prod.Location = new System.Drawing.Point(0, 346);
+            this.btn_prod.Location = new System.Drawing.Point(0, 337);
             this.btn_prod.Name = "btn_prod";
             this.btn_prod.Size = new System.Drawing.Size(472, 87);
             this.btn_prod.TabIndex = 17;
@@ -273,7 +199,7 @@ namespace SmileSunshineToy
             this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fin.ImageKey = "deposit.png";
             this.btn_fin.ImageList = this.imageList1;
-            this.btn_fin.Location = new System.Drawing.Point(0, 259);
+            this.btn_fin.Location = new System.Drawing.Point(0, 250);
             this.btn_fin.Name = "btn_fin";
             this.btn_fin.Size = new System.Drawing.Size(472, 87);
             this.btn_fin.TabIndex = 15;
@@ -290,7 +216,7 @@ namespace SmileSunshineToy
             this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_rd.ImageKey = "analysis.png";
             this.btn_rd.ImageList = this.imageList1;
-            this.btn_rd.Location = new System.Drawing.Point(0, 172);
+            this.btn_rd.Location = new System.Drawing.Point(0, 163);
             this.btn_rd.Name = "btn_rd";
             this.btn_rd.Size = new System.Drawing.Size(472, 87);
             this.btn_rd.TabIndex = 13;
@@ -307,7 +233,7 @@ namespace SmileSunshineToy
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.order.ImageKey = "order.png";
             this.order.ImageList = this.imageList1;
-            this.order.Location = new System.Drawing.Point(0, 85);
+            this.order.Location = new System.Drawing.Point(0, 76);
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(472, 87);
             this.order.TabIndex = 2;
@@ -326,38 +252,60 @@ namespace SmileSunshineToy
             this.btn_home.ImageList = this.imageList1;
             this.btn_home.Location = new System.Drawing.Point(0, 0);
             this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(472, 85);
+            this.btn_home.Size = new System.Drawing.Size(472, 76);
             this.btn_home.TabIndex = 1;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.HomeBtn_Click);
             // 
-            // button1
+            // panel3
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.ImageKey = "profile-user.png";
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1865, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 156);
-            this.button1.TabIndex = 28;
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel3.BackColor = System.Drawing.Color.Bisque;
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1800, 140);
+            this.panel3.TabIndex = 18;
             // 
-            // Invall
+            // user
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2005, 1111);
-            this.Controls.Add(this.panel2);
+            this.user.Dock = System.Windows.Forms.DockStyle.Right;
+            this.user.FlatAppearance.BorderSize = 0;
+            this.user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.user.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.ForeColor = System.Drawing.Color.Black;
+            this.user.ImageKey = "profile-user.png";
+            this.user.ImageList = this.imageList1;
+            this.user.Location = new System.Drawing.Point(1660, 0);
+            this.user.Name = "user";
+            this.user.Size = new System.Drawing.Size(140, 140);
+            this.user.TabIndex = 27;
+            this.user.UseVisualStyleBackColor = true;
+            this.user.Click += new System.EventHandler(this.userBtn_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Bisque;
+            this.panel2.Controls.Add(this.user);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1800, 140);
+            this.panel2.TabIndex = 17;
+            // 
+            // BaseDashboard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1800, 1150);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Invall";
-            this.Text = "InvWaOverview";
-            this.Load += new System.EventHandler(this.InvWaOverview_Load);
+            this.Name = "BaseDashboard";
+            this.Text = "BaseDashboaed";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.BaseDashboaed_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -366,6 +314,10 @@ namespace SmileSunshineToy
         }
 
         #endregion
+
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_inv;
         private System.Windows.Forms.Button btn_person;
         private System.Windows.Forms.Button btn_proc;
@@ -373,16 +325,10 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btn_prod;
         private System.Windows.Forms.Button btn_fin;
         private System.Windows.Forms.Button btn_rd;
-        private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Button order;
         private System.Windows.Forms.Button btn_home;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button btn_material;
-        private System.Windows.Forms.Button btn_product;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button user;
     }
 }

@@ -271,7 +271,7 @@ namespace SmileSunshineToy
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox9
+            // pictureBox9S
             // 
             this.pictureBox9.Image = global::SmileSunshineToy.Properties.Resources.product_management;
             this.pictureBox9.Location = new System.Drawing.Point(3, 700);

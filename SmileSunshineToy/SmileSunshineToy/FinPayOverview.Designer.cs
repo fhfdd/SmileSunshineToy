@@ -30,18 +30,12 @@ namespace SmileSunshineToy
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FinPayOverview));
             this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.btn_inv = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btn_material = new System.Windows.Forms.Button();
-            this.btn_product = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,40 +45,34 @@ namespace SmileSunshineToy
             this.stockQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new SmileSunshineToy.testDataSet();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.btn_person = new System.Windows.Forms.Button();
-            this.btn_proc = new System.Windows.Forms.Button();
-            this.btn_log = new System.Windows.Forms.Button();
-            this.btn_prod = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btn_fin = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btn_rd = new System.Windows.Forms.Button();
-            this.logout = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btn_material = new System.Windows.Forms.Button();
+            this.btn_product = new System.Windows.Forms.Button();
+            this.btn_home = new System.Windows.Forms.Button();
             this.order = new System.Windows.Forms.Button();
-            this.Home = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
+            this.btn_rd = new System.Windows.Forms.Button();
+            this.btn_fin = new System.Windows.Forms.Button();
+            this.btn_prod = new System.Windows.Forms.Button();
+            this.btn_log = new System.Windows.Forms.Button();
+            this.btn_proc = new System.Windows.Forms.Button();
+            this.btn_person = new System.Windows.Forms.Button();
+            this.btn_inv = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // productTableAdapter
@@ -106,31 +94,6 @@ namespace SmileSunshineToy
             this.txtSearch.Size = new System.Drawing.Size(431, 28);
             this.txtSearch.TabIndex = 44;
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::SmileSunshineToy.Properties.Resources.product_management;
-            this.pictureBox9.Location = new System.Drawing.Point(3, 700);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(50, 46);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 27;
-            this.pictureBox9.TabStop = false;
-            // 
-            // btn_inv
-            // 
-            this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_inv.FlatAppearance.BorderSize = 0;
-            this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_inv.ForeColor = System.Drawing.Color.Black;
-            this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inv.Location = new System.Drawing.Point(0, 694);
-            this.btn_inv.Name = "btn_inv";
-            this.btn_inv.Size = new System.Drawing.Size(472, 87);
-            this.btn_inv.TabIndex = 26;
-            this.btn_inv.Text = "Inventory";
-            this.btn_inv.UseVisualStyleBackColor = true;
-            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(1278, 308);
@@ -148,73 +111,6 @@ namespace SmileSunshineToy
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::SmileSunshineToy.Properties.Resources.customer;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 611);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 46);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 25;
-            this.pictureBox5.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Bisque;
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.btn_material);
-            this.panel2.Controls.Add(this.btn_product);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(472, 156);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 1014);
-            this.panel2.TabIndex = 46;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 154);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(262, 78);
-            this.button7.TabIndex = 13;
-            this.button7.Text = "Warehouse";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // btn_material
-            // 
-            this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_material.FlatAppearance.BorderSize = 0;
-            this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_material.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_material.ForeColor = System.Drawing.Color.Black;
-            this.btn_material.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_material.Location = new System.Drawing.Point(0, 76);
-            this.btn_material.Name = "btn_material";
-            this.btn_material.Size = new System.Drawing.Size(262, 78);
-            this.btn_material.TabIndex = 2;
-            this.btn_material.Text = "Material";
-            this.btn_material.UseVisualStyleBackColor = true;
-            // 
-            // btn_product
-            // 
-            this.btn_product.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_product.FlatAppearance.BorderSize = 0;
-            this.btn_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_product.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_product.ForeColor = System.Drawing.Color.Black;
-            this.btn_product.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_product.Location = new System.Drawing.Point(0, 0);
-            this.btn_product.Name = "btn_product";
-            this.btn_product.Size = new System.Drawing.Size(262, 76);
-            this.btn_product.TabIndex = 1;
-            this.btn_product.Text = "Product";
-            this.btn_product.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -294,116 +190,6 @@ namespace SmileSunshineToy
             this.testDataSet.DataSetName = "testDataSet";
             this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Bisque;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(472, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1288, 156);
-            this.panel3.TabIndex = 36;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::SmileSunshineToy.Properties.Resources.procurement;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 528);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 46);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 24;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::SmileSunshineToy.Properties.Resources.delivery_truck;
-            this.pictureBox7.Location = new System.Drawing.Point(3, 448);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(50, 46);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 23;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::SmileSunshineToy.Properties.Resources.production_line;
-            this.pictureBox8.Location = new System.Drawing.Point(3, 357);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(50, 46);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 22;
-            this.pictureBox8.TabStop = false;
-            // 
-            // btn_person
-            // 
-            this.btn_person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_person.FlatAppearance.BorderSize = 0;
-            this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_person.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_person.ForeColor = System.Drawing.Color.Black;
-            this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_person.Location = new System.Drawing.Point(0, 607);
-            this.btn_person.Name = "btn_person";
-            this.btn_person.Size = new System.Drawing.Size(472, 87);
-            this.btn_person.TabIndex = 20;
-            this.btn_person.Text = "Personnel information";
-            this.btn_person.UseVisualStyleBackColor = true;
-            // 
-            // btn_proc
-            // 
-            this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_proc.FlatAppearance.BorderSize = 0;
-            this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_proc.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_proc.ForeColor = System.Drawing.Color.Black;
-            this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_proc.Location = new System.Drawing.Point(0, 520);
-            this.btn_proc.Name = "btn_proc";
-            this.btn_proc.Size = new System.Drawing.Size(472, 87);
-            this.btn_proc.TabIndex = 19;
-            this.btn_proc.Text = "Procurement";
-            this.btn_proc.UseVisualStyleBackColor = true;
-            // 
-            // btn_log
-            // 
-            this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_log.FlatAppearance.BorderSize = 0;
-            this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_log.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_log.ForeColor = System.Drawing.Color.Black;
-            this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_log.Location = new System.Drawing.Point(0, 433);
-            this.btn_log.Name = "btn_log";
-            this.btn_log.Size = new System.Drawing.Size(472, 87);
-            this.btn_log.TabIndex = 18;
-            this.btn_log.Text = "Logistics";
-            this.btn_log.UseVisualStyleBackColor = true;
-            // 
-            // btn_prod
-            // 
-            this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_prod.FlatAppearance.BorderSize = 0;
-            this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prod.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prod.ForeColor = System.Drawing.Color.Black;
-            this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_prod.Location = new System.Drawing.Point(0, 346);
-            this.btn_prod.Name = "btn_prod";
-            this.btn_prod.Size = new System.Drawing.Size(472, 87);
-            this.btn_prod.TabIndex = 17;
-            this.btn_prod.Text = "Production";
-            this.btn_prod.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SmileSunshineToy.Properties.Resources.deposit;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 279);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(951, 308);
@@ -412,22 +198,6 @@ namespace SmileSunshineToy
             this.btnDelete.TabIndex = 41;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btn_fin
-            // 
-            this.btn_fin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_fin.FlatAppearance.BorderSize = 0;
-            this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fin.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_fin.ForeColor = System.Drawing.Color.Black;
-            this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fin.Location = new System.Drawing.Point(0, 259);
-            this.btn_fin.Name = "btn_fin";
-            this.btn_fin.Size = new System.Drawing.Size(472, 87);
-            this.btn_fin.TabIndex = 15;
-            this.btn_fin.Text = "Financial";
-            this.btn_fin.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -438,55 +208,130 @@ namespace SmileSunshineToy
             this.btnSearch.Text = "search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // imageList1
             // 
-            this.pictureBox2.Image = global::SmileSunshineToy.Properties.Resources.order;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 105);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "profile-user.png");
+            this.imageList1.Images.SetKeyName(1, "user.png");
+            this.imageList1.Images.SetKeyName(2, "customer.png");
+            this.imageList1.Images.SetKeyName(3, "procurement.png");
+            this.imageList1.Images.SetKeyName(4, "delivery-truck.png");
+            this.imageList1.Images.SetKeyName(5, "production-line.png");
+            this.imageList1.Images.SetKeyName(6, "deposit.png");
+            this.imageList1.Images.SetKeyName(7, "analysis.png");
+            this.imageList1.Images.SetKeyName(8, "product-management.png");
+            this.imageList1.Images.SetKeyName(9, "order.png");
+            this.imageList1.Images.SetKeyName(10, "home.png");
             // 
-            // pictureBox3
+            // panel2
             // 
-            this.pictureBox3.Image = global::SmileSunshineToy.Properties.Resources.analysis;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 193);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 46);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
+            this.panel2.BackColor = System.Drawing.Color.Bisque;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1760, 140);
+            this.panel2.TabIndex = 46;
             // 
-            // btn_rd
+            // panel4
             // 
-            this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_rd.FlatAppearance.BorderSize = 0;
-            this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rd.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rd.ForeColor = System.Drawing.Color.Black;
-            this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_rd.Location = new System.Drawing.Point(0, 172);
-            this.btn_rd.Name = "btn_rd";
-            this.btn_rd.Size = new System.Drawing.Size(472, 87);
-            this.btn_rd.TabIndex = 13;
-            this.btn_rd.Text = "R&&D";
-            this.btn_rd.UseVisualStyleBackColor = true;
+            this.panel4.BackColor = System.Drawing.Color.Bisque;
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1760, 140);
+            this.panel4.TabIndex = 17;
             // 
-            // logout
+            // button1
             // 
-            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logout.FlatAppearance.BorderSize = 0;
-            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.ForeColor = System.Drawing.Color.Black;
-            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 1080);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(472, 90);
-            this.logout.TabIndex = 4;
-            this.logout.Text = "Logout";
-            this.logout.UseVisualStyleBackColor = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.ImageKey = "profile-user.png";
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(1620, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 140);
+            this.button1.TabIndex = 27;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Bisque;
+            this.panel3.Controls.Add(this.button7);
+            this.panel3.Controls.Add(this.btn_material);
+            this.panel3.Controls.Add(this.btn_product);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(472, 140);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(262, 1030);
+            this.panel3.TabIndex = 48;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(0, 154);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(262, 78);
+            this.button7.TabIndex = 13;
+            this.button7.Text = "Warehouse";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // btn_material
+            // 
+            this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_material.FlatAppearance.BorderSize = 0;
+            this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_material.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_material.ForeColor = System.Drawing.Color.Black;
+            this.btn_material.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_material.Location = new System.Drawing.Point(0, 76);
+            this.btn_material.Name = "btn_material";
+            this.btn_material.Size = new System.Drawing.Size(262, 78);
+            this.btn_material.TabIndex = 2;
+            this.btn_material.Text = "Material";
+            this.btn_material.UseVisualStyleBackColor = true;
+            // 
+            // btn_product
+            // 
+            this.btn_product.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_product.FlatAppearance.BorderSize = 0;
+            this.btn_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_product.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_product.ForeColor = System.Drawing.Color.Black;
+            this.btn_product.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_product.Location = new System.Drawing.Point(0, 0);
+            this.btn_product.Name = "btn_product";
+            this.btn_product.Size = new System.Drawing.Size(262, 76);
+            this.btn_product.TabIndex = 1;
+            this.btn_product.Text = "Product";
+            this.btn_product.UseVisualStyleBackColor = true;
+            // 
+            // btn_home
+            // 
+            this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_home.FlatAppearance.BorderSize = 0;
+            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_home.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.ForeColor = System.Drawing.Color.Black;
+            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_home.ImageKey = "home.png";
+            this.btn_home.ImageList = this.imageList1;
+            this.btn_home.Location = new System.Drawing.Point(0, 0);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Size = new System.Drawing.Size(472, 76);
+            this.btn_home.TabIndex = 1;
+            this.btn_home.Text = "Home";
+            this.btn_home.UseVisualStyleBackColor = true;
             // 
             // order
             // 
@@ -496,99 +341,196 @@ namespace SmileSunshineToy
             this.order.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.order.ForeColor = System.Drawing.Color.Black;
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.order.Location = new System.Drawing.Point(0, 85);
+            this.order.ImageKey = "order.png";
+            this.order.ImageList = this.imageList1;
+            this.order.Location = new System.Drawing.Point(0, 76);
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(472, 87);
             this.order.TabIndex = 2;
             this.order.Text = "Sale Order";
             this.order.UseVisualStyleBackColor = true;
             // 
-            // Home
+            // logout
             // 
-            this.Home.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Home.FlatAppearance.BorderSize = 0;
-            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Home.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home.ForeColor = System.Drawing.Color.Black;
-            this.Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Home.Location = new System.Drawing.Point(0, 0);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(472, 85);
-            this.Home.TabIndex = 1;
-            this.Home.Text = "Home";
-            this.Home.UseVisualStyleBackColor = true;
+            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.ForeColor = System.Drawing.Color.Black;
+            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.Location = new System.Drawing.Point(0, 949);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(472, 81);
+            this.logout.TabIndex = 4;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            // 
+            // btn_rd
+            // 
+            this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_rd.FlatAppearance.BorderSize = 0;
+            this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rd.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.ForeColor = System.Drawing.Color.Black;
+            this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_rd.ImageKey = "analysis.png";
+            this.btn_rd.ImageList = this.imageList1;
+            this.btn_rd.Location = new System.Drawing.Point(0, 163);
+            this.btn_rd.Name = "btn_rd";
+            this.btn_rd.Size = new System.Drawing.Size(472, 87);
+            this.btn_rd.TabIndex = 13;
+            this.btn_rd.Text = "R&&D";
+            this.btn_rd.UseVisualStyleBackColor = true;
+            // 
+            // btn_fin
+            // 
+            this.btn_fin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_fin.FlatAppearance.BorderSize = 0;
+            this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fin.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.ForeColor = System.Drawing.Color.Black;
+            this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_fin.ImageKey = "deposit.png";
+            this.btn_fin.ImageList = this.imageList1;
+            this.btn_fin.Location = new System.Drawing.Point(0, 250);
+            this.btn_fin.Name = "btn_fin";
+            this.btn_fin.Size = new System.Drawing.Size(472, 87);
+            this.btn_fin.TabIndex = 15;
+            this.btn_fin.Text = "Financial";
+            this.btn_fin.UseVisualStyleBackColor = true;
+            // 
+            // btn_prod
+            // 
+            this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_prod.FlatAppearance.BorderSize = 0;
+            this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prod.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.ForeColor = System.Drawing.Color.Black;
+            this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_prod.ImageKey = "production-line.png";
+            this.btn_prod.ImageList = this.imageList1;
+            this.btn_prod.Location = new System.Drawing.Point(0, 337);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(472, 87);
+            this.btn_prod.TabIndex = 17;
+            this.btn_prod.Text = "Production";
+            this.btn_prod.UseVisualStyleBackColor = true;
+            // 
+            // btn_log
+            // 
+            this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_log.FlatAppearance.BorderSize = 0;
+            this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_log.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.ForeColor = System.Drawing.Color.Black;
+            this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_log.ImageKey = "delivery-truck.png";
+            this.btn_log.ImageList = this.imageList1;
+            this.btn_log.Location = new System.Drawing.Point(0, 424);
+            this.btn_log.Name = "btn_log";
+            this.btn_log.Size = new System.Drawing.Size(472, 87);
+            this.btn_log.TabIndex = 18;
+            this.btn_log.Text = "Logistics";
+            this.btn_log.UseVisualStyleBackColor = true;
+            // 
+            // btn_proc
+            // 
+            this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_proc.FlatAppearance.BorderSize = 0;
+            this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_proc.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.ForeColor = System.Drawing.Color.Black;
+            this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_proc.ImageKey = "procurement.png";
+            this.btn_proc.ImageList = this.imageList1;
+            this.btn_proc.Location = new System.Drawing.Point(0, 511);
+            this.btn_proc.Name = "btn_proc";
+            this.btn_proc.Size = new System.Drawing.Size(472, 87);
+            this.btn_proc.TabIndex = 19;
+            this.btn_proc.Text = "Procurement";
+            this.btn_proc.UseVisualStyleBackColor = true;
+            // 
+            // btn_person
+            // 
+            this.btn_person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_person.FlatAppearance.BorderSize = 0;
+            this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_person.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.ForeColor = System.Drawing.Color.Black;
+            this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_person.ImageKey = "customer.png";
+            this.btn_person.ImageList = this.imageList1;
+            this.btn_person.Location = new System.Drawing.Point(0, 598);
+            this.btn_person.Name = "btn_person";
+            this.btn_person.Size = new System.Drawing.Size(472, 87);
+            this.btn_person.TabIndex = 20;
+            this.btn_person.Text = "Personnel information";
+            this.btn_person.UseVisualStyleBackColor = true;
+            // 
+            // btn_inv
+            // 
+            this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_inv.FlatAppearance.BorderSize = 0;
+            this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.ForeColor = System.Drawing.Color.Black;
+            this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inv.ImageKey = "product-management.png";
+            this.btn_inv.ImageList = this.imageList1;
+            this.btn_inv.Location = new System.Drawing.Point(0, 685);
+            this.btn_inv.Name = "btn_inv";
+            this.btn_inv.Size = new System.Drawing.Size(472, 87);
+            this.btn_inv.TabIndex = 26;
+            this.btn_inv.Text = "Inventory";
+            this.btn_inv.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Bisque;
-            this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.btn_inv);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.btn_person);
             this.panel1.Controls.Add(this.btn_proc);
             this.panel1.Controls.Add(this.btn_log);
             this.panel1.Controls.Add(this.btn_prod);
-            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.btn_fin);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.btn_rd);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.logout);
             this.panel1.Controls.Add(this.order);
-            this.panel1.Controls.Add(this.Home);
+            this.panel1.Controls.Add(this.btn_home);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 1170);
-            this.panel1.TabIndex = 37;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SmileSunshineToy.Properties.Resources.home;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.panel1.Size = new System.Drawing.Size(472, 1030);
+            this.panel1.TabIndex = 47;
             // 
             // FinPayOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1760, 1170);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.filterComboBox);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FinPayOverview";
             this.Text = "FinPayOverview";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -599,15 +541,8 @@ namespace SmileSunshineToy
         private testDataSetTableAdapters.productTableAdapter productTableAdapter;
         private System.Windows.Forms.ComboBox filterComboBox;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Button btn_inv;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button btn_material;
-        private System.Windows.Forms.Button btn_product;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
@@ -617,25 +552,26 @@ namespace SmileSunshineToy
         private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
         private testDataSet testDataSet;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Button btn_person;
-        private System.Windows.Forms.Button btn_proc;
-        private System.Windows.Forms.Button btn_log;
-        private System.Windows.Forms.Button btn_prod;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btn_fin;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button btn_rd;
-        private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_material;
+        private System.Windows.Forms.Button btn_product;
+        private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button order;
-        private System.Windows.Forms.Button Home;
+        private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.Button btn_rd;
+        private System.Windows.Forms.Button btn_fin;
+        private System.Windows.Forms.Button btn_prod;
+        private System.Windows.Forms.Button btn_log;
+        private System.Windows.Forms.Button btn_proc;
+        private System.Windows.Forms.Button btn_person;
+        private System.Windows.Forms.Button btn_inv;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -11,7 +11,7 @@
         public static string UserName { get; set; }
         public static UserRole Role { get; set; }
 
-        // Check if user has permission (Admin has all)
+        // Check if user has permission
         public static bool HasPermission(UserRole requiredRole)
         {
             return Role == UserRole.Admin || Role == requiredRole;

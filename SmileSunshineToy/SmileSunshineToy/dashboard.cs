@@ -128,7 +128,7 @@ namespace SmileSunshineToy
 
         private void btn_rd_Click(object sender, EventArgs e)
         {
-            new RDoverview().Show(); // 研发管理窗体
+            new RDdash().Show(); // 研发管理窗体
             this.Hide();
         }
 
@@ -153,8 +153,9 @@ namespace SmileSunshineToy
 
         private void btn_fin_Click_1(object sender, EventArgs e)
         {
-            FinPayOverview finPayOverview = new FinPayOverview();
-            FinPayOverview.Show();
+            FinPayOverview finPayForm = new FinPayOverview(); // 创建实例
+            finPayForm.Show(); // 调用实例方法
+            this.Hide(); ;
         }
     }
 }

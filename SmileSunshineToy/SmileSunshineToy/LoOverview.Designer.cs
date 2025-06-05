@@ -31,19 +31,27 @@ namespace SmileSunshineToy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoOverview));
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_person = new System.Windows.Forms.Button();
+            this.btn_inv = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btn_person = new System.Windows.Forms.Button();
             this.btn_proc = new System.Windows.Forms.Button();
             this.btn_log = new System.Windows.Forms.Button();
             this.btn_prod = new System.Windows.Forms.Button();
             this.btn_fin = new System.Windows.Forms.Button();
             this.btn_rd = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.order = new System.Windows.Forms.Button();
-            this.btn_inv = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btn_home = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
+            this.filterComboBox = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,28 +60,48 @@ namespace SmileSunshineToy
             this.stockQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new SmileSunshineToy.testDataSet();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.filterComboBox = new System.Windows.Forms.ComboBox();
-            this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel3
+            // btn_inv
             // 
-            this.panel3.BackColor = System.Drawing.Color.Bisque;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(472, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1409, 140);
-            this.panel3.TabIndex = 44;
+            this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_inv.FlatAppearance.BorderSize = 0;
+            this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.ForeColor = System.Drawing.Color.Black;
+            this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inv.ImageKey = "product-management.png";
+            this.btn_inv.ImageList = this.imageList1;
+            this.btn_inv.Location = new System.Drawing.Point(0, 685);
+            this.btn_inv.Name = "btn_inv";
+            this.btn_inv.Size = new System.Drawing.Size(472, 87);
+            this.btn_inv.TabIndex = 26;
+            this.btn_inv.Text = "Inventory";
+            this.btn_inv.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "profile-user.png");
+            this.imageList1.Images.SetKeyName(1, "user.png");
+            this.imageList1.Images.SetKeyName(2, "customer.png");
+            this.imageList1.Images.SetKeyName(3, "procurement.png");
+            this.imageList1.Images.SetKeyName(4, "delivery-truck.png");
+            this.imageList1.Images.SetKeyName(5, "production-line.png");
+            this.imageList1.Images.SetKeyName(6, "deposit.png");
+            this.imageList1.Images.SetKeyName(7, "analysis.png");
+            this.imageList1.Images.SetKeyName(8, "product-management.png");
+            this.imageList1.Images.SetKeyName(9, "order.png");
+            this.imageList1.Images.SetKeyName(10, "home.png");
             // 
             // btn_person
             // 
@@ -92,22 +120,6 @@ namespace SmileSunshineToy
             this.btn_person.TabIndex = 20;
             this.btn_person.Text = "Personnel information";
             this.btn_person.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "profile-user.png");
-            this.imageList1.Images.SetKeyName(1, "user.png");
-            this.imageList1.Images.SetKeyName(2, "customer.png");
-            this.imageList1.Images.SetKeyName(3, "procurement.png");
-            this.imageList1.Images.SetKeyName(4, "delivery-truck.png");
-            this.imageList1.Images.SetKeyName(5, "production-line.png");
-            this.imageList1.Images.SetKeyName(6, "deposit.png");
-            this.imageList1.Images.SetKeyName(7, "analysis.png");
-            this.imageList1.Images.SetKeyName(8, "product-management.png");
-            this.imageList1.Images.SetKeyName(9, "order.png");
-            this.imageList1.Images.SetKeyName(10, "home.png");
             // 
             // btn_proc
             // 
@@ -203,12 +215,27 @@ namespace SmileSunshineToy
             this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 1080);
+            this.logout.Location = new System.Drawing.Point(0, 940);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(472, 81);
             this.logout.TabIndex = 4;
             this.logout.Text = "Logout";
             this.logout.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.ImageKey = "profile-user.png";
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(1741, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 140);
+            this.button1.TabIndex = 27;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // order
             // 
@@ -227,42 +254,6 @@ namespace SmileSunshineToy
             this.order.Text = "Sale Order";
             this.order.UseVisualStyleBackColor = true;
             // 
-            // btn_inv
-            // 
-            this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_inv.FlatAppearance.BorderSize = 0;
-            this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_inv.ForeColor = System.Drawing.Color.Black;
-            this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inv.ImageKey = "product-management.png";
-            this.btn_inv.ImageList = this.imageList1;
-            this.btn_inv.Location = new System.Drawing.Point(0, 685);
-            this.btn_inv.Name = "btn_inv";
-            this.btn_inv.Size = new System.Drawing.Size(472, 87);
-            this.btn_inv.TabIndex = 26;
-            this.btn_inv.Text = "Inventory";
-            this.btn_inv.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Bisque;
-            this.panel1.Controls.Add(this.btn_inv);
-            this.panel1.Controls.Add(this.btn_person);
-            this.panel1.Controls.Add(this.btn_proc);
-            this.panel1.Controls.Add(this.btn_log);
-            this.panel1.Controls.Add(this.btn_prod);
-            this.panel1.Controls.Add(this.btn_fin);
-            this.panel1.Controls.Add(this.btn_rd);
-            this.panel1.Controls.Add(this.logout);
-            this.panel1.Controls.Add(this.order);
-            this.panel1.Controls.Add(this.btn_home);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 1161);
-            this.panel1.TabIndex = 45;
-            // 
             // btn_home
             // 
             this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
@@ -280,6 +271,91 @@ namespace SmileSunshineToy
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Bisque;
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1881, 140);
+            this.panel4.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Bisque;
+            this.panel1.Controls.Add(this.btn_inv);
+            this.panel1.Controls.Add(this.btn_person);
+            this.panel1.Controls.Add(this.btn_proc);
+            this.panel1.Controls.Add(this.btn_log);
+            this.panel1.Controls.Add(this.btn_prod);
+            this.panel1.Controls.Add(this.btn_fin);
+            this.panel1.Controls.Add(this.btn_rd);
+            this.panel1.Controls.Add(this.logout);
+            this.panel1.Controls.Add(this.order);
+            this.panel1.Controls.Add(this.btn_home);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 140);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(472, 1021);
+            this.panel1.TabIndex = 58;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Bisque;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1881, 140);
+            this.panel2.TabIndex = 57;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // filterComboBox
+            // 
+            this.filterComboBox.FormattingEnabled = true;
+            this.filterComboBox.Location = new System.Drawing.Point(1396, 208);
+            this.filterComboBox.Name = "filterComboBox";
+            this.filterComboBox.Size = new System.Drawing.Size(130, 26);
+            this.filterComboBox.TabIndex = 56;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(971, 208);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(431, 28);
+            this.txtSearch.TabIndex = 55;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(1278, 308);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(124, 73);
+            this.btnCancel.TabIndex = 54;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(1111, 308);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(124, 73);
+            this.btnSave.TabIndex = 53;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(779, 308);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(124, 73);
+            this.btnAdd.TabIndex = 51;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
@@ -292,12 +368,12 @@ namespace SmileSunshineToy
             this.priceDataGridViewTextBoxColumn,
             this.stockQuantityDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(572, 435);
+            this.dataGridView1.Location = new System.Drawing.Point(753, 385);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1217, 642);
-            this.dataGridView1.TabIndex = 36;
+            this.dataGridView1.Size = new System.Drawing.Size(1022, 578);
+            this.dataGridView1.TabIndex = 49;
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -349,67 +425,21 @@ namespace SmileSunshineToy
             this.testDataSet.DataSetName = "testDataSet";
             this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(1292, 349);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(124, 73);
-            this.btnCancel.TabIndex = 41;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(1125, 349);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(124, 73);
-            this.btnSave.TabIndex = 40;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(965, 349);
+            this.btnDelete.Location = new System.Drawing.Point(951, 308);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(124, 73);
-            this.btnDelete.TabIndex = 39;
+            this.btnDelete.TabIndex = 52;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(793, 349);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(124, 73);
-            this.btnAdd.TabIndex = 38;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(985, 238);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(431, 28);
-            this.txtSearch.TabIndex = 42;
-            // 
-            // filterComboBox
-            // 
-            this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(1410, 238);
-            this.filterComboBox.Name = "filterComboBox";
-            this.filterComboBox.Size = new System.Drawing.Size(130, 26);
-            this.filterComboBox.TabIndex = 43;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(855, 233);
+            this.btnSearch.Location = new System.Drawing.Point(841, 204);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(134, 33);
-            this.btnSearch.TabIndex = 37;
+            this.btnSearch.TabIndex = 50;
             this.btnSearch.Text = "search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
@@ -419,20 +449,22 @@ namespace SmileSunshineToy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1881, 1161);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.filterComboBox);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.filterComboBox);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoOverview";
             this.Text = "LoOverview";
+            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
@@ -443,19 +475,27 @@ namespace SmileSunshineToy
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btn_person;
+        private System.Windows.Forms.Button btn_inv;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btn_person;
         private System.Windows.Forms.Button btn_proc;
         private System.Windows.Forms.Button btn_log;
         private System.Windows.Forms.Button btn_prod;
         private System.Windows.Forms.Button btn_fin;
         private System.Windows.Forms.Button btn_rd;
         private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button order;
-        private System.Windows.Forms.Button btn_inv;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private testDataSetTableAdapters.productTableAdapter productTableAdapter;
+        private System.Windows.Forms.ComboBox filterComboBox;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -464,13 +504,7 @@ namespace SmileSunshineToy
         private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
         private testDataSet testDataSet;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ComboBox filterComboBox;
-        private testDataSetTableAdapters.productTableAdapter productTableAdapter;
         private System.Windows.Forms.Button btnSearch;
     }
 }
