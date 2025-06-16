@@ -11,12 +11,47 @@ using MySql.Data.MySqlClient;
 
 namespace SmileSunshineToy
 {
-    public partial class ProdPlanOverview : Form
+    public partial class ProdPlanOverview : DataGridViewForm
     {
-        public ProdPlanOverview()
+        public ProdPlanOverview(): base()
         {
             InitializeComponent();
+
+            base.TableName = "productionplan";
+            base.PrimaryKey = "planID";
+            base.DataGridView = dataGridView1;
+            base.FilterComboBox = filterComboBox;
+            base.SearchTextBox = txtSearch;
+            base.AddButton = btnAdd;
+            base.DeleteButton = btnDelete;
+            base.SaveButton = btnSave;
+            base.CancelButton = btnCancel;
+            base.SearchButton = btnSearch;
+
+
+            filterComboBox.Items.Add("planID");
+            filterComboBox.Items.Add("startDate");
+            filterComboBox.Items.Add("EndDate");
+            filterComboBox.SelectedIndex = 0;
+
+            LoadData();
+
         }
+
+        //public override void SaveChanges()
+        //{
+        //    if (dataGridView1.SelectedRows.Count == 1)
+        //    {
+        //        DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+        //        selectedRow.Cells["PlanID"].Value = txtPlanID.Text;
+        //        selectedRow.Cells["StartDate"].Value = txtStartDate.Text;
+        //        selectedRow.Cells["EndDate"].Value = txtEndDate.Text;
+        //        selectedRow.Cells["Status"].Value = txtStatus.Text;
+        //        selectedRow.Cells["order_id"].Value = orderID.Text;
+        //    }
+        //    base.SaveChanges();
+        //}
 
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
@@ -32,26 +67,7 @@ namespace SmileSunshineToy
 
         private void ProdPlanOverview_Load(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=test;Uid=root;Pwd=;";
-            string query = "SELECT * FROM productionplan";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-
-                    DataTable dataTable = new DataTable("productionplan");
-
-                    adapter.Fill(dataTable);
-
-                    dataGridView1.DataSource = dataTable;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("load data fail: " + ex.Message);
-                }
-            }
         }
 
         private void btn_inv_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
@@ -70,6 +86,68 @@ namespace SmileSunshineToy
         private void btn_sub2_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
         private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
 
+        private void addBtn_Click(object sender, EventArgs e) => AddRecord();
+        private void deleteBtn_Click(object sender, EventArgs e) => DeleteRecord();
+        private void saveBtn_Click(object sender, EventArgs e) => SaveChanges();
+        private void cancelBtn_Click(object sender, EventArgs e) => CancelChanges();
+        private void searchBtn_Click(object sender, EventArgs e) => SearchRecords();
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                string orderId = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
+                txtPlanID.Text = selectedRow.Cells["PlanID"].Value?.ToString() ?? "";
+                txtStartDate.Text = selectedRow.Cells["StartDate"].Value?.ToString() ?? "";
+                txtEndDate.Text = selectedRow.Cells["EndDate"].Value?.ToString() ?? "";
+                txtStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
+                orderID.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
+                productID.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
+                LoadOrderGridView(orderId);
+            }
+            else
+            {
+                txtPlanID.Text = "";
+                txtStartDate.Text = "";
+                txtEndDate.Text = "";
+                txtStatus.Text = "";
+                orderGridView.DataSource = null;
+            }
+        }
+
+        private void LoadOrderGridView(string orderId)
+        {
+            try
+            {
+                string query = "SELECT * FROM `order`";
+                if (!string.IsNullOrEmpty(orderId))
+                {
+                    query += $" WHERE OrderID = @OrderID";
+                }
+
+                using (MySqlConnection conn = new MySqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    if (!string.IsNullOrEmpty(orderId))
+                    {
+                        cmd.Parameters.AddWithValue("@OrderID", orderId);
+                    }
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    orderGridView.DataSource = dt; // 绑定到 orderGridView
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"load order fail: {ex.Message}", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
     }
 }
