@@ -342,18 +342,27 @@ namespace SmileSunshineToy
             // 
             this.filterComboBox.FormattingEnabled = true;
 
+            this.filterComboBox.Location = new System.Drawing.Point(1396, 231);
+
+
             this.filterComboBox.Location = new System.Drawing.Point(1377, 214);
 
             this.filterComboBox.Location = new System.Drawing.Point(1396, 231);
+
 
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(130, 28);
             this.filterComboBox.TabIndex = 56;
             // 
             // txtSearch
+
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(971, 231);
+
           
             this.txtSearch.Location = new System.Drawing.Point(952, 214);
             this.txtSearch.Location = new System.Drawing.Point(971, 231);
+
 
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(431, 26);
@@ -724,6 +733,7 @@ namespace SmileSunshineToy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1881, 1106);
+<
 
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -749,6 +759,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.ShipID);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LogID);
+
 
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
