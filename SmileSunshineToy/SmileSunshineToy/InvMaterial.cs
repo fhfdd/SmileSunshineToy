@@ -17,7 +17,7 @@ namespace SmileSunshineToy
             base.AddButton = btnAdd;
             base.DeleteButton = btnDelete;
             base.SaveButton = btnSave;
-            base.CancelButton = btnSave;
+            base.CancelButton = btnCancel;
             base.SearchButton = btnSearch;
 
 

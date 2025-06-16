@@ -41,12 +41,6 @@ namespace SmileSunshineToy
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new SmileSunshineToy.testDataSet();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -65,13 +59,14 @@ namespace SmileSunshineToy
             this.logout = new System.Windows.Forms.Button();
             this.order = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -99,7 +94,7 @@ namespace SmileSunshineToy
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageKey = "profile-user.png";
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1710, 0);
+            this.button1.Location = new System.Drawing.Point(1946, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 140);
             this.button1.TabIndex = 27;
@@ -113,7 +108,7 @@ namespace SmileSunshineToy
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1850, 140);
+            this.panel4.Size = new System.Drawing.Size(2086, 140);
             this.panel4.TabIndex = 17;
             // 
             // panel2
@@ -123,7 +118,7 @@ namespace SmileSunshineToy
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1850, 140);
+            this.panel2.Size = new System.Drawing.Size(2086, 140);
             this.panel2.TabIndex = 57;
             // 
             // productTableAdapter
@@ -172,65 +167,6 @@ namespace SmileSunshineToy
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.stockQuantityDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(753, 385);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1022, 578);
-            this.dataGridView1.TabIndex = 49;
-            // 
-            // productIDDataGridViewTextBoxColumn
-            // 
-            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-            this.productIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // stockQuantityDataGridViewTextBoxColumn
-            // 
-            this.stockQuantityDataGridViewTextBoxColumn.DataPropertyName = "StockQuantity";
-            this.stockQuantityDataGridViewTextBoxColumn.HeaderText = "StockQuantity";
-            this.stockQuantityDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.stockQuantityDataGridViewTextBoxColumn.Name = "stockQuantityDataGridViewTextBoxColumn";
-            this.stockQuantityDataGridViewTextBoxColumn.Width = 150;
-            // 
             // productBindingSource
             // 
             this.productBindingSource.DataMember = "product";
@@ -272,6 +208,7 @@ namespace SmileSunshineToy
             // 
             // btn_material
             // 
+            this.btn_material.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_material.FlatAppearance.BorderSize = 0;
             this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -283,7 +220,8 @@ namespace SmileSunshineToy
             this.btn_material.Size = new System.Drawing.Size(262, 78);
             this.btn_material.TabIndex = 2;
             this.btn_material.Text = "Inbound";
-            this.btn_material.UseVisualStyleBackColor = true;
+            this.btn_material.UseVisualStyleBackColor = false;
+            this.btn_material.Click += new System.EventHandler(this.btn_sub1_Click);
             // 
             // btn_product
             // 
@@ -299,6 +237,7 @@ namespace SmileSunshineToy
             this.btn_product.TabIndex = 1;
             this.btn_product.Text = "Product Plan";
             this.btn_product.UseVisualStyleBackColor = true;
+            this.btn_product.Click += new System.EventHandler(this.btn_sub2_Click);
             // 
             // panel1
             // 
@@ -394,6 +333,7 @@ namespace SmileSunshineToy
             // 
             // btn_prod
             // 
+            this.btn_prod.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_prod.FlatAppearance.BorderSize = 0;
             this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -407,7 +347,7 @@ namespace SmileSunshineToy
             this.btn_prod.Size = new System.Drawing.Size(472, 87);
             this.btn_prod.TabIndex = 17;
             this.btn_prod.Text = "Production";
-            this.btn_prod.UseVisualStyleBackColor = true;
+            this.btn_prod.UseVisualStyleBackColor = false;
             this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
             // 
             // btn_fin
@@ -499,11 +439,30 @@ namespace SmileSunshineToy
             this.btn_home.UseVisualStyleBackColor = true;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.Location = new System.Drawing.Point(749, 477);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1262, 528);
+            this.dataGridView1.TabIndex = 61;
+            // 
             // ProdInOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1850, 1095);
+            this.ClientSize = new System.Drawing.Size(2086, 1095);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -512,7 +471,6 @@ namespace SmileSunshineToy
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -522,11 +480,11 @@ namespace SmileSunshineToy
             this.Load += new System.EventHandler(this.ProdInOverview_Load);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,12 +501,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
         private testDataSet testDataSet;
         private System.Windows.Forms.Button btnDelete;
@@ -567,5 +519,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Button order;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
