@@ -56,22 +56,39 @@ namespace SmileSunshineToy
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productionplanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new SmileSunshineToy.testDataSet();
+            this.productionplanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.productionplanTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productionplanTableAdapter();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtStartDate = new System.Windows.Forms.DateTimePicker();
+            this.txtStatus = new System.Windows.Forms.ComboBox();
+            this.txtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.productionplanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtPlanID = new System.Windows.Forms.TextBox();
+            this.orderID = new System.Windows.Forms.ComboBox();
+            this.orderTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.orderTableAdapter();
+            this.orderGridView = new System.Windows.Forms.DataGridView();
+            this.productGridView = new System.Windows.Forms.DataGridView();
+            this.productID = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_inv
@@ -79,7 +96,7 @@ namespace SmileSunshineToy
             this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_inv.FlatAppearance.BorderSize = 0;
             this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_inv.ForeColor = System.Drawing.Color.Black;
             this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_inv.ImageKey = "product-management.png";
@@ -114,7 +131,7 @@ namespace SmileSunshineToy
             this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_person.FlatAppearance.BorderSize = 0;
             this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_person.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_person.ForeColor = System.Drawing.Color.Black;
             this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_person.ImageKey = "customer.png";
@@ -132,7 +149,7 @@ namespace SmileSunshineToy
             this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_proc.FlatAppearance.BorderSize = 0;
             this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_proc.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_proc.ForeColor = System.Drawing.Color.Black;
             this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_proc.ImageKey = "procurement.png";
@@ -150,7 +167,7 @@ namespace SmileSunshineToy
             this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_log.FlatAppearance.BorderSize = 0;
             this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_log.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_log.ForeColor = System.Drawing.Color.Black;
             this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_log.ImageKey = "delivery-truck.png";
@@ -165,10 +182,11 @@ namespace SmileSunshineToy
             // 
             // btn_prod
             // 
+            this.btn_prod.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_prod.FlatAppearance.BorderSize = 0;
             this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prod.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prod.ForeColor = System.Drawing.Color.Black;
             this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_prod.ImageKey = "production-line.png";
@@ -178,7 +196,7 @@ namespace SmileSunshineToy
             this.btn_prod.Size = new System.Drawing.Size(472, 87);
             this.btn_prod.TabIndex = 17;
             this.btn_prod.Text = "Production";
-            this.btn_prod.UseVisualStyleBackColor = true;
+            this.btn_prod.UseVisualStyleBackColor = false;
             this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
             // 
             // btn_fin
@@ -187,7 +205,7 @@ namespace SmileSunshineToy
             this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_fin.FlatAppearance.BorderSize = 0;
             this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fin.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fin.ForeColor = System.Drawing.Color.Black;
             this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fin.ImageKey = "deposit.png";
@@ -205,7 +223,7 @@ namespace SmileSunshineToy
             this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_rd.FlatAppearance.BorderSize = 0;
             this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rd.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_rd.ForeColor = System.Drawing.Color.Black;
             this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_rd.ImageKey = "analysis.png";
@@ -223,10 +241,10 @@ namespace SmileSunshineToy
             this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.logout.FlatAppearance.BorderSize = 0;
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 880);
+            this.logout.Location = new System.Drawing.Point(0, 1135);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(472, 81);
             this.logout.TabIndex = 4;
@@ -239,15 +257,16 @@ namespace SmileSunshineToy
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageKey = "profile-user.png";
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1772, 0);
+            this.button1.Location = new System.Drawing.Point(2142, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 140);
             this.button1.TabIndex = 27;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_user_Click);
             // 
             // panel3
             // 
@@ -257,7 +276,7 @@ namespace SmileSunshineToy
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(472, 140);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(262, 961);
+            this.panel3.Size = new System.Drawing.Size(262, 1216);
             this.panel3.TabIndex = 59;
             // 
             // btn_material
@@ -265,7 +284,7 @@ namespace SmileSunshineToy
             this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_material.FlatAppearance.BorderSize = 0;
             this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_material.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_material.ForeColor = System.Drawing.Color.Black;
             this.btn_material.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_material.Location = new System.Drawing.Point(0, 76);
@@ -278,10 +297,11 @@ namespace SmileSunshineToy
             // 
             // btn_product
             // 
+            this.btn_product.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_product.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_product.FlatAppearance.BorderSize = 0;
             this.btn_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_product.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_product.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_product.ForeColor = System.Drawing.Color.Black;
             this.btn_product.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_product.Location = new System.Drawing.Point(0, 0);
@@ -289,7 +309,7 @@ namespace SmileSunshineToy
             this.btn_product.Size = new System.Drawing.Size(262, 76);
             this.btn_product.TabIndex = 1;
             this.btn_product.Text = "Product Plan";
-            this.btn_product.UseVisualStyleBackColor = true;
+            this.btn_product.UseVisualStyleBackColor = false;
             this.btn_product.Click += new System.EventHandler(this.btn_sub1_Click);
             // 
             // order
@@ -297,7 +317,7 @@ namespace SmileSunshineToy
             this.order.Dock = System.Windows.Forms.DockStyle.Top;
             this.order.FlatAppearance.BorderSize = 0;
             this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.order.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.order.ForeColor = System.Drawing.Color.Black;
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.order.ImageKey = "order.png";
@@ -315,7 +335,7 @@ namespace SmileSunshineToy
             this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_home.FlatAppearance.BorderSize = 0;
             this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.ForeColor = System.Drawing.Color.Black;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.ImageKey = "home.png";
@@ -335,7 +355,7 @@ namespace SmileSunshineToy
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1912, 140);
+            this.panel4.Size = new System.Drawing.Size(2282, 140);
             this.panel4.TabIndex = 17;
             // 
             // panel1
@@ -354,7 +374,7 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 961);
+            this.panel1.Size = new System.Drawing.Size(472, 1216);
             this.panel1.TabIndex = 58;
             // 
             // panel2
@@ -364,7 +384,7 @@ namespace SmileSunshineToy
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1912, 140);
+            this.panel2.Size = new System.Drawing.Size(2282, 140);
             this.panel2.TabIndex = 57;
             // 
             // productTableAdapter
@@ -373,138 +393,262 @@ namespace SmileSunshineToy
             // 
             // filterComboBox
             // 
+            this.filterComboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(1396, 208);
+            this.filterComboBox.Location = new System.Drawing.Point(1574, 194);
             this.filterComboBox.Name = "filterComboBox";
-            this.filterComboBox.Size = new System.Drawing.Size(130, 26);
+            this.filterComboBox.Size = new System.Drawing.Size(254, 59);
             this.filterComboBox.TabIndex = 56;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(971, 208);
+            this.txtSearch.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSearch.Location = new System.Drawing.Point(1083, 190);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(431, 28);
+            this.txtSearch.Size = new System.Drawing.Size(494, 58);
             this.txtSearch.TabIndex = 55;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(1278, 308);
+            this.btnCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(1892, 693);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(124, 73);
             this.btnCancel.TabIndex = 54;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1111, 308);
+            this.btnSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(1725, 693);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(124, 73);
             this.btnSave.TabIndex = 53;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(779, 308);
+            this.btnAdd.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(1393, 693);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(124, 73);
             this.btnAdd.TabIndex = 51;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.stockQuantityDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(753, 385);
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.Location = new System.Drawing.Point(791, 784);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1022, 578);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1262, 528);
             this.dataGridView1.TabIndex = 49;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // productIDDataGridViewTextBoxColumn
+            // productionplanBindingSource1
             // 
-            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-            this.productIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // stockQuantityDataGridViewTextBoxColumn
-            // 
-            this.stockQuantityDataGridViewTextBoxColumn.DataPropertyName = "StockQuantity";
-            this.stockQuantityDataGridViewTextBoxColumn.HeaderText = "StockQuantity";
-            this.stockQuantityDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.stockQuantityDataGridViewTextBoxColumn.Name = "stockQuantityDataGridViewTextBoxColumn";
-            this.stockQuantityDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "product";
-            this.productBindingSource.DataSource = this.testDataSet;
+            this.productionplanBindingSource1.DataMember = "productionplan";
+            this.productionplanBindingSource1.DataSource = this.testDataSet;
             // 
             // testDataSet
             // 
             this.testDataSet.DataSetName = "testDataSet";
             this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // productionplanBindingSource
+            // 
+            this.productionplanBindingSource.DataMember = "productionplan";
+            this.productionplanBindingSource.DataSource = this.testDataSet;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "product";
+            this.productBindingSource.DataSource = this.testDataSet;
+            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(951, 308);
+            this.btnDelete.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(1565, 693);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(124, 73);
             this.btnDelete.TabIndex = 52;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(841, 204);
+            this.btnSearch.Font = new System.Drawing.Font("Arial Unicode MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(849, 190);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(134, 33);
+            this.btnSearch.Size = new System.Drawing.Size(237, 58);
             this.btnSearch.TabIndex = 50;
             this.btnSearch.Text = "search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // productionplanTableAdapter
+            // 
+            this.productionplanTableAdapter.ClearBeforeFill = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(807, 499);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(240, 20);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Order Delivery Date: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(807, 383);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 23);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "Order Signing Date: ";
+            // 
+            // txtStartDate
+            // 
+            this.txtStartDate.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStartDate.Font = new System.Drawing.Font("Arial Unicode MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStartDate.Location = new System.Drawing.Point(811, 416);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(503, 66);
+            this.txtStartDate.TabIndex = 60;
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Font = new System.Drawing.Font("Arial Unicode MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.FormattingEnabled = true;
+            this.txtStatus.Location = new System.Drawing.Point(811, 621);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(200, 56);
+            this.txtStatus.TabIndex = 64;
+            this.txtStatus.Text = "Stutas";
+            // 
+            // txtEndDate
+            // 
+            this.txtEndDate.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndDate.Font = new System.Drawing.Font("Arial Unicode MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndDate.Location = new System.Drawing.Point(811, 539);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(503, 66);
+            this.txtEndDate.TabIndex = 65;
+            // 
+            // productionplanBindingSource2
+            // 
+            this.productionplanBindingSource2.DataMember = "productionplan";
+            this.productionplanBindingSource2.DataSource = this.testDataSet;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataMember = "order";
+            this.orderBindingSource.DataSource = this.testDataSet;
+            // 
+            // txtPlanID
+            // 
+            this.txtPlanID.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPlanID.Location = new System.Drawing.Point(811, 315);
+            this.txtPlanID.Name = "txtPlanID";
+            this.txtPlanID.Size = new System.Drawing.Size(494, 58);
+            this.txtPlanID.TabIndex = 67;
+            // 
+            // orderID
+            // 
+            this.orderID.Font = new System.Drawing.Font("Arial Unicode MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderID.FormattingEnabled = true;
+            this.orderID.Location = new System.Drawing.Point(1516, 315);
+            this.orderID.Name = "orderID";
+            this.orderID.Size = new System.Drawing.Size(200, 56);
+            this.orderID.TabIndex = 68;
+            this.orderID.Text = "orderID";
+            // 
+            // orderTableAdapter
+            // 
+            this.orderTableAdapter.ClearBeforeFill = true;
+            // 
+            // orderGridView
+            // 
+            this.orderGridView.AllowUserToOrderColumns = true;
+            this.orderGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.orderGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.orderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.orderGridView.Location = new System.Drawing.Point(1516, 392);
+            this.orderGridView.MultiSelect = false;
+            this.orderGridView.Name = "orderGridView";
+            this.orderGridView.ReadOnly = true;
+            this.orderGridView.RowHeadersVisible = false;
+            this.orderGridView.RowHeadersWidth = 62;
+            this.orderGridView.RowTemplate.Height = 30;
+            this.orderGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.orderGridView.Size = new System.Drawing.Size(677, 90);
+            this.orderGridView.TabIndex = 69;
+            // 
+            // productGridView
+            // 
+            this.productGridView.AllowUserToOrderColumns = true;
+            this.productGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.productGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.productGridView.Location = new System.Drawing.Point(1516, 574);
+            this.productGridView.MultiSelect = false;
+            this.productGridView.Name = "productGridView";
+            this.productGridView.ReadOnly = true;
+            this.productGridView.RowHeadersVisible = false;
+            this.productGridView.RowHeadersWidth = 62;
+            this.productGridView.RowTemplate.Height = 30;
+            this.productGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productGridView.Size = new System.Drawing.Size(677, 90);
+            this.productGridView.TabIndex = 71;
+            // 
+            // productID
+            // 
+            this.productID.Font = new System.Drawing.Font("Arial Unicode MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productID.FormattingEnabled = true;
+            this.productID.Location = new System.Drawing.Point(1516, 497);
+            this.productID.Name = "productID";
+            this.productID.Size = new System.Drawing.Size(200, 56);
+            this.productID.TabIndex = 70;
+            this.productID.Text = "productID";
             // 
             // ProdPlanOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1912, 1101);
+            this.ClientSize = new System.Drawing.Size(2282, 1356);
+            this.Controls.Add(this.productGridView);
+            this.Controls.Add(this.productID);
+            this.Controls.Add(this.orderGridView);
+            this.Controls.Add(this.orderID);
+            this.Controls.Add(this.txtPlanID);
+            this.Controls.Add(this.txtEndDate);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtStartDate);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -527,8 +671,14 @@ namespace SmileSunshineToy
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,14 +711,25 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
         private testDataSet testDataSet;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.BindingSource productionplanBindingSource;
+        private testDataSetTableAdapters.productionplanTableAdapter productionplanTableAdapter;
+        private System.Windows.Forms.BindingSource productionplanBindingSource1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker txtStartDate;
+        private System.Windows.Forms.ComboBox txtStatus;
+        private System.Windows.Forms.DateTimePicker txtEndDate;
+        private System.Windows.Forms.BindingSource productionplanBindingSource2;
+        private System.Windows.Forms.TextBox txtPlanID;
+        private System.Windows.Forms.ComboBox orderID;
+        private System.Windows.Forms.BindingSource orderBindingSource;
+        private testDataSetTableAdapters.orderTableAdapter orderTableAdapter;
+        private System.Windows.Forms.DataGridView orderGridView;
+        private System.Windows.Forms.DataGridView productGridView;
+        private System.Windows.Forms.ComboBox productID;
     }
 }
