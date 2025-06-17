@@ -47,5 +47,10 @@ namespace SmileSunshineToy
             ClearTextBoxes(this); // Clear all TextBoxes on the form
             dtpDeliveryDate.Value = DateTime.Now; // Reset the DateTimePicker to the current date
         }
+
+        private void Status_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
