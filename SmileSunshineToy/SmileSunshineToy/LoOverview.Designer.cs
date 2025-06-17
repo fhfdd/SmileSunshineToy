@@ -52,6 +52,9 @@ namespace SmileSunshineToy
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new SmileSunshineToy.testDataSet();
             this.btnSearch = new System.Windows.Forms.Button();
+
+       
+
             this.LogID = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -76,6 +79,7 @@ namespace SmileSunshineToy
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -369,6 +373,7 @@ namespace SmileSunshineToy
             this.txtSearch.TabIndex = 55;
             // 
 
+
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(1278, 342);
@@ -454,7 +459,7 @@ namespace SmileSunshineToy
             this.stockQuantityDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.stockQuantityDataGridViewTextBoxColumn.Name = "stockQuantityDataGridViewTextBoxColumn";
             this.stockQuantityDataGridViewTextBoxColumn.Width = 150;
-  
+
             // productBindingSource
             // 
             this.productBindingSource.DataMember = "product";
@@ -465,6 +470,7 @@ namespace SmileSunshineToy
             this.testDataSet.DataSetName = "testDataSet";
             this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+
 
             // btnSearch
             // 
@@ -479,6 +485,7 @@ namespace SmileSunshineToy
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
+
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(841, 227);
@@ -489,6 +496,14 @@ namespace SmileSunshineToy
             this.btnSearch.Text = "search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
+
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(571, 301);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 59;
+
             // LogID
             // 
             this.LogID.AutoSize = true;
@@ -524,10 +539,18 @@ namespace SmileSunshineToy
             this.ShipID.Size = new System.Drawing.Size(125, 25);
             this.ShipID.TabIndex = 61;
             this.ShipID.Text = "Shipment ID:";
+
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+
+            this.label1.Location = new System.Drawing.Point(502, 301);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "label1";
+
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(1493, 299);
             this.label1.Name = "label1";
@@ -726,6 +749,7 @@ namespace SmileSunshineToy
             this.button4.TabIndex = 82;
             this.button4.Text = "Clear";
             this.button4.UseVisualStyleBackColor = false;
+
             // 
             // LoOverview
             // 
@@ -733,7 +757,10 @@ namespace SmileSunshineToy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1881, 1106);
-<
+
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+
 
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -759,6 +786,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.ShipID);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LogID);
+
 
 
             this.Controls.Add(this.panel1);
@@ -804,6 +832,10 @@ namespace SmileSunshineToy
         private System.Windows.Forms.BindingSource productBindingSource;
         private testDataSet testDataSet;
         private System.Windows.Forms.Button btnSearch;
+
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.Label LogID;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
@@ -828,5 +860,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+
     }
 }
