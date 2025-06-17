@@ -17,7 +17,7 @@ namespace SmileSunshineToy
             base.AddButton = btnAdd;
             base.DeleteButton = btnDelete;
             base.SaveButton = btnSave;
-            base.CancelButton = btnSave;
+            base.CancelButton = btnCancel;
             base.SearchButton = btnSearch;
 
 
@@ -57,6 +57,11 @@ namespace SmileSunshineToy
         private void searchBtn_Click(object sender, EventArgs e) => SearchRecords();
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void order_Click(object sender, EventArgs e)
         {
 
         }

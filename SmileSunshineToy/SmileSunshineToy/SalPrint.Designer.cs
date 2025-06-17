@@ -230,7 +230,6 @@ namespace SmileSunshineToy
             this.Controls.Add(this.saleAllSearch);
             this.Controls.Add(this.saleSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "SalPrint";
             this.Text = "SalPrint";
             this.Load += new System.EventHandler(this.SalPrint_Load);

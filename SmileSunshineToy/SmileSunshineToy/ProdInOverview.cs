@@ -10,11 +10,30 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class ProdInOverview : Form
+    public partial class ProdInOverview : DataGridViewForm
     {
-        public ProdInOverview()
+        public ProdInOverview():base()
         {
             InitializeComponent();
+
+            base.TableName = "inbound";
+            base.PrimaryKey = "inboundID";
+            base.DataGridView = dataGridView1;
+            base.FilterComboBox = filterComboBox;
+            base.SearchTextBox = txtSearch;
+            base.AddButton = btnAdd;
+            base.DeleteButton = btnDelete;
+            base.SaveButton = btnSave;
+            base.CancelButton = btnCancel;
+            base.SearchButton = btnSearch;
+
+
+            filterComboBox.Items.Add("inboundID");
+            filterComboBox.Items.Add("startDate");
+            filterComboBox.Items.Add("EndDate");
+            filterComboBox.SelectedIndex = 0;
+
+            LoadData();
         }
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
@@ -39,8 +58,8 @@ namespace SmileSunshineToy
         private void btn_home_Click(object sender, EventArgs e) { this.Show(); this.Activate(); }
         private void btn_fin_Click_1(object sender, EventArgs e) { FinPayOverview finPayForm = new FinPayOverview(); finPayForm.Show(); this.Hide(); }
         private void btn_user_Click(object sender, EventArgs e) { new UserProfileForm().Show(); this.Hide(); }
-        private void btn_sub1_Click(object sender, EventArgs e) { new InvProduct().Show(); this.Hide(); }
-        private void btn_sub2_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
+        private void btn_sub1_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
+        private void btn_sub2_Click(object sender, EventArgs e) { new ProdPlanOverview().Show(); this.Hide(); }
         private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
     }
 }

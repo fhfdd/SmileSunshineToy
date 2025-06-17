@@ -41,12 +41,6 @@ namespace SmileSunshineToy
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new SmileSunshineToy.testDataSet();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -55,23 +49,24 @@ namespace SmileSunshineToy
             this.btn_material = new System.Windows.Forms.Button();
             this.btn_product = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logout = new System.Windows.Forms.Button();
-            this.btn_home = new System.Windows.Forms.Button();
-            this.order = new System.Windows.Forms.Button();
-            this.btn_rd = new System.Windows.Forms.Button();
-            this.btn_fin = new System.Windows.Forms.Button();
-            this.btn_prod = new System.Windows.Forms.Button();
-            this.btn_log = new System.Windows.Forms.Button();
-            this.btn_proc = new System.Windows.Forms.Button();
-            this.btn_person = new System.Windows.Forms.Button();
             this.btn_inv = new System.Windows.Forms.Button();
+            this.btn_person = new System.Windows.Forms.Button();
+            this.btn_proc = new System.Windows.Forms.Button();
+            this.btn_log = new System.Windows.Forms.Button();
+            this.btn_prod = new System.Windows.Forms.Button();
+            this.btn_fin = new System.Windows.Forms.Button();
+            this.btn_rd = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
+            this.order = new System.Windows.Forms.Button();
+            this.btn_home = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -95,15 +90,16 @@ namespace SmileSunshineToy
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageKey = "profile-user.png";
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1710, 0);
+            this.button1.Location = new System.Drawing.Point(1946, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 140);
             this.button1.TabIndex = 27;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_user_Click);
             // 
             // panel4
             // 
@@ -112,7 +108,7 @@ namespace SmileSunshineToy
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1850, 140);
+            this.panel4.Size = new System.Drawing.Size(2086, 140);
             this.panel4.TabIndex = 17;
             // 
             // panel2
@@ -122,7 +118,7 @@ namespace SmileSunshineToy
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1850, 140);
+            this.panel2.Size = new System.Drawing.Size(2086, 140);
             this.panel2.TabIndex = 57;
             // 
             // productTableAdapter
@@ -171,65 +167,6 @@ namespace SmileSunshineToy
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.stockQuantityDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(753, 385);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1022, 578);
-            this.dataGridView1.TabIndex = 49;
-            // 
-            // productIDDataGridViewTextBoxColumn
-            // 
-            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-            this.productIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // stockQuantityDataGridViewTextBoxColumn
-            // 
-            this.stockQuantityDataGridViewTextBoxColumn.DataPropertyName = "StockQuantity";
-            this.stockQuantityDataGridViewTextBoxColumn.HeaderText = "StockQuantity";
-            this.stockQuantityDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.stockQuantityDataGridViewTextBoxColumn.Name = "stockQuantityDataGridViewTextBoxColumn";
-            this.stockQuantityDataGridViewTextBoxColumn.Width = 150;
-            // 
             // productBindingSource
             // 
             this.productBindingSource.DataMember = "product";
@@ -271,10 +208,11 @@ namespace SmileSunshineToy
             // 
             // btn_material
             // 
+            this.btn_material.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_material.FlatAppearance.BorderSize = 0;
             this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_material.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_material.ForeColor = System.Drawing.Color.Black;
             this.btn_material.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_material.Location = new System.Drawing.Point(0, 76);
@@ -282,14 +220,15 @@ namespace SmileSunshineToy
             this.btn_material.Size = new System.Drawing.Size(262, 78);
             this.btn_material.TabIndex = 2;
             this.btn_material.Text = "Inbound";
-            this.btn_material.UseVisualStyleBackColor = true;
+            this.btn_material.UseVisualStyleBackColor = false;
+            this.btn_material.Click += new System.EventHandler(this.btn_sub1_Click);
             // 
             // btn_product
             // 
             this.btn_product.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_product.FlatAppearance.BorderSize = 0;
             this.btn_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_product.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_product.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_product.ForeColor = System.Drawing.Color.Black;
             this.btn_product.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_product.Location = new System.Drawing.Point(0, 0);
@@ -298,6 +237,7 @@ namespace SmileSunshineToy
             this.btn_product.TabIndex = 1;
             this.btn_product.Text = "Product Plan";
             this.btn_product.UseVisualStyleBackColor = true;
+            this.btn_product.Click += new System.EventHandler(this.btn_sub2_Click);
             // 
             // panel1
             // 
@@ -318,167 +258,12 @@ namespace SmileSunshineToy
             this.panel1.Size = new System.Drawing.Size(472, 955);
             this.panel1.TabIndex = 58;
             // 
-            // logout
-            // 
-            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logout.FlatAppearance.BorderSize = 0;
-            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.ForeColor = System.Drawing.Color.Black;
-            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 874);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(472, 81);
-            this.logout.TabIndex = 4;
-            this.logout.Text = "Logout";
-            this.logout.UseVisualStyleBackColor = true;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
-            // 
-            // btn_home
-            // 
-            this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_home.FlatAppearance.BorderSize = 0;
-            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.ForeColor = System.Drawing.Color.Black;
-            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.ImageKey = "home.png";
-            this.btn_home.ImageList = this.imageList1;
-            this.btn_home.Location = new System.Drawing.Point(0, 0);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(472, 76);
-            this.btn_home.TabIndex = 1;
-            this.btn_home.Text = "Home";
-            this.btn_home.UseVisualStyleBackColor = true;
-            // 
-            // order
-            // 
-            this.order.Dock = System.Windows.Forms.DockStyle.Top;
-            this.order.FlatAppearance.BorderSize = 0;
-            this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.order.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order.ForeColor = System.Drawing.Color.Black;
-            this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.order.ImageKey = "order.png";
-            this.order.ImageList = this.imageList1;
-            this.order.Location = new System.Drawing.Point(0, 76);
-            this.order.Name = "order";
-            this.order.Size = new System.Drawing.Size(472, 87);
-            this.order.TabIndex = 2;
-            this.order.Text = "Sale Order";
-            this.order.UseVisualStyleBackColor = true;
-            // 
-            // btn_rd
-            // 
-            this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_rd.FlatAppearance.BorderSize = 0;
-            this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rd.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rd.ForeColor = System.Drawing.Color.Black;
-            this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_rd.ImageKey = "analysis.png";
-            this.btn_rd.ImageList = this.imageList1;
-            this.btn_rd.Location = new System.Drawing.Point(0, 163);
-            this.btn_rd.Name = "btn_rd";
-            this.btn_rd.Size = new System.Drawing.Size(472, 87);
-            this.btn_rd.TabIndex = 13;
-            this.btn_rd.Text = "R&&D";
-            this.btn_rd.UseVisualStyleBackColor = true;
-            // 
-            // btn_fin
-            // 
-            this.btn_fin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_fin.FlatAppearance.BorderSize = 0;
-            this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fin.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_fin.ForeColor = System.Drawing.Color.Black;
-            this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fin.ImageKey = "deposit.png";
-            this.btn_fin.ImageList = this.imageList1;
-            this.btn_fin.Location = new System.Drawing.Point(0, 250);
-            this.btn_fin.Name = "btn_fin";
-            this.btn_fin.Size = new System.Drawing.Size(472, 87);
-            this.btn_fin.TabIndex = 15;
-            this.btn_fin.Text = "Financial";
-            this.btn_fin.UseVisualStyleBackColor = true;
-            // 
-            // btn_prod
-            // 
-            this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_prod.FlatAppearance.BorderSize = 0;
-            this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prod.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prod.ForeColor = System.Drawing.Color.Black;
-            this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_prod.ImageKey = "production-line.png";
-            this.btn_prod.ImageList = this.imageList1;
-            this.btn_prod.Location = new System.Drawing.Point(0, 337);
-            this.btn_prod.Name = "btn_prod";
-            this.btn_prod.Size = new System.Drawing.Size(472, 87);
-            this.btn_prod.TabIndex = 17;
-            this.btn_prod.Text = "Production";
-            this.btn_prod.UseVisualStyleBackColor = true;
-            // 
-            // btn_log
-            // 
-            this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_log.FlatAppearance.BorderSize = 0;
-            this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_log.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_log.ForeColor = System.Drawing.Color.Black;
-            this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_log.ImageKey = "delivery-truck.png";
-            this.btn_log.ImageList = this.imageList1;
-            this.btn_log.Location = new System.Drawing.Point(0, 424);
-            this.btn_log.Name = "btn_log";
-            this.btn_log.Size = new System.Drawing.Size(472, 87);
-            this.btn_log.TabIndex = 18;
-            this.btn_log.Text = "Logistics";
-            this.btn_log.UseVisualStyleBackColor = true;
-            // 
-            // btn_proc
-            // 
-            this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_proc.FlatAppearance.BorderSize = 0;
-            this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_proc.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_proc.ForeColor = System.Drawing.Color.Black;
-            this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_proc.ImageKey = "procurement.png";
-            this.btn_proc.ImageList = this.imageList1;
-            this.btn_proc.Location = new System.Drawing.Point(0, 511);
-            this.btn_proc.Name = "btn_proc";
-            this.btn_proc.Size = new System.Drawing.Size(472, 87);
-            this.btn_proc.TabIndex = 19;
-            this.btn_proc.Text = "Procurement";
-            this.btn_proc.UseVisualStyleBackColor = true;
-            // 
-            // btn_person
-            // 
-            this.btn_person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_person.FlatAppearance.BorderSize = 0;
-            this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_person.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_person.ForeColor = System.Drawing.Color.Black;
-            this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_person.ImageKey = "customer.png";
-            this.btn_person.ImageList = this.imageList1;
-            this.btn_person.Location = new System.Drawing.Point(0, 598);
-            this.btn_person.Name = "btn_person";
-            this.btn_person.Size = new System.Drawing.Size(472, 87);
-            this.btn_person.TabIndex = 20;
-            this.btn_person.Text = "Personnel information";
-            this.btn_person.UseVisualStyleBackColor = true;
-            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
-            // 
             // btn_inv
             // 
             this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_inv.FlatAppearance.BorderSize = 0;
             this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_inv.ForeColor = System.Drawing.Color.Black;
             this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_inv.ImageKey = "product-management.png";
@@ -491,11 +276,193 @@ namespace SmileSunshineToy
             this.btn_inv.UseVisualStyleBackColor = true;
             this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
             // 
+            // btn_person
+            // 
+            this.btn_person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_person.FlatAppearance.BorderSize = 0;
+            this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.ForeColor = System.Drawing.Color.Black;
+            this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_person.ImageKey = "customer.png";
+            this.btn_person.ImageList = this.imageList1;
+            this.btn_person.Location = new System.Drawing.Point(0, 598);
+            this.btn_person.Name = "btn_person";
+            this.btn_person.Size = new System.Drawing.Size(472, 87);
+            this.btn_person.TabIndex = 20;
+            this.btn_person.Text = "Personnel information";
+            this.btn_person.UseVisualStyleBackColor = true;
+            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
+            // 
+            // btn_proc
+            // 
+            this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_proc.FlatAppearance.BorderSize = 0;
+            this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_proc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.ForeColor = System.Drawing.Color.Black;
+            this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_proc.ImageKey = "procurement.png";
+            this.btn_proc.ImageList = this.imageList1;
+            this.btn_proc.Location = new System.Drawing.Point(0, 511);
+            this.btn_proc.Name = "btn_proc";
+            this.btn_proc.Size = new System.Drawing.Size(472, 87);
+            this.btn_proc.TabIndex = 19;
+            this.btn_proc.Text = "Procurement";
+            this.btn_proc.UseVisualStyleBackColor = true;
+            this.btn_proc.Click += new System.EventHandler(this.btn_proc_Click);
+            // 
+            // btn_log
+            // 
+            this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_log.FlatAppearance.BorderSize = 0;
+            this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.ForeColor = System.Drawing.Color.Black;
+            this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_log.ImageKey = "delivery-truck.png";
+            this.btn_log.ImageList = this.imageList1;
+            this.btn_log.Location = new System.Drawing.Point(0, 424);
+            this.btn_log.Name = "btn_log";
+            this.btn_log.Size = new System.Drawing.Size(472, 87);
+            this.btn_log.TabIndex = 18;
+            this.btn_log.Text = "Logistics";
+            this.btn_log.UseVisualStyleBackColor = true;
+            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
+            // 
+            // btn_prod
+            // 
+            this.btn_prod.BackColor = System.Drawing.Color.PeachPuff;
+            this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_prod.FlatAppearance.BorderSize = 0;
+            this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.ForeColor = System.Drawing.Color.Black;
+            this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_prod.ImageKey = "production-line.png";
+            this.btn_prod.ImageList = this.imageList1;
+            this.btn_prod.Location = new System.Drawing.Point(0, 337);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(472, 87);
+            this.btn_prod.TabIndex = 17;
+            this.btn_prod.Text = "Production";
+            this.btn_prod.UseVisualStyleBackColor = false;
+            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
+            // 
+            // btn_fin
+            // 
+            this.btn_fin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_fin.FlatAppearance.BorderSize = 0;
+            this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.ForeColor = System.Drawing.Color.Black;
+            this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_fin.ImageKey = "deposit.png";
+            this.btn_fin.ImageList = this.imageList1;
+            this.btn_fin.Location = new System.Drawing.Point(0, 250);
+            this.btn_fin.Name = "btn_fin";
+            this.btn_fin.Size = new System.Drawing.Size(472, 87);
+            this.btn_fin.TabIndex = 15;
+            this.btn_fin.Text = "Financial";
+            this.btn_fin.UseVisualStyleBackColor = true;
+            this.btn_fin.Click += new System.EventHandler(this.btn_fin_Click);
+            // 
+            // btn_rd
+            // 
+            this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_rd.FlatAppearance.BorderSize = 0;
+            this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.ForeColor = System.Drawing.Color.Black;
+            this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_rd.ImageKey = "analysis.png";
+            this.btn_rd.ImageList = this.imageList1;
+            this.btn_rd.Location = new System.Drawing.Point(0, 163);
+            this.btn_rd.Name = "btn_rd";
+            this.btn_rd.Size = new System.Drawing.Size(472, 87);
+            this.btn_rd.TabIndex = 13;
+            this.btn_rd.Text = "R&&D";
+            this.btn_rd.UseVisualStyleBackColor = true;
+            this.btn_rd.Click += new System.EventHandler(this.btn_rd_Click);
+            // 
+            // logout
+            // 
+            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.ForeColor = System.Drawing.Color.Black;
+            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.Location = new System.Drawing.Point(0, 874);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(472, 81);
+            this.logout.TabIndex = 4;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
+            // order
+            // 
+            this.order.Dock = System.Windows.Forms.DockStyle.Top;
+            this.order.FlatAppearance.BorderSize = 0;
+            this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order.ForeColor = System.Drawing.Color.Black;
+            this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.order.ImageKey = "order.png";
+            this.order.ImageList = this.imageList1;
+            this.order.Location = new System.Drawing.Point(0, 76);
+            this.order.Name = "order";
+            this.order.Size = new System.Drawing.Size(472, 87);
+            this.order.TabIndex = 2;
+            this.order.Text = "Sale Order";
+            this.order.UseVisualStyleBackColor = true;
+            this.order.Click += new System.EventHandler(this.order_Click);
+            // 
+            // btn_home
+            // 
+            this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_home.FlatAppearance.BorderSize = 0;
+            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.ForeColor = System.Drawing.Color.Black;
+            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_home.ImageKey = "home.png";
+            this.btn_home.ImageList = this.imageList1;
+            this.btn_home.Location = new System.Drawing.Point(0, 0);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Size = new System.Drawing.Size(472, 76);
+            this.btn_home.TabIndex = 1;
+            this.btn_home.Text = "Home";
+            this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.Location = new System.Drawing.Point(749, 477);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1262, 528);
+            this.dataGridView1.TabIndex = 61;
+            // 
             // ProdInOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1850, 1095);
+            this.ClientSize = new System.Drawing.Size(2086, 1095);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -504,7 +471,6 @@ namespace SmileSunshineToy
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -514,11 +480,11 @@ namespace SmileSunshineToy
             this.Load += new System.EventHandler(this.ProdInOverview_Load);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,12 +501,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productBindingSource;
         private testDataSet testDataSet;
         private System.Windows.Forms.Button btnDelete;
@@ -559,5 +519,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Button order;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
