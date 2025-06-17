@@ -41,5 +41,11 @@ namespace SmileSunshineToy
         private void btn_sub1_Click(object sender, EventArgs e) { new InvProduct().Show(); this.Hide(); }
         private void btn_sub2_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
         private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes(this); // Clear all TextBoxes on the form
+            dtpDeliveryDate.Value = DateTime.Now; // Reset the DateTimePicker to the current date
+        }
     }
 }

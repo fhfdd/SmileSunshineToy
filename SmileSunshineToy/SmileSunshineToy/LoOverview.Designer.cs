@@ -75,7 +75,7 @@ namespace SmileSunshineToy
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ClearFields = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -581,16 +581,17 @@ namespace SmileSunshineToy
             this.button3.Text = "Generate Delivery Notes";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // ClearFields
             // 
-            this.button4.BackColor = System.Drawing.Color.MistyRose;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(1306, 701);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(137, 38);
-            this.button4.TabIndex = 82;
-            this.button4.Text = "Clear";
-            this.button4.UseVisualStyleBackColor = false;
+            this.ClearFields.BackColor = System.Drawing.Color.MistyRose;
+            this.ClearFields.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ClearFields.Location = new System.Drawing.Point(1306, 701);
+            this.ClearFields.Name = "ClearFields";
+            this.ClearFields.Size = new System.Drawing.Size(137, 38);
+            this.ClearFields.TabIndex = 82;
+            this.ClearFields.Text = "Clear";
+            this.ClearFields.UseVisualStyleBackColor = false;
+            this.ClearFields.Click += new System.EventHandler(this.button4_Click);
             // 
             // LoOverview
             // 
@@ -598,7 +599,7 @@ namespace SmileSunshineToy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1547, 763);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.ClearFields);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox8);
@@ -688,6 +689,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ClearFields;
     }
 }
