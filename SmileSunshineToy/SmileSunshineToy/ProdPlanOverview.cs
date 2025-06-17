@@ -104,7 +104,24 @@ namespace SmileSunshineToy
                 txtStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
                 orderID.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
                 productID.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
-                LoadOrderGridView(orderId);
+
+                if (!string.IsNullOrEmpty(productID.Text))
+                {
+                    LoadGridData(orderGridView, "order", orderId);
+                }
+                else
+                {
+                    orderGridView.DataSource = null;               
+                }
+ 
+                if (!string.IsNullOrEmpty(productID.Text))
+                {
+                    LoadGridData(productGridView, "product", productID.Text);
+                }
+                else
+                {
+                    orderGridView.DataSource = null;
+                }
             }
             else
             {
@@ -112,40 +129,11 @@ namespace SmileSunshineToy
                 txtStartDate.Text = "";
                 txtEndDate.Text = "";
                 txtStatus.Text = "";
+                orderID.Text = "";
+                productID.Text = "";
                 orderGridView.DataSource = null;
-            }
-        }
+                productGridView.DataSource = null;
 
-        private void LoadOrderGridView(string orderId)
-        {
-            try
-            {
-                string query = "SELECT * FROM `order`";
-                if (!string.IsNullOrEmpty(orderId))
-                {
-                    query += $" WHERE OrderID = @OrderID";
-                }
-
-                using (MySqlConnection conn = new MySqlConnection(ConnectionString))
-                {
-                    conn.Open();
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    if (!string.IsNullOrEmpty(orderId))
-                    {
-                        cmd.Parameters.AddWithValue("@OrderID", orderId);
-                    }
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    orderGridView.DataSource = dt; // 绑定到 orderGridView
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"load order fail: {ex.Message}", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

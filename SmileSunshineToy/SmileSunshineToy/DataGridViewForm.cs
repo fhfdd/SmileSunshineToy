@@ -246,5 +246,46 @@ namespace SmileSunshineToy
         {
 
         }
-    }
+
+        protected void LoadGridData(DataGridView targetGrid,
+                            string tableName,
+                            string idColumn = null,
+                            object idValue = null)
+        {
+            try
+            {
+                string query = $"SELECT * FROM `{tableName}`";
+
+                if (!string.IsNullOrEmpty(idColumn) && idValue != null)
+                {
+                    query += $" WHERE {idColumn} = @id";
+                }
+
+                using (MySqlConnection conn = new MySqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+  
+                    if (!string.IsNullOrEmpty(idColumn) && idValue != null)
+                    {
+                        cmd.Parameters.AddWithValue("@id", idValue);
+                    }
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    targetGrid.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Load{tableName}Fail: {ex.Message}", "Mistake");
+            }
+        }
+    
+
+
+}
 }
