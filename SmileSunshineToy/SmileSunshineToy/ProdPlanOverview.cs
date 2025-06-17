@@ -99,8 +99,10 @@ namespace SmileSunshineToy
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 string orderId = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
                 txtPlanID.Text = selectedRow.Cells["PlanID"].Value?.ToString() ?? "";
-                txtStartDate.Text = selectedRow.Cells["StartDate"].Value?.ToString() ?? "";
-                txtEndDate.Text = selectedRow.Cells["EndDate"].Value?.ToString() ?? "";
+                object startDateValue = selectedRow.Cells["StartDate"].Value;
+                txtStartDate.Text = FormatDateForMySQL(startDateValue);
+                object endDateValue = selectedRow.Cells["EndDate"].Value;
+                txtEndDate.Text = FormatDateForMySQL(endDateValue);
                 txtStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
                 orderID.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
                 productID.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
@@ -137,5 +139,56 @@ namespace SmileSunshineToy
             }
         }
 
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("请先选择一个生产计划进行编辑", "提示",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                // 获取当前选中的行
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                int rowIndex = selectedRow.Index;
+
+                // 使用文本框中的值更新数据行
+                if (DataTable.Rows.Count > rowIndex)
+                {
+                    DataRow row = DataTable.Rows[rowIndex];
+
+                    // 更新生产计划基本信息
+                    row["PlanID"] = txtPlanID.Text;
+                    row["StartDate"] = DateTime.Parse(txtStartDate.Text); // 根据实际类型调整
+                    row["EndDate"] = DateTime.Parse(txtEndDate.Text);
+                    row["Status"] = txtStatus.Text;
+
+                    // 更新关联信息
+                    row["order_id"] = orderID.Text;
+                    row["product_id"] = productID.Text;
+
+                    // 提交更改到数据库
+                    base.SaveChanges();
+
+                    // 刷新显示
+                    dataGridView1.Refresh();
+
+                    MessageBox.Show("生产计划更新成功!", "成功",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("日期格式不正确！请使用yyyy-MM-dd格式", "格式错误",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"编辑失败: {ex.Message}", "错误",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

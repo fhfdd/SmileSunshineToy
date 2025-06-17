@@ -284,8 +284,25 @@ namespace SmileSunshineToy
                 MessageBox.Show($"Load{tableName}Fail: {ex.Message}", "Mistake");
             }
         }
-    
 
 
-}
+        public string FormatDateForMySQL(object dateValue)
+        {
+            if (dateValue is DateTime date)
+            {
+                return date.ToString("yyyy-MM-dd");
+            }
+
+            if (dateValue is string dateStr)
+            {
+                if (DateTime.TryParse(dateStr, out DateTime parsedDate))
+                {
+                    return parsedDate.ToString("yyyy-MM-dd");
+                }
+            }
+            return string.Empty;
+        }
+
+
+    }
 }

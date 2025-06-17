@@ -76,6 +76,7 @@ namespace SmileSunshineToy
             this.orderGridView = new System.Windows.Forms.DataGridView();
             this.productGridView = new System.Windows.Forms.DataGridView();
             this.productID = new System.Windows.Forms.ComboBox();
+            this.editBtn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -634,11 +635,23 @@ namespace SmileSunshineToy
             this.productID.TabIndex = 70;
             this.productID.Text = "productID";
             // 
+            // editBtn
+            // 
+            this.editBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Location = new System.Drawing.Point(1223, 693);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(124, 73);
+            this.editBtn.TabIndex = 72;
+            this.editBtn.Text = "EDIT";
+            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
             // ProdPlanOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2282, 1356);
+            this.Controls.Add(this.editBtn);
             this.Controls.Add(this.productGridView);
             this.Controls.Add(this.productID);
             this.Controls.Add(this.orderGridView);
@@ -731,5 +744,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.DataGridView orderGridView;
         private System.Windows.Forms.DataGridView productGridView;
         private System.Windows.Forms.ComboBox productID;
+        private System.Windows.Forms.Button editBtn;
     }
 }
