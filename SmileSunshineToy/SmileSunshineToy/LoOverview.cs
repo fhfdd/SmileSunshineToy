@@ -26,7 +26,10 @@ namespace SmileSunshineToy
         {
 
         }
-        private void btn_inv_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
+        private void btn_inv_Click(object sender, EventArgs e) {
+            InvMaterial I1 = new InvMaterial();
+            I1.Show();
+        }
         private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
         private void btn_person_Click(object sender, EventArgs e) { new PerCusOverview().Show(); this.Hide(); }
         private void btn_proc_Click(object sender, EventArgs e) { new ProcOverview().Show(); this.Hide(); }
@@ -44,13 +47,55 @@ namespace SmileSunshineToy
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ClearTextBoxes(this); // Clear all TextBoxes on the form
-            dtpDeliveryDate.Value = DateTime.Now; // Reset the DateTimePicker to the current date
+           
         }
 
         private void Status_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void order_Click_1(object sender, EventArgs e)
+        {
+            SalOrderQuery S1 = new SalOrderQuery();
+            S1.Show();
+        }
+
+        private void btn_rd_Click_1(object sender, EventArgs e)
+        {
+            RDdash R1 = new RDdash();
+            R1.Show();
+
+        }
+
+        private void btn_fin_Click_2(object sender, EventArgs e)
+        {
+            FinPayOverview F1 = new FinPayOverview();
+            F1.Show();
+        }
+
+        private void btn_prod_Click_1(object sender, EventArgs e)
+        {
+            ProdInOverview P1 = new ProdInOverview();
+            P1.Show();
+
+        }
+
+        private void btn_log_Click_1(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void btn_proc_Click_1(object sender, EventArgs e)
+        {
+            ProcOverview P2 = new ProcOverview();
+            P2.Show();
+        }
+
+        private void btn_person_Click_1(object sender, EventArgs e)
+        {
+            PerCusOverview P3 = new PerCusOverview();
+            P3.Show();
         }
     }
 }
