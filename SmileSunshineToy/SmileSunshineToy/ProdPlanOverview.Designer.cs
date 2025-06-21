@@ -31,6 +31,7 @@ namespace SmileSunshineToy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdPlanOverview));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_inv = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_person = new System.Windows.Forms.Button();
@@ -65,9 +66,9 @@ namespace SmileSunshineToy
             this.productionplanTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productionplanTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dpStartDate = new System.Windows.Forms.DateTimePicker();
             this.txtStatus = new System.Windows.Forms.ComboBox();
-            this.txtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dpEndDate = new System.Windows.Forms.DateTimePicker();
             this.productionplanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtPlanID = new System.Windows.Forms.TextBox();
@@ -77,6 +78,7 @@ namespace SmileSunshineToy
             this.productGridView = new System.Windows.Forms.DataGridView();
             this.productID = new System.Windows.Forms.ComboBox();
             this.editBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -446,8 +448,17 @@ namespace SmileSunshineToy
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 15F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(791, 784);
             this.dataGridView1.MultiSelect = false;
@@ -529,14 +540,16 @@ namespace SmileSunshineToy
             this.label1.TabIndex = 61;
             this.label1.Text = "Order Signing Date: ";
             // 
-            // txtStartDate
+            // dpStartDate
             // 
-            this.txtStartDate.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStartDate.Font = new System.Drawing.Font("Arial Unicode MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStartDate.Location = new System.Drawing.Point(811, 416);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.Size = new System.Drawing.Size(503, 66);
-            this.txtStartDate.TabIndex = 60;
+            this.dpStartDate.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpStartDate.CustomFormat = "yyyy-MM-dd";
+            this.dpStartDate.Font = new System.Drawing.Font("Arial Unicode MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpStartDate.Location = new System.Drawing.Point(811, 416);
+            this.dpStartDate.Name = "dpStartDate";
+            this.dpStartDate.Size = new System.Drawing.Size(503, 66);
+            this.dpStartDate.TabIndex = 60;
             // 
             // txtStatus
             // 
@@ -548,14 +561,16 @@ namespace SmileSunshineToy
             this.txtStatus.TabIndex = 64;
             this.txtStatus.Text = "Stutas";
             // 
-            // txtEndDate
+            // dpEndDate
             // 
-            this.txtEndDate.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndDate.Font = new System.Drawing.Font("Arial Unicode MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndDate.Location = new System.Drawing.Point(811, 539);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.Size = new System.Drawing.Size(503, 66);
-            this.txtEndDate.TabIndex = 65;
+            this.dpEndDate.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpEndDate.CustomFormat = "yyyy-MM-dd";
+            this.dpEndDate.Font = new System.Drawing.Font("Arial Unicode MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpEndDate.Location = new System.Drawing.Point(811, 539);
+            this.dpEndDate.Name = "dpEndDate";
+            this.dpEndDate.Size = new System.Drawing.Size(503, 66);
+            this.dpEndDate.TabIndex = 65;
             // 
             // productionplanBindingSource2
             // 
@@ -646,22 +661,34 @@ namespace SmileSunshineToy
             this.editBtn.UseVisualStyleBackColor = true;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(807, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 23);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "Order ID:";
+            // 
             // ProdPlanOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2282, 1356);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.productGridView);
             this.Controls.Add(this.productID);
             this.Controls.Add(this.orderGridView);
             this.Controls.Add(this.orderID);
             this.Controls.Add(this.txtPlanID);
-            this.Controls.Add(this.txtEndDate);
+            this.Controls.Add(this.dpEndDate);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtStartDate);
+            this.Controls.Add(this.dpStartDate);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -733,9 +760,9 @@ namespace SmileSunshineToy
         private System.Windows.Forms.BindingSource productionplanBindingSource1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker txtStartDate;
+        private System.Windows.Forms.DateTimePicker dpStartDate;
         private System.Windows.Forms.ComboBox txtStatus;
-        private System.Windows.Forms.DateTimePicker txtEndDate;
+        private System.Windows.Forms.DateTimePicker dpEndDate;
         private System.Windows.Forms.BindingSource productionplanBindingSource2;
         private System.Windows.Forms.TextBox txtPlanID;
         private System.Windows.Forms.ComboBox orderID;
@@ -745,5 +772,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.DataGridView productGridView;
         private System.Windows.Forms.ComboBox productID;
         private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.Label label2;
     }
 }

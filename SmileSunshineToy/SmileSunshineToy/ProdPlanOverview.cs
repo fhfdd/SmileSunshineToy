@@ -100,16 +100,18 @@ namespace SmileSunshineToy
                 string orderId = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
                 txtPlanID.Text = selectedRow.Cells["PlanID"].Value?.ToString() ?? "";
                 object startDateValue = selectedRow.Cells["StartDate"].Value;
-                txtStartDate.Text = FormatDateForMySQL(startDateValue);
+                if (startDateValue != DBNull.Value && startDateValue is DateTime)
+                    dpStartDate.Value = (DateTime)startDateValue;
                 object endDateValue = selectedRow.Cells["EndDate"].Value;
-                txtEndDate.Text = FormatDateForMySQL(endDateValue);
+                if (endDateValue != DBNull.Value && endDateValue is DateTime)
+                    dpEndDate.Value = (DateTime)endDateValue;
                 txtStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
                 orderID.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
                 productID.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
 
                 if (!string.IsNullOrEmpty(productID.Text))
                 {
-                    LoadGridData(orderGridView, "order", orderId);
+                    LoadGridData(orderGridView, "order", orderID.Text);
                 }
                 else
                 {
@@ -128,8 +130,8 @@ namespace SmileSunshineToy
             else
             {
                 txtPlanID.Text = "";
-                txtStartDate.Text = "";
-                txtEndDate.Text = "";
+                dpStartDate.Text = "";
+                dpEndDate.Text = "";
                 txtStatus.Text = "";
                 orderID.Text = "";
                 productID.Text = "";
@@ -139,55 +141,53 @@ namespace SmileSunshineToy
             }
         }
 
+        private string originalPlanID = "";
+        private DateTime? originalStartDate;
+        private DateTime? originalEndDate;
+        private string originalStatus = "";
+        private string originalOrderId = "";
+        private string originalProductId = "";
+
         private void editBtn_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count != 1)
             {
-                MessageBox.Show("请先选择一个生产计划进行编辑", "提示",
-                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("please choose a record");
                 return;
             }
 
             try
             {
-                // 获取当前选中的行
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                int rowIndex = selectedRow.Index;
+                DataRow row = DataTable.Rows[dataGridView1.SelectedRows[0].Index];
+                bool hasChange = false;
 
-                // 使用文本框中的值更新数据行
-                if (DataTable.Rows.Count > rowIndex)
-                {
-                    DataRow row = DataTable.Rows[rowIndex];
-
-                    // 更新生产计划基本信息
-                    row["PlanID"] = txtPlanID.Text;
-                    row["StartDate"] = DateTime.Parse(txtStartDate.Text); // 根据实际类型调整
-                    row["EndDate"] = DateTime.Parse(txtEndDate.Text);
-                    row["Status"] = txtStatus.Text;
-
-                    // 更新关联信息
-                    row["order_id"] = orderID.Text;
-                    row["product_id"] = productID.Text;
-
-                    // 提交更改到数据库
-                    base.SaveChanges();
-
-                    // 刷新显示
-                    dataGridView1.Refresh();
-
-                    MessageBox.Show("生产计划更新成功!", "成功",
-                                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                               if (txtPlanID.Text != originalPlanID) { row["PlanID"] = txtPlanID.Text; hasChange = true; }
+                if (dpStartDate.Value != originalStartDate) { row["StartDate"] = dpStartDate.Value; hasChange = true; }
+                if (dpEndDate.Value != originalEndDate) { row["EndDate"] = dpEndDate.Value; hasChange = true; }
+                if (txtStatus.Text != originalStatus) { row["Status"] = txtStatus.Text; hasChange = true; }
+                if (orderID.Text != originalOrderId) { row["order_id"] = orderID.Text; hasChange = true; }
+                
+                string newProductId = productID.Text.Trim();
+                if (newProductId != originalProductId) {
+                    row["product_id"] = string.IsNullOrEmpty(newProductId) ? (object)DBNull.Value : int.Parse(newProductId);
+                    hasChange = true;
                 }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("日期格式不正确！请使用yyyy-MM-dd格式", "格式错误",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                if (hasChange)
+                {
+
+                    dataGridView1.Refresh();
+                    MessageBox.Show("更新成功！");
+                }
+                else
+                {
+                    MessageBox.Show("未检测到修改，无需保存");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"编辑失败: {ex.Message}", "错误",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"编辑失败: {ex.Message}");
             }
         }
     }
