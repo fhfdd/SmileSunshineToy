@@ -286,25 +286,6 @@ namespace SmileSunshineToy
             }
         }
 
-        public virtual void EditRecord()
-        {
-            if (DataGridView.SelectedRows.Count != 1)
-            {
-                MessageBox.Show("请选择一条记录进行编辑", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            try
-            {
-                DataRow row = DataTable.Rows[DataGridView.SelectedRows[0].Index];
-                // 这里不需要保存，修改会自动记录在DataTable中
-                MessageBox.Show("记录已修改，请点击保存按钮提交更改", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"编辑失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
     }

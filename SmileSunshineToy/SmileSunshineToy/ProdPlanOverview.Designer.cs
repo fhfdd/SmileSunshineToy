@@ -78,8 +78,10 @@ namespace SmileSunshineToy
             this.productID = new System.Windows.Forms.ComboBox();
             this.editBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.orderSearch = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtOrder = new System.Windows.Forms.TextBox();
+            this.txtProd = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -610,7 +612,7 @@ namespace SmileSunshineToy
             this.orderGridView.RowHeadersWidth = 62;
             this.orderGridView.RowTemplate.Height = 30;
             this.orderGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orderGridView.Size = new System.Drawing.Size(677, 147);
+            this.orderGridView.Size = new System.Drawing.Size(821, 147);
             this.orderGridView.TabIndex = 69;
             this.orderGridView.SelectionChanged += new System.EventHandler(this.orderGridView_SelectionChanged);
             this.orderGridView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.orderGridView_MouseDown);
@@ -630,7 +632,7 @@ namespace SmileSunshineToy
             this.productGridView.RowHeadersWidth = 62;
             this.productGridView.RowTemplate.Height = 30;
             this.productGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productGridView.Size = new System.Drawing.Size(677, 149);
+            this.productGridView.Size = new System.Drawing.Size(821, 149);
             this.productGridView.TabIndex = 71;
             this.productGridView.SelectionChanged += new System.EventHandler(this.productGridView_SelectionChanged);
             this.productGridView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.productGridView_MouseDown);
@@ -667,33 +669,53 @@ namespace SmileSunshineToy
             this.label2.TabIndex = 73;
             this.label2.Text = "Order ID:";
             // 
-            // button2
+            // orderSearch
             // 
-            this.button2.Font = new System.Drawing.Font("Arial Unicode MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1712, 315);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(237, 58);
-            this.button2.TabIndex = 74;
-            this.button2.Text = "search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.orderSearch.Font = new System.Drawing.Font("Arial Unicode MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderSearch.Location = new System.Drawing.Point(2082, 313);
+            this.orderSearch.Name = "orderSearch";
+            this.orderSearch.Size = new System.Drawing.Size(237, 58);
+            this.orderSearch.TabIndex = 74;
+            this.orderSearch.Text = "search";
+            this.orderSearch.UseVisualStyleBackColor = true;
+            this.orderSearch.Click += new System.EventHandler(this.orderSearch_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Arial Unicode MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1712, 575);
+            this.button3.Location = new System.Drawing.Point(2082, 576);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(237, 58);
             this.button3.TabIndex = 75;
             this.button3.Text = "search";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.prodsearch_Click);
+            // 
+            // txtOrder
+            // 
+            this.txtOrder.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtOrder.Location = new System.Drawing.Point(1712, 315);
+            this.txtOrder.Name = "txtOrder";
+            this.txtOrder.Size = new System.Drawing.Size(375, 58);
+            this.txtOrder.TabIndex = 76;
+            // 
+            // txtProd
+            // 
+            this.txtProd.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtProd.Location = new System.Drawing.Point(1712, 574);
+            this.txtProd.Name = "txtProd";
+            this.txtProd.Size = new System.Drawing.Size(375, 58);
+            this.txtProd.TabIndex = 77;
             // 
             // ProdPlanOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2393, 1409);
+            this.Controls.Add(this.txtProd);
+            this.Controls.Add(this.txtOrder);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.orderSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.productGridView);
@@ -788,7 +810,9 @@ namespace SmileSunshineToy
         private System.Windows.Forms.ComboBox productID;
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button orderSearch;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtOrder;
+        private System.Windows.Forms.TextBox txtProd;
     }
 }

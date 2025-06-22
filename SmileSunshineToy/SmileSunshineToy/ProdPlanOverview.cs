@@ -41,6 +41,14 @@ namespace SmileSunshineToy
             coboStatus.Items.Add("EndDate");
             coboStatus.SelectedIndex = 0;
 
+            orderID.Items.Add("Order ID");
+            orderID.Items.Add("Order Name");
+            orderID.SelectedIndex = 0;
+
+            productID.Items.Add("Product ID");
+            productID.Items.Add("Product Name");
+            productID.SelectedIndex = 0;
+
             LoadData();
         }
 
@@ -114,12 +122,12 @@ namespace SmileSunshineToy
                 if (endDateValue != DBNull.Value && endDateValue is DateTime)
                     dpEndDate.Value = (DateTime)endDateValue;
                 coboStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
-                orderID.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
-                productID.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
+                txtOrder.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
+                txtProd.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
 
                 if (!string.IsNullOrEmpty(orderID.Text))
                 {
-                    LoadGridData(orderGridView, "order", orderID.Text);
+                    LoadGridData(orderGridView, "order", txtOrder.Text);
                 }
                 else
                 {
@@ -128,7 +136,7 @@ namespace SmileSunshineToy
  
                 if (!string.IsNullOrEmpty(productID.Text))
                 {
-                    LoadGridData(productGridView, "product", productID.Text);
+                    LoadGridData(productGridView, "product", txtProd.Text);
                 }
                 else
                 {
@@ -141,8 +149,8 @@ namespace SmileSunshineToy
                 dpStartDate.Text = "";
                 dpEndDate.Text = "";
                 coboStatus.Text = "";
-                orderID.Text = "";
-                productID.Text = "";
+                txtOrder.Text = "";
+                txtProd.Text = "";
                 orderGridView.DataSource = null;
                 productGridView.DataSource = null;
 
@@ -155,6 +163,7 @@ namespace SmileSunshineToy
         private string originalStatus = "";
         private string originalOrderId = "";
         private string originalProductId = "";
+
 
         private void editBtn_Click(object sender, EventArgs e)
         {
@@ -206,7 +215,7 @@ namespace SmileSunshineToy
             if (userHasManuallySelectedProduct && productGridView.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = productGridView.SelectedRows[0];
-                productID.Text = selectedRow.Cells["productID"].Value?.ToString() ?? "";
+                txtProd.Text = selectedRow.Cells["productID"].Value?.ToString() ?? "";
             }
         }
 
@@ -215,7 +224,7 @@ namespace SmileSunshineToy
             if (userHasManuallySelectedOrder && orderGridView.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = orderGridView.SelectedRows[0];
-                orderID.Text = selectedRow.Cells["orderID"].Value?.ToString() ?? "";
+                txtOrder.Text = selectedRow.Cells["orderID"].Value?.ToString() ?? "";
             }
         }
 
@@ -234,5 +243,18 @@ namespace SmileSunshineToy
             userHasManuallySelectedOrder = false;
             userHasManuallySelectedProduct = false;
         }
+
+        private void orderSearch_Click(object sender, EventArgs e)
+        {
+            string orderId = txtOrder.Text.Trim();
+            base.LoadGridData(orderGridView, "order", "orderID", orderId);
+        }
+
+        private void prodsearch_Click(object sender, EventArgs e)
+        {
+            string productId = txtProd.Text.Trim();
+            base.LoadGridData(productGridView, "product", "productID", productId);
+        }
+
     }
 }
