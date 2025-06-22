@@ -11,10 +11,13 @@ using MySql.Data.MySqlClient;
 
 namespace SmileSunshineToy
 {
+
     public partial class ProdPlanOverview : DataGridViewForm
-    {
+    {   
+        private bool userHasManuallySelectedOrder = false;
+        private bool userHasManuallySelectedProduct = false;
         public ProdPlanOverview(): base()
-        {
+        { 
             InitializeComponent();
 
             base.TableName = "productionplan";
@@ -23,7 +26,6 @@ namespace SmileSunshineToy
             base.FilterComboBox = filterComboBox;
             base.SearchTextBox = txtSearch;
             base.AddButton = btnAdd;
-            base.DeleteButton = btnDelete;
             base.SaveButton = btnSave;
             base.CancelButton = btnCancel;
             base.SearchButton = btnSearch;
@@ -34,27 +36,40 @@ namespace SmileSunshineToy
             filterComboBox.Items.Add("EndDate");
             filterComboBox.SelectedIndex = 0;
 
-            LoadData();
+            coboStatus.Items.Add("pending");
+            coboStatus.Items.Add("OnHold");
+            coboStatus.Items.Add("EndDate");
+            coboStatus.SelectedIndex = 0;
 
+            orderID.Items.Add("Order ID");
+            orderID.Items.Add("Order Name");
+            orderID.SelectedIndex = 0;
+
+            productID.Items.Add("Product ID");
+            productID.Items.Add("Product Name");
+            productID.SelectedIndex = 0;
+
+            LoadData();
         }
 
-        //public override void SaveChanges()
-        //{
-        //    if (dataGridView1.SelectedRows.Count == 1)
-        //    {
-        //        DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-        //        selectedRow.Cells["PlanID"].Value = txtPlanID.Text;
-        //        selectedRow.Cells["StartDate"].Value = txtStartDate.Text;
-        //        selectedRow.Cells["EndDate"].Value = txtEndDate.Text;
-        //        selectedRow.Cells["Status"].Value = txtStatus.Text;
-        //        selectedRow.Cells["order_id"].Value = orderID.Text;
-        //    }
-        //    base.SaveChanges();
-        //}
+    //public override void SaveChanges()
+    //{
+    //    if (dataGridView1.SelectedRows.Count == 1)
+    //    {
+    //        DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+    //        selectedRow.Cells["PlanID"].Value = txtPlanID.Text;
+    //        selectedRow.Cells["StartDate"].Value = txtStartDate.Text;
+    //        selectedRow.Cells["EndDate"].Value = txtEndDate.Text;
+    //        selectedRow.Cells["Status"].Value = txtStatus.Text;
+    //        selectedRow.Cells["order_id"].Value = orderID.Text;
+    //    }
+    //    base.SaveChanges();
+    //}
 
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+    private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
         }
@@ -94,59 +109,151 @@ namespace SmileSunshineToy
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 string orderId = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
                 txtPlanID.Text = selectedRow.Cells["PlanID"].Value?.ToString() ?? "";
-                txtStartDate.Text = selectedRow.Cells["StartDate"].Value?.ToString() ?? "";
-                txtEndDate.Text = selectedRow.Cells["EndDate"].Value?.ToString() ?? "";
-                txtStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
-                orderID.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
-                productID.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
-                LoadOrderGridView(orderId);
+                object startDateValue = selectedRow.Cells["StartDate"].Value;
+                if (startDateValue != DBNull.Value && startDateValue is DateTime)
+                    dpStartDate.Value = (DateTime)startDateValue;
+                object endDateValue = selectedRow.Cells["EndDate"].Value;
+                if (endDateValue != DBNull.Value && endDateValue is DateTime)
+                    dpEndDate.Value = (DateTime)endDateValue;
+                coboStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
+                txtOrder.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
+                txtProd.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
+
+                if (!string.IsNullOrEmpty(orderID.Text))
+                {
+                    LoadGridData(orderGridView, "order", txtOrder.Text);
+                }
+                else
+                {
+                    LoadGridData(orderGridView, "order");
+                }
+ 
+                if (!string.IsNullOrEmpty(productID.Text))
+                {
+                    LoadGridData(productGridView, "product", txtProd.Text);
+                }
+                else
+                {
+                    LoadGridData(productGridView, "product");
+                }
             }
             else
             {
                 txtPlanID.Text = "";
-                txtStartDate.Text = "";
-                txtEndDate.Text = "";
-                txtStatus.Text = "";
+                dpStartDate.Text = "";
+                dpEndDate.Text = "";
+                coboStatus.Text = "";
+                txtOrder.Text = "";
+                txtProd.Text = "";
                 orderGridView.DataSource = null;
+                productGridView.DataSource = null;
+
             }
         }
 
-        private void LoadOrderGridView(string orderId)
+        private string originalPlanID = "";
+        private DateTime? originalStartDate;
+        private DateTime? originalEndDate;
+        private string originalStatus = "";
+        private string originalOrderId = "";
+        private string originalProductId = "";
+
+
+        private void editBtn_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("please choose a record");
+                return;
+            }
+
             try
             {
-                string query = "SELECT * FROM `order`";
-                if (!string.IsNullOrEmpty(orderId))
-                {
-                    query += $" WHERE OrderID = @OrderID";
+                DataRow row = DataTable.Rows[dataGridView1.SelectedRows[0].Index];
+                bool hasChange = false;
+
+                if (txtPlanID.Text != originalPlanID) { row["PlanID"] = txtPlanID.Text; hasChange = true; }
+                if (dpStartDate.Value != originalStartDate) { row["StartDate"] = dpStartDate.Value; hasChange = true; }
+                if (dpEndDate.Value != originalEndDate) { row["EndDate"] = dpEndDate.Value; hasChange = true; }
+                if (coboStatus.Text != originalStatus) { row["Status"] = coboStatus.Text; hasChange = true; }
+                if (orderID.Text != originalOrderId) { row["order_id"] = orderID.Text; hasChange = true; }
+                
+                string newProductId = productID.Text.Trim();
+                if (newProductId != originalProductId) {
+                    row["product_id"] = string.IsNullOrEmpty(newProductId) ? (object)DBNull.Value : int.Parse(newProductId);
+                    hasChange = true;
                 }
 
-                using (MySqlConnection conn = new MySqlConnection(ConnectionString))
+
+                if (hasChange)
                 {
-                    conn.Open();
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    if (!string.IsNullOrEmpty(orderId))
-                    {
-                        cmd.Parameters.AddWithValue("@OrderID", orderId);
-                    }
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    orderGridView.DataSource = dt; // 绑定到 orderGridView
+                    dataGridView1.Refresh();
+                    MessageBox.Show("更新成功！");
+                }
+                else
+                {
+                    MessageBox.Show("未检测到修改，无需保存");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"load order fail: {ex.Message}", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"编辑失败: {ex.Message}");
             }
+        }
+
+
+
+        private void productGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (userHasManuallySelectedProduct && productGridView.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = productGridView.SelectedRows[0];
+                txtProd.Text = selectedRow.Cells["productID"].Value?.ToString() ?? "";
+            }
+        }
+
+        private void orderGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (userHasManuallySelectedOrder && orderGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = orderGridView.SelectedRows[0];
+                txtOrder.Text = selectedRow.Cells["orderID"].Value?.ToString() ?? "";
+            }
+        }
+
+        private void orderGridView_MouseDown(object sender, MouseEventArgs e)
+        {
+            userHasManuallySelectedOrder = true;
+        }
+
+        private void productGridView_MouseDown(object sender, MouseEventArgs e)
+        {
+            userHasManuallySelectedProduct = true;
+        }
+
+        private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            userHasManuallySelectedOrder = false;
+            userHasManuallySelectedProduct = false;
+        }
+
+        private void orderSearch_Click(object sender, EventArgs e)
+        {
+            string orderId = txtOrder.Text.Trim();
+            base.LoadGridData(orderGridView, "order", "orderID", orderId);
+        }
+
+        private void prodsearch_Click(object sender, EventArgs e)
+        {
+            string productId = txtProd.Text.Trim();
+            base.LoadGridData(productGridView, "product", "productID", productId);
         }
 
     }
