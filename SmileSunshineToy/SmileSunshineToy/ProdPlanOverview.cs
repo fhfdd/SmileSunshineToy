@@ -232,5 +232,88 @@ namespace SmileSunshineToy
             base.LoadGridData(productGridView, "product", "productID", productId);
         }
 
+        public override void AddRecord()
+        {
+            string tempId = $"TEMP_{Guid.NewGuid().ToString().Substring(0, 8)}";
+
+            using (var dialog = new ProdPlanAdd(ConnectionString))
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    DataRow newRow = DataTable.NewRow();
+                    newRow["StartDate"] = dialog.StartDate;
+                    newRow["EndDate"] = dialog.EndDate;
+                    newRow["Status"] = dialog.Status;
+                    newRow["OrderID"] = dialog.OrderID;
+                    newRow["ProductID"] = dialog.ProductID;
+
+                    DataTable.Rows.Add(newRow);
+                    DataGridView.Refresh();
+                }
+            }
+        }
+
+        private void dataGridView1_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                e.ToolTipText = "Double Cick See Detail";
+            }
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                string planId = row.Cells["PlanID"].Value?.ToString();
+
+                DateTime startDate;
+                if (row.Cells["StartDate"].Value != DBNull.Value && row.Cells["StartDate"].Value != null)
+                {
+                    if (DateTime.TryParse(row.Cells["StartDate"].Value.ToString(), out startDate))
+                    {
+                        startDate = DateTime.ParseExact(startDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", null);
+                    }
+                    else
+                    {
+                        startDate = dpStartDate.MinDate;
+                    }
+                }
+                else
+                {
+                    startDate = dpStartDate.MinDate;
+                }
+
+                DateTime endDate;
+                if (row.Cells["EndDate"].Value != DBNull.Value && row.Cells["EndDate"].Value != null)
+                {
+                    if (DateTime.TryParse(row.Cells["EndDate"].Value.ToString(), out endDate))
+                    {
+                        endDate = DateTime.ParseExact(endDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", null);
+                    }
+                    else
+                    {
+                        endDate = dpEndDate.MinDate;
+                    }
+                }
+                else
+                {
+                    endDate = dpEndDate.MinDate;
+                }
+
+                string status = row.Cells["Status"].Value?.ToString();
+                string orderId = row.Cells["OrderID"].Value?.ToString();
+                string productId = row.Cells["ProductID"].Value?.ToString();
+
+                var detailForm = new ProdPlanAdd(
+                    planId, startDate, endDate, status,
+                    orderId,
+                    productId
+                );
+                detailForm.ShowDialog();
+            }
+        }
     }
 }
