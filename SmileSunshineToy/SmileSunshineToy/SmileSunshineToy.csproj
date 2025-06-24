@@ -77,6 +77,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProdPlanAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlanAdd.Designer.cs">
+      <DependentUpon>ProdPlanAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="RDdash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProdInOverview.resx">
       <DependentUpon>ProdInOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlanAdd.resx">
+      <DependentUpon>ProdPlanAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProdPlanOverview.resx">
       <DependentUpon>ProdPlanOverview.cs</DependentUpon>

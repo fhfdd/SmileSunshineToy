@@ -53,22 +53,6 @@ namespace SmileSunshineToy
         }
 
 
-    //public override void SaveChanges()
-    //{
-    //    if (dataGridView1.SelectedRows.Count == 1)
-    //    {
-    //        DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
-    //        selectedRow.Cells["PlanID"].Value = txtPlanID.Text;
-    //        selectedRow.Cells["StartDate"].Value = txtStartDate.Text;
-    //        selectedRow.Cells["EndDate"].Value = txtEndDate.Text;
-    //        selectedRow.Cells["Status"].Value = txtStatus.Text;
-    //        selectedRow.Cells["order_id"].Value = orderID.Text;
-    //    }
-    //    base.SaveChanges();
-    //}
-
-
     private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
@@ -93,7 +77,7 @@ namespace SmileSunshineToy
         private void btn_prod_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
         private void btn_fin_Click(object sender, EventArgs e) { new FinPayOverview().Show(); this.Hide(); }
         private void btn_rd_Click(object sender, EventArgs e) { new RDdash().Show(); this.Hide(); }
-        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { this.Close(); new Login().Show(); } }
+        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
         private void btn_home_Click(object sender, EventArgs e) { this.Show(); this.Activate(); }
         private void btn_fin_Click_1(object sender, EventArgs e) { FinPayOverview finPayForm = new FinPayOverview(); finPayForm.Show(); this.Hide(); }
         private void btn_user_Click(object sender, EventArgs e) { new UserProfileForm().Show(); this.Hide(); }
@@ -113,7 +97,6 @@ namespace SmileSunshineToy
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                string orderId = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
                 txtPlanID.Text = selectedRow.Cells["PlanID"].Value?.ToString() ?? "";
                 object startDateValue = selectedRow.Cells["StartDate"].Value;
                 if (startDateValue != DBNull.Value && startDateValue is DateTime)
@@ -122,8 +105,8 @@ namespace SmileSunshineToy
                 if (endDateValue != DBNull.Value && endDateValue is DateTime)
                     dpEndDate.Value = (DateTime)endDateValue;
                 coboStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
-                txtOrder.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
-                txtProd.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
+                txtOrder.Text = selectedRow.Cells["OrderID"].Value?.ToString() ?? "";
+                txtProd.Text = selectedRow.Cells["ProductID"].Value?.ToString() ?? "";
 
                 if (!string.IsNullOrEmpty(orderID.Text))
                 {
@@ -172,7 +155,6 @@ namespace SmileSunshineToy
                 MessageBox.Show("please choose a record");
                 return;
             }
-
             try
             {
                 DataRow row = DataTable.Rows[dataGridView1.SelectedRows[0].Index];
@@ -182,18 +164,12 @@ namespace SmileSunshineToy
                 if (dpStartDate.Value != originalStartDate) { row["StartDate"] = dpStartDate.Value; hasChange = true; }
                 if (dpEndDate.Value != originalEndDate) { row["EndDate"] = dpEndDate.Value; hasChange = true; }
                 if (coboStatus.Text != originalStatus) { row["Status"] = coboStatus.Text; hasChange = true; }
-                if (orderID.Text != originalOrderId) { row["order_id"] = orderID.Text; hasChange = true; }
-                
-                string newProductId = productID.Text.Trim();
-                if (newProductId != originalProductId) {
-                    row["product_id"] = string.IsNullOrEmpty(newProductId) ? (object)DBNull.Value : int.Parse(newProductId);
-                    hasChange = true;
-                }
+                if (txtOrder.Text != originalOrderId) { row["OrderID"] = txtOrder.Text; hasChange = true; }
+                if (txtProd.Text != originalProductId) { row["ProductID"] = txtProd.Text; hasChange = true; }
 
 
                 if (hasChange)
                 {
-
                     dataGridView1.Refresh();
                     MessageBox.Show("更新成功！");
                 }
@@ -256,5 +232,88 @@ namespace SmileSunshineToy
             base.LoadGridData(productGridView, "product", "productID", productId);
         }
 
+        public override void AddRecord()
+        {
+            string tempId = $"TEMP_{Guid.NewGuid().ToString().Substring(0, 8)}";
+
+            using (var dialog = new ProdPlanAdd(ConnectionString))
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    DataRow newRow = DataTable.NewRow();
+                    newRow["StartDate"] = dialog.StartDate;
+                    newRow["EndDate"] = dialog.EndDate;
+                    newRow["Status"] = dialog.Status;
+                    newRow["OrderID"] = dialog.OrderID;
+                    newRow["ProductID"] = dialog.ProductID;
+
+                    DataTable.Rows.Add(newRow);
+                    DataGridView.Refresh();
+                }
+            }
+        }
+
+        private void dataGridView1_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                e.ToolTipText = "Double Cick See Detail";
+            }
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                string planId = row.Cells["PlanID"].Value?.ToString();
+
+                DateTime startDate;
+                if (row.Cells["StartDate"].Value != DBNull.Value && row.Cells["StartDate"].Value != null)
+                {
+                    if (DateTime.TryParse(row.Cells["StartDate"].Value.ToString(), out startDate))
+                    {
+                        startDate = DateTime.ParseExact(startDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", null);
+                    }
+                    else
+                    {
+                        startDate = dpStartDate.MinDate;
+                    }
+                }
+                else
+                {
+                    startDate = dpStartDate.MinDate;
+                }
+
+                DateTime endDate;
+                if (row.Cells["EndDate"].Value != DBNull.Value && row.Cells["EndDate"].Value != null)
+                {
+                    if (DateTime.TryParse(row.Cells["EndDate"].Value.ToString(), out endDate))
+                    {
+                        endDate = DateTime.ParseExact(endDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", null);
+                    }
+                    else
+                    {
+                        endDate = dpEndDate.MinDate;
+                    }
+                }
+                else
+                {
+                    endDate = dpEndDate.MinDate;
+                }
+
+                string status = row.Cells["Status"].Value?.ToString();
+                string orderId = row.Cells["OrderID"].Value?.ToString();
+                string productId = row.Cells["ProductID"].Value?.ToString();
+
+                var detailForm = new ProdPlanAdd(
+                    planId, startDate, endDate, status,
+                    orderId,
+                    productId
+                );
+                detailForm.ShowDialog();
+            }
+        }
     }
 }

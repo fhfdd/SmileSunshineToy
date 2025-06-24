@@ -19,47 +19,35 @@ namespace SmileSunshineToy
         // Button click event for login attempt
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // 1. Validate input completeness
-            if (string.IsNullOrEmpty(userID.Text) || string.IsNullOrEmpty(password.Text))
+            if (string.IsNullOrEmpty(userName.Text) || string.IsNullOrEmpty(password.Text))
             {
-                MessageBox.Show("Please enter both User ID and Password.");
+                MessageBox.Show("Please enter both User Name and Password.");
                 return;
             }
 
-            // 2. Validate User ID is a number
-            int userId;
-            if (!int.TryParse(userID.Text, out userId))
-            {
-                MessageBox.Show("User ID must be a numeric value.");
-                return;
-            }
-
-            string pwd = password.Text; // Get password input
+            string Name = userName.Text;
+            string pwd = password.Text;
 
             try
             {
-                // 3. Database connection and validation
                 using (MySqlConnection conn = new MySqlConnection(sqlcon1))
                 {
-                    conn.Open(); // Open database connection
+                    conn.Open();
 
-                    // SQL query with parameterization (prevents SQL injection)
                     string sql = "SELECT UserID, Name, Role FROM `User` " +
-                                 "WHERE UserID = @UserID AND Password = @Password";
+                                 "WHERE Name = @Name AND Password = @Password";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@UserID", userId);
+ 
+                    cmd.Parameters.AddWithValue("@Name", Name);
                     cmd.Parameters.AddWithValue("@Password", pwd);
 
-                    // Execute query and read results
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read()) // If user record found
+                        if (reader.Read())
                         {
-                            // 4. Populate user session data
                             UserSession.UserID = Convert.ToInt32(reader["UserID"]);
                             UserSession.UserName = reader["Name"].ToString();
 
-                            // 5. Parse role from database to enum
                             string roleStr = reader["Role"].ToString();
                             if (Enum.TryParse(roleStr, out UserRole role))
                             {
@@ -71,19 +59,17 @@ namespace SmileSunshineToy
                                 return;
                             }
 
-                            // 6. Navigate to dashboard
-                            MessageBox.Show("Login successful!");
                             this.Hide();
                             new Dashboard().Show();
                         }
-                        else // No matching user found
+                        else
                         {
                             MessageBox.Show("Invalid User ID or Password.");
                         }
                     }
                 }
             }
-            catch (Exception ex) // Catch any database/connection errors
+            catch (Exception ex)
             {
                 MessageBox.Show($"Login failed: {ex.Message}");
             }
@@ -109,7 +95,6 @@ namespace SmileSunshineToy
 
         private void NavigationBaseForm_Load(object sender, EventArgs e)
         {
-            // 实现窗体加载逻辑
         }
 
         //region Auto-generated event stubs (no logic needed)
@@ -138,6 +123,12 @@ namespace SmileSunshineToy
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
         }
         //endregion
     }
