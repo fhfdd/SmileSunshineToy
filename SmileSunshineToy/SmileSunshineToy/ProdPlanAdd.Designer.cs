@@ -198,6 +198,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dpStartDate);
             this.Controls.Add(this.btnCancel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProdPlanAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProdPlanAdd";
