@@ -53,22 +53,6 @@ namespace SmileSunshineToy
         }
 
 
-    //public override void SaveChanges()
-    //{
-    //    if (dataGridView1.SelectedRows.Count == 1)
-    //    {
-    //        DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
-    //        selectedRow.Cells["PlanID"].Value = txtPlanID.Text;
-    //        selectedRow.Cells["StartDate"].Value = txtStartDate.Text;
-    //        selectedRow.Cells["EndDate"].Value = txtEndDate.Text;
-    //        selectedRow.Cells["Status"].Value = txtStatus.Text;
-    //        selectedRow.Cells["order_id"].Value = orderID.Text;
-    //    }
-    //    base.SaveChanges();
-    //}
-
-
     private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
@@ -113,7 +97,6 @@ namespace SmileSunshineToy
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                string orderId = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
                 txtPlanID.Text = selectedRow.Cells["PlanID"].Value?.ToString() ?? "";
                 object startDateValue = selectedRow.Cells["StartDate"].Value;
                 if (startDateValue != DBNull.Value && startDateValue is DateTime)
@@ -122,8 +105,8 @@ namespace SmileSunshineToy
                 if (endDateValue != DBNull.Value && endDateValue is DateTime)
                     dpEndDate.Value = (DateTime)endDateValue;
                 coboStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
-                txtOrder.Text = selectedRow.Cells["order_id"].Value?.ToString() ?? "";
-                txtProd.Text = selectedRow.Cells["product_id"].Value?.ToString() ?? "";
+                txtOrder.Text = selectedRow.Cells["OrderID"].Value?.ToString() ?? "";
+                txtProd.Text = selectedRow.Cells["ProductID"].Value?.ToString() ?? "";
 
                 if (!string.IsNullOrEmpty(orderID.Text))
                 {
@@ -172,7 +155,6 @@ namespace SmileSunshineToy
                 MessageBox.Show("please choose a record");
                 return;
             }
-
             try
             {
                 DataRow row = DataTable.Rows[dataGridView1.SelectedRows[0].Index];
@@ -182,18 +164,12 @@ namespace SmileSunshineToy
                 if (dpStartDate.Value != originalStartDate) { row["StartDate"] = dpStartDate.Value; hasChange = true; }
                 if (dpEndDate.Value != originalEndDate) { row["EndDate"] = dpEndDate.Value; hasChange = true; }
                 if (coboStatus.Text != originalStatus) { row["Status"] = coboStatus.Text; hasChange = true; }
-                if (orderID.Text != originalOrderId) { row["order_id"] = orderID.Text; hasChange = true; }
-                
-                string newProductId = productID.Text.Trim();
-                if (newProductId != originalProductId) {
-                    row["product_id"] = string.IsNullOrEmpty(newProductId) ? (object)DBNull.Value : int.Parse(newProductId);
-                    hasChange = true;
-                }
+                if (txtOrder.Text != originalOrderId) { row["OrderID"] = txtOrder.Text; hasChange = true; }
+                if (txtProd.Text != originalProductId) { row["ProductID"] = txtProd.Text; hasChange = true; }
 
 
                 if (hasChange)
                 {
-
                     dataGridView1.Refresh();
                     MessageBox.Show("更新成功！");
                 }

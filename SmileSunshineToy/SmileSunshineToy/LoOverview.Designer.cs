@@ -257,7 +257,6 @@ namespace SmileSunshineToy
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageKey = "profile-user.png";
             this.button1.ImageList = this.imageList1;
-\
             this.button1.Location = new System.Drawing.Point(1407, 0);
           
             this.button1.Name = "button1";
