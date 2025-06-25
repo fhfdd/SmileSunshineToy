@@ -33,7 +33,7 @@ namespace SmileSunshineToy
         {
             InitializeComponent();
 
-            PlanID = planId;
+            PlanID = GeneratePlanID();
             StartDate = startDate;
             EndDate = endDate;
             Status = status;
@@ -46,34 +46,9 @@ namespace SmileSunshineToy
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (!int.TryParse(txtOrder.Text.Trim(), out int orderId))
-            {
-                MessageBox.Show("请输入有效的订单ID");
-                return;
-            }
-
-            if (!int.TryParse(txtProd.Text.Trim(), out int productId))
-            {
-                MessageBox.Show("请输入有效的产品ID");
-                return;
-            }
-            if (!CheckForeignKeyExists(_connectionString, "`order`", "OrderID", orderId))
-            {
-                MessageBox.Show("订单ID不存在，请输入有效的订单ID");
-                return;
-            }
-
-            if (!CheckForeignKeyExists(_connectionString, "`product`", "ProductID", productId))
-            {
-                MessageBox.Show("产品ID不存在，请输入有效的产品ID");
-                return;
-            }
-
             StartDate = dpStartDate.Value;
             EndDate = dpEndDate.Value;
             Status = coboStatus.Text;
-            OrderID = txtOrder.Text.Trim();
-            ProductID = txtProd.Text.Trim();
 
             DialogResult = DialogResult.OK;
             Close();
@@ -104,6 +79,25 @@ namespace SmileSunshineToy
             {
                 MessageBox.Show($"检查外键时发生错误: {ex.Message}");
                 return false;
+            }
+        }
+
+        private string GeneratePlanID()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand("SELECT generate_id('PLAN')", conn);
+                    object result = cmd.ExecuteScalar();
+                    return result?.ToString() ?? "PLAN-ERROR";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"生成ID失败: {ex.Message}");
+                return $"PLAN-{DateTime.Now:yyyyMMdd}-001"; // 默认值
             }
         }
 

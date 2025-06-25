@@ -7,7 +7,7 @@
 
     public static class UserSession
     {
-        public static int UserID { get; set; }
+        public static string UserID { get; set; }
         public static string UserName { get; set; }
         public static UserRole Role { get; set; }
 
