@@ -22,7 +22,6 @@ namespace SmileSunshineToy
             base.FilterComboBox = filterComboBox;
             base.SearchTextBox = txtSearch;
             base.AddButton = btnAdd;
-            base.DeleteButton = btnDelete;
             base.SaveButton = btnSave;
             base.CancelButton = btnCancel;
             base.SearchButton = btnSearch;

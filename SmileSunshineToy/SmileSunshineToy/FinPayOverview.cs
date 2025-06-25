@@ -10,14 +10,18 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class FinPayOverview : Form
+    public partial class FinPayOverview : DataGridViewForm
     {
-        public FinPayOverview()
+        public FinPayOverview() : base()
         {
             InitializeComponent();
-        }
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+            base.TableName = "payment";
+            base.PrimaryKey = "PaymentID";
+            base.DataGridView = dataGridView1;
+            LoadData();
+        }
+            private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
         }
