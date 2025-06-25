@@ -319,5 +319,20 @@ namespace SmileSunshineToy
         {
             toolStripLabel1.Text = System.DateTime.Now.ToString();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPlanID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
