@@ -557,7 +557,7 @@ namespace SmileSunshineToy
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
->>>>>>> main
+
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -599,6 +599,7 @@ namespace SmileSunshineToy
             this.stockQuantityDataGridViewTextBoxColumn.Name = "stockQuantityDataGridViewTextBoxColumn";
             this.stockQuantityDataGridViewTextBoxColumn.Width = 150;
             // 
+
 
             // productBindingSource
             // 
@@ -706,10 +707,12 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
 
+
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
+
 
     }
 }

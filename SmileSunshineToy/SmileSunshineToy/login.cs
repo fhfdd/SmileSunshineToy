@@ -8,15 +8,12 @@ namespace SmileSunshineToy
 
     public partial class Login : Form
     {
-        // MySQL database connection string
         private string sqlcon1 = "Server=127.0.0.1;Database=test;Uid=root;Pwd=;";
-
         public Login()
         {
-            InitializeComponent(); // Initialize UI components (auto-generated)
+            InitializeComponent();
         }
 
-        // Button click event for login attempt
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(userName.Text) || string.IsNullOrEmpty(password.Text))
@@ -34,10 +31,10 @@ namespace SmileSunshineToy
                 {
                     conn.Open();
 
-                    string sql = "SELECT UserID, Name, Role FROM `User` " +
+                    string sql = "SELECT UserID, Name, Role FROM `user` " +
                                  "WHERE Name = @Name AND Password = @Password";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
- 
+
                     cmd.Parameters.AddWithValue("@Name", Name);
                     cmd.Parameters.AddWithValue("@Password", pwd);
 
@@ -64,7 +61,22 @@ namespace SmileSunshineToy
                         }
                         else
                         {
-                            MessageBox.Show("Invalid User ID or Password.");
+                            MessageBox.Show($"Login failed. No records found for username: {Name}");
+
+                            string testSql = "SELECT COUNT(*) FROM `user` WHERE Name = @Name";
+                            MySqlCommand testCmd = new MySqlCommand(testSql, conn);
+                            testCmd.Parameters.AddWithValue("@Name", Name);
+                            int userCount = Convert.ToInt32(testCmd.ExecuteScalar());
+
+                            if (userCount > 0)
+                            {
+                                MessageBox.Show("Username exists but password is incorrect.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Username does not exist.");
+                            }
+
                         }
                     }
                 }
@@ -129,6 +141,11 @@ namespace SmileSunshineToy
         {
             this.Close();
             Application.Exit();
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
         //endregion
     }

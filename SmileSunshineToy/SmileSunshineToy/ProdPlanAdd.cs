@@ -6,7 +6,7 @@ namespace SmileSunshineToy
 {
     public partial class ProdPlanAdd : Form
     {
-        private string _connectionString;
+        private string _connectionString = "Server=localhost;Database=test;Uid=root;Pwd=;";
         private bool _isViewMode = false;
         public string PlanID { get; private set; }
         public DateTime StartDate { get; private set; }
@@ -45,35 +45,30 @@ namespace SmileSunshineToy
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // 获取用户输入的订单ID并尝试转换为整数
+
             if (!int.TryParse(txtOrder.Text.Trim(), out int orderId))
             {
                 MessageBox.Show("请输入有效的订单ID");
                 return;
             }
 
-            // 获取用户输入的产品ID并尝试转换为整数
             if (!int.TryParse(txtProd.Text.Trim(), out int productId))
             {
                 MessageBox.Show("请输入有效的产品ID");
                 return;
             }
-
-            // 检查订单ID对应的外键是否存在
             if (!CheckForeignKeyExists(_connectionString, "`order`", "OrderID", orderId))
             {
                 MessageBox.Show("订单ID不存在，请输入有效的订单ID");
                 return;
             }
 
-            // 检查产品ID对应的外键是否存在
             if (!CheckForeignKeyExists(_connectionString, "`product`", "ProductID", productId))
             {
                 MessageBox.Show("产品ID不存在，请输入有效的产品ID");
                 return;
             }
 
-            // 若都通过检查，获取并赋值其他字段
             StartDate = dpStartDate.Value;
             EndDate = dpEndDate.Value;
             Status = coboStatus.Text;

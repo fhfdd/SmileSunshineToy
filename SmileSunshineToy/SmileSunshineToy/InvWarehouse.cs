@@ -125,6 +125,7 @@ namespace SmileSunshineToy
             filterComboBox.Items.Add("Location");
             filterComboBox.Items.Add("WarehouseID");
             filterComboBox.SelectedIndex = 0;
+
         }
 
         private void BindEvents()
@@ -139,6 +140,7 @@ namespace SmileSunshineToy
 
         private void LoadInventoryData()
         {
+
             try
             {
                 inventoryTable.Clear();
@@ -356,9 +358,11 @@ namespace SmileSunshineToy
 
         }
 
+
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
     }
 }
