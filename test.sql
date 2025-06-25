@@ -57,6 +57,8 @@ CREATE TABLE material (
     StockQuantity INT NOT NULL DEFAULT 0,
     SupplierID VARCHAR(20) DEFAULT NULL,
     Unit VARCHAR(10) DEFAULT 'pcs',
+    image_data LONGBLOB DEFAULT NULL, 
+    image_type VARCHAR(50) DEFAULT NULL,
     FOREIGN KEY (SupplierID) REFERENCES supplier(SupplierID)
 );
 
@@ -378,13 +380,13 @@ INSERT INTO invoice (InvoiceID, OrderID, InvoiceDate, TotalAmount) VALUES
 -- Payments
 INSERT INTO payment (PaymentID, InvoiceID, PaymentDate, Amount, PaymentMethod) VALUES
 ('PAY-20230602-001', 'INV-20230602-001', '2023-06-02', 129.97, 'Credit Card'),
-('PAY-20230606-001', 'INV-20230606-001', '2023-极6-06', 89.99, 'PayPal'),
+('PAY-20230606-001', 'INV-20230606-001', '2023-06-06', 89.99, 'PayPal'),
 ('PAY-20230616-001', 'INV-20230616-001', '2023-06-16', 149.97, 'Credit Card'),
 ('PAY-20230621-001', 'INV-20230621-001', '2023-06-21', 39.99, 'Bank Transfer');
 
 -- Production plans
 INSERT INTO productionplan (planID, OrderID, ProductID, startDate, EndDate, Status) VALUES
-('PLAN-20230606-001', 'ORD-20230605-002', 'PROD-0003', '2023-06-06', '2023-极6-08', 'Completed'),
+('PLAN-20230606-001', 'ORD-20230605-002', 'PROD-0003', '2023-06-06', '2023-06-10', 'Completed'),
 ('PLAN-20230611-001', 'ORD-20230610-003', 'PROD-0002', '2023-06-11', '2023-06-12', 'Processing'),
 ('PLAN-20230621-001', 'ORD-20230620-005', 'PROD-0005', '2023-06-21', '2023-06-23', 'Pending');
 
@@ -411,7 +413,7 @@ INSERT INTO user (UserID, Role, Name, Email, Password) VALUES
 ('USER-0001', 'Admin', 'Admin User', 'admin@erp.com', 'admin123'),
 ('USER-0002', 'Sales', 'Sales Manager', 'sales@erp.com', 'sales123'),
 ('USER-0003', 'Inventory', 'Inventory Clerk', 'inventory@erp.com', 'inventory123'),
-('USER-0004', 'Production', 'Production Manager', 'production@极p.com', 'production123'),
+('USER-0004', 'Production', 'Production Manager', 'production@erp.com', 'production123'),
 ('USER-0005', 'Logistics', 'Shipping Coordinator', 'shipping@erp.com', 'shipping123');
 
 -- Shipments
