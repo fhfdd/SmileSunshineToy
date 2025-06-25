@@ -32,12 +32,20 @@ namespace SmileSunshineToy
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdPlanOverview));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.logout = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_material = new System.Windows.Forms.Button();
             this.btn_product = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.Role = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_inv = new System.Windows.Forms.Button();
@@ -82,8 +90,10 @@ namespace SmileSunshineToy
             this.button3 = new System.Windows.Forms.Button();
             this.txtOrder = new System.Windows.Forms.TextBox();
             this.txtProd = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -118,7 +128,7 @@ namespace SmileSunshineToy
             this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.logout.FlatAppearance.BorderSize = 0;
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logout.Location = new System.Drawing.Point(0, 1188);
@@ -145,7 +155,7 @@ namespace SmileSunshineToy
             this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_material.FlatAppearance.BorderSize = 0;
             this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_material.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_material.ForeColor = System.Drawing.Color.Black;
             this.btn_material.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_material.Location = new System.Drawing.Point(0, 76);
@@ -162,7 +172,7 @@ namespace SmileSunshineToy
             this.btn_product.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_product.FlatAppearance.BorderSize = 0;
             this.btn_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_product.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_product.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_product.ForeColor = System.Drawing.Color.Black;
             this.btn_product.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_product.Location = new System.Drawing.Point(0, 0);
@@ -176,12 +186,46 @@ namespace SmileSunshineToy
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Bisque;
+            this.panel4.Controls.Add(this.toolStrip1);
+            this.panel4.Controls.Add(this.Role);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(2393, 140);
             this.panel4.TabIndex = 17;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.Bisque;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1});
+            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(177, 140);
+            this.toolStrip1.TabIndex = 81;
+            this.toolStrip1.Text = "Time;Date";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(172, 38);
+            this.toolStripLabel1.Text = "Time,Date";
+            // 
+            // Role
+            // 
+            this.Role.AutoSize = true;
+            this.Role.BackColor = System.Drawing.Color.Transparent;
+            this.Role.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.Role.Location = new System.Drawing.Point(2150, 61);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(67, 29);
+            this.Role.TabIndex = 79;
+            this.Role.Text = "Role";
             // 
             // button1
             // 
@@ -223,7 +267,7 @@ namespace SmileSunshineToy
             this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_inv.FlatAppearance.BorderSize = 0;
             this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inv.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_inv.ForeColor = System.Drawing.Color.Black;
             this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_inv.ImageKey = "product-management.png";
@@ -242,7 +286,7 @@ namespace SmileSunshineToy
             this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_person.FlatAppearance.BorderSize = 0;
             this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_person.ForeColor = System.Drawing.Color.Black;
             this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_person.ImageKey = "customer.png";
@@ -260,7 +304,7 @@ namespace SmileSunshineToy
             this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_proc.FlatAppearance.BorderSize = 0;
             this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_proc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_proc.ForeColor = System.Drawing.Color.Black;
             this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_proc.ImageKey = "procurement.png";
@@ -278,7 +322,7 @@ namespace SmileSunshineToy
             this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_log.FlatAppearance.BorderSize = 0;
             this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_log.ForeColor = System.Drawing.Color.Black;
             this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_log.ImageKey = "delivery-truck.png";
@@ -297,7 +341,7 @@ namespace SmileSunshineToy
             this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_prod.FlatAppearance.BorderSize = 0;
             this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_prod.ForeColor = System.Drawing.Color.Black;
             this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_prod.ImageKey = "production-line.png";
@@ -316,7 +360,7 @@ namespace SmileSunshineToy
             this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_fin.FlatAppearance.BorderSize = 0;
             this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_fin.ForeColor = System.Drawing.Color.Black;
             this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fin.ImageKey = "deposit.png";
@@ -334,7 +378,7 @@ namespace SmileSunshineToy
             this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_rd.FlatAppearance.BorderSize = 0;
             this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_rd.ForeColor = System.Drawing.Color.Black;
             this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_rd.ImageKey = "analysis.png";
@@ -352,7 +396,7 @@ namespace SmileSunshineToy
             this.order.Dock = System.Windows.Forms.DockStyle.Top;
             this.order.FlatAppearance.BorderSize = 0;
             this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.order.ForeColor = System.Drawing.Color.Black;
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.order.ImageKey = "order.png";
@@ -370,7 +414,7 @@ namespace SmileSunshineToy
             this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_home.FlatAppearance.BorderSize = 0;
             this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.btn_home.ForeColor = System.Drawing.Color.Black;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.ImageKey = "home.png";
@@ -399,24 +443,24 @@ namespace SmileSunshineToy
             // 
             // filterComboBox
             // 
-            this.filterComboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterComboBox.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
             this.filterComboBox.FormattingEnabled = true;
             this.filterComboBox.Location = new System.Drawing.Point(1574, 194);
             this.filterComboBox.Name = "filterComboBox";
-            this.filterComboBox.Size = new System.Drawing.Size(254, 59);
+            this.filterComboBox.Size = new System.Drawing.Size(254, 62);
             this.filterComboBox.TabIndex = 56;
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSearch.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
             this.txtSearch.Location = new System.Drawing.Point(1083, 190);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(494, 58);
+            this.txtSearch.Size = new System.Drawing.Size(494, 59);
             this.txtSearch.TabIndex = 55;
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(1984, 1200);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(274, 73);
@@ -427,7 +471,7 @@ namespace SmileSunshineToy
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
             this.btnSave.Location = new System.Drawing.Point(1984, 1094);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(274, 73);
@@ -438,7 +482,7 @@ namespace SmileSunshineToy
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Location = new System.Drawing.Point(1984, 977);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(274, 73);
@@ -454,15 +498,23 @@ namespace SmileSunshineToy
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 15F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(791, 860);
             this.dataGridView1.MultiSelect = false;
@@ -501,7 +553,7 @@ namespace SmileSunshineToy
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Arial Unicode MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Location = new System.Drawing.Point(849, 190);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(237, 58);
@@ -518,10 +570,10 @@ namespace SmileSunshineToy
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(807, 499);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(229, 20);
+            this.label4.Size = new System.Drawing.Size(250, 29);
             this.label4.TabIndex = 62;
             this.label4.Text = "Plan Delivery Date: ";
             // 
@@ -529,10 +581,10 @@ namespace SmileSunshineToy
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(807, 383);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 23);
+            this.label1.Size = new System.Drawing.Size(237, 29);
             this.label1.TabIndex = 61;
             this.label1.Text = "Plan Signing Date: ";
             // 
@@ -540,20 +592,20 @@ namespace SmileSunshineToy
             // 
             this.dpStartDate.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpStartDate.CustomFormat = "yyyy-MM-dd";
-            this.dpStartDate.Font = new System.Drawing.Font("Arial Unicode MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpStartDate.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
             this.dpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpStartDate.Location = new System.Drawing.Point(811, 416);
             this.dpStartDate.Name = "dpStartDate";
-            this.dpStartDate.Size = new System.Drawing.Size(503, 66);
+            this.dpStartDate.Size = new System.Drawing.Size(503, 59);
             this.dpStartDate.TabIndex = 60;
             // 
             // coboStatus
             // 
-            this.coboStatus.Font = new System.Drawing.Font("Arial Unicode MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coboStatus.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
             this.coboStatus.FormattingEnabled = true;
             this.coboStatus.Location = new System.Drawing.Point(811, 621);
             this.coboStatus.Name = "coboStatus";
-            this.coboStatus.Size = new System.Drawing.Size(200, 56);
+            this.coboStatus.Size = new System.Drawing.Size(325, 62);
             this.coboStatus.TabIndex = 64;
             this.coboStatus.Text = "Stutas";
             // 
@@ -561,11 +613,11 @@ namespace SmileSunshineToy
             // 
             this.dpEndDate.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpEndDate.CustomFormat = "yyyy-MM-dd";
-            this.dpEndDate.Font = new System.Drawing.Font("Arial Unicode MS", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpEndDate.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
             this.dpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpEndDate.Location = new System.Drawing.Point(811, 539);
             this.dpEndDate.Name = "dpEndDate";
-            this.dpEndDate.Size = new System.Drawing.Size(503, 66);
+            this.dpEndDate.Size = new System.Drawing.Size(503, 59);
             this.dpEndDate.TabIndex = 65;
             // 
             // productionplanBindingSource2
@@ -581,20 +633,20 @@ namespace SmileSunshineToy
             // txtPlanID
             // 
             this.txtPlanID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPlanID.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPlanID.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
             this.txtPlanID.Location = new System.Drawing.Point(811, 315);
             this.txtPlanID.Name = "txtPlanID";
             this.txtPlanID.ReadOnly = true;
-            this.txtPlanID.Size = new System.Drawing.Size(494, 51);
+            this.txtPlanID.Size = new System.Drawing.Size(494, 52);
             this.txtPlanID.TabIndex = 67;
             // 
             // orderID
             // 
-            this.orderID.Font = new System.Drawing.Font("Arial Unicode MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderID.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold);
             this.orderID.FormattingEnabled = true;
             this.orderID.Location = new System.Drawing.Point(1516, 315);
             this.orderID.Name = "orderID";
-            this.orderID.Size = new System.Drawing.Size(200, 56);
+            this.orderID.Size = new System.Drawing.Size(200, 52);
             this.orderID.TabIndex = 68;
             this.orderID.Text = "orderID";
             // 
@@ -607,7 +659,23 @@ namespace SmileSunshineToy
             this.orderGridView.AllowUserToOrderColumns = true;
             this.orderGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.orderGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.orderGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.orderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.orderGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.orderGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.orderGridView.Location = new System.Drawing.Point(1516, 392);
             this.orderGridView.MultiSelect = false;
@@ -627,7 +695,23 @@ namespace SmileSunshineToy
             this.productGridView.AllowUserToOrderColumns = true;
             this.productGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.productGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.productGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.productGridView.Location = new System.Drawing.Point(1516, 653);
             this.productGridView.MultiSelect = false;
@@ -644,17 +728,17 @@ namespace SmileSunshineToy
             // 
             // productID
             // 
-            this.productID.Font = new System.Drawing.Font("Arial Unicode MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productID.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold);
             this.productID.FormattingEnabled = true;
             this.productID.Location = new System.Drawing.Point(1516, 576);
             this.productID.Name = "productID";
-            this.productID.Size = new System.Drawing.Size(200, 56);
+            this.productID.Size = new System.Drawing.Size(218, 52);
             this.productID.TabIndex = 70;
             this.productID.Text = "productID";
             // 
             // editBtn
             // 
-            this.editBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
             this.editBtn.Location = new System.Drawing.Point(1984, 862);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(274, 73);
@@ -667,16 +751,16 @@ namespace SmileSunshineToy
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(807, 280);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 23);
+            this.label2.Size = new System.Drawing.Size(109, 29);
             this.label2.TabIndex = 73;
             this.label2.Text = "Plan ID:";
             // 
             // orderSearch
             // 
-            this.orderSearch.Font = new System.Drawing.Font("Arial Unicode MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderSearch.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
             this.orderSearch.Location = new System.Drawing.Point(2082, 313);
             this.orderSearch.Name = "orderSearch";
             this.orderSearch.Size = new System.Drawing.Size(237, 58);
@@ -687,7 +771,7 @@ namespace SmileSunshineToy
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Arial Unicode MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
             this.button3.Location = new System.Drawing.Point(2082, 576);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(237, 58);
@@ -698,19 +782,25 @@ namespace SmileSunshineToy
             // 
             // txtOrder
             // 
-            this.txtOrder.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtOrder.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
             this.txtOrder.Location = new System.Drawing.Point(1712, 315);
             this.txtOrder.Name = "txtOrder";
-            this.txtOrder.Size = new System.Drawing.Size(375, 58);
+            this.txtOrder.Size = new System.Drawing.Size(375, 59);
             this.txtOrder.TabIndex = 76;
             // 
             // txtProd
             // 
-            this.txtProd.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtProd.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
             this.txtProd.Location = new System.Drawing.Point(1712, 574);
             this.txtProd.Name = "txtProd";
-            this.txtProd.Size = new System.Drawing.Size(375, 58);
+            this.txtProd.Size = new System.Drawing.Size(375, 59);
             this.txtProd.TabIndex = 77;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ProdPlanOverview
             // 
@@ -751,6 +841,9 @@ namespace SmileSunshineToy
             this.Load += new System.EventHandler(this.ProdPlanOverview_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -819,5 +912,9 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txtOrder;
         private System.Windows.Forms.TextBox txtProd;
+        private System.Windows.Forms.Label Role;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
