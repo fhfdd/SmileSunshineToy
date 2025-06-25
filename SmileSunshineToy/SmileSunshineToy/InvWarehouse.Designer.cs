@@ -505,7 +505,6 @@ namespace SmileSunshineToy
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
-
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -533,43 +532,11 @@ namespace SmileSunshineToy
             // 
             // Price
             // 
-            this.stockQuantityDataGridViewTextBoxColumn.DataPropertyName = "StockQuantity";
-            this.stockQuantityDataGridViewTextBoxColumn.HeaderText = "StockQuantity";
-            this.stockQuantityDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.stockQuantityDataGridViewTextBoxColumn.Name = "stockQuantityDataGridViewTextBoxColumn";
-            this.stockQuantityDataGridViewTextBoxColumn.Width = 150;
-            // 
-
-
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "product";
-            this.productBindingSource.DataSource = this.testDataSet;
-            // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "testDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(951, 307);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(124, 73);
-            this.btnDelete.TabIndex = 52;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(842, 204);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(134, 34);
-            this.btnSearch.TabIndex = 50;
-            this.btnSearch.Text = "search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.Price.DataPropertyName = "Location";
+            this.Price.HeaderText = "Location";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 125;
             // 
             // StockQuantity
             // 
@@ -645,13 +612,13 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
-
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockQuantity;
     }
 }
