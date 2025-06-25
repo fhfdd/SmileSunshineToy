@@ -1,30 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SmileSunshineToy.Utilities;
 
 namespace SmileSunshineToy
 {
-
     public partial class ProdPlanOverview : DataGridViewForm
-    {   
+    {
         private bool userHasManuallySelectedOrder = false;
         private bool userHasManuallySelectedProduct = false;
         private ProductImageHelper _imageHelper;
         private FileUploadManager _fileUploadManager;
+        private string originalPlanID = "";
+        private DateTime? originalStartDate;
+        private DateTime? originalEndDate;
+        private string originalStatus = "";
+        private string originalOrderId = "";
+        private string originalProductId = "";
 
-        public ProdPlanOverview(): base()
-        { 
+        public ProdPlanOverview() : base()
+        {
             InitializeComponent();
 
-            _imageHelper = new ProductImageHelper(ConnectionString);
             _imageHelper = new ProductImageHelper(ConnectionString);
             _fileUploadManager = new FileUploadManager(ConnectionString);
 
@@ -38,168 +36,150 @@ namespace SmileSunshineToy
             base.CancelButton = btnCancel;
             base.SearchButton = btnSearch;
 
+            filterComboBox.Items.AddRange(new[] { "planID", "startDate", "EndDate" });
+            coboStatus.Items.AddRange(new[] { "pending", "OnHold", "Completed" });
+            orderID.Items.AddRange(new[] { "Order ID", "Order Name" });
+            productID.Items.AddRange(new[] { "Product ID", "Product Name" });
 
-            filterComboBox.Items.Add("planID");
-            filterComboBox.Items.Add("startDate");
-            filterComboBox.Items.Add("EndDate");
             filterComboBox.SelectedIndex = 0;
-
-            coboStatus.Items.Add("pending");
-            coboStatus.Items.Add("OnHold");
-            coboStatus.Items.Add("EndDate");
             coboStatus.SelectedIndex = 0;
-
-            orderID.Items.Add("Order ID");
-            orderID.Items.Add("Order Name");
             orderID.SelectedIndex = 0;
-
-            productID.Items.Add("Product ID");
-            productID.Items.Add("Product Name");
             productID.SelectedIndex = 0;
 
             LoadData();
         }
 
-
-    private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        public override void LoadData()
         {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConnectionString + ";Convert Zero Datetime=True;"))
+                {
+                    conn.Open();
+                    DataAdapter = new MySqlDataAdapter($"SELECT * FROM `{TableName}`", conn);
 
+                    DataTable.Clear();
+                    DataAdapter.Fill(DataTable);
+
+                    foreach (DataRow row in DataTable.Rows)
+                    {
+                        if (row["StartDate"] == DBNull.Value)
+                            row["StartDate"] = DateTime.MinValue;
+
+                        if (row["EndDate"] == DBNull.Value || row["EndDate"].ToString() == "0000-00-00")
+                            row["EndDate"] = DateTime.MinValue;
+                    }
+
+                    DataGridView.DataSource = DataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Data load failed: {ex.Message}");
+            }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        private void ProdPlanOverview_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        private void ProdPlanOverview_Load(object sender, EventArgs e) { }
+        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
+        private void btn_sub2_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
+        private void btn_sub1_Click(object sender, EventArgs e) { new ProdPlanOverview().Show(); this.Hide(); }
+        private void btn_user_Click(object sender, EventArgs e) { new UserProfileForm().Show(); this.Hide(); }
         private void btn_inv_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
-        private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
         private void btn_person_Click(object sender, EventArgs e) { new PerCusOverview().Show(); this.Hide(); }
         private void btn_proc_Click(object sender, EventArgs e) { new ProcOverview().Show(); this.Hide(); }
         private void btn_log_Click(object sender, EventArgs e) { new LoOverview().Show(); this.Hide(); }
         private void btn_prod_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
         private void btn_fin_Click(object sender, EventArgs e) { new FinPayOverview().Show(); this.Hide(); }
         private void btn_rd_Click(object sender, EventArgs e) { new RDdash().Show(); this.Hide(); }
-        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
+        private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
         private void btn_home_Click(object sender, EventArgs e) { this.Show(); this.Activate(); }
-        private void btn_fin_Click_1(object sender, EventArgs e) { FinPayOverview finPayForm = new FinPayOverview(); finPayForm.Show(); this.Hide(); }
-        private void btn_user_Click(object sender, EventArgs e) { new UserProfileForm().Show(); this.Hide(); }
-        private void btn_sub1_Click(object sender, EventArgs e) { new ProdPlanOverview().Show(); this.Hide(); }
-        private void btn_sub2_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
-        private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
-
-        private void addBtn_Click(object sender, EventArgs e) => AddRecord();
-        private void deleteBtn_Click(object sender, EventArgs e) => DeleteRecord();
-        private void saveBtn_Click(object sender, EventArgs e) => SaveChanges();
         private void cancelBtn_Click(object sender, EventArgs e) => CancelChanges();
+        private void saveBtn_Click(object sender, EventArgs e) => SaveChanges();
+        private void addBtn_Click(object sender, EventArgs e) => AddRecord();
         private void searchBtn_Click(object sender, EventArgs e) => SearchRecords();
+        private void txtPlanID_TextChanged(object sender, EventArgs e) { }
+        private void productGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 txtPlanID.Text = selectedRow.Cells["PlanID"].Value?.ToString() ?? "";
-                object startDateValue = selectedRow.Cells["StartDate"].Value;
-                if (startDateValue != DBNull.Value && startDateValue is DateTime)
-                    dpStartDate.Value = (DateTime)startDateValue;
-                object endDateValue = selectedRow.Cells["EndDate"].Value;
-                if (endDateValue != DBNull.Value && endDateValue is DateTime)
-                    dpEndDate.Value = (DateTime)endDateValue;
+
+                if (selectedRow.Cells["StartDate"].Value is DateTime startDate)
+                    dpStartDate.Value = startDate;
+
+                if (selectedRow.Cells["EndDate"].Value is DateTime endDate)
+                    dpEndDate.Value = endDate;
+
                 coboStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
                 txtOrder.Text = selectedRow.Cells["OrderID"].Value?.ToString() ?? "";
                 txtProd.Text = selectedRow.Cells["ProductID"].Value?.ToString() ?? "";
 
-                if (!string.IsNullOrEmpty(orderID.Text))
-                {
-                    LoadGridData(orderGridView, "order", txtOrder.Text);
-                }
-                else
-                {
-                    LoadGridData(orderGridView, "order");
-                }
- 
-                if (!string.IsNullOrEmpty(productID.Text))
-                {
-                    LoadGridData(productGridView, "product", txtProd.Text);
-                }
-                else
-                {
-                    LoadGridData(productGridView, "product");
-                }
+                LoadGridData(orderGridView, "order", !string.IsNullOrEmpty(txtOrder.Text) ? txtOrder.Text : null);
+                LoadGridData(productGridView, "product", !string.IsNullOrEmpty(txtProd.Text) ? txtProd.Text : null);
             }
             else
             {
                 txtPlanID.Text = "";
-                dpStartDate.Text = "";
-                dpEndDate.Text = "";
+                dpStartDate.Value = DateTime.Now;
+                dpEndDate.Value = DateTime.Now;
                 coboStatus.Text = "";
                 txtOrder.Text = "";
                 txtProd.Text = "";
                 orderGridView.DataSource = null;
                 productGridView.DataSource = null;
-
             }
         }
-
-        private string originalPlanID = "";
-        private DateTime? originalStartDate;
-        private DateTime? originalEndDate;
-        private string originalStatus = "";
-        private string originalOrderId = "";
-        private string originalProductId = "";
-
 
         private void editBtn_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count != 1)
             {
-                MessageBox.Show("please choose a record");
+                MessageBox.Show("Please choose a record");
                 return;
             }
+
             try
             {
                 DataRow row = DataTable.Rows[dataGridView1.SelectedRows[0].Index];
-                bool hasChange = false;
-
-                if (txtPlanID.Text != originalPlanID) { row["PlanID"] = txtPlanID.Text; hasChange = true; }
-                if (dpStartDate.Value != originalStartDate) { row["StartDate"] = dpStartDate.Value; hasChange = true; }
-                if (dpEndDate.Value != originalEndDate) { row["EndDate"] = dpEndDate.Value; hasChange = true; }
-                if (coboStatus.Text != originalStatus) { row["Status"] = coboStatus.Text; hasChange = true; }
-                if (txtOrder.Text != originalOrderId) { row["OrderID"] = txtOrder.Text; hasChange = true; }
-                if (txtProd.Text != originalProductId) { row["ProductID"] = txtProd.Text; hasChange = true; }
-
+                bool hasChange = txtPlanID.Text != originalPlanID ||
+                               dpStartDate.Value != originalStartDate ||
+                               dpEndDate.Value != originalEndDate ||
+                               coboStatus.Text != originalStatus ||
+                               txtOrder.Text != originalOrderId ||
+                               txtProd.Text != originalProductId;
 
                 if (hasChange)
                 {
+                    row["PlanID"] = txtPlanID.Text;
+                    row["StartDate"] = dpStartDate.Value;
+                    row["EndDate"] = dpEndDate.Value;
+                    row["Status"] = coboStatus.Text;
+                    row["OrderID"] = txtOrder.Text;
+                    row["ProductID"] = txtProd.Text;
+
                     dataGridView1.Refresh();
-                    MessageBox.Show("更新成功！");
+                    MessageBox.Show("Update successful!");
                 }
                 else
                 {
-                    MessageBox.Show("未检测到修改，无需保存");
+                    MessageBox.Show("No changes detected");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"编辑失败: {ex.Message}");
+                MessageBox.Show($"Edit failed: {ex.Message}");
             }
         }
-
-
 
         private void productGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (userHasManuallySelectedProduct && productGridView.SelectedRows.Count == 1)
             {
-                DataGridViewRow selectedRow = productGridView.SelectedRows[0];
-                txtProd.Text = selectedRow.Cells["productID"].Value?.ToString() ?? "";
+                txtProd.Text = productGridView.SelectedRows[0].Cells["productID"].Value?.ToString() ?? "";
             }
         }
 
@@ -207,42 +187,23 @@ namespace SmileSunshineToy
         {
             if (userHasManuallySelectedOrder && orderGridView.SelectedRows.Count > 0)
             {
-                DataGridViewRow selectedRow = orderGridView.SelectedRows[0];
-                txtOrder.Text = selectedRow.Cells["orderID"].Value?.ToString() ?? "";
+                txtOrder.Text = orderGridView.SelectedRows[0].Cells["orderID"].Value?.ToString() ?? "";
             }
         }
 
-        private void orderGridView_MouseDown(object sender, MouseEventArgs e)
-        {
-            userHasManuallySelectedOrder = true;
-        }
-
-        private void productGridView_MouseDown(object sender, MouseEventArgs e)
-        {
-            userHasManuallySelectedProduct = true;
-        }
-
+        private void orderGridView_MouseDown(object sender, MouseEventArgs e) => userHasManuallySelectedOrder = true;
+        private void productGridView_MouseDown(object sender, MouseEventArgs e) => userHasManuallySelectedProduct = true;
         private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
         {
             userHasManuallySelectedOrder = false;
             userHasManuallySelectedProduct = false;
         }
 
-        private void orderSearch_Click(object sender, EventArgs e)
-        {
-            string orderId = txtOrder.Text.Trim();
-            base.LoadGridData(orderGridView, "order", "orderID", orderId);
-        }
-
-        private void prodsearch_Click(object sender, EventArgs e)
-        {
-            string productId = txtProd.Text.Trim();
-            base.LoadGridData(productGridView, "product", "productID", productId);
-        }
+        private void orderSearch_Click(object sender, EventArgs e) => LoadGridData(orderGridView, "order", "orderID", txtOrder.Text.Trim());
+        private void prodsearch_Click(object sender, EventArgs e) => LoadGridData(productGridView, "product", "productID", txtProd.Text.Trim());
 
         public override void AddRecord()
         {
-
             using (var dialog = new ProdPlanAdd(ConnectionString))
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
@@ -253,7 +214,6 @@ namespace SmileSunshineToy
                     newRow["Status"] = dialog.Status;
                     newRow["OrderID"] = dialog.OrderID;
                     newRow["ProductID"] = dialog.ProductID;
-
                     DataTable.Rows.Add(newRow);
                     DataGridView.Refresh();
                 }
@@ -265,7 +225,7 @@ namespace SmileSunshineToy
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                e.ToolTipText = "Double Cick See Detail";
+                e.ToolTipText = "Double Click See Detail";
             }
         }
 
@@ -276,107 +236,42 @@ namespace SmileSunshineToy
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 string planId = row.Cells["PlanID"].Value?.ToString();
 
-                DateTime startDate;
-                if (row.Cells["StartDate"].Value != DBNull.Value && row.Cells["StartDate"].Value != null)
-                {
-                    if (DateTime.TryParse(row.Cells["StartDate"].Value.ToString(), out startDate))
-                    {
-                        startDate = DateTime.ParseExact(startDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", null);
-                    }
-                    else
-                    {
-                        startDate = dpStartDate.MinDate;
-                    }
-                }
-                else
-                {
-                    startDate = dpStartDate.MinDate;
-                }
+                DateTime startDate = row.Cells["StartDate"].Value is DateTime start ? start : dpStartDate.MinDate;
+                DateTime endDate = row.Cells["EndDate"].Value is DateTime end ? end : dpEndDate.MinDate;
 
-                DateTime endDate;
-                if (row.Cells["EndDate"].Value != DBNull.Value && row.Cells["EndDate"].Value != null)
-                {
-                    if (DateTime.TryParse(row.Cells["EndDate"].Value.ToString(), out endDate))
-                    {
-                        endDate = DateTime.ParseExact(endDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", null);
-                    }
-                    else
-                    {
-                        endDate = dpEndDate.MinDate;
-                    }
-                }
-                else
-                {
-                    endDate = dpEndDate.MinDate;
-                }
-
-                string status = row.Cells["Status"].Value?.ToString();
-                string orderId = row.Cells["OrderID"].Value?.ToString();
-                string productId = row.Cells["ProductID"].Value?.ToString();
-
-                var detailForm = new ProdPlanAdd(
-                    planId, startDate, endDate, status,
-                    orderId,
-                    productId
-                );
-                detailForm.ShowDialog();
+                new ProdPlanAdd(
+                    planId,
+                    startDate,
+                    endDate,
+                    row.Cells["Status"].Value?.ToString(),
+                    row.Cells["OrderID"].Value?.ToString(),
+                    row.Cells["ProductID"].Value?.ToString()
+                ).ShowDialog();
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            toolStripLabel1.Text = System.DateTime.Now.ToString();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPlanID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void export_Click(object sender, EventArgs e)
-        {
-            TextPdfExporter.ExportDataGridViewToPdf(dataGridView1);
         }
 
         private void productGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            try
+            if (e.RowIndex >= 0)
             {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = productGridView.Rows[e.RowIndex];
-                    int productId = Convert.ToInt32(row.Cells["productID"].Value);
-                    string productName = row.Cells["Name"].Value?.ToString() ?? "未知产品";
-                    string description = row.Cells["description"].Value?.ToString() ?? "";
+                DataGridViewRow row = productGridView.Rows[e.RowIndex];
+                string productId = row.Cells["productID"].Value?.ToString(); // 直接获取字符串值
+                string productName = row.Cells["Name"].Value?.ToString() ?? "Unknown";
+                string description = row.Cells["description"].Value?.ToString() ?? "";
 
-                    // 创建并显示产品详情窗体
-                    var detailForm = new ProductDetailForm(
-                        productId,
-                        productName,
-                        description,
-                        _fileUploadManager,
-                        _imageHelper
-                    );
+                var detailForm = new ProductDetailForm(
+                    productId,
+                    productName,
+                    description,
+                    _fileUploadManager,
+                    _imageHelper
+                );
 
-                    detailForm.ShowDialog();
-                }
+                detailForm.ShowDialog();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"无法打开详情窗口: {ex.Message}", "错误",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        
-    }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e) => toolStripLabel1.Text = DateTime.Now.ToString();
+        private void export_Click(object sender, EventArgs e) => TextPdfExporter.ExportDataGridViewToPdf(dataGridView1);
     }
 }

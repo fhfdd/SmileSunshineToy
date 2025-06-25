@@ -7,12 +7,12 @@ namespace SmileSunshineToy
 {
     public partial class ProductDetailForm : Form
     {
-        private readonly int _productId;
+        private readonly string _productId;
         private Image _currentImage;
         private readonly FileUploadManager _fileUploadManager;
         private readonly ProductImageHelper _imageHelper;
 
-        public ProductDetailForm(int productId, string productName, string description,
+        public ProductDetailForm(string productId, string productName, string description,
                                  FileUploadManager fileUploadManager,
                                  ProductImageHelper imageHelper)
         {
@@ -30,7 +30,6 @@ namespace SmileSunshineToy
 
         private void LoadProductImage()
         {
-            // 获取当前图片
             _currentImage = _imageHelper.GetProductImage(_productId);
 
             if (_currentImage != null)

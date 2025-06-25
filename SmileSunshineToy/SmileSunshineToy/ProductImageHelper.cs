@@ -15,7 +15,7 @@ namespace SmileSunshineToy.Utilities
         }
 
         // 从数据库获取产品图片
-        public Image GetProductImage(int productId)
+        public Image GetProductImage(string productId)
         {
             try
             {

@@ -18,6 +18,7 @@ namespace SmileSunshineToy
 
             base.TableName = "inbound";
             base.PrimaryKey = "inboundID";
+            base.DataGridView = dataGridView1;
 
             LoadData();
         }
