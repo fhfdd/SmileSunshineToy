@@ -334,5 +334,10 @@ namespace SmileSunshineToy
         {
 
         }
+
+        private void export_Click(object sender, EventArgs e)
+        {
+            TextPdfExporter.ExportDataGridViewToPdf(dataGridView1);
+        }
     }
 }
