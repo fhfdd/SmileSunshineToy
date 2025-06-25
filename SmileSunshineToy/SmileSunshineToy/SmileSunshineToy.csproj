@@ -89,6 +89,7 @@
     <Compile Include="RDdash.Designer.cs">
       <DependentUpon>RDdash.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextPdfExporter.cs" />
     <Compile Include="UserProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
