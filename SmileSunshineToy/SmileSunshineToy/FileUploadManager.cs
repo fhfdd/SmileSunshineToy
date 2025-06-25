@@ -59,32 +59,54 @@ namespace SmileSunshineToy.Utilities
         }
 
         // 从文件选择器中上传图片
-        public Image SelectAndUploadImage(int productId)
+        public Image SelectAndUploadImage(string productId)  // 修改为string类型
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            try
             {
-                openFileDialog.Filter = "图片文件|*.jpg;*.jpeg;*.png;*.bmp|所有文件|*.*";
-                openFileDialog.Title = "选择产品图片";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    try
+                    openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        Image selectedImage = Image.FromFile(openFileDialog.FileName);
-
-                        if (UploadProductImage(productId, selectedImage))
+                        using (Image image = Image.FromFile(openFileDialog.FileName))
                         {
-                            return selectedImage;
+                            using (var conn = new MySqlConnection(_connectionString))
+                            {
+                                conn.Open();
+
+                                using (var cmd = new MySqlCommand(
+                                    "UPDATE product SET image_data = @data WHERE productID = @id",
+                                    conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@id", productId);  // 使用字符串参数
+                                    cmd.Parameters.AddWithValue("@data", ImageToByteArray(image));
+
+                                    int affectedRows = cmd.ExecuteNonQuery();
+                                    if (affectedRows > 0)
+                                    {
+                                        return (Image)image.Clone();  // 返回新实例
+                                    }
+                                }
+                            }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"无法加载图片: {ex.Message}", "错误",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
+                return null;
             }
-            return null;
+            catch (Exception ex)
+            {
+                MessageBox.Show($"图片上传失败: {ex.Message}", "错误",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
         }
     }
 }
