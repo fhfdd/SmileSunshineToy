@@ -181,7 +181,7 @@ namespace SmileSunshineToy
             {
                 //materialTable.Clear();
 
-                materialAdapter.Fill(materialTable);
+                //materialAdapter.Fill(materialTable);
 
                 dataGridView1.DataSource = materialTable;
             }
