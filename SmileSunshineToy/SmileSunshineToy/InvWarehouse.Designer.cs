@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Windows.Forms;
+
 namespace SmileSunshineToy
 {
     partial class InvWarehouse
@@ -70,10 +72,17 @@ namespace SmileSunshineToy
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new SmileSunshineToy.testDataSet();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
+
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
@@ -276,6 +285,7 @@ namespace SmileSunshineToy
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(262, 856);
             this.panel3.TabIndex = 59;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // button7
             // 
@@ -479,6 +489,11 @@ namespace SmileSunshineToy
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(1022, 578);
             this.dataGridView1.TabIndex = 49;
+
+
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+
+
             // 
             // Name
             // 
@@ -545,6 +560,7 @@ namespace SmileSunshineToy
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
+
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -586,6 +602,43 @@ namespace SmileSunshineToy
             this.stockQuantityDataGridViewTextBoxColumn.Name = "stockQuantityDataGridViewTextBoxColumn";
             this.stockQuantityDataGridViewTextBoxColumn.Width = 150;
             // 
+
+
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "product";
+            this.productBindingSource.DataSource = this.testDataSet;
+            // 
+            // testDataSet
+            // 
+            this.testDataSet.DataSetName = "testDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(951, 307);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(124, 73);
+            this.btnDelete.TabIndex = 52;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(842, 204);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(134, 34);
+            this.btnSearch.TabIndex = 50;
+            this.btnSearch.Text = "search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+
             // InvWarehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -615,6 +668,11 @@ namespace SmileSunshineToy
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -650,13 +708,13 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockQuantity;
+
+
     }
 }
