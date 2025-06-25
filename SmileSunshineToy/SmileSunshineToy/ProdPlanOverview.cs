@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using SmileSunshineToy.Utilities;
 
 namespace SmileSunshineToy
 {
@@ -338,6 +339,17 @@ namespace SmileSunshineToy
         private void export_Click(object sender, EventArgs e)
         {
             TextPdfExporter.ExportDataGridViewToPdf(dataGridView1);
+        }
+
+        private void productGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            GridViewImageHelper.ShowSelectedRowImage(
+                dataGridView1,
+                "ImagePath",  // 或您实际的图片列名
+                "ProductID",
+                "ProductName",
+                "Price"
+            );
         }
     }
 }

@@ -489,7 +489,10 @@ namespace SmileSunshineToy
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(1022, 578);
             this.dataGridView1.TabIndex = 49;
+
+
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+
 
             // 
             // Name
@@ -654,7 +657,6 @@ namespace SmileSunshineToy
             this.Controls.Add(this.btnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "InvWarehouse";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
