@@ -171,7 +171,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.login_Load_1);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
