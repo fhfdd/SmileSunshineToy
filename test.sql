@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 03, 2025 at 08:07 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- 主机： 127.0.0.1
+-- 生成日期： 2025-06-25 10:42:41
+-- 服务器版本： 10.4.32-MariaDB
+-- PHP 版本： 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project`
+-- 数据库： `test`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aftersalerequest`
+-- 表的结构 `aftersalerequest`
 --
 
 CREATE TABLE `aftersalerequest` (
@@ -35,7 +35,7 @@ CREATE TABLE `aftersalerequest` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `aftersalerequest`
+-- 转存表中的数据 `aftersalerequest`
 --
 
 INSERT INTO `aftersalerequest` (`RequestID`, `OrderID`, `Status`, `RequestDate`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `aftersalerequest` (`RequestID`, `OrderID`, `Status`, `RequestDate`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cschat`
+-- 表的结构 `cschat`
 --
 
 CREATE TABLE `cschat` (
@@ -58,7 +58,7 @@ CREATE TABLE `cschat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cschat`
+-- 转存表中的数据 `cschat`
 --
 
 INSERT INTO `cschat` (`ChatID`, `CustomerID`, `Message`, `Response`, `Timestamp`) VALUES
@@ -69,7 +69,7 @@ INSERT INTO `cschat` (`ChatID`, `CustomerID`, `Message`, `Response`, `Timestamp`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- 表的结构 `customer`
 --
 
 CREATE TABLE `customer` (
@@ -82,7 +82,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `customer`
+-- 转存表中的数据 `customer`
 --
 
 INSERT INTO `customer` (`CustomerID`, `Name`, `Email`, `Address`, `Feedback`, `Phone`) VALUES
@@ -98,7 +98,7 @@ INSERT INTO `customer` (`CustomerID`, `Name`, `Email`, `Address`, `Feedback`, `P
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- 表的结构 `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -109,7 +109,7 @@ CREATE TABLE `feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `feedback`
+-- 转存表中的数据 `feedback`
 --
 
 INSERT INTO `feedback` (`FeedbackID`, `CustomerID`, `FeedbackText`, `FeedbackDate`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `feedback` (`FeedbackID`, `CustomerID`, `FeedbackText`, `FeedbackDat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `idsequence`
+-- 表的结构 `idsequence`
 --
 
 CREATE TABLE `idsequence` (
@@ -130,7 +130,7 @@ CREATE TABLE `idsequence` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `idsequence`
+-- 转存表中的数据 `idsequence`
 --
 
 INSERT INTO `idsequence` (`Prefix`, `CurrentNumber`) VALUES
@@ -139,7 +139,7 @@ INSERT INTO `idsequence` (`Prefix`, `CurrentNumber`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inventory`
+-- 表的结构 `inventory`
 --
 
 CREATE TABLE `inventory` (
@@ -151,7 +151,7 @@ CREATE TABLE `inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `inventory`
+-- 转存表中的数据 `inventory`
 --
 
 INSERT INTO `inventory` (`InventoryID`, `ProductID`, `Quantity`, `Location`, `WarehouseID`) VALUES
@@ -162,7 +162,7 @@ INSERT INTO `inventory` (`InventoryID`, `ProductID`, `Quantity`, `Location`, `Wa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `invoice`
+-- 表的结构 `invoice`
 --
 
 CREATE TABLE `invoice` (
@@ -173,7 +173,7 @@ CREATE TABLE `invoice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `invoice`
+-- 转存表中的数据 `invoice`
 --
 
 INSERT INTO `invoice` (`InvoiceID`, `OrderID`, `InvoiceDate`, `TotalAmount`) VALUES
@@ -187,7 +187,7 @@ INSERT INTO `invoice` (`InvoiceID`, `OrderID`, `InvoiceDate`, `TotalAmount`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `logistics`
+-- 表的结构 `logistics`
 --
 
 CREATE TABLE `logistics` (
@@ -197,7 +197,7 @@ CREATE TABLE `logistics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `logistics`
+-- 转存表中的数据 `logistics`
 --
 
 INSERT INTO `logistics` (`logisticsID`, `ShipmentID`, `status`) VALUES
@@ -211,7 +211,7 @@ INSERT INTO `logistics` (`logisticsID`, `ShipmentID`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `material`
+-- 表的结构 `material`
 --
 
 CREATE TABLE `material` (
@@ -224,7 +224,7 @@ CREATE TABLE `material` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `material`
+-- 转存表中的数据 `material`
 --
 
 INSERT INTO `material` (`MaterialID`, `MaterialName`, `Specification`, `StockQuantity`, `SupplierID`, `Unit`) VALUES
@@ -239,33 +239,33 @@ INSERT INTO `material` (`MaterialID`, `MaterialName`, `Specification`, `StockQua
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- 表的结构 `order`
 --
 
 CREATE TABLE `order` (
   `OrderID` int(11) NOT NULL,
   `CustomerID` int(11) NOT NULL,
   `OrderDate` date NOT NULL,
-  `Status` varchar(20) DEFAULT NULL,
+  `Status` enum('Pending','Processing','Completed') DEFAULT 'Pending',
   `TotalAmount` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `order`
+-- 转存表中的数据 `order`
 --
 
 INSERT INTO `order` (`OrderID`, `CustomerID`, `OrderDate`, `Status`, `TotalAmount`) VALUES
-(1, 1, '2025-06-03', 'Confirmed', 1999.99),
-(3, 4, '2025-05-25', 'Confirmed', 2500.00),
+(1, 1, '2025-06-03', 'Completed', 1999.99),
+(3, 4, '2025-05-25', 'Completed', 2500.00),
 (4, 5, '2025-04-25', 'Pending', 800.00),
-(5, 6, '2025-05-15', 'Confirmed', 550.00),
+(5, 6, '2025-05-15', 'Completed', 550.00),
 (8, 7, '2025-03-25', 'Pending', 649.50),
-(9, 8, '2025-05-18', 'Confirmed', 1899.00),
+(9, 8, '2025-05-18', 'Completed', 1899.00),
 (10, 9, '2025-05-07', 'Pending', 1300.00),
-(11, 10, '2025-06-02', 'Confirmed', 999.00);
+(11, 10, '2025-06-02', 'Completed', 999.00);
 
 --
--- Triggers `order`
+-- 触发器 `order`
 --
 DELIMITER $$
 CREATE TRIGGER `AutoGenerateOrderID` BEFORE INSERT ON `order` FOR EACH ROW BEGIN
@@ -287,7 +287,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ordersequence`
+-- 表的结构 `ordersequence`
 --
 
 CREATE TABLE `ordersequence` (
@@ -296,7 +296,7 @@ CREATE TABLE `ordersequence` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `ordersequence`
+-- 转存表中的数据 `ordersequence`
 --
 
 INSERT INTO `ordersequence` (`OrderDate`, `CurrentNumber`) VALUES
@@ -311,7 +311,7 @@ INSERT INTO `ordersequence` (`OrderDate`, `CurrentNumber`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payment`
+-- 表的结构 `payment`
 --
 
 CREATE TABLE `payment` (
@@ -323,7 +323,7 @@ CREATE TABLE `payment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `payment`
+-- 转存表中的数据 `payment`
 --
 
 INSERT INTO `payment` (`PaymentID`, `InvoiceID`, `PaymentDate`, `Amount`, `PaymentMethod`) VALUES
@@ -337,7 +337,7 @@ INSERT INTO `payment` (`PaymentID`, `InvoiceID`, `PaymentDate`, `Amount`, `Payme
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- 表的结构 `product`
 --
 
 CREATE TABLE `product` (
@@ -349,7 +349,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `product`
+-- 转存表中的数据 `product`
 --
 
 INSERT INTO `product` (`ProductID`, `Name`, `Description`, `Price`, `StockQuantity`) VALUES
@@ -362,79 +362,82 @@ INSERT INTO `product` (`ProductID`, `Name`, `Description`, `Price`, `StockQuanti
 -- --------------------------------------------------------
 
 --
--- Table structure for table `productionplan`
+-- 表的结构 `productionplan`
 --
 
 CREATE TABLE `productionplan` (
   `planID` int(11) NOT NULL,
+  `OrderID` int(11) DEFAULT NULL,
+  `ProductID` int(11) DEFAULT NULL,
   `startDate` date DEFAULT NULL,
   `EndDate` date DEFAULT NULL,
-  `Status` varchar(10) DEFAULT NULL
+  `Status` enum('Pending','Processing','Completed') DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `productionplan`
+-- 转存表中的数据 `productionplan`
 --
 
-INSERT INTO `productionplan` (`planID`, `startDate`, `EndDate`, `Status`) VALUES
-(1, '2025-03-01', '2025-03-10', 'In progres'),
-(2, '2025-03-15', '2025-03-25', 'On Hold '),
-(3, '2025-04-01', '2025-04-10', 'Completed'),
-(4, '2025-04-11', '2025-04-20', 'Quality Ch'),
-(5, '2025-04-15', '2025-04-20', 'Completed'),
-(6, '2025-04-21', '2025-04-27', 'In progres');
+INSERT INTO `productionplan` (`planID`, `OrderID`, `ProductID`, `startDate`, `EndDate`, `Status`) VALUES
+(1, 1, 1, '2025-03-01', '2025-03-10', 'Processing'),
+(2, 3, 2, '2025-03-15', '2025-03-25', 'Pending'),
+(3, 4, 3, '2025-04-01', '2025-04-10', 'Completed'),
+(4, 5, 4, '2025-04-11', '2025-04-20', 'Processing'),
+(5, 8, 5, '2025-04-15', '2025-04-20', 'Completed'),
+(6, 9, 1, '2025-04-21', '2025-04-27', 'Processing'),
+(7, 3, 1, '2025-06-25', '2025-07-02', 'Pending');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `returnrequest`
+-- 表的结构 `returnrequest`
 --
 
 CREATE TABLE `returnrequest` (
   `ExchangeID` int(11) NOT NULL,
   `OrderID` int(11) NOT NULL,
   `ProductID` int(11) NOT NULL,
-  `Status` varchar(10) DEFAULT NULL,
+  `Status` enum('Pending','Processing','Completed') DEFAULT 'Pending',
   `UpdatedDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `returnrequest`
+-- 转存表中的数据 `returnrequest`
 --
 
 INSERT INTO `returnrequest` (`ExchangeID`, `OrderID`, `ProductID`, `Status`, `UpdatedDate`) VALUES
-(3, 4, 1, 'Exchange p', '2025-06-01'),
-(4, 8, 4, 'Approved', '2025-05-29'),
-(5, 10, 2, 'In process', '2025-05-31');
+(3, 4, 1, 'Processing', '2025-06-01'),
+(4, 8, 4, 'Completed', '2025-05-29'),
+(5, 10, 2, 'Processing', '2025-05-31');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shipment`
+-- 表的结构 `shipment`
 --
 
 CREATE TABLE `shipment` (
   `shipmentID` int(11) NOT NULL,
   `OrderID` int(11) DEFAULT NULL,
   `TrackingNumber` int(11) DEFAULT NULL,
-  `Status` varchar(30) DEFAULT NULL,
+  `Status` enum('Pending','Processing','Completed') DEFAULT 'Pending',
   `EstimatedDeliveryDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `shipment`
+-- 转存表中的数据 `shipment`
 --
 
 INSERT INTO `shipment` (`shipmentID`, `OrderID`, `TrackingNumber`, `Status`, `EstimatedDeliveryDate`) VALUES
-(1, 1, 1, 'In Transit', '2025-06-19'),
-(2, 3, 2, 'Dispatched', '2025-06-18'),
+(1, 1, 1, 'Processing', '2025-06-19'),
+(2, 3, 2, 'Processing', '2025-06-18'),
 (3, 5, 3, 'Completed', '2025-06-04'),
-(4, 11, 4, 'In warehouse', '2025-06-24');
+(4, 11, 4, 'Pending', '2025-06-24');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier`
+-- 表的结构 `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -445,7 +448,7 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `supplier`
+-- 转存表中的数据 `supplier`
 --
 
 INSERT INTO `supplier` (`SuPPlierID`, `Name`, `contactInfo`, `Address`) VALUES
@@ -457,30 +460,30 @@ INSERT INTO `supplier` (`SuPPlierID`, `Name`, `contactInfo`, `Address`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `task`
+-- 表的结构 `task`
 --
 
 CREATE TABLE `task` (
   `TaskID` int(11) NOT NULL,
   `TaskName` varchar(20) DEFAULT NULL,
-  `Status` varchar(20) DEFAULT NULL,
+  `Status` enum('Pending','Processing','Completed') DEFAULT 'Pending',
   `Duedate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `task`
+-- 转存表中的数据 `task`
 --
 
 INSERT INTO `task` (`TaskID`, `TaskName`, `Status`, `Duedate`) VALUES
-(1, 'Design Review', 'Waiting for feedback', '2025-06-07'),
-(2, 'Assembly Line Setup', 'In progress', '2025-06-08'),
+(1, 'Design Review', 'Pending', '2025-06-07'),
+(2, 'Assembly Line Setup', 'Processing', '2025-06-08'),
 (3, 'Order Fulfillment', 'Completed', '2025-06-01'),
-(4, 'Packaging Design', 'Approved', '2025-06-11');
+(4, 'Packaging Design', 'Completed', '2025-06-11');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- 表的结构 `user`
 --
 
 CREATE TABLE `user` (
@@ -492,15 +495,23 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- 转存表中的数据 `user`
 --
 
 INSERT INTO `user` (`UserID`, `Role`, `Name`, `Email`, `Password`) VALUES
-(1, 'Sales', 'Tom Smith', 'sales@example.com', 'SalesPass123'),
-(2, 'Purchasing', 'Alice Li', 'purchasing@example.com', 'PurPass456');
+(1, 'Admin', 'Admin User', 'admin@example.com', 'AdminPass123'),
+(2, 'Sales', 'Sales Rep', 'salesrep@example.com', 'SalesPass456'),
+(3, 'Inventory', 'Inventory Clerk', 'inventory@example.com', 'InvPass789'),
+(4, 'Finance', 'Finance Officer', 'finance@example.com', 'FinPass012'),
+(5, 'Production', 'Production Worker', 'production@example.com', 'ProdPass345'),
+(6, 'Logistics', 'Logistics Staff', 'logistics@example.com', 'LogiPass678'),
+(7, 'Procuremen', 'Procurement Speciali', 'procurement@example.com', 'ProcPass901'),
+(8, 'Personnel', 'HR Personnel', 'hr@example.com', 'HrPass234'),
+(9, 'RD', 'RD Engineer', 'rd@example.com', 'RdPass567'),
+(10, 'None', 'Guest User', 'guest@example.com', 'GuestPass890');
 
 --
--- Triggers `user`
+-- 触发器 `user`
 --
 DELIMITER $$
 CREATE TRIGGER `AutoGenerateUserID` BEFORE INSERT ON `user` FOR EACH ROW BEGIN
@@ -526,7 +537,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `warehouse`
+-- 表的结构 `warehouse`
 --
 
 CREATE TABLE `warehouse` (
@@ -538,7 +549,7 @@ CREATE TABLE `warehouse` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `warehouse`
+-- 转存表中的数据 `warehouse`
 --
 
 INSERT INTO `warehouse` (`WarehouseID`, `WarehouseName`, `Location`, `ContactPerson`, `ContactPhone`) VALUES
@@ -548,126 +559,78 @@ INSERT INTO `warehouse` (`WarehouseID`, `WarehouseName`, `Location`, `ContactPer
 -- --------------------------------------------------------
 
 --
--- Table structure for table `workorder`
+-- 表的结构 `workorder`
 --
 
 CREATE TABLE `workorder` (
   `WorkOrderID` int(11) NOT NULL,
   `productionPlanID` int(11) DEFAULT NULL,
-  `Status` varchar(5) DEFAULT NULL,
+  `Status` enum('Pending','Processing','Completed') DEFAULT 'Pending',
   `startDate` date DEFAULT NULL,
   `EndDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `workorder`
+-- 转存表中的数据 `workorder`
 --
 
 INSERT INTO `workorder` (`WorkOrderID`, `productionPlanID`, `Status`, `startDate`, `EndDate`) VALUES
-(1, 1, 'INPRG', '2025-04-05', '2025-04-15'),
-(2, 2, 'ONHLD', '2025-04-20', '2025-04-30'),
-(3, 3, 'COMP', '2025-05-01', '2025-05-10');
+(1, 1, 'Processing', '2025-04-05', '2025-04-15'),
+(2, 2, 'Pending', '2025-04-20', '2025-04-30'),
+(3, 3, 'Completed', '2025-05-01', '2025-05-10');
 
 --
--- Indexes for dumped tables
+-- 转储表的索引
 --
 
 --
--- Indexes for table `aftersalerequest`
---
-ALTER TABLE `aftersalerequest`
-  ADD PRIMARY KEY (`RequestID`),
-  ADD KEY `OrderID` (`OrderID`);
-
---
--- Indexes for table `cschat`
---
-ALTER TABLE `cschat`
-  ADD PRIMARY KEY (`ChatID`),
-  ADD KEY `CustomerID` (`CustomerID`);
-
---
--- Indexes for table `customer`
+-- 表的索引 `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`CustomerID`);
 
 --
--- Indexes for table `feedback`
+-- 表的索引 `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`FeedbackID`),
   ADD KEY `CustomerID` (`CustomerID`);
 
 --
--- Indexes for table `idsequence`
+-- 表的索引 `idsequence`
 --
 ALTER TABLE `idsequence`
   ADD PRIMARY KEY (`Prefix`);
 
 --
--- Indexes for table `inventory`
---
-ALTER TABLE `inventory`
-  ADD PRIMARY KEY (`InventoryID`),
-  ADD KEY `ProductID` (`ProductID`),
-  ADD KEY `WarehouseID` (`WarehouseID`);
-
---
--- Indexes for table `invoice`
---
-ALTER TABLE `invoice`
-  ADD PRIMARY KEY (`InvoiceID`),
-  ADD KEY `OrderID` (`OrderID`);
-
---
--- Indexes for table `logistics`
---
-ALTER TABLE `logistics`
-  ADD PRIMARY KEY (`logisticsID`),
-  ADD KEY `ShipmentID` (`ShipmentID`);
-
---
--- Indexes for table `material`
---
-ALTER TABLE `material`
-  ADD PRIMARY KEY (`MaterialID`),
-  ADD KEY `SupplierID` (`SupplierID`);
-
---
--- Indexes for table `order`
+-- 表的索引 `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`OrderID`),
   ADD KEY `CustomerID` (`CustomerID`);
 
 --
--- Indexes for table `ordersequence`
+-- 表的索引 `ordersequence`
 --
 ALTER TABLE `ordersequence`
   ADD PRIMARY KEY (`OrderDate`);
 
 --
--- Indexes for table `payment`
---
-ALTER TABLE `payment`
-  ADD PRIMARY KEY (`PaymentID`),
-  ADD KEY `InvoiceID` (`InvoiceID`);
-
---
--- Indexes for table `product`
+-- 表的索引 `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`ProductID`);
 
 --
--- Indexes for table `productionplan`
+-- 表的索引 `productionplan`
 --
 ALTER TABLE `productionplan`
-  ADD PRIMARY KEY (`planID`);
+  ADD PRIMARY KEY (`planID`),
+  ADD KEY `idx_order_id` (`OrderID`),
+  ADD KEY `idx_product_id` (`ProductID`);
 
 --
--- Indexes for table `returnrequest`
+-- 表的索引 `returnrequest`
 --
 ALTER TABLE `returnrequest`
   ADD PRIMARY KEY (`ExchangeID`),
@@ -675,235 +638,157 @@ ALTER TABLE `returnrequest`
   ADD KEY `ProductID` (`ProductID`);
 
 --
--- Indexes for table `shipment`
+-- 表的索引 `shipment`
 --
 ALTER TABLE `shipment`
   ADD PRIMARY KEY (`shipmentID`),
   ADD KEY `OrderID` (`OrderID`);
 
 --
--- Indexes for table `supplier`
+-- 表的索引 `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`SuPPlierID`);
 
 --
--- Indexes for table `task`
+-- 表的索引 `task`
 --
 ALTER TABLE `task`
   ADD PRIMARY KEY (`TaskID`);
 
 --
--- Indexes for table `user`
+-- 表的索引 `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`UserID`);
 
 --
--- Indexes for table `warehouse`
+-- 表的索引 `warehouse`
 --
 ALTER TABLE `warehouse`
   ADD PRIMARY KEY (`WarehouseID`);
 
 --
--- Indexes for table `workorder`
+-- 表的索引 `workorder`
 --
 ALTER TABLE `workorder`
   ADD PRIMARY KEY (`WorkOrderID`),
   ADD KEY `productionPlanID` (`productionPlanID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- 在导出的表使用AUTO_INCREMENT
 --
 
 --
--- AUTO_INCREMENT for table `aftersalerequest`
---
-ALTER TABLE `aftersalerequest`
-  MODIFY `RequestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `cschat`
---
-ALTER TABLE `cschat`
-  MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `customer`
+-- 使用表AUTO_INCREMENT `customer`
 --
 ALTER TABLE `customer`
   MODIFY `CustomerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `feedback`
+-- 使用表AUTO_INCREMENT `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `FeedbackID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `inventory`
---
-ALTER TABLE `inventory`
-  MODIFY `InventoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `invoice`
---
-ALTER TABLE `invoice`
-  MODIFY `InvoiceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `logistics`
---
-ALTER TABLE `logistics`
-  MODIFY `logisticsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `material`
---
-ALTER TABLE `material`
-  MODIFY `MaterialID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `order`
+-- 使用表AUTO_INCREMENT `order`
 --
 ALTER TABLE `order`
   MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `payment`
---
-ALTER TABLE `payment`
-  MODIFY `PaymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `product`
+-- 使用表AUTO_INCREMENT `product`
 --
 ALTER TABLE `product`
   MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `productionplan`
+-- 使用表AUTO_INCREMENT `productionplan`
 --
 ALTER TABLE `productionplan`
-  MODIFY `planID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `planID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `returnrequest`
+-- 使用表AUTO_INCREMENT `returnrequest`
 --
 ALTER TABLE `returnrequest`
   MODIFY `ExchangeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `shipment`
+-- 使用表AUTO_INCREMENT `shipment`
 --
 ALTER TABLE `shipment`
   MODIFY `shipmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `supplier`
+-- 使用表AUTO_INCREMENT `supplier`
 --
 ALTER TABLE `supplier`
   MODIFY `SuPPlierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `task`
+-- 使用表AUTO_INCREMENT `task`
 --
 ALTER TABLE `task`
   MODIFY `TaskID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `user`
+-- 使用表AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `warehouse`
+-- 使用表AUTO_INCREMENT `warehouse`
 --
 ALTER TABLE `warehouse`
   MODIFY `WarehouseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `workorder`
+-- 使用表AUTO_INCREMENT `workorder`
 --
 ALTER TABLE `workorder`
   MODIFY `WorkOrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- 限制导出的表
 --
 
 --
--- Constraints for table `aftersalerequest`
---
-ALTER TABLE `aftersalerequest`
-  ADD CONSTRAINT `aftersalerequest_ibfk_1` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`);
-
---
--- Constraints for table `cschat`
---
-ALTER TABLE `cschat`
-  ADD CONSTRAINT `cschat_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`);
-
---
--- Constraints for table `feedback`
+-- 限制表 `feedback`
 --
 ALTER TABLE `feedback`
   ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`);
 
 --
--- Constraints for table `inventory`
---
-ALTER TABLE `inventory`
-  ADD CONSTRAINT `inventory_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `product` (`ProductID`),
-  ADD CONSTRAINT `inventory_ibfk_2` FOREIGN KEY (`WarehouseID`) REFERENCES `warehouse` (`WarehouseID`);
-
---
--- Constraints for table `invoice`
---
-ALTER TABLE `invoice`
-  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`);
-
---
--- Constraints for table `logistics`
---
-ALTER TABLE `logistics`
-  ADD CONSTRAINT `logistics_ibfk_1` FOREIGN KEY (`ShipmentID`) REFERENCES `shipment` (`shipmentID`);
-
---
--- Constraints for table `material`
---
-ALTER TABLE `material`
-  ADD CONSTRAINT `material_ibfk_1` FOREIGN KEY (`SupplierID`) REFERENCES `supplier` (`SuPPlierID`);
-
---
--- Constraints for table `order`
+-- 限制表 `order`
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `customer` (`CustomerID`);
 
 --
--- Constraints for table `payment`
+-- 限制表 `productionplan`
 --
-ALTER TABLE `payment`
-  ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`InvoiceID`) REFERENCES `invoice` (`InvoiceID`);
+ALTER TABLE `productionplan`
+  ADD CONSTRAINT `fk_productionplan_order` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`),
+  ADD CONSTRAINT `fk_productionplan_product` FOREIGN KEY (`ProductID`) REFERENCES `product` (`ProductID`);
 
 --
--- Constraints for table `returnrequest`
+-- 限制表 `returnrequest`
 --
 ALTER TABLE `returnrequest`
   ADD CONSTRAINT `returnrequest_ibfk_1` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`),
   ADD CONSTRAINT `returnrequest_ibfk_2` FOREIGN KEY (`ProductID`) REFERENCES `product` (`ProductID`);
 
 --
--- Constraints for table `shipment`
+-- 限制表 `shipment`
 --
 ALTER TABLE `shipment`
   ADD CONSTRAINT `shipment_ibfk_1` FOREIGN KEY (`OrderID`) REFERENCES `order` (`OrderID`);
 
 --
--- Constraints for table `workorder`
+-- 限制表 `workorder`
 --
 ALTER TABLE `workorder`
   ADD CONSTRAINT `workorder_ibfk_1` FOREIGN KEY (`productionPlanID`) REFERENCES `productionplan` (`planID`);
