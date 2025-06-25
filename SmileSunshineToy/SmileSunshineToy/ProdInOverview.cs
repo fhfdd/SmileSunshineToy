@@ -18,6 +18,19 @@ namespace SmileSunshineToy
 
             base.TableName = "inbound";
             base.PrimaryKey = "inboundID";
+            base.DataGridView = dataGridView1;
+            base.FilterComboBox = filterComboBox;
+            base.SearchTextBox = txtSearch;
+            base.AddButton = btnAdd;
+            base.SaveButton = btnSave;
+            base.CancelButton = btnCancel;
+            base.SearchButton = btnSearch;
+
+
+            filterComboBox.Items.Add("inboundID");
+            filterComboBox.Items.Add("startDate");
+            filterComboBox.Items.Add("EndDate");
+            filterComboBox.SelectedIndex = 0;
 
             LoadData();
         }
