@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class FinReOverview : Form
+    public partial class FinReOverview : DataGridViewForm
     {
-        public FinReOverview()
+        public FinReOverview():base()
         {
             InitializeComponent();
+
+            base.TableName = "productionplan";
+            base.PrimaryKey = "planID";
+            base.DataGridView = dataGridView1;
+
+            LoadData();
         }
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
