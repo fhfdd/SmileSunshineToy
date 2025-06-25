@@ -234,7 +234,6 @@ namespace SmileSunshineToy
 
         public override void AddRecord()
         {
-            string tempId = $"TEMP_{Guid.NewGuid().ToString().Substring(0, 8)}";
 
             using (var dialog = new ProdPlanAdd(ConnectionString))
             {
@@ -314,6 +313,11 @@ namespace SmileSunshineToy
                 );
                 detailForm.ShowDialog();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripLabel1.Text = System.DateTime.Now.ToString();
         }
     }
 }
