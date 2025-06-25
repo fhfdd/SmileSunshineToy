@@ -180,7 +180,9 @@ namespace SmileSunshineToy
             try
             {
                 //materialTable.Clear();
-                //materialAdapter.Fill(materialTable);
+
+                materialAdapter.Fill(materialTable);
+
                 dataGridView1.DataSource = materialTable;
             }
             catch (Exception ex)
@@ -429,6 +431,7 @@ namespace SmileSunshineToy
         {
             // 当搜索框文本改变时，自动执行搜索
             SearchMaterials();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -437,6 +440,7 @@ namespace SmileSunshineToy
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+
         {
 
         }
