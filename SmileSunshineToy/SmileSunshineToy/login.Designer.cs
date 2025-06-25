@@ -57,7 +57,7 @@
             // 
             this.userName.BackColor = System.Drawing.SystemColors.Menu;
             this.userName.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
-            this.userName.Location = new System.Drawing.Point(191, 603);
+            this.userName.Location = new System.Drawing.Point(201, 457);
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(1243, 59);
             this.userName.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.password.BackColor = System.Drawing.SystemColors.Menu;
             this.password.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
-            this.password.Location = new System.Drawing.Point(191, 435);
+            this.password.Location = new System.Drawing.Point(201, 611);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(1243, 59);
             this.password.TabIndex = 4;
@@ -157,6 +157,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1497, 1126);
             this.panel2.TabIndex = 9;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
             // Login
             // 
