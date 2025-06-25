@@ -77,6 +77,7 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileUploadManager.cs" />
     <Compile Include="GridViewImageHelper.cs" />
     <Compile Include="ProdPlanAdd.cs">
       <SubType>Form</SubType>
@@ -84,6 +85,14 @@
     <Compile Include="ProdPlanAdd.Designer.cs">
       <DependentUpon>ProdPlanAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductDetailForm.Designer.cs">
+      <DependentUpon>ProductDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductImageHelper.cs" />
+    <Compile Include="ProductImageManager.cs" />
     <Compile Include="RDdash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductDetailForm.resx">
+      <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

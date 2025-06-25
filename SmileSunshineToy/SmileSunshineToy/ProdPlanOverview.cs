@@ -17,9 +17,16 @@ namespace SmileSunshineToy
     {   
         private bool userHasManuallySelectedOrder = false;
         private bool userHasManuallySelectedProduct = false;
+        private ProductImageHelper _imageHelper;
+        private FileUploadManager _fileUploadManager;
+
         public ProdPlanOverview(): base()
         { 
             InitializeComponent();
+
+            _imageHelper = new ProductImageHelper(ConnectionString);
+            _imageHelper = new ProductImageHelper(ConnectionString);
+            _fileUploadManager = new FileUploadManager(ConnectionString);
 
             base.TableName = "productionplan";
             base.PrimaryKey = "planID";
@@ -343,13 +350,33 @@ namespace SmileSunshineToy
 
         private void productGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            GridViewImageHelper.ShowSelectedRowImage(
-                dataGridView1,
-                "ImagePath",  // 或您实际的图片列名
-                "ProductID",
-                "ProductName",
-                "Price"
-            );
-        }
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = productGridView.Rows[e.RowIndex];
+                    int productId = Convert.ToInt32(row.Cells["productID"].Value);
+                    string productName = row.Cells["Name"].Value?.ToString() ?? "未知产品";
+                    string description = row.Cells["description"].Value?.ToString() ?? "";
+
+                    // 创建并显示产品详情窗体
+                    var detailForm = new ProductDetailForm(
+                        productId,
+                        productName,
+                        description,
+                        _fileUploadManager,
+                        _imageHelper
+                    );
+
+                    detailForm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"无法打开详情窗口: {ex.Message}", "错误",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+    }
     }
 }
