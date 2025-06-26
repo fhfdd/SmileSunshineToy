@@ -1,8 +1,16 @@
-﻿namespace SmileSunshineToy
+﻿
+// 以下为 Designer 自动生成代码（保持原逻辑，确保与 Form 关联）
+namespace SmileSunshineToy
 {
     partial class ProductDetailForm
     {
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.PictureBox pictureBoxProduct;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Label lblProductId;
+        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Button btnClose;
 
         protected override void Dispose(bool disposing)
         {
@@ -14,7 +22,6 @@
         }
 
         #region Windows Form Designer generated code
-
         private void InitializeComponent()
         {
             this.pictureBoxProduct = new System.Windows.Forms.PictureBox();
@@ -44,6 +51,7 @@
             this.btnUpload.TabIndex = 1;
             this.btnUpload.Text = "上传新图片";
             this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // lblProductId
             // 
@@ -82,7 +90,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "关闭";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            //this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ProductDetailForm
             // 
@@ -102,16 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBoxProduct;
-        private System.Windows.Forms.Button btnUpload;
-        private System.Windows.Forms.Label lblProductId;
-        private System.Windows.Forms.Label lblProductName;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Button btnClose;
     }
 }

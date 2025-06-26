@@ -412,6 +412,7 @@ namespace SmileSunshineToy
             this.export.TabIndex = 102;
             this.export.Text = "export";
             this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.export_Click);
             // 
             // txtProd
             // 
@@ -658,6 +659,7 @@ namespace SmileSunshineToy
             this.btnSave.TabIndex = 82;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -668,6 +670,7 @@ namespace SmileSunshineToy
             this.btnAdd.TabIndex = 81;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridView1
             // 

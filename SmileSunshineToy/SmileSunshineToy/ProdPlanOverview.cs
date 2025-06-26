@@ -307,9 +307,7 @@ namespace SmileSunshineToy
                 new ProductDetailForm(
                     row.Cells["productID"].Value?.ToString(),
                     row.Cells["Name"].Value?.ToString() ?? "Unknown",
-                    row.Cells["description"].Value?.ToString() ?? "",
-                    null,
-                    null
+                    row.Cells["description"].Value?.ToString() ?? ""
                 ).ShowDialog();
             }
         }

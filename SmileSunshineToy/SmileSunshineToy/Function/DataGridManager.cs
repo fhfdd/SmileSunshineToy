@@ -20,6 +20,11 @@ namespace SmileSunshineToy
             DataTable = new DataTable();
         }
 
+        public string GenerateSystemID()
+        {
+            return _baseManager.GenerateSystemID();
+        }
+
         // 添加连接字符串设置
         public void SetConnectionString(string connectionString)
         {
