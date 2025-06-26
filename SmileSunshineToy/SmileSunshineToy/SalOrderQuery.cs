@@ -18,13 +18,12 @@ namespace SmileSunshineToy
         {
             InitializeComponent();
 
-            base.TableName = "product";
-            base.PrimaryKey = "ProductID";
+            base.TableName = "order";
+            base.PrimaryKey = "OrderID";
             base.DataGridView = dataGridView1;
             base.FilterComboBox = filterComboBox;
             base.SearchTextBox = txtSearch;
             base.AddButton = btnAdd;
-            base.DeleteButton = btnDelete;
             base.SaveButton = btnSave;
             base.CancelButton = btnSave;
             base.SearchButton = btnSearch;

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class RDdash : Form
+    public partial class RDdash : DataGridViewForm
     {
-        public RDdash()
+        public RDdash():base()
         {
             InitializeComponent();
+
+            base.TableName = "productionplan";
+            base.PrimaryKey = "planID";
+            base.DataGridView = dataGridView1;
+
+            LoadData();
         }
 
         private void RDdash_Load(object sender, EventArgs e)

@@ -25,57 +25,57 @@ namespace SmileSunshineToy
             lblProductName.Text = productName;
             txtDescription.Text = description;
 
-            LoadProductImage();
+            //LoadProductImage();
         }
 
-        private void LoadProductImage()
-        {
-            _currentImage = _imageHelper.GetProductImage(_productId);
+        //private void LoadProductImage()
+        //{
+        //    _currentImage = _imageHelper.GetProductImage(_productId);
 
-            if (_currentImage != null)
-            {
-                pictureBoxProduct.Image = _currentImage;
-            }
-            else
-            {
-                pictureBoxProduct.Image = Properties.Resources.DefaultProductImage;
-            }
-        }
+        //    if (_currentImage != null)
+        //    {
+        //        pictureBoxProduct.Image = _currentImage;
+        //    }
+        //    else
+        //    {
+        //        pictureBoxProduct.Image = Properties.Resources.DefaultProductImage;
+        //    }
+        //}
 
-        private void btnUpload_Click(object sender, EventArgs e)
-        {
-            // 选择并上传新图片
-            var newImage = _fileUploadManager.SelectAndUploadImage(_productId);
+        //private void btnUpload_Click(object sender, EventArgs e)
+        //{
+        //    // 选择并上传新图片
+        //    var newImage = _fileUploadManager.SelectAndUploadImage(_productId);
 
-            if (newImage != null)
-            {
-                // 显示新图片并释放旧资源
-                if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
-                {
-                    _currentImage.Dispose();
-                }
+        //    if (newImage != null)
+        //    {
+        //        // 显示新图片并释放旧资源
+        //        if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
+        //        {
+        //            _currentImage.Dispose();
+        //        }
 
-                _currentImage = newImage;
-                pictureBoxProduct.Image = _currentImage;
+        //        _currentImage = newImage;
+        //        pictureBoxProduct.Image = _currentImage;
 
-                MessageBox.Show("图片上传成功!", "成功",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+        //        MessageBox.Show("图片上传成功!", "成功",
+        //                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
 
-        private void ProductDetailForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // 释放图片资源
-            if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
-            {
-                _currentImage.Dispose();
-            }
-        }
+        //private void ProductDetailForm_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    // 释放图片资源
+        //    if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
+        //    {
+        //        _currentImage.Dispose();
+        //    }
+        //}
 
-        private void ProductDetailForm_Load(object sender, EventArgs e)
-        {
+        //private void ProductDetailForm_Load(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void btnClose_Click(object sender, EventArgs e)
         {

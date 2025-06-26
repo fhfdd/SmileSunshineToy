@@ -129,8 +129,8 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FileUploadManager.cs" />
-    <Compile Include="GridViewImageHelper.cs" />
+    <Compile Include="Function\FileUploadManager.cs" />
+    <Compile Include="Function\GridViewImageHelper.cs" />
     <Compile Include="ProdPlanAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,22 +143,22 @@
     <Compile Include="ProductDetailForm.Designer.cs">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductImageHelper.cs" />
-    <Compile Include="ProductImageManager.cs" />
+    <Compile Include="Function\ProductImageHelper.cs" />
+    <Compile Include="Function\ProductImageManager.cs" />
     <Compile Include="RDdash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RDdash.Designer.cs">
       <DependentUpon>RDdash.cs</DependentUpon>
     </Compile>
-    <Compile Include="TextPdfExporter.cs" />
+    <Compile Include="Function\TextPdfExporter.cs" />
     <Compile Include="UserProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserProfileForm.Designer.cs">
       <DependentUpon>UserProfileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserSession.cs" />
+    <Compile Include="Function\UserSession.cs" />
     <Compile Include="DataGridViewForm.cs">
       <SubType>Form</SubType>
     </Compile>

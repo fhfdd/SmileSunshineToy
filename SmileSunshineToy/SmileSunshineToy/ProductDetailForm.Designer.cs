@@ -44,7 +44,6 @@
             this.btnUpload.TabIndex = 1;
             this.btnUpload.Text = "上传新图片";
             this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // lblProductId
             // 
@@ -100,7 +99,6 @@
             this.Name = "ProductDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "产品详情";
-            this.Load += new System.EventHandler(this.ProductDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class PerSupOverview : Form
+    public partial class PerSupOverview : DataGridViewForm
     {
         public PerSupOverview()
         {
             InitializeComponent();
+
+            base.TableName = "supplier";
+            base.PrimaryKey = "SupplierID";
+            base.DataGridView = dataGridView1;
+
+            LoadData();
         }
 
         private void Create_Click(object sender, EventArgs e)

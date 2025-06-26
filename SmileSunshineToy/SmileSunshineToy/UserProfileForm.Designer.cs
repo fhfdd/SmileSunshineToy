@@ -31,6 +31,8 @@ namespace SmileSunshineToy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserProfileForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_user = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -45,30 +47,28 @@ namespace SmileSunshineToy
             this.btn_rd = new System.Windows.Forms.Button();
             this.btn_sale = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
-            this.filterComboBoxUser = new System.Windows.Forms.ComboBox();
-            this.txtSearchUser = new System.Windows.Forms.TextBox();
-            this.btnCancelUser = new System.Windows.Forms.Button();
-            this.btnSaveUser = new System.Windows.Forms.Button();
-            this.btnDeleteUser = new System.Windows.Forms.Button();
-            this.btnAddUser = new System.Windows.Forms.Button();
-            this.btnSearchUser = new System.Windows.Forms.Button();
-            this.dataGridView1User = new System.Windows.Forms.DataGridView();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new SmileSunshineToy.testDataSet();
             this.testDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.userTableAdapter();
+            this.export = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.txtPlanID = new System.Windows.Forms.TextBox();
+            this.filterComboBox = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_user)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -307,126 +307,6 @@ namespace SmileSunshineToy
             this.btn_home.UseVisualStyleBackColor = true;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
-            // filterComboBoxUser
-            // 
-            this.filterComboBoxUser.FormattingEnabled = true;
-            this.filterComboBoxUser.Location = new System.Drawing.Point(1169, 204);
-            this.filterComboBoxUser.Name = "filterComboBoxUser";
-            this.filterComboBoxUser.Size = new System.Drawing.Size(130, 26);
-            this.filterComboBoxUser.TabIndex = 30;
-            // 
-            // txtSearchUser
-            // 
-            this.txtSearchUser.Location = new System.Drawing.Point(744, 204);
-            this.txtSearchUser.Name = "txtSearchUser";
-            this.txtSearchUser.Size = new System.Drawing.Size(431, 28);
-            this.txtSearchUser.TabIndex = 29;
-            // 
-            // btnCancelUser
-            // 
-            this.btnCancelUser.Location = new System.Drawing.Point(1051, 315);
-            this.btnCancelUser.Name = "btnCancelUser";
-            this.btnCancelUser.Size = new System.Drawing.Size(124, 73);
-            this.btnCancelUser.TabIndex = 28;
-            this.btnCancelUser.Text = "Cancel";
-            this.btnCancelUser.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveUser
-            // 
-            this.btnSaveUser.Location = new System.Drawing.Point(884, 315);
-            this.btnSaveUser.Name = "btnSaveUser";
-            this.btnSaveUser.Size = new System.Drawing.Size(124, 73);
-            this.btnSaveUser.TabIndex = 27;
-            this.btnSaveUser.Text = "Save";
-            this.btnSaveUser.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteUser
-            // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(724, 315);
-            this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(124, 73);
-            this.btnDeleteUser.TabIndex = 26;
-            this.btnDeleteUser.Text = "Delete";
-            this.btnDeleteUser.UseVisualStyleBackColor = true;
-            // 
-            // btnAddUser
-            // 
-            this.btnAddUser.Location = new System.Drawing.Point(552, 315);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(124, 73);
-            this.btnAddUser.TabIndex = 25;
-            this.btnAddUser.Text = "ADD";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchUser
-            // 
-            this.btnSearchUser.Location = new System.Drawing.Point(614, 199);
-            this.btnSearchUser.Name = "btnSearchUser";
-            this.btnSearchUser.Size = new System.Drawing.Size(134, 33);
-            this.btnSearchUser.TabIndex = 24;
-            this.btnSearchUser.Text = "search";
-            this.btnSearchUser.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1User
-            // 
-            this.dataGridView1User.AllowUserToOrderColumns = true;
-            this.dataGridView1User.AutoGenerateColumns = false;
-            this.dataGridView1User.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1User.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIDDataGridViewTextBoxColumn,
-            this.roleDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn});
-            this.dataGridView1User.DataSource = this.userBindingSource;
-            this.dataGridView1User.Location = new System.Drawing.Point(525, 398);
-            this.dataGridView1User.Name = "dataGridView1User";
-            this.dataGridView1User.RowHeadersWidth = 62;
-            this.dataGridView1User.RowTemplate.Height = 30;
-            this.dataGridView1User.Size = new System.Drawing.Size(1257, 642);
-            this.dataGridView1User.TabIndex = 23;
-            this.dataGridView1User.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // roleDataGridViewTextBoxColumn
-            // 
-            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
-            this.roleDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
-            this.roleDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Width = 150;
-            // 
             // userBindingSource
             // 
             this.userBindingSource.DataMember = "user";
@@ -446,33 +326,169 @@ namespace SmileSunshineToy
             // 
             this.userTableAdapter.ClearBeforeFill = true;
             // 
+            // export
+            // 
+            this.export.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.export.Location = new System.Drawing.Point(1180, 922);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(204, 55);
+            this.export.TabIndex = 222;
+            this.export.Text = "export";
+            this.export.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(550, 227);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 29);
+            this.label2.TabIndex = 217;
+            this.label2.Text = "Plan ID:";
+            // 
+            // editBtn
+            // 
+            this.editBtn.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.editBtn.Location = new System.Drawing.Point(555, 922);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(149, 55);
+            this.editBtn.TabIndex = 216;
+            this.editBtn.Text = "EDIT";
+            this.editBtn.UseVisualStyleBackColor = true;
+            // 
+            // txtPlanID
+            // 
+            this.txtPlanID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlanID.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Bold);
+            this.txtPlanID.Location = new System.Drawing.Point(665, 235);
+            this.txtPlanID.Name = "txtPlanID";
+            this.txtPlanID.ReadOnly = true;
+            this.txtPlanID.Size = new System.Drawing.Size(494, 31);
+            this.txtPlanID.TabIndex = 211;
+            // 
+            // filterComboBox
+            // 
+            this.filterComboBox.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.filterComboBox.FormattingEnabled = true;
+            this.filterComboBox.Location = new System.Drawing.Point(616, 347);
+            this.filterComboBox.Name = "filterComboBox";
+            this.filterComboBox.Size = new System.Drawing.Size(192, 37);
+            this.filterComboBox.TabIndex = 205;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
+            this.txtSearch.Location = new System.Drawing.Point(805, 334);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(366, 59);
+            this.txtSearch.TabIndex = 204;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Location = new System.Drawing.Point(859, 922);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(164, 55);
+            this.btnCancel.TabIndex = 203;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Location = new System.Drawing.Point(1029, 922);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(145, 55);
+            this.btnSave.TabIndex = 202;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.Location = new System.Drawing.Point(710, 922);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(143, 55);
+            this.btnAdd.TabIndex = 201;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.Location = new System.Drawing.Point(555, 391);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1072, 364);
+            this.dataGridView1.TabIndex = 199;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.Location = new System.Drawing.Point(1177, 344);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(133, 42);
+            this.btnSearch.TabIndex = 200;
+            this.btnSearch.Text = "search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // UserProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1906, 1075);
-            this.Controls.Add(this.filterComboBoxUser);
-            this.Controls.Add(this.txtSearchUser);
-            this.Controls.Add(this.btnCancelUser);
-            this.Controls.Add(this.btnSaveUser);
-            this.Controls.Add(this.btnDeleteUser);
-            this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.btnSearchUser);
-            this.Controls.Add(this.dataGridView1User);
+            this.Controls.Add(this.export);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.editBtn);
+            this.Controls.Add(this.txtPlanID);
+            this.Controls.Add(this.filterComboBox);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserProfileForm";
             this.Text = "UserProfileForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.UserProfileForm_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_user)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1User)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,22 +510,20 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btn_sale;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox filterComboBoxUser;
-        private System.Windows.Forms.TextBox txtSearchUser;
-        private System.Windows.Forms.Button btnCancelUser;
-        private System.Windows.Forms.Button btnSaveUser;
-        private System.Windows.Forms.Button btnDeleteUser;
-        private System.Windows.Forms.Button btnAddUser;
-        private System.Windows.Forms.Button btnSearchUser;
-        private System.Windows.Forms.DataGridView dataGridView1User;
         private System.Windows.Forms.BindingSource testDataSetBindingSource;
         private testDataSet testDataSet;
         private System.Windows.Forms.BindingSource userBindingSource;
         private testDataSetTableAdapters.userTableAdapter userTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button export;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.TextBox txtPlanID;
+        private System.Windows.Forms.ComboBox filterComboBox;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
