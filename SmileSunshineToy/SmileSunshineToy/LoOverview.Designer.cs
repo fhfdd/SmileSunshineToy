@@ -683,6 +683,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.btnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoOverview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoOverview";
             this.Load += new System.EventHandler(this.LoOverview_Load);
             this.panel4.ResumeLayout(false);

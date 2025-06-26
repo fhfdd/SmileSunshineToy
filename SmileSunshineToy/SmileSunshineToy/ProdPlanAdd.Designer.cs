@@ -29,8 +29,6 @@ namespace SmileSunshineToy
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtProd = new System.Windows.Forms.TextBox();
-            this.txtOrder = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPlanID = new System.Windows.Forms.TextBox();
             this.dpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -42,23 +40,9 @@ namespace SmileSunshineToy
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.coboOrder = new System.Windows.Forms.ComboBox();
+            this.coboProduct = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txtProd
-            // 
-            this.txtProd.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtProd.Location = new System.Drawing.Point(56, 557);
-            this.txtProd.Name = "txtProd";
-            this.txtProd.Size = new System.Drawing.Size(375, 58);
-            this.txtProd.TabIndex = 100;
-            // 
-            // txtOrder
-            // 
-            this.txtOrder.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtOrder.Location = new System.Drawing.Point(56, 449);
-            this.txtOrder.Name = "txtOrder";
-            this.txtOrder.Size = new System.Drawing.Size(375, 58);
-            this.txtOrder.TabIndex = 99;
             // 
             // label2
             // 
@@ -91,6 +75,7 @@ namespace SmileSunshineToy
             this.dpEndDate.Name = "dpEndDate";
             this.dpEndDate.Size = new System.Drawing.Size(503, 66);
             this.dpEndDate.TabIndex = 89;
+            this.dpEndDate.Value = new System.DateTime(2025, 6, 26, 0, 0, 0, 0);
             // 
             // coboStatus
             // 
@@ -134,6 +119,7 @@ namespace SmileSunshineToy
             this.dpStartDate.Name = "dpStartDate";
             this.dpStartDate.Size = new System.Drawing.Size(503, 66);
             this.dpStartDate.TabIndex = 85;
+            this.dpStartDate.Value = new System.DateTime(2025, 6, 26, 0, 0, 0, 0);
             // 
             // btnCancel
             // 
@@ -179,17 +165,37 @@ namespace SmileSunshineToy
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // coboOrder
+            // 
+            this.coboOrder.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            this.coboOrder.FormattingEnabled = true;
+            this.coboOrder.Location = new System.Drawing.Point(56, 449);
+            this.coboOrder.Name = "coboOrder";
+            this.coboOrder.Size = new System.Drawing.Size(306, 46);
+            this.coboOrder.TabIndex = 104;
+            this.coboOrder.Text = "orderID";
+            // 
+            // coboProduct
+            // 
+            this.coboProduct.Font = new System.Drawing.Font("Rockwell", 15F, System.Drawing.FontStyle.Bold);
+            this.coboProduct.FormattingEnabled = true;
+            this.coboProduct.Location = new System.Drawing.Point(59, 574);
+            this.coboProduct.Name = "coboProduct";
+            this.coboProduct.Size = new System.Drawing.Size(306, 46);
+            this.coboProduct.TabIndex = 105;
+            this.coboProduct.Text = "product";
+            // 
             // ProdPlanAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(861, 821);
+            this.Controls.Add(this.coboProduct);
+            this.Controls.Add(this.coboOrder);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtProd);
-            this.Controls.Add(this.txtOrder);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPlanID);
             this.Controls.Add(this.dpEndDate);
@@ -202,16 +208,12 @@ namespace SmileSunshineToy
             this.Name = "ProdPlanAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProdPlanAdd";
-            this.Load += new System.EventHandler(this.ProdPlanAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtProd;
-        private System.Windows.Forms.TextBox txtOrder;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPlanID;
         private System.Windows.Forms.DateTimePicker dpEndDate;
@@ -223,5 +225,7 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox coboOrder;
+        private System.Windows.Forms.ComboBox coboProduct;
     }
 }

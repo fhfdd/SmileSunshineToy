@@ -749,6 +749,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ProdInOverview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProdInOverview";
             this.Load += new System.EventHandler(this.ProdInOverview_Load);
             this.panel1.ResumeLayout(false);

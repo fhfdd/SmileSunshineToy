@@ -129,6 +129,9 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function\BaseDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Function\FileUploadManager.cs" />
     <Compile Include="Function\GridViewImageHelper.cs" />
     <Compile Include="ProdPlanAdd.cs">
@@ -159,7 +162,7 @@
       <DependentUpon>UserProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\UserSession.cs" />
-    <Compile Include="DataGridViewForm.cs">
+    <Compile Include="Function\DataGridViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="cschat.cs">
@@ -335,7 +338,7 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataGridViewForm.resx">
+    <EmbeddedResource Include="Function\DataGridViewForm.resx">
       <DependentUpon>DataGridViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinPayOverview.resx">

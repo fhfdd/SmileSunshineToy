@@ -747,6 +747,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FinPayOverview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FinPayOverview";
             this.Load += new System.EventHandler(this.FinPayOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();

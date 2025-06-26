@@ -762,6 +762,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PerStuOverview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PerStuOverview";
             this.Load += new System.EventHandler(this.PerStuOverview_Load);
             this.panel4.ResumeLayout(false);

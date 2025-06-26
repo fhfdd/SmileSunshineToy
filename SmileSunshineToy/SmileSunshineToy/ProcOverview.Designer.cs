@@ -699,6 +699,7 @@ namespace SmileSunshineToy
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProcOverview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProcOverview";
             this.Load += new System.EventHandler(this.ProcOverview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();

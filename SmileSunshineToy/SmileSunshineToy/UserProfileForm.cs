@@ -22,9 +22,8 @@ namespace SmileSunshineToy
         private void InitializeUserConfig()
         {
             TableName = "user";    
-            PrimaryKey = "UserID";      
-
-            //DataGridView = dataGridView1User;
+            PrimaryKey = "UserID";
+            DataGridView = dataGridView1;
             //FilterComboBox = filterComboBoxUser;
             //SearchTextBox = txtSearchUser;
             //AddButton = btnAddUser;
@@ -64,6 +63,36 @@ namespace SmileSunshineToy
         private void btn_sub2_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
         private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtPlanID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
 
         }

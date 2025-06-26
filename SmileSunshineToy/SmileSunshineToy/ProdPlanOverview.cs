@@ -18,6 +18,7 @@ namespace SmileSunshineToy
         private string originalStatus = "";
         private string originalOrderId = "";
         private string originalProductId = "";
+        private bool _isDataValid;
 
         public ProdPlanOverview() : base()
         {
@@ -26,6 +27,8 @@ namespace SmileSunshineToy
             _imageHelper = new ProductImageHelper(ConnectionString);
             _fileUploadManager = new FileUploadManager(ConnectionString);
 
+            IDPrefix = "PROD";
+            IDTextBox = txtPlanID;
             base.TableName = "productionplan";
             base.PrimaryKey = "planID";
             base.DataGridView = dataGridView1;
@@ -49,6 +52,17 @@ namespace SmileSunshineToy
             LoadData();
         }
 
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (DialogResult == DialogResult.OK && !_isDataValid)
+            {
+                MessageBox.Show("请先保存数据");
+                e.Cancel = true;
+            }
+        }
+
         public override void LoadData()
         {
             try
@@ -56,8 +70,17 @@ namespace SmileSunshineToy
                 using (MySqlConnection conn = new MySqlConnection(ConnectionString + ";Convert Zero Datetime=True;"))
                 {
                     conn.Open();
-                    DataAdapter = new MySqlDataAdapter($"SELECT * FROM `{TableName}`", conn);
+                    string query = $@"
+                    SELECT 
+                        PlanID, 
+                        StartDate, 
+                        EndDate, 
+                        Status, 
+                        OrderID, 
+                        ProductID 
+                    FROM `{TableName}`";
 
+                    DataAdapter = new MySqlDataAdapter(query, conn);
                     DataTable.Clear();
                     DataAdapter.Fill(DataTable);
 
@@ -66,7 +89,7 @@ namespace SmileSunshineToy
                         if (row["StartDate"] == DBNull.Value)
                             row["StartDate"] = DateTime.MinValue;
 
-                        if (row["EndDate"] == DBNull.Value || row["EndDate"].ToString() == "0000-00-00")
+                        if (row["EndDate"] == DBNull.Value)
                             row["EndDate"] = DateTime.MinValue;
                     }
 
@@ -94,29 +117,50 @@ namespace SmileSunshineToy
         private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
         private void btn_home_Click(object sender, EventArgs e) { this.Show(); this.Activate(); }
         private void cancelBtn_Click(object sender, EventArgs e) => CancelChanges();
-        private void saveBtn_Click(object sender, EventArgs e) => SaveChanges();
         private void addBtn_Click(object sender, EventArgs e) => AddRecord();
         private void searchBtn_Click(object sender, EventArgs e) => SearchRecords();
         private void txtPlanID_TextChanged(object sender, EventArgs e) { }
         private void productGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void label2_Click(object sender, EventArgs e) { }
 
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveChanges(); // 调用基类保存方法
+                MessageBox.Show("数据保存成功");
+                _isDataValid = true; // 添加这行：设置数据已保存状态
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"保存失败: {ex.Message}");
+            }
+        }
+
+
+
+        //点击显示行数据
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
                 txtPlanID.Text = selectedRow.Cells["PlanID"].Value?.ToString() ?? "";
-
-                if (selectedRow.Cells["StartDate"].Value is DateTime startDate)
-                    dpStartDate.Value = startDate;
-
-                if (selectedRow.Cells["EndDate"].Value is DateTime endDate)
-                    dpEndDate.Value = endDate;
-
                 coboStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
                 txtOrder.Text = selectedRow.Cells["OrderID"].Value?.ToString() ?? "";
                 txtProd.Text = selectedRow.Cells["ProductID"].Value?.ToString() ?? "";
+
+                if (selectedRow.Cells["StartDate"].Value is DateTime startDate)
+                    dpStartDate.Value = startDate;
+                else
+                    dpStartDate.Value = DateTime.MinValue;
+
+                if (selectedRow.Cells["EndDate"].Value is DateTime endDate)
+                    dpEndDate.Value = endDate;
+                else
+                    dpEndDate.Value = DateTime.MinValue;
 
                 LoadGridData(orderGridView, "order", !string.IsNullOrEmpty(txtOrder.Text) ? txtOrder.Text : null);
                 LoadGridData(productGridView, "product", !string.IsNullOrEmpty(txtProd.Text) ? txtProd.Text : null);
@@ -134,13 +178,14 @@ namespace SmileSunshineToy
             }
         }
 
+
         private void editBtn_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count != 1)
-            {
-                MessageBox.Show("Please choose a record");
-                return;
-            }
+    if (dataGridView1.SelectedRows.Count != 1)
+    {
+        MessageBox.Show("Please choose a record");
+        return;
+    }
 
             try
             {
@@ -206,20 +251,26 @@ namespace SmileSunshineToy
         {
             using (var dialog = new ProdPlanAdd(ConnectionString))
             {
-                if (dialog.ShowDialog() == DialogResult.OK)
+                if (dialog.ShowDialog() == DialogResult.OK && dialog.PlanData != null)
                 {
+                    // 直接使用当前窗体关联的 DataTable，而非新建行再添加
                     DataRow newRow = DataTable.NewRow();
-                    newRow["StartDate"] = dialog.StartDate;
-                    newRow["EndDate"] = dialog.EndDate;
-                    newRow["Status"] = dialog.Status;
-                    newRow["OrderID"] = dialog.OrderID;
-                    newRow["ProductID"] = dialog.ProductID;
-                    DataTable.Rows.Add(newRow);
-                    DataGridView.Refresh();
+
+                    newRow["PlanID"] = dialog.PlanData["PlanID"];
+                    newRow["StartDate"] = dialog.PlanData["StartDate"];
+                    newRow["EndDate"] = dialog.PlanData["EndDate"];
+                    newRow["Status"] = dialog.PlanData["Status"];
+                    newRow["OrderID"] = dialog.PlanData["OrderID"];
+                    newRow["ProductID"] = dialog.PlanData["ProductID"];
+
+                    DataTable.Rows.Add(newRow); // 加入当前窗体的 DataTable
+                    DataGridView.Refresh(); // 刷新 DataGridView 显示
                 }
             }
         }
 
+
+        //这块都是按钮逻辑
         private void dataGridView1_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -228,6 +279,8 @@ namespace SmileSunshineToy
                 e.ToolTipText = "Double Click See Detail";
             }
         }
+
+        //jump dialog
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -245,17 +298,20 @@ namespace SmileSunshineToy
                     endDate,
                     row.Cells["Status"].Value?.ToString(),
                     row.Cells["OrderID"].Value?.ToString(),
-                    row.Cells["ProductID"].Value?.ToString()
+                    row.Cells["ProductID"].Value?.ToString(),
+                    ConnectionString // Add this parameter
                 ).ShowDialog();
             }
         }
 
+
+        //jump pic
         private void productGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = productGridView.Rows[e.RowIndex];
-                string productId = row.Cells["productID"].Value?.ToString(); // 直接获取字符串值
+                string productId = row.Cells["productID"].Value?.ToString(); 
                 string productName = row.Cells["Name"].Value?.ToString() ?? "Unknown";
                 string description = row.Cells["description"].Value?.ToString() ?? "";
 
@@ -271,7 +327,10 @@ namespace SmileSunshineToy
             }
         }
 
+        //时间
         private void timer1_Tick(object sender, EventArgs e) => toolStripLabel1.Text = DateTime.Now.ToString();
+
+        //导出pdf
         private void export_Click(object sender, EventArgs e) => TextPdfExporter.ExportDataGridViewToPdf(dataGridView1);
     }
 }
