@@ -18,12 +18,9 @@ namespace SmileSunshineToy
         {
             if (string.IsNullOrEmpty(userName.Text) || string.IsNullOrEmpty(password.Text))
             {
-                MessageBox.Show("Please enter both User Name and Password.");
+                MessageBox.Show("请输入用户名和密码");
                 return;
             }
-
-            string Name = userName.Text;
-            string pwd = password.Text;
 
             try
             {
@@ -31,59 +28,48 @@ namespace SmileSunshineToy
                 {
                     conn.Open();
 
-                    string sql = "SELECT UserID, Name, Role FROM `user` " +
-                                 "WHERE Name = @Name AND Password = @Password";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    // 使用参数化查询防止SQL注入
+                    string sql = @"SELECT UserID, Name, Role FROM user 
+                         WHERE Name = @Name AND Password = @Password";
 
-                    cmd.Parameters.AddWithValue("@Name", Name);
-                    cmd.Parameters.AddWithValue("@Password", pwd);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                     {
-                        if (reader.Read())
-                        {
-                            UserSession.UserID = Convert.ToInt32(reader["UserID"]);
-                            UserSession.UserName = reader["Name"].ToString();
+                        cmd.Parameters.AddWithValue("@Name", userName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Password", password.Text);
 
-                            string roleStr = reader["Role"].ToString();
-                            if (Enum.TryParse(roleStr, out UserRole role))
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
                             {
-                                UserSession.Role = role;
+                                // 关键修复：直接使用字符串UserID
+                                UserSession.UserID = reader["UserID"].ToString();
+                                UserSession.UserName = reader["Name"].ToString();
+
+                                // 处理角色（保持原有逻辑）
+                                if (Enum.TryParse(reader["Role"].ToString(), true, out UserRole role))
+                                {
+                                    UserSession.Role = role;
+                                    this.Hide();
+                                    new Dashboard().Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("无效的用户权限");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show($"Failed to parse role: {roleStr}");
-                                return;
+                                MessageBox.Show("用户名或密码错误", "登录失败",
+                                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
-
-                            this.Hide();
-                            new Dashboard().Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Login failed. No records found for username: {Name}");
-
-                            string testSql = "SELECT COUNT(*) FROM `user` WHERE Name = @Name";
-                            MySqlCommand testCmd = new MySqlCommand(testSql, conn);
-                            testCmd.Parameters.AddWithValue("@Name", Name);
-                            int userCount = Convert.ToInt32(testCmd.ExecuteScalar());
-
-                            if (userCount > 0)
-                            {
-                                MessageBox.Show("Username exists but password is incorrect.");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Username does not exist.");
-                            }
-
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Login failed: {ex.Message}");
+                MessageBox.Show($"登录错误: {ex.Message}", "错误",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
