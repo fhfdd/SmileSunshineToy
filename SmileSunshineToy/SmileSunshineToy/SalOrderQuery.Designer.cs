@@ -53,8 +53,6 @@ namespace SmileSunshineToy
             this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new SmileSunshineToy.testDataSet();
@@ -347,24 +345,6 @@ namespace SmileSunshineToy
             this.txtSearch.Size = new System.Drawing.Size(431, 28);
             this.txtSearch.TabIndex = 55;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(1278, 308);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(124, 73);
-            this.btnCancel.TabIndex = 54;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(1111, 308);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(124, 73);
-            this.btnSave.TabIndex = 53;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(779, 308);
@@ -490,8 +470,6 @@ namespace SmileSunshineToy
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.filterComboBox);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDelete);
@@ -600,8 +578,6 @@ private void deleteBtn_Click(object sender, EventArgs e)
         private testDataSetTableAdapters.productTableAdapter productTableAdapter;
         private System.Windows.Forms.ComboBox filterComboBox;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.BindingSource productBindingSource;
         private testDataSet testDataSet;
