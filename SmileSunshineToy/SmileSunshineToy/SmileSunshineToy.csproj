@@ -151,6 +151,12 @@
     <Compile Include="RDdash.Designer.cs">
       <DependentUpon>RDdash.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextPdfExporter.cs" />
     <Compile Include="UserProfileForm.cs">
       <SubType>Form</SubType>
@@ -398,6 +404,9 @@
     </Compile>
     <EmbeddedResource Include="RDdash.resx">
       <DependentUpon>RDdash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrder.resx">
+      <DependentUpon>AddOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalOrderQuery.resx">
       <DependentUpon>SalOrderQuery.cs</DependentUpon>
