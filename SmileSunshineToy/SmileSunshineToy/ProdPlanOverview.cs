@@ -60,6 +60,10 @@ namespace SmileSunshineToy
                 {
                     if (row["StartDate"] == DBNull.Value) row["StartDate"] = DateTime.MinValue;
                     if (row["EndDate"] == DBNull.Value) row["EndDate"] = DateTime.MinValue;
+                    if (!IsOrderIdValid(row["OrderID"].ToString()))
+                    {
+                        row.SetColumnError("OrderID", "订单不存在");
+                    }
                 }
                 dataGridView1.Refresh();
             }
@@ -102,17 +106,36 @@ namespace SmileSunshineToy
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            // 检查订单ID是否存在
+            if (!IsOrderIdValid(txtOrder.Text.Trim()))
+            {
+                MessageBox.Show("订单ID无效或不存在，请重新输入");
+                return;
+            }
+
             try
             {
                 if (_dataManager.SaveChanges())
                 {
-                    MessageBox.Show("Data saved successfully");
+                    MessageBox.Show("数据保存成功");
                     _isDataValid = true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Save failed: {ex.Message}");
+                MessageBox.Show($"保存失败: {ex.Message}");
+            }
+        }
+
+        // 检查订单ID是否有效
+        private bool IsOrderIdValid(string orderId)
+        {
+            using (var conn = new MySqlConnection(Configuration.ConnectionString))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand("SELECT COUNT(*) FROM `order` WHERE OrderID = @orderId", conn);
+                cmd.Parameters.AddWithValue("@orderId", orderId);
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
             }
         }
 

@@ -66,9 +66,13 @@ namespace SmileSunshineToy
                 using (var conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
-
+                    coboOrder.Items.Insert(0, "--请选择订单--");
+                    coboProduct.Items.Insert(0, "--请选择产品--");
+                    coboOrder.SelectedIndex = 0;
+                    coboProduct.SelectedIndex = 0;
                     // 加载订单
                     var cmd = new MySqlCommand("SELECT OrderID FROM `order`", conn);
+
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -96,6 +100,12 @@ namespace SmileSunshineToy
 
         private bool ValidateInput()
         {
+
+            if (coboOrder.SelectedIndex <= 0)
+            {
+                MessageBox.Show("请选择有效的订单");
+                return false;
+            }
             if (string.IsNullOrEmpty(coboOrder.Text) || coboOrder.Text == "orderID")
             {
                 MessageBox.Show("请选择有效的订单");
