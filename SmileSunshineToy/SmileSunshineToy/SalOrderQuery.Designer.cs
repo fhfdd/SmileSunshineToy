@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Windows;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace SmileSunshineToy
 {
@@ -389,7 +392,8 @@ namespace SmileSunshineToy
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(951, 308);
+            this.btnDelete.AutoEllipsis = true;
+            this.btnDelete.Location = new System.Drawing.Point(950, 308);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(124, 73);
             this.btnDelete.TabIndex = 52;
@@ -510,10 +514,71 @@ namespace SmileSunshineToy
 
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
+        // 删除按钮点击事件处理
+private void deleteBtn_Click(object sender, EventArgs e)
+{
+    // 检查是否有选中的行
+    if (dataGridView1.SelectedRows.Count == 0)
+    {
+        MessageBox.Show("请选择要删除的销售订单！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+    }
+
+    // 获取选中行的订单ID
+    int orderId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["orderIDDataGridViewTextBoxColumn"].Value);
+    
+    // 确认对话框
+    DialogResult result = MessageBox.Show($"确定要删除订单ID为 {orderId} 的销售订单吗？此操作不可撤销！", 
+        "确认删除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+    
+    if (result != DialogResult.Yes)
+    {
+        return;
+    }
+
+    try
+    {
+        // 开始数据库事务（可选，确保数据一致性）
+        using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(orderTableAdapter.Connection.ConnectionString))
         {
-            throw new NotImplementedException();
+            connection.Open();
+            using (System.Data.SqlClient.SqlTransaction transaction = connection.BeginTransaction())
+            {
+                try
+                {
+                   
+                    // 执行删除操作
+                    int rowsAffected = orderTableAdapter.DeleteByOrderID(orderId);
+                    
+                    if (rowsAffected > 0)
+                    {
+                        // 提交事务
+                        transaction.Commit();
+                        
+                        // 刷新数据
+                        this.orderTableAdapter.Fill(this.testDataSet.order);
+                        
+                        MessageBox.Show("The sales order has been deleted successfully!", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("The specified sales order was not found. It may have been deleted by another user!", "hint", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // 回滚事务
+                    transaction.Rollback();
+                    MessageBox.Show($"删除订单时发生错误：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"连接数据库时发生错误：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
 
         #endregion
 

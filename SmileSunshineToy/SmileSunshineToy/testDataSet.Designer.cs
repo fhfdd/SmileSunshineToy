@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace SmileSunshineToy {
     
     
@@ -13505,6 +13507,11 @@ namespace SmileSunshineToy.testDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+
+        internal int DeleteByOrderID(int orderId)
+        {
+            throw new NotImplementedException();
         }
     }
     
