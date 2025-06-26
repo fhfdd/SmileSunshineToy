@@ -7,12 +7,12 @@ namespace SmileSunshineToy
 {
     public partial class ProductDetailForm : Form
     {
-        private readonly int _productId;
+        private readonly string _productId;
         private Image _currentImage;
         private readonly FileUploadManager _fileUploadManager;
         private readonly ProductImageHelper _imageHelper;
 
-        public ProductDetailForm(int productId, string productName, string description,
+        public ProductDetailForm(string productId, string productName, string description,
                                  FileUploadManager fileUploadManager,
                                  ProductImageHelper imageHelper)
         {
@@ -30,7 +30,6 @@ namespace SmileSunshineToy
 
         private void LoadProductImage()
         {
-            // 获取当前图片
             _currentImage = _imageHelper.GetProductImage(_productId);
 
             if (_currentImage != null)
@@ -39,7 +38,7 @@ namespace SmileSunshineToy
             }
             else
             {
-                pictureBoxProduct.Image = Properties.Resources.DefaultProductImage;
+
             }
         }
 
@@ -51,11 +50,6 @@ namespace SmileSunshineToy
             if (newImage != null)
             {
                 // 显示新图片并释放旧资源
-                if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
-                {
-                    _currentImage.Dispose();
-                }
-
                 _currentImage = newImage;
                 pictureBoxProduct.Image = _currentImage;
 
@@ -67,10 +61,6 @@ namespace SmileSunshineToy
         private void ProductDetailForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // 释放图片资源
-            if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
-            {
-                _currentImage.Dispose();
-            }
         }
 
         private void ProductDetailForm_Load(object sender, EventArgs e)
@@ -80,7 +70,7 @@ namespace SmileSunshineToy
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

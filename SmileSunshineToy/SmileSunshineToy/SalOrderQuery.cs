@@ -55,6 +55,7 @@ namespace SmileSunshineToy
 
                     dataGridView1.DataSource = dataTable;
                     dataGridView1.Refresh(); // 强制刷新UI
+
                     filterComboBox.Items.Clear();
                     filterComboBox.Items.Add("OrderID");
                     filterComboBox.Items.Add("Status");
