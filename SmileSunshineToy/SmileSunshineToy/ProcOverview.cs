@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class ProcOverview : DataGridViewForm
+    public partial class ProcOverview : Form
     {
-        public ProcOverview():base()
+        public ProcOverview()
         {
             InitializeComponent();
-            base.TableName = "inbound";
-            base.PrimaryKey = "inboundID";
-            base.DataGridView = dataGridView1;
-
-            LoadData();
         }
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)

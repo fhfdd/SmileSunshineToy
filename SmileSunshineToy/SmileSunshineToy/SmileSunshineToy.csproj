@@ -129,16 +129,25 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Function\BaseDataForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Function\FileUploadManager.cs" />
-    <Compile Include="Function\GridViewImageHelper.cs" />
+    <Compile Include="edit\FormNavigationManager.cs" />
+    <Compile Include="edit\SelectionHandler.cs" />
+    <Compile Include="Function\AfterSalesService.cs" />
+    <Compile Include="Function\BaseDataManager.cs" />
+    <Compile Include="Function\Configuration.cs" />
+    <Compile Include="Function\DataGridManager.cs" />
+    <Compile Include="Function\DeliveryManager.cs" />
+    <Compile Include="Function\InventoryService.cs" />
     <Compile Include="ProdPlanAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProdPlanAdd.Designer.cs">
       <DependentUpon>ProdPlanAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdPlanOverview1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdPlanOverview1.Designer.cs">
+      <DependentUpon>ProdPlanOverview1.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductDetailForm.cs">
       <SubType>Form</SubType>
@@ -146,7 +155,6 @@
     <Compile Include="ProductDetailForm.Designer.cs">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Function\ProductImageHelper.cs" />
     <Compile Include="Function\ProductImageManager.cs" />
     <Compile Include="RDdash.cs">
       <SubType>Form</SubType>
@@ -162,9 +170,6 @@
       <DependentUpon>UserProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\UserSession.cs" />
-    <Compile Include="Function\DataGridViewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="cschat.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -338,9 +343,6 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Function\DataGridViewForm.resx">
-      <DependentUpon>DataGridViewForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FinPayOverview.resx">
       <DependentUpon>FinPayOverview.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,14 +379,14 @@
     <EmbeddedResource Include="ProdInOverview.resx">
       <DependentUpon>ProdInOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProdPlanAdd.resx">
-      <DependentUpon>ProdPlanAdd.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ProdPlanOverview.resx">
       <DependentUpon>ProdPlanOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdPlanOverview1.resx">
+      <DependentUpon>ProdPlanOverview1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductDetailForm.resx">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>

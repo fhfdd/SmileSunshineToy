@@ -4,77 +4,104 @@ using System.Drawing.Imaging;
 using System.IO;
 using MySql.Data.MySqlClient;
 
-public class ProductImageManager
+namespace SmileSunshineToy.Utilities
 {
-    private readonly string _connectionString;
-
-    public ProductImageManager(string connectionString)
+    public class ProductImageManager
     {
-        _connectionString = connectionString;
-    }
+        private readonly string _connectionString;
 
-    // 保存图片到数据库
-    public void SaveImageToDb(int productId, Image image)
-    {
-        using (var conn = new MySqlConnection(_connectionString))
+        public ProductImageManager(string connectionString)
         {
-            conn.Open();
-
-            using (var cmd = new MySqlCommand(
-                "UPDATE product SET image_data = @data, image_type = @type WHERE ProductID = @id",
-                conn))
-            {
-                cmd.Parameters.AddWithValue("@id", productId);
-                cmd.Parameters.AddWithValue("@data", ImageToBytes(image));
-                cmd.Parameters.AddWithValue("@type", "image/jpeg");
-
-                cmd.ExecuteNonQuery();
-            }
+            _connectionString = connectionString;
         }
-    }
 
-    // 从数据库读取图片
-    public Image GetImageFromDb(int productId)
-    {
-        using (var conn = new MySqlConnection(_connectionString))
+        /// <summary>
+        /// 保存图片到数据库 (支持所有ImageFormat)
+        /// </summary>
+        public void SaveImageToDb(int productId, Image image, ImageFormat format = null)
         {
-            conn.Open();
-
-            using (var cmd = new MySqlCommand(
-                "SELECT image_data FROM product WHERE ProductID = @id",
-                conn))
+            using (var conn = new MySqlConnection(_connectionString))
             {
-                cmd.Parameters.AddWithValue("@id", productId);
-
-                using (var reader = cmd.ExecuteReader())
+                conn.Open();
+                using (var cmd = new MySqlCommand(
+                    "UPDATE product SET image_data=@data, image_type=@type WHERE ProductID=@id",
+                    conn))
                 {
-                    if (reader.Read() && !reader.IsDBNull(0))
-                    {
-                        byte[] data = (byte[])reader["image_data"];
-                        return BytesToImage(data);
-                    }
+                    cmd.Parameters.AddWithValue("@id", productId);
+                    cmd.Parameters.AddWithValue("@data", ImageToBytes(image, format ?? ImageFormat.Jpeg));
+                    cmd.Parameters.AddWithValue("@type", GetMimeType(format));
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
-        return null;
-    }
 
-    // 辅助方法：图片转字节数组
-    private byte[] ImageToBytes(Image image)
-    {
-        using (var ms = new MemoryStream())
+        /// <summary>
+        /// 从数据库获取图片 (兼容string和int类型的ID)
+        /// </summary>
+        public Image GetImageFromDb(string productId) => GetImageById(productId);
+        public Image GetImageFromDb(int productId) => GetImageById(productId);
+
+        /// <summary>
+        /// 图片转字节数组 (可指定格式)
+        /// </summary>
+        private byte[] ImageToBytes(Image image, ImageFormat format)
         {
-            image.Save(ms, ImageFormat.Jpeg);
-            return ms.ToArray();
+            using (var ms = new MemoryStream())
+            {
+                image.Save(ms, format);
+                return ms.ToArray();
+            }
         }
-    }
 
-    // 辅助方法：字节数组转图片
-    private Image BytesToImage(byte[] data)
-    {
-        using (var ms = new MemoryStream(data))
+        /// <summary>
+        /// 字节数组转图片 (自动释放资源)
+        /// </summary>
+        private Image BytesToImage(byte[] data)
         {
-            return Image.FromStream(ms);
+            using (var ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        // 私有方法：统一处理图片查询
+        private Image GetImageById(object productId)
+        {
+            try
+            {
+                using (var conn = new MySqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new MySqlCommand(
+                        "SELECT image_data FROM product WHERE ProductID=@id",
+                        conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", productId);
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read() && !reader.IsDBNull(0))
+                            {
+                                return BytesToImage((byte[])reader["image_data"]);
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"图片加载失败: {ex.Message}");
+                return null;
+            }
+        }
+
+        // 获取图片MIME类型
+        private string GetMimeType(ImageFormat format)
+        {
+            if (format == ImageFormat.Jpeg) return "image/jpeg";
+            if (format == ImageFormat.Png) return "image/png";
+            if (format == ImageFormat.Gif) return "image/gif";
+            return "application/octet-stream";
         }
     }
 }

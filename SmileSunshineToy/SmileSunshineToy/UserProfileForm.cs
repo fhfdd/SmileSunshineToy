@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class UserProfileForm : DataGridViewForm
+    public partial class UserProfileForm : Form
     {
 
         public UserProfileForm()
@@ -21,16 +21,7 @@ namespace SmileSunshineToy
 
         private void InitializeUserConfig()
         {
-            TableName = "user";    
-            PrimaryKey = "UserID";
-            DataGridView = dataGridView1;
-            //FilterComboBox = filterComboBoxUser;
-            //SearchTextBox = txtSearchUser;
-            //AddButton = btnAddUser;
-            //DeleteButton = btnDeleteUser;
-            //SaveButton = btnSaveUser;
-            //CancelButton = btnCancelUser;
-            //SearchButton = btnSearchUser;
+
 
 
             if (UserSession.Role != UserRole.Admin)
@@ -40,7 +31,6 @@ namespace SmileSunshineToy
                 //dataGridView1User.ReadOnly = true;
             }
 
-            LoadData();
         }
 
             private void UserProfileForm_Load(object sender, EventArgs e)

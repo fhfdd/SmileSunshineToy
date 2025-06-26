@@ -6,23 +6,15 @@ using System.Data;
 
 namespace SmileSunshineToy
 {
-    public partial class LoOverview : DataGridViewForm
+    public partial class LoOverview : Form
     {
 
-        public LoOverview():base()
+        public LoOverview()
         {
             InitializeComponent();
-
-            base.TableName = "logistics";
-            base.PrimaryKey = "LogisticsID";
-            base.DataGridView = dataGridView1;
-            base.FilterComboBox = filterComboBox;
-            base.SearchTextBox = txtSearch;
-
             filterComboBox.Items.AddRange(new[] { "planID", "startDate", "EndDate" });
             filterComboBox.SelectedIndex = 0;
 
-            LoadData();
         }
 
 
