@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace SmileSunshineToy
 {
-    public partial class SalOrderQuery
+    public partial class SalOrderQuery:Form
     {
 
         public SalOrderQuery()
