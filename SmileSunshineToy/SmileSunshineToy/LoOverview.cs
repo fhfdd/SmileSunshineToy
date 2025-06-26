@@ -1,21 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+using System.IO;
+using System.Data;
 
 namespace SmileSunshineToy
 {
     public partial class LoOverview : Form
     {
+        private SqlConnection connection;
+        private string connectionString = "Server=localhost; Database=test; Uid=root;Pwd="; 
+
         public LoOverview()
         {
             InitializeComponent();
+            InitializeDatabaseConnection();
+            LoadData();
         }
+
+        private void InitializeDatabaseConnection()
+        {
+            try
+            {
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error connecting to database: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadData()
+        {
+            try
+            {
+                string query = "SELECT * FROM logistics"; // Adjust query as needed
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                dataGridView1.DataSource = table; // Assuming your DataGridView is named dataGridView1
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
@@ -96,6 +130,87 @@ namespace SmileSunshineToy
         {
             PerCusOverview P3 = new PerCusOverview();
             P3.Show();
+        }
+
+        private void btnGeneratePdf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create a SaveFileDialog to let user choose where to save
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                saveFileDialog.FileName = "LogisticsDetails.pdf";
+                saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Create a new PDF document
+                    PdfDocument document = new PdfDocument();
+                    document.Info.Title = "Logistics Details";
+
+                    // Add a page
+                    PdfPage page = document.AddPage();
+                    XGraphics gfx = XGraphics.FromPdfPage(page);
+                    XFont fontTitle = new XFont("Arial", 16, XFontStyle.Bold);
+                    XFont fontHeader = new XFont("Arial", 12, XFontStyle.Bold);
+                    XFont fontText = new XFont("Arial", 10);
+
+                    // Draw title
+                    gfx.DrawString("Logistics Details Report", fontTitle, XBrushes.Black,
+                        new XRect(0, 40, page.Width, page.Height), XStringFormats.TopCenter);
+
+                    // Draw current date
+                    gfx.DrawString($"Generated on: {DateTime.Now.ToString("yyyy-MM-dd HH:mm")}", fontText, XBrushes.Black,
+                        new XRect(40, 80, page.Width - 80, page.Height), XStringFormats.TopLeft);
+
+                    // Create a table-like structure for the data
+                    int yPos = 120;
+
+                    // Add logistics information
+                    if (dataGridView1.CurrentRow != null)
+                    {
+                        DataGridViewRow row = dataGridView1.CurrentRow;
+
+                        gfx.DrawString("Logistics Information:", fontHeader, XBrushes.Black,
+                            new XRect(40, yPos, page.Width, page.Height), XStringFormats.TopLeft);
+                        yPos += 20;
+
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (cell.Value != null)
+                            {
+                                gfx.DrawString($"{cell.OwningColumn.HeaderText}: {cell.Value}", fontText, XBrushes.Black,
+                                    new XRect(50, yPos, page.Width, page.Height), XStringFormats.TopLeft);
+                                yPos += 15;
+                            }
+                        }
+                    }
+
+                    // Save the document
+                    document.Save(saveFileDialog.FileName);
+                    document.Close();
+
+                    MessageBox.Show($"PDF successfully saved to:\n{saveFileDialog.FileName}", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Optional: Open the PDF after creation
+                    // System.Diagnostics.Process.Start(saveFileDialog.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating PDF: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Make sure to close the connection when the form closes
+        private void LoOverview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (connection != null && connection.State == ConnectionState.Open)
+            {
+                connection.Close();
+            }
         }
     }
 }
