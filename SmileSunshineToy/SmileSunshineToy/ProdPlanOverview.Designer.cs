@@ -175,7 +175,7 @@ namespace SmileSunshineToy
             // export
             // 
             this.export.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.export.Location = new System.Drawing.Point(1173, 834);
+            this.export.Location = new System.Drawing.Point(1228, 834);
             this.export.Name = "export";
             this.export.Size = new System.Drawing.Size(204, 55);
             this.export.TabIndex = 78;
