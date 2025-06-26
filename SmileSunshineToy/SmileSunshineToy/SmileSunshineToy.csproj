@@ -123,14 +123,19 @@
     <Compile Include="aftersalerequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="function1\AfterSalesService.cs" />
+    <Compile Include="function1\BaseDataManager.cs" />
+    <Compile Include="function1\Configuration.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FileUploadManager.cs" />
-    <Compile Include="GridViewImageHelper.cs" />
+    <Compile Include="function1\DataGridManager.cs" />
+    <Compile Include="function1\DeliveryManager.cs" />
+    <Compile Include="function1\FormNavigationManager.cs" />
+    <Compile Include="function1\InventoryService.cs" />
     <Compile Include="ProdPlanAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,8 +148,7 @@
     <Compile Include="ProductDetailForm.Designer.cs">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductImageHelper.cs" />
-    <Compile Include="ProductImageManager.cs" />
+    <Compile Include="function1\ProductImageManager.cs" />
     <Compile Include="RDdash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,16 +161,13 @@
     <Compile Include="AddOrder.Designer.cs">
       <DependentUpon>AddOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="TextPdfExporter.cs" />
+    <Compile Include="function1\SelectionHandler.cs" />
+    <Compile Include="function1\TextPdfExporter.cs" />
     <Compile Include="UserProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserProfileForm.Designer.cs">
       <DependentUpon>UserProfileForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserSession.cs" />
-    <Compile Include="DataGridViewForm.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="cschat.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -306,9 +307,7 @@
     <Compile Include="returnrequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="SalOrderQuery.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="SalOrderQuery.cs" />
     <Compile Include="SalOrderQuery.Designer.cs">
       <DependentUpon>SalOrderQuery.cs</DependentUpon>
     </Compile>
@@ -335,14 +334,12 @@
     <Compile Include="user.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="function1\UserSession.cs" />
     <Compile Include="workorder.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DataGridViewForm.resx">
-      <DependentUpon>DataGridViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinPayOverview.resx">
       <DependentUpon>FinPayOverview.cs</DependentUpon>
@@ -379,9 +376,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProdInOverview.resx">
       <DependentUpon>ProdInOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProdPlanAdd.resx">
-      <DependentUpon>ProdPlanAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProdPlanOverview.resx">
       <DependentUpon>ProdPlanOverview.cs</DependentUpon>

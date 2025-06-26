@@ -11,20 +11,12 @@ using MySql.Data.MySqlClient;
 
 namespace SmileSunshineToy
 {
-    public partial class SalOrderQuery : DataGridViewForm
+    public partial class SalOrderQuery
     {
 
-        public SalOrderQuery() : base()
+        public SalOrderQuery()
         {
             InitializeComponent();
-
-            base.TableName = "product";
-            base.PrimaryKey = "ProductID";
-            base.FilterComboBox = filterComboBox;
-            base.SearchTextBox = txtSearch;
-            base.AddButton = btnAdd;
-            base.DeleteButton = btnDelete;
-            base.SearchButton = btnSearch;
 
 
             filterComboBox.Items.Add("ProductID");
