@@ -1,7 +1,7 @@
-﻿using SmileSunshineToy.Utilities;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using SmileSunshineToy.Utilities;
 
 namespace SmileSunshineToy
 {
@@ -9,18 +9,13 @@ namespace SmileSunshineToy
     {
         private readonly string _productId;
         private Image _currentImage;
-        private readonly FileUploadManager _fileUploadManager;
-        private readonly ProductImageHelper _imageHelper;
 
-        public ProductDetailForm(string productId, string productName, string description,
-                                 FileUploadManager fileUploadManager,
-                                 ProductImageHelper imageHelper)
+        public ProductDetailForm(string productId, string productName, string description)
         {
             InitializeComponent();
             _productId = productId;
-            _fileUploadManager = fileUploadManager;
-            _imageHelper = imageHelper;
 
+            // 初始化界面
             lblProductId.Text = $"产品ID: {productId}";
             lblProductName.Text = productName;
             txtDescription.Text = description;
@@ -30,47 +25,62 @@ namespace SmileSunshineToy
 
         private void LoadProductImage()
         {
-            _currentImage = _imageHelper.GetProductImage(_productId);
-
-            if (_currentImage != null)
+            // 直接创建 ProductImageManager（用默认连接字符串）
+            using (var imageManager = ProductImageManager.CreateDefault())
             {
-                pictureBoxProduct.Image = _currentImage;
-            }
-            else
-            {
-
+                try
+                {
+                    _currentImage = imageManager.GetImageFromDb(_productId);
+                    pictureBoxProduct.Image = _currentImage ?? GetDefaultImage();
+                }
+                catch (Exception ex)
+                {
+                    FormNavigationManager.ShowError($"图片加载失败: {ex.Message}");
+                    pictureBoxProduct.Image = GetDefaultImage();
+                }
             }
         }
 
+        private Image GetDefaultImage()
+        {
+            return Properties.Resources.DefaultProductImage ??
+                   SystemIcons.WinLogo.ToBitmap();
+        }
+
+        // 其他事件（如上传）如果需要保存图片，也局部创建：
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            // 选择并上传新图片
-            var newImage = _fileUploadManager.SelectAndUploadImage(_productId);
-
-            if (newImage != null)
+            using (var openDialog = new OpenFileDialog())
             {
-                // 显示新图片并释放旧资源
-                _currentImage = newImage;
-                pictureBoxProduct.Image = _currentImage;
-
-                MessageBox.Show("图片上传成功!", "成功",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (openDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (var image = Image.FromFile(openDialog.FileName))
+                        using (var imageManager = ProductImageManager.CreateDefault())
+                        {
+                            // 保存图片到数据库
+                            imageManager.SaveImageToDb(_productId, image);
+                            // 更新界面
+                            _currentImage?.Dispose();
+                            _currentImage = new Bitmap(image);
+                            pictureBoxProduct.Image = _currentImage;
+                            FormNavigationManager.ShowInformation("图片上传成功");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        FormNavigationManager.ShowError($"上传失败: {ex.Message}");
+                    }
+                }
             }
         }
 
-        private void ProductDetailForm_FormClosing(object sender, FormClosingEventArgs e)
+        // 窗体关闭时释放图片
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            // 释放图片资源
-        }
-
-        private void ProductDetailForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            base.OnFormClosing(e);
+            _currentImage?.Dispose();
         }
     }
 }

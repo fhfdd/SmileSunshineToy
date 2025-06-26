@@ -1,60 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class FinPayOverview : DataGridViewForm
+    public partial class FinPayOverview : Form
     {
-        public FinPayOverview() : base()
+        private readonly DataGridManager _dataManager;
+
+        public FinPayOverview()
         {
             InitializeComponent();
 
-            base.TableName = "payment";
-            base.PrimaryKey = "PaymentID";
-            base.DataGridView = dataGridView1;
+            InitializeDataGridView();
             LoadData();
         }
-            private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
 
+        private void InitializeDataGridView()
+        {
+            dataGridView1.DataSource = _dataManager.DataTable;
+            dataGridView1.AutoGenerateColumns = true;
         }
 
-        private void LeftToolStripPanel_Click(object sender, EventArgs e)
+        private void LoadData()
         {
-
+            try
+            {
+                _dataManager.LoadData();
+                dataGridView1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Data load failed: {ex.Message}");
+            }
         }
 
-        private void RightToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TopToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BottomToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FinPayOverview_Load(object sender, EventArgs e)
-        {
-
-        }
+        // Navigation methods remain unchanged
         private void btn_inv_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
         private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
         private void btn_person_Click(object sender, EventArgs e) { new PerCusOverview().Show(); this.Hide(); }
@@ -70,6 +50,14 @@ namespace SmileSunshineToy
         private void btn_sub1_Click(object sender, EventArgs e) { new FinPayOverview().Show(); this.Hide(); }
         private void btn_sub2_Click(object sender, EventArgs e) { new FinReOverview().Show(); this.Hide(); }
         private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
+
+        // Empty event handlers remain unchanged
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e) { }
+        private void LeftToolStripPanel_Click(object sender, EventArgs e) { }
+        private void RightToolStripPanel_Click(object sender, EventArgs e) { }
+        private void TopToolStripPanel_Click(object sender, EventArgs e) { }
+        private void BottomToolStripPanel_Click(object sender, EventArgs e) { }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void FinPayOverview_Load(object sender, EventArgs e) { }
     }
 }
-

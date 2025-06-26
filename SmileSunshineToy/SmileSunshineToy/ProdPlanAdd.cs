@@ -1,13 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
     public partial class ProdPlanAdd : Form
     {
-        private string _connectionString = "Server=localhost;Database=test;Uid=root;Pwd=;";
-        private bool _isViewMode = false;
+        private string _connectionString;
+        public DataRow PlanData { get; private set; }
         public string PlanID { get; private set; }
         public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }
@@ -18,40 +19,144 @@ namespace SmileSunshineToy
         public ProdPlanAdd(string connectionString)
         {
             InitializeComponent();
-            StartDate = DateTime.Now;
-            EndDate = DateTime.Now.AddDays(7);
-            Status = "pending";
-            _isViewMode = false;
+            _connectionString = connectionString;
+            InitializeForm();
         }
-        public ProdPlanAdd(
-            string planId,
-            DateTime startDate,
-            DateTime endDate,
-            string status,
-            string orderId,
-            string productId)
+
+        public ProdPlanAdd(string planId, DateTime startDate, DateTime endDate, string status, string orderId, string productId, string connectionString)
+    : this(connectionString)
         {
-            InitializeComponent();
+            txtPlanID.Text = planId;
+            dpStartDate.Value = startDate;
+            dpEndDate.Value = endDate;
+            coboStatus.Text = status;
+            coboOrder.Text = orderId;
+            coboProduct.Text = productId;
 
-            PlanID = GeneratePlanID();
-            StartDate = startDate;
-            EndDate = endDate;
-            Status = status;
-            OrderID = orderId;
-            ProductID = productId;
+            txtPlanID.ReadOnly = true;
+        }
 
-            _isViewMode = true;
+        private void InitializeForm()
+        {
+            // 初始化状态下拉框
+            coboStatus.Items.AddRange(new[] { "Pending", "Processing", "Completed" });
+            coboStatus.SelectedIndex = 0;
+
+            // 设置默认日期
+            dpStartDate.Value = DateTime.Now;
+            dpEndDate.Value = DateTime.Now.AddDays(7);
+
+            // 生成PlanID
+            txtPlanID.Text = GeneratePlanID();
+            txtPlanID.ReadOnly = true;
+
+            // 加载订单和产品数据
+            LoadReferenceData();
+        }
+
+        private string GeneratePlanID()
+        {
+            return "PLAN-" + DateTime.Now.ToString("yyyyMMddHHmmss");
+        }
+
+        private void LoadReferenceData()
+        {
+            try
+            {
+                using (var conn = new MySqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    coboOrder.Items.Insert(0, "--请选择订单--");
+                    coboProduct.Items.Insert(0, "--请选择产品--");
+                    coboOrder.SelectedIndex = 0;
+                    coboProduct.SelectedIndex = 0;
+                    // 加载订单
+                    var cmd = new MySqlCommand("SELECT OrderID FROM `order`", conn);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            coboOrder.Items.Add(reader["OrderID"].ToString());
+                        }
+                    }
+
+                    // 加载产品
+                    cmd = new MySqlCommand("SELECT productID FROM product", conn);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            coboProduct.Items.Add(reader["productID"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"加载数据失败: {ex.Message}");
+            }
+        }
+
+        private bool ValidateInput()
+        {
+
+            if (coboOrder.SelectedIndex <= 0)
+            {
+                MessageBox.Show("请选择有效的订单");
+                return false;
+            }
+            if (string.IsNullOrEmpty(coboOrder.Text) || coboOrder.Text == "orderID")
+            {
+                MessageBox.Show("请选择有效的订单");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(coboProduct.Text) || coboProduct.Text == "product")
+            {
+                MessageBox.Show("请选择有效的产品");
+                return false;
+            }
+
+            if (dpStartDate.Value > dpEndDate.Value)
+            {
+                MessageBox.Show("结束日期不能早于开始日期");
+                return false;
+            }
+
+            return true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!ValidateInput()) return;
 
-            StartDate = dpStartDate.Value;
-            EndDate = dpEndDate.Value;
-            Status = coboStatus.Text;
+            try
+            {
+                // 创建数据行
+                DataTable dt = new DataTable();
+                dt.Columns.Add("PlanID", typeof(string));
+                dt.Columns.Add("StartDate", typeof(DateTime));
+                dt.Columns.Add("EndDate", typeof(DateTime));
+                dt.Columns.Add("Status", typeof(string));
+                dt.Columns.Add("OrderID", typeof(string));
+                dt.Columns.Add("ProductID", typeof(string));
 
-            DialogResult = DialogResult.OK;
-            Close();
+                PlanData = dt.NewRow();
+                PlanData["PlanID"] = txtPlanID.Text;
+                PlanData["StartDate"] = dpStartDate.Value;
+                PlanData["EndDate"] = dpEndDate.Value;
+                PlanData["Status"] = coboStatus.Text;
+                PlanData["OrderID"] = coboOrder.Text;
+                PlanData["ProductID"] = coboProduct.Text;
+
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"保存失败: {ex.Message}");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -59,70 +164,5 @@ namespace SmileSunshineToy
             DialogResult = DialogResult.Cancel;
             Close();
         }
-
-        private bool CheckForeignKeyExists(string connectionString, string tableName, string columnName, int value)
-        {
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = $"SELECT COUNT(*) FROM {tableName} WHERE {columnName} = @Value";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Value", value);
-
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return count > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"检查外键时发生错误: {ex.Message}");
-                return false;
-            }
-        }
-
-        private string GeneratePlanID()
-        {
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(_connectionString))
-                {
-                    conn.Open();
-                    MySqlCommand cmd = new MySqlCommand("SELECT generate_id('PLAN')", conn);
-                    object result = cmd.ExecuteScalar();
-                    return result?.ToString() ?? "PLAN-ERROR";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"生成ID失败: {ex.Message}");
-                return $"PLAN-{DateTime.Now:yyyyMMdd}-001"; // 默认值
-            }
-        }
-
-        private void ProdPlanAdd_Load(object sender, EventArgs e)
-        {
-            txtPlanID.Text = PlanID;
-            dpStartDate.Value = StartDate;
-            dpEndDate.Value = EndDate;
-            coboStatus.Text = Status;
-            txtOrder.Text = OrderID;
-            txtProd.Text = ProductID;
-
-            if (_isViewMode)
-            {
-                txtPlanID.ReadOnly = true;
-                dpStartDate.Enabled = false;
-                dpEndDate.Enabled = false;
-                coboStatus.Enabled = false;
-                txtOrder.ReadOnly = true;
-                txtProd.ReadOnly = true;
-
-                btnSave.Visible = false;
-                btnCancel.Text = "Close";
-            }
-        }
-
     }
 }

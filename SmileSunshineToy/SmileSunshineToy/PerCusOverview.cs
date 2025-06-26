@@ -15,6 +15,7 @@ namespace SmileSunshineToy
         public PerCusOverview()
         {
             InitializeComponent();
+
         }
 
         private void PerCusOverview_Load(object sender, EventArgs e)

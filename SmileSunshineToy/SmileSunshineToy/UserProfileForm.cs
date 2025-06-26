@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class UserProfileForm : DataGridViewForm
+    public partial class UserProfileForm : Form
     {
 
         public UserProfileForm()
@@ -21,28 +21,16 @@ namespace SmileSunshineToy
 
         private void InitializeUserConfig()
         {
-            // 1. 配置基类核心参数（匹配数据库）
-            TableName = "user";         // 数据库表名（区分大小写）
-            PrimaryKey = "UserID";      // 主键字段
 
-            DataGridView = dataGridView1User;
-            FilterComboBox = filterComboBoxUser;
-            SearchTextBox = txtSearchUser;
-            AddButton = btnAddUser;
-            DeleteButton = btnDeleteUser;
-            SaveButton = btnSaveUser;
-            CancelButton = btnCancelUser;
-            SearchButton = btnSearchUser;
 
 
             if (UserSession.Role != UserRole.Admin)
             {
-                btnAddUser.Visible = btnDeleteUser.Visible =
-                btnSaveUser.Visible = btnCancelUser.Visible = false;
-                dataGridView1User.ReadOnly = true;
+                //btnAddUser.Visible = btnDeleteUser.Visible =
+                //btnSaveUser.Visible = btnCancelUser.Visible = false;
+                //dataGridView1User.ReadOnly = true;
             }
 
-            LoadData();
         }
 
             private void UserProfileForm_Load(object sender, EventArgs e)
@@ -65,6 +53,36 @@ namespace SmileSunshineToy
         private void btn_sub2_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
         private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtPlanID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
 
         }

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace SmileSunshineToy
 {
-    public partial class InvMaterial : DataGridViewForm
+    public partial class InvMaterial : Form
     {
         // 数据库相关字段
         private MySql.Data.MySqlClient.MySqlConnection connection;
@@ -17,16 +17,10 @@ namespace SmileSunshineToy
         private System.Data.DataTable materialTable;
         private MySql.Data.MySqlClient.MySqlCommandBuilder commandBuilder;
 
-        public InvMaterial() : base()
+        public InvMaterial()
         {
             InitializeComponent();
             InitializeMaterialForm();
-
-            base.TableName = "material";
-            base.PrimaryKey = "MaterialID";
-            base.DataGridView = dataGridView1;
-
-            LoadData();
         }
 
         private void InitializeMaterialForm()

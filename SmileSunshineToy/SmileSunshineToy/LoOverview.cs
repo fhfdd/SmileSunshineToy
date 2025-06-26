@@ -8,51 +8,15 @@ namespace SmileSunshineToy
 {
     public partial class LoOverview : Form
     {
-        private SqlConnection connection;
-        private string connectionString = "Server=localhost; Database=test; Uid=root;Pwd="; 
 
         public LoOverview()
         {
             InitializeComponent();
-            InitializeDatabaseConnection();
-            LoadData();
-        }
-
-        private void InitializeDatabaseConnection()
-        {
-            try
-            {
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error connecting to database: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void LoadData()
-        {
-            try
-            {
-                string query = "SELECT * FROM logistics"; // Adjust query as needed
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-
-                dataGridView1.DataSource = table; // Assuming your DataGridView is named dataGridView1
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
+            filterComboBox.Items.AddRange(new[] { "planID", "startDate", "EndDate" });
+            filterComboBox.SelectedIndex = 0;
 
         }
+
 
         private void LoOverview_Load(object sender, EventArgs e)
         {
@@ -62,20 +26,10 @@ namespace SmileSunshineToy
             InvMaterial I1 = new InvMaterial();
             I1.Show();
         }
-        private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
-        private void btn_person_Click(object sender, EventArgs e) { new PerCusOverview().Show(); this.Hide(); }
-        private void btn_proc_Click(object sender, EventArgs e) { new ProcOverview().Show(); this.Hide(); }
-        private void btn_log_Click(object sender, EventArgs e) { new LoOverview().Show(); this.Hide(); }
-        private void btn_prod_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
-        private void btn_fin_Click(object sender, EventArgs e) { new FinPayOverview().Show(); this.Hide(); }
+ 
         private void btn_rd_Click(object sender, EventArgs e) { new RDdash().Show(); this.Hide(); }
-        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { this.Close(); new Login().Show(); } }
-        private void btn_home_Click(object sender, EventArgs e) { this.Show(); this.Activate(); }
-        private void btn_fin_Click_1(object sender, EventArgs e) { FinPayOverview finPayForm = new FinPayOverview(); finPayForm.Show(); this.Hide(); }
-        private void btn_user_Click(object sender, EventArgs e) { new UserProfileForm().Show(); this.Hide(); }
-        private void btn_sub1_Click(object sender, EventArgs e) { new InvProduct().Show(); this.Hide(); }
-        private void btn_sub2_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
-        private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
+        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { this.Hide(); new Login().Show(); } }
+ 
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -184,17 +138,17 @@ namespace SmileSunshineToy
         //                }
         //            }
 
-        //            // Save the document
-        //            document.Save(saveFileDialog.FileName);
-        //            document.Close();
+            //        // Save the document
+            //        document.Save(saveFileDialog.FileName);
+            //        document.Close();
 
-        //            MessageBox.Show($"PDF successfully saved to:\n{saveFileDialog.FileName}", "Success",
-        //                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        MessageBox.Show($"PDF successfully saved to:\n{saveFileDialog.FileName}", "Success",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        //            // Optional: Open the PDF after creation
-        //            // System.Diagnostics.Process.Start(saveFileDialog.FileName);
-        //        }
-        //    }
+            //        // Optional: Open the PDF after creation
+            //        // System.Diagnostics.Process.Start(saveFileDialog.FileName);
+            //    }
+            //}
         //    catch (Exception ex)
         //    {
         //        MessageBox.Show($"Error generating PDF: {ex.Message}", "Error",
@@ -202,7 +156,7 @@ namespace SmileSunshineToy
         //    }
         //}
 
-        //// Make sure to close the connection when the form closes
+        // Make sure to close the connection when the form closes
         //private void LoOverview_FormClosing(object sender, FormClosingEventArgs e)
         //{
         //    if (connection != null && connection.State == ConnectionState.Open)
