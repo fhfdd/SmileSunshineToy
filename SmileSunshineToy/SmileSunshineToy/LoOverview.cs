@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using PdfSharp.Pdf;
-using PdfSharp.Drawing;
 using System.IO;
 using System.Data;
 
@@ -132,85 +130,85 @@ namespace SmileSunshineToy
             P3.Show();
         }
 
-        private void btnGeneratePdf_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Create a SaveFileDialog to let user choose where to save
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-                saveFileDialog.FileName = "LogisticsDetails.pdf";
-                saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+        //private void btnGeneratePdf_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        // Create a SaveFileDialog to let user choose where to save
+        //        SaveFileDialog saveFileDialog = new SaveFileDialog();
+        //        saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+        //        saveFileDialog.FileName = "LogisticsDetails.pdf";
+        //        saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
 
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Create a new PDF document
-                    PdfDocument document = new PdfDocument();
-                    document.Info.Title = "Logistics Details";
+        //        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+        //        {
+        //            // Create a new PDF document
+        //            PdfDocument document = new PdfDocument();
+        //            document.Info.Title = "Logistics Details";
 
-                    // Add a page
-                    PdfPage page = document.AddPage();
-                    XGraphics gfx = XGraphics.FromPdfPage(page);
-                    XFont fontTitle = new XFont("Arial", 16, XFontStyle.Bold);
-                    XFont fontHeader = new XFont("Arial", 12, XFontStyle.Bold);
-                    XFont fontText = new XFont("Arial", 10);
+        //            // Add a page
+        //            PdfPage page = document.AddPage();
+        //            XGraphics gfx = XGraphics.FromPdfPage(page);
+        //            XFont fontTitle = new XFont("Arial", 16, XFontStyle.Bold);
+        //            XFont fontHeader = new XFont("Arial", 12, XFontStyle.Bold);
+        //            XFont fontText = new XFont("Arial", 10);
 
-                    // Draw title
-                    gfx.DrawString("Logistics Details Report", fontTitle, XBrushes.Black,
-                        new XRect(0, 40, page.Width, page.Height), XStringFormats.TopCenter);
+        //            // Draw title
+        //            gfx.DrawString("Logistics Details Report", fontTitle, XBrushes.Black,
+        //                new XRect(0, 40, page.Width, page.Height), XStringFormats.TopCenter);
 
-                    // Draw current date
-                    gfx.DrawString($"Generated on: {DateTime.Now.ToString("yyyy-MM-dd HH:mm")}", fontText, XBrushes.Black,
-                        new XRect(40, 80, page.Width - 80, page.Height), XStringFormats.TopLeft);
+        //            // Draw current date
+        //            gfx.DrawString($"Generated on: {DateTime.Now.ToString("yyyy-MM-dd HH:mm")}", fontText, XBrushes.Black,
+        //                new XRect(40, 80, page.Width - 80, page.Height), XStringFormats.TopLeft);
 
-                    // Create a table-like structure for the data
-                    int yPos = 120;
+        //            // Create a table-like structure for the data
+        //            int yPos = 120;
 
-                    // Add logistics information
-                    if (dataGridView1.CurrentRow != null)
-                    {
-                        DataGridViewRow row = dataGridView1.CurrentRow;
+        //            // Add logistics information
+        //            if (dataGridView1.CurrentRow != null)
+        //            {
+        //                DataGridViewRow row = dataGridView1.CurrentRow;
 
-                        gfx.DrawString("Logistics Information:", fontHeader, XBrushes.Black,
-                            new XRect(40, yPos, page.Width, page.Height), XStringFormats.TopLeft);
-                        yPos += 20;
+        //                gfx.DrawString("Logistics Information:", fontHeader, XBrushes.Black,
+        //                    new XRect(40, yPos, page.Width, page.Height), XStringFormats.TopLeft);
+        //                yPos += 20;
 
-                        foreach (DataGridViewCell cell in row.Cells)
-                        {
-                            if (cell.Value != null)
-                            {
-                                gfx.DrawString($"{cell.OwningColumn.HeaderText}: {cell.Value}", fontText, XBrushes.Black,
-                                    new XRect(50, yPos, page.Width, page.Height), XStringFormats.TopLeft);
-                                yPos += 15;
-                            }
-                        }
-                    }
+        //                foreach (DataGridViewCell cell in row.Cells)
+        //                {
+        //                    if (cell.Value != null)
+        //                    {
+        //                        gfx.DrawString($"{cell.OwningColumn.HeaderText}: {cell.Value}", fontText, XBrushes.Black,
+        //                            new XRect(50, yPos, page.Width, page.Height), XStringFormats.TopLeft);
+        //                        yPos += 15;
+        //                    }
+        //                }
+        //            }
 
-                    // Save the document
-                    document.Save(saveFileDialog.FileName);
-                    document.Close();
+        //            // Save the document
+        //            document.Save(saveFileDialog.FileName);
+        //            document.Close();
 
-                    MessageBox.Show($"PDF successfully saved to:\n{saveFileDialog.FileName}", "Success",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            MessageBox.Show($"PDF successfully saved to:\n{saveFileDialog.FileName}", "Success",
+        //                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Optional: Open the PDF after creation
-                    // System.Diagnostics.Process.Start(saveFileDialog.FileName);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error generating PDF: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //            // Optional: Open the PDF after creation
+        //            // System.Diagnostics.Process.Start(saveFileDialog.FileName);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error generating PDF: {ex.Message}", "Error",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
-        // Make sure to close the connection when the form closes
-        private void LoOverview_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (connection != null && connection.State == ConnectionState.Open)
-            {
-                connection.Close();
-            }
-        }
+        //// Make sure to close the connection when the form closes
+        //private void LoOverview_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    if (connection != null && connection.State == ConnectionState.Open)
+        //    {
+        //        connection.Close();
+        //    }
+        //}
     }
 }

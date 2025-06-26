@@ -20,7 +20,6 @@ namespace SmileSunshineToy
 
             base.TableName = "product";
             base.PrimaryKey = "ProductID";
-            base.DataGridView = dataGridView1;
             base.FilterComboBox = filterComboBox;
             base.SearchTextBox = txtSearch;
             base.AddButton = btnAdd;
@@ -55,7 +54,6 @@ namespace SmileSunshineToy
 
                     adapter.Fill(dataTable);
 
-                    dataGridView1.DataSource = dataTable;
 
                     filterComboBox.Items.Clear();
                     filterComboBox.Items.Add("OrderID");

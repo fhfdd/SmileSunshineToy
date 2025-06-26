@@ -38,7 +38,7 @@ namespace SmileSunshineToy
             }
             else
             {
-                pictureBoxProduct.Image = Properties.Resources.DefaultProductImage;
+
             }
         }
 
@@ -50,11 +50,6 @@ namespace SmileSunshineToy
             if (newImage != null)
             {
                 // 显示新图片并释放旧资源
-                if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
-                {
-                    _currentImage.Dispose();
-                }
-
                 _currentImage = newImage;
                 pictureBoxProduct.Image = _currentImage;
 
@@ -66,10 +61,6 @@ namespace SmileSunshineToy
         private void ProductDetailForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // 释放图片资源
-            if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
-            {
-                _currentImage.Dispose();
-            }
         }
 
         private void ProductDetailForm_Load(object sender, EventArgs e)
