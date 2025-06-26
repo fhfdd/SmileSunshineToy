@@ -143,12 +143,6 @@
     <Compile Include="ProdPlanAdd.Designer.cs">
       <DependentUpon>ProdPlanAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProdPlanOverview1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProdPlanOverview1.Designer.cs">
-      <DependentUpon>ProdPlanOverview1.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProductDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,9 +378,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProdPlanOverview1.resx">
-      <DependentUpon>ProdPlanOverview1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductDetailForm.resx">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>

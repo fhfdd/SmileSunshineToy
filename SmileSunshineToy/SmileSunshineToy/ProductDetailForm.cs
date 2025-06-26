@@ -5,6 +5,25 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
+    // 临时空实现类 - 仅用于通过编译
+    public class FileUploadManager
+    {
+        public Image SelectAndUploadImage(string productId)
+        {
+            // 空实现
+            return null;
+        }
+    }
+
+    public class ProductImageHelper
+    {
+        public Image GetProductImage(string productId)
+        {
+            // 空实现
+            return null;
+        }
+    }
+
     public partial class ProductDetailForm : Form
     {
         private readonly string _productId;
@@ -38,7 +57,8 @@ namespace SmileSunshineToy
             }
             else
             {
-                pictureBoxProduct.Image = Properties.Resources.DefaultProductImage;
+                // 使用默认图片
+                pictureBoxProduct.Image = SystemIcons.WinLogo.ToBitmap(); // 临时占位符
             }
         }
 
@@ -50,7 +70,7 @@ namespace SmileSunshineToy
             if (newImage != null)
             {
                 // 显示新图片并释放旧资源
-                if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
+                if (_currentImage != null)
                 {
                     _currentImage.Dispose();
                 }
@@ -66,7 +86,7 @@ namespace SmileSunshineToy
         private void ProductDetailForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // 释放图片资源
-            if (_currentImage != null && _currentImage != Properties.Resources.DefaultProductImage)
+            if (_currentImage != null)
             {
                 _currentImage.Dispose();
             }
@@ -74,7 +94,7 @@ namespace SmileSunshineToy
 
         private void ProductDetailForm_Load(object sender, EventArgs e)
         {
-
+            // 空实现
         }
 
         private void btnClose_Click(object sender, EventArgs e)

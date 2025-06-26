@@ -23,6 +23,19 @@ namespace SmileSunshineToy
             InitializeForm();
         }
 
+        public ProdPlanAdd(string planId, DateTime startDate, DateTime endDate, string status, string orderId, string productId, string connectionString)
+    : this(connectionString)
+        {
+            txtPlanID.Text = planId;
+            dpStartDate.Value = startDate;
+            dpEndDate.Value = endDate;
+            coboStatus.Text = status;
+            coboOrder.Text = orderId;
+            coboProduct.Text = productId;
+
+            txtPlanID.ReadOnly = true;
+        }
+
         private void InitializeForm()
         {
             // 初始化状态下拉框

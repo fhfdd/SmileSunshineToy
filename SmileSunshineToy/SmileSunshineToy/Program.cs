@@ -18,7 +18,7 @@ namespace SmileSunshineToy
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new ProdPlanOverview1());
+            Application.Run(new ProdPlanOverview());
 
         }
     }

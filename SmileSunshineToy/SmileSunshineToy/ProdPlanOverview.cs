@@ -30,10 +30,8 @@ namespace SmileSunshineToy
 
         private void InitializeDataManager()
         {
-            _dataManager = new DataGridManager("productionplan", "planID", "PROD")
-            {
-                ConnectionString = Configuration.ConnectionString
-            };
+            _dataManager = new DataGridManager("productionplan", "planID", "PROD");
+            _dataManager.SetConnectionString(Configuration.ConnectionString);
         }
 
         private void InitializeUIComponents()
@@ -128,9 +126,13 @@ namespace SmileSunshineToy
                 coboStatus.Text = selectedRow.Cells["Status"].Value?.ToString() ?? "";
                 txtOrder.Text = selectedRow.Cells["OrderID"].Value?.ToString() ?? "";
                 txtProd.Text = selectedRow.Cells["ProductID"].Value?.ToString() ?? "";
+                dpStartDate.Value = selectedRow.Cells["StartDate"].Value is DateTime startDate && startDate > DateTime.MinValue
+                    ? startDate
+                    : DateTime.Today;
 
-                dpStartDate.Value = selectedRow.Cells["StartDate"].Value is DateTime startDate ? startDate : DateTime.MinValue;
-                dpEndDate.Value = selectedRow.Cells["EndDate"].Value is DateTime endDate ? endDate : DateTime.MinValue;
+                dpEndDate.Value = selectedRow.Cells["EndDate"].Value is DateTime endDate && endDate > DateTime.MinValue
+                    ? endDate
+                    : DateTime.Today.AddDays(7);
 
                 LoadGridData(orderGridView, "order", !string.IsNullOrEmpty(txtOrder.Text) ? txtOrder.Text : null);
                 LoadGridData(productGridView, "product", !string.IsNullOrEmpty(txtProd.Text) ? txtProd.Text : null);
@@ -283,8 +285,8 @@ namespace SmileSunshineToy
                     row.Cells["productID"].Value?.ToString(),
                     row.Cells["Name"].Value?.ToString() ?? "Unknown",
                     row.Cells["description"].Value?.ToString() ?? "",
-                    _fileUploadManager,
-                    _imageHelper
+                    null,
+                    null
                 ).ShowDialog();
             }
         }
