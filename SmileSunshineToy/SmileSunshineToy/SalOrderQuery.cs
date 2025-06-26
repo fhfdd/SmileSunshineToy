@@ -24,8 +24,6 @@ namespace SmileSunshineToy
             base.SearchTextBox = txtSearch;
             base.AddButton = btnAdd;
             base.DeleteButton = btnDelete;
-            base.SaveButton = btnSave;
-            base.CancelButton = btnSave;
             base.SearchButton = btnSearch;
 
 
@@ -33,7 +31,7 @@ namespace SmileSunshineToy
             filterComboBox.Items.Add("name");
             filterComboBox.Items.Add("price");
             filterComboBox.SelectedIndex = 0; dataGridView1.AutoGenerateColumns = true;
-            SalOrderQuery_Load(null,null);
+            SalOrderQuery_Load(null, null);
         }
 
 
@@ -92,7 +90,7 @@ namespace SmileSunshineToy
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SalOrderQuery_Load(null,null);
+            SalOrderQuery_Load(null, null);
         }
 
 
