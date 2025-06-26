@@ -97,7 +97,7 @@ namespace SmileSunshineToy
             catch (Exception ex)
             {
                 MessageBox.Show($"Add failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }  
         }
 
         // Mark rows for deletion (deleted on SaveChanges).

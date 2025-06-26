@@ -20,7 +20,6 @@ namespace SmileSunshineToy
 
             base.TableName = "product";
             base.PrimaryKey = "ProductID";
-            base.DataGridView = dataGridView1;
             base.FilterComboBox = filterComboBox;
             base.SearchTextBox = txtSearch;
             base.AddButton = btnAdd;
@@ -33,9 +32,8 @@ namespace SmileSunshineToy
             filterComboBox.Items.Add("ProductID");
             filterComboBox.Items.Add("name");
             filterComboBox.Items.Add("price");
-            filterComboBox.SelectedIndex = 0;
-
-            LoadData();
+            filterComboBox.SelectedIndex = 0; dataGridView1.AutoGenerateColumns = true;
+            SalOrderQuery_Load(null,null);
         }
 
 
@@ -51,12 +49,12 @@ namespace SmileSunshineToy
                 {
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
 
-                    DataTable dataTable = new DataTable("order");
+                    DataTable dataTable = new DataTable();
 
                     adapter.Fill(dataTable);
 
                     dataGridView1.DataSource = dataTable;
-
+                    dataGridView1.Refresh(); // 强制刷新UI
                     filterComboBox.Items.Clear();
                     filterComboBox.Items.Add("OrderID");
                     filterComboBox.Items.Add("Status");
@@ -84,6 +82,19 @@ namespace SmileSunshineToy
         private void btn_sub1_Click(object sender, EventArgs e) { new InvProduct().Show(); this.Hide(); }
         private void btn_sub2_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
         private void btn_sub3_Click(object sender, EventArgs e) { new InvWarehouse().Show(); this.Hide(); }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddOrderForm addOrderForm = new AddOrderForm();
+            addOrderForm.ShowDialog();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SalOrderQuery_Load(null,null);
+        }
+
+
     }
 
 
