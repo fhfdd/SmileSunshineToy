@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoOverview));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ClearFields = new System.Windows.Forms.Button();
@@ -104,23 +104,23 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(519, 592);
             this.dataGridView1.MultiSelect = false;
@@ -380,7 +380,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 902);
+            this.panel1.Size = new System.Drawing.Size(472, 860);
             this.panel1.TabIndex = 58;
             // 
             // btn_inv
@@ -388,7 +388,7 @@
             this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_inv.FlatAppearance.BorderSize = 0;
             this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_inv.ForeColor = System.Drawing.Color.Black;
             this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_inv.ImageKey = "product-management.png";
@@ -406,7 +406,7 @@
             this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_person.FlatAppearance.BorderSize = 0;
             this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_person.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_person.ForeColor = System.Drawing.Color.Black;
             this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_person.ImageKey = "customer.png";
@@ -423,7 +423,7 @@
             this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_proc.FlatAppearance.BorderSize = 0;
             this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_proc.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_proc.ForeColor = System.Drawing.Color.Black;
             this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_proc.ImageKey = "procurement.png";
@@ -441,7 +441,7 @@
             this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_log.FlatAppearance.BorderSize = 0;
             this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_log.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_log.ForeColor = System.Drawing.Color.Black;
             this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_log.ImageKey = "delivery-truck.png";
@@ -459,7 +459,7 @@
             this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_prod.FlatAppearance.BorderSize = 0;
             this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prod.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prod.ForeColor = System.Drawing.Color.Black;
             this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_prod.ImageKey = "production-line.png";
@@ -477,7 +477,7 @@
             this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_fin.FlatAppearance.BorderSize = 0;
             this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fin.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fin.ForeColor = System.Drawing.Color.Black;
             this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fin.ImageKey = "deposit.png";
@@ -494,7 +494,7 @@
             this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_rd.FlatAppearance.BorderSize = 0;
             this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rd.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_rd.ForeColor = System.Drawing.Color.Black;
             this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_rd.ImageKey = "analysis.png";
@@ -511,10 +511,10 @@
             this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.logout.FlatAppearance.BorderSize = 0;
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 821);
+            this.logout.Location = new System.Drawing.Point(0, 779);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(472, 81);
             this.logout.TabIndex = 4;
@@ -527,7 +527,7 @@
             this.order.Dock = System.Windows.Forms.DockStyle.Top;
             this.order.FlatAppearance.BorderSize = 0;
             this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.order.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.order.ForeColor = System.Drawing.Color.Black;
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.order.ImageKey = "order.png";
@@ -545,7 +545,7 @@
             this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_home.FlatAppearance.BorderSize = 0;
             this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.ForeColor = System.Drawing.Color.Black;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.ImageKey = "home.png";
@@ -566,7 +566,7 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1593, 140);
+            this.panel2.Size = new System.Drawing.Size(1615, 140);
             this.panel2.TabIndex = 57;
             // 
             // panel4
@@ -576,7 +576,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1593, 140);
+            this.panel4.Size = new System.Drawing.Size(1615, 140);
             this.panel4.TabIndex = 17;
             // 
             // button1
@@ -584,11 +584,11 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageKey = "profile-user.png";
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1453, 0);
+            this.button1.Location = new System.Drawing.Point(1475, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 140);
             this.button1.TabIndex = 27;
@@ -631,7 +631,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1593, 1042);
+            this.ClientSize = new System.Drawing.Size(1615, 1000);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ClearFields);
             this.Controls.Add(this.button3);

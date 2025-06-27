@@ -70,10 +70,10 @@ namespace SmileSunshineToy
             this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.logout.FlatAppearance.BorderSize = 0;
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 825);
+            this.logout.Location = new System.Drawing.Point(0, 779);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(322, 81);
             this.logout.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(322, 906);
+            this.panel1.Size = new System.Drawing.Size(322, 860);
             this.panel1.TabIndex = 17;
             // 
             // btn_inv
@@ -105,7 +105,7 @@ namespace SmileSunshineToy
             this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_inv.FlatAppearance.BorderSize = 0;
             this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inv.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_inv.ForeColor = System.Drawing.Color.Black;
             this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_inv.ImageKey = "product-management.png";
@@ -124,7 +124,7 @@ namespace SmileSunshineToy
             this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_person.FlatAppearance.BorderSize = 0;
             this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_person.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_person.ForeColor = System.Drawing.Color.Black;
             this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_person.ImageKey = "customer.png";
@@ -142,7 +142,7 @@ namespace SmileSunshineToy
             this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_proc.FlatAppearance.BorderSize = 0;
             this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_proc.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_proc.ForeColor = System.Drawing.Color.Black;
             this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_proc.ImageKey = "procurement.png";
@@ -160,7 +160,7 @@ namespace SmileSunshineToy
             this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_log.FlatAppearance.BorderSize = 0;
             this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_log.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_log.ForeColor = System.Drawing.Color.Black;
             this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_log.ImageKey = "delivery-truck.png";
@@ -178,7 +178,7 @@ namespace SmileSunshineToy
             this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_prod.FlatAppearance.BorderSize = 0;
             this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prod.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prod.ForeColor = System.Drawing.Color.Black;
             this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_prod.ImageKey = "production-line.png";
@@ -197,7 +197,7 @@ namespace SmileSunshineToy
             this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_fin.FlatAppearance.BorderSize = 0;
             this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fin.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fin.ForeColor = System.Drawing.Color.Black;
             this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_fin.ImageKey = "deposit.png";
@@ -215,7 +215,7 @@ namespace SmileSunshineToy
             this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_rd.FlatAppearance.BorderSize = 0;
             this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rd.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_rd.ForeColor = System.Drawing.Color.Black;
             this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_rd.ImageKey = "analysis.png";
@@ -233,7 +233,7 @@ namespace SmileSunshineToy
             this.order.Dock = System.Windows.Forms.DockStyle.Top;
             this.order.FlatAppearance.BorderSize = 0;
             this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.order.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.order.ForeColor = System.Drawing.Color.Black;
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.order.ImageKey = "order.png";
@@ -252,7 +252,7 @@ namespace SmileSunshineToy
             this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_home.FlatAppearance.BorderSize = 0;
             this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.ForeColor = System.Drawing.Color.Black;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.ImageKey = "home.png";
@@ -272,7 +272,7 @@ namespace SmileSunshineToy
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1641, 140);
+            this.panel3.Size = new System.Drawing.Size(1615, 140);
             this.panel3.TabIndex = 16;
             // 
             // user
@@ -280,11 +280,11 @@ namespace SmileSunshineToy
             this.user.Dock = System.Windows.Forms.DockStyle.Right;
             this.user.FlatAppearance.BorderSize = 0;
             this.user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.user.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.user.ForeColor = System.Drawing.Color.Black;
             this.user.ImageKey = "profile-user.png";
             this.user.ImageList = this.imageList1;
-            this.user.Location = new System.Drawing.Point(1501, 0);
+            this.user.Location = new System.Drawing.Point(1475, 0);
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(140, 140);
             this.user.TabIndex = 28;
@@ -295,7 +295,7 @@ namespace SmileSunshineToy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1641, 1046);
+            this.ClientSize = new System.Drawing.Size(1615, 1000);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Name = "Dashboard";

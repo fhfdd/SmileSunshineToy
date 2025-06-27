@@ -108,7 +108,7 @@ namespace SmileSunshineToy
             this.panel2.Location = new System.Drawing.Point(259, 156);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(167, 893);
+            this.panel2.Size = new System.Drawing.Size(167, 844);
             this.panel2.TabIndex = 23;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -274,7 +274,7 @@ namespace SmileSunshineToy
             this.panel1.Location = new System.Drawing.Point(0, 156);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 893);
+            this.panel1.Size = new System.Drawing.Size(259, 844);
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -507,7 +507,7 @@ namespace SmileSunshineToy
             this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 803);
+            this.logout.Location = new System.Drawing.Point(0, 754);
             this.logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(259, 90);
@@ -557,7 +557,7 @@ namespace SmileSunshineToy
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1671, 156);
+            this.panel3.Size = new System.Drawing.Size(1615, 156);
             this.panel3.TabIndex = 12;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -565,7 +565,7 @@ namespace SmileSunshineToy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1671, 1049);
+            this.ClientSize = new System.Drawing.Size(1615, 1000);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.filterComboBox);
             this.Controls.Add(this.txtSearch);
