@@ -569,7 +569,6 @@ namespace SmileSunshineToy
             this.Name = "InvProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InvMoutDetail";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.InvProduct_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

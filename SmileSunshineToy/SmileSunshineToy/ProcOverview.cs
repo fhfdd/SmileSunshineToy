@@ -22,7 +22,7 @@ namespace SmileSunshineToy
             InitializeComponent();
 
             // 初始化数据管理器
-            _procurementManager = new DataGridManager("procurement", "ProcurementID", "PROC");
+            _procurementManager = new DataGridManager("inbound", "InboundID", "IB");
             _supplierManager = new DataGridManager("supplier", "SupplierID", "SUPP");
             _materialManager = new DataGridManager("material", "MaterialID", "MAT");
 
