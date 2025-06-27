@@ -1,11 +1,12 @@
 ﻿using SmileSunshineToy.Logistics;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class LoOverview : Form
+    public partial class LoOverview : BaseForm
     {
         private DataGridManager _logisticsManager;
         private DeliveryManager _deliveryManager;
@@ -15,6 +16,7 @@ namespace SmileSunshineToy
         {
             InitializeComponent();
             InitializeLogisticsSystem();
+            SetDesignSize(new Size(1792, 1126));
         }
 
         private void InitializeLogisticsSystem()

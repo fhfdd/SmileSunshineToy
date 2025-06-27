@@ -123,6 +123,12 @@
     <Compile Include="aftersalerequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="function1\AfterSalesService.cs" />
     <Compile Include="function1\BaseDataManager.cs" />
     <Compile Include="function1\Configuration.cs" />
