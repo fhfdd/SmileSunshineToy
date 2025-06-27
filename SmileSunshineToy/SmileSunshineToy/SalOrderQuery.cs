@@ -85,18 +85,8 @@ namespace SmileSunshineToy
         #region 数据操作事件
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (_dataManager.AddRecord(true))
-                {
-                    dataGridView1.Refresh();
-                    FormNavigationManager.ShowInformation("已添加新订单记录");
-                }
-            }
-            catch (Exception ex)
-            {
-                FormNavigationManager.ShowError($"添加订单记录失败: {ex.Message}");
-            }
+            AddOrderForm addOrderForm = new AddOrderForm();
+            addOrderForm.ShowDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -146,23 +136,12 @@ namespace SmileSunshineToy
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtSearch.Text))
-            {
-                LoadData();
-                return;
-            }
+            SalOrderQuery_Load(null, null);
+        }
 
-            try
-            {
-                dataGridView1.DataSource = _dataManager.SearchRecords(
-                    txtSearch.Text,
-                    filterComboBox.SelectedItem?.ToString() ?? "OrderID"
-                );
-            }
-            catch (Exception ex)
-            {
-                FormNavigationManager.ShowError($"搜索订单记录失败: {ex.Message}");
-            }
+        private void SalOrderQuery_Load(object p1, object p2)
+        {
+            throw new NotImplementedException();
         }
 
         private void export_Click(object sender, EventArgs e)
@@ -171,9 +150,8 @@ namespace SmileSunshineToy
         }
         #endregion
 
-        private void SalOrderQuery_Load(object sender, EventArgs e) { }
+       
     }
-
 
 
     }
