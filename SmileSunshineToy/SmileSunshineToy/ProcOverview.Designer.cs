@@ -558,7 +558,6 @@ namespace SmileSunshineToy
             this.btn_fin.TabIndex = 15;
             this.btn_fin.Text = "Financial";
             this.btn_fin.UseVisualStyleBackColor = true;
-            this.btn_fin.Click += new System.EventHandler(this.btn_fin_Click_1);
             // 
             // btn_rd
             // 

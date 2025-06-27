@@ -9,8 +9,6 @@ namespace SmileSunshineToy
     {
         private readonly BaseDataManager _baseManager;
         public DataTable DataTable { get; private set; }
-
-        // 添加必要的属性
         public string TableName => _baseManager.TableName;
         public string PrimaryKey => _baseManager.PrimaryKey;
 

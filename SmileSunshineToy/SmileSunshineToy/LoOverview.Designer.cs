@@ -1,5 +1,4 @@
-﻿
-namespace SmileSunshineToy
+﻿namespace SmileSunshineToy
 {
     partial class LoOverview
     {
@@ -48,11 +47,8 @@ namespace SmileSunshineToy
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new SmileSunshineToy.testDataSet();
             this.btnSearch = new System.Windows.Forms.Button();
             this.LogID = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -82,8 +78,6 @@ namespace SmileSunshineToy
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +97,6 @@ namespace SmileSunshineToy
             this.btn_inv.TabIndex = 26;
             this.btn_inv.Text = "Inventory";
             this.btn_inv.UseVisualStyleBackColor = true;
-            this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
             // 
             // imageList1
             // 
@@ -138,7 +131,6 @@ namespace SmileSunshineToy
             this.btn_person.TabIndex = 20;
             this.btn_person.Text = "Personnel information";
             this.btn_person.UseVisualStyleBackColor = true;
-            this.btn_person.Click += new System.EventHandler(this.btn_person_Click_1);
             // 
             // btn_proc
             // 
@@ -156,7 +148,6 @@ namespace SmileSunshineToy
             this.btn_proc.TabIndex = 19;
             this.btn_proc.Text = "Procurement";
             this.btn_proc.UseVisualStyleBackColor = true;
-            this.btn_proc.Click += new System.EventHandler(this.btn_proc_Click_1);
             // 
             // btn_log
             // 
@@ -192,7 +183,6 @@ namespace SmileSunshineToy
             this.btn_prod.TabIndex = 17;
             this.btn_prod.Text = "Production";
             this.btn_prod.UseVisualStyleBackColor = true;
-            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click_1);
             // 
             // btn_fin
             // 
@@ -211,7 +201,6 @@ namespace SmileSunshineToy
             this.btn_fin.TabIndex = 15;
             this.btn_fin.Text = "Financial";
             this.btn_fin.UseVisualStyleBackColor = true;
-            this.btn_fin.Click += new System.EventHandler(this.btn_fin_Click_2);
             // 
             // btn_rd
             // 
@@ -227,9 +216,8 @@ namespace SmileSunshineToy
             this.btn_rd.Name = "btn_rd";
             this.btn_rd.Size = new System.Drawing.Size(472, 87);
             this.btn_rd.TabIndex = 13;
-            this.btn_rd.Text = "R&&D";
+            this.btn_rd.Text = "R&D";
             this.btn_rd.UseVisualStyleBackColor = true;
-            this.btn_rd.Click += new System.EventHandler(this.btn_rd_Click_1);
             // 
             // logout
             // 
@@ -337,14 +325,14 @@ namespace SmileSunshineToy
             this.panel2.Size = new System.Drawing.Size(1547, 140);
             this.panel2.TabIndex = 57;
             // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
             // filterComboBox
             // 
             this.filterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filterComboBox.FormattingEnabled = true;
+            this.filterComboBox.Items.AddRange(new object[] {
+            "LogisticsID",
+            "ShipmentID",
+            "Status"});
             this.filterComboBox.Location = new System.Drawing.Point(1257, 161);
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(130, 37);
@@ -358,16 +346,6 @@ namespace SmileSunshineToy
             this.txtSearch.Size = new System.Drawing.Size(431, 35);
             this.txtSearch.TabIndex = 55;
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "product";
-            this.productBindingSource.DataSource = this.testDataSet;
-            // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "testDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -375,8 +353,9 @@ namespace SmileSunshineToy
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(134, 33);
             this.btnSearch.TabIndex = 50;
-            this.btnSearch.Text = "search";
+            this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // LogID
             // 
@@ -423,7 +402,6 @@ namespace SmileSunshineToy
             this.Status.Size = new System.Drawing.Size(85, 29);
             this.Status.TabIndex = 63;
             this.Status.Text = "Status:";
-            this.Status.Click += new System.EventHandler(this.Status_Click);
             // 
             // comboBox1
             // 
@@ -583,8 +561,9 @@ namespace SmileSunshineToy
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 51);
             this.button2.TabIndex = 80;
-            this.button2.Text = "Send";
+            this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -596,6 +575,7 @@ namespace SmileSunshineToy
             this.button3.TabIndex = 81;
             this.button3.Text = "Generate Delivery Notes";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ClearFields
             // 
@@ -607,7 +587,6 @@ namespace SmileSunshineToy
             this.ClearFields.TabIndex = 82;
             this.ClearFields.Text = "Clear";
             this.ClearFields.UseVisualStyleBackColor = false;
-            this.ClearFields.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 
@@ -684,13 +663,11 @@ namespace SmileSunshineToy
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoOverview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoOverview";
+            this.Text = "Logistics Overview";
             this.Load += new System.EventHandler(this.LoOverview_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -714,21 +691,16 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private testDataSetTableAdapters.productTableAdapter productTableAdapter;
         private System.Windows.Forms.ComboBox filterComboBox;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.BindingSource productBindingSource;
-        private testDataSet testDataSet;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label LogID;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-      
         private System.Windows.Forms.Label ShipID;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
@@ -743,9 +715,7 @@ namespace SmileSunshineToy
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox8;
-
         private System.Windows.Forms.Button button2;
-
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button ClearFields;
         private System.Windows.Forms.DataGridView dataGridView1;

@@ -200,6 +200,7 @@ namespace SmileSunshineToy
         public int MinColumnWidth { get; set; } = 12;
         public int MaxColumnWidth { get; set; } = 35;
         public bool ShowSuccessMessage { get; set; } = true;
+        public string Title { get; set; } = "Report";
     }
 
     public enum TextAlignment { Left, Center, Right }

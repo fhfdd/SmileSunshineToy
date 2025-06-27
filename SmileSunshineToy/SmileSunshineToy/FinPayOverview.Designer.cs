@@ -410,6 +410,7 @@ namespace SmileSunshineToy
             this.export.TabIndex = 222;
             this.export.Text = "export";
             this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // txtProd
             // 
@@ -656,6 +657,7 @@ namespace SmileSunshineToy
             this.btnSave.TabIndex = 202;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -666,6 +668,7 @@ namespace SmileSunshineToy
             this.btnAdd.TabIndex = 201;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridView1
             // 
@@ -712,6 +715,7 @@ namespace SmileSunshineToy
             this.btnSearch.TabIndex = 200;
             this.btnSearch.Text = "search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // FinPayOverview
             // 

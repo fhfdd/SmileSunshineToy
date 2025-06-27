@@ -199,7 +199,6 @@ namespace SmileSunshineToy
             this.btn_prod.TabIndex = 17;
             this.btn_prod.Text = "Production";
             this.btn_prod.UseVisualStyleBackColor = true;
-            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click_1);
             // 
             // btn_fin
             // 
@@ -391,7 +390,6 @@ namespace SmileSunshineToy
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(304, 985);
             this.panel1.TabIndex = 58;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
