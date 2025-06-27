@@ -77,6 +77,7 @@ namespace SmileSunshineToy
             // 
             // btn_inv
             // 
+            this.btn_inv.BackColor = System.Drawing.Color.BurlyWood;
             this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_inv.FlatAppearance.BorderSize = 0;
             this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -91,7 +92,7 @@ namespace SmileSunshineToy
             this.btn_inv.Size = new System.Drawing.Size(283, 86);
             this.btn_inv.TabIndex = 26;
             this.btn_inv.Text = "Inventory";
-            this.btn_inv.UseVisualStyleBackColor = true;
+            this.btn_inv.UseVisualStyleBackColor = false;
             this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
             // 
             // imageList1
@@ -309,6 +310,7 @@ namespace SmileSunshineToy
             // 
             // btn_product
             // 
+            this.btn_product.BackColor = System.Drawing.Color.BurlyWood;
             this.btn_product.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_product.FlatAppearance.BorderSize = 0;
             this.btn_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -321,7 +323,7 @@ namespace SmileSunshineToy
             this.btn_product.Size = new System.Drawing.Size(150, 75);
             this.btn_product.TabIndex = 1;
             this.btn_product.Text = "Product";
-            this.btn_product.UseVisualStyleBackColor = true;
+            this.btn_product.UseVisualStyleBackColor = false;
             this.btn_product.Click += new System.EventHandler(this.btn_sub1_Click);
             // 
             // order

@@ -44,6 +44,7 @@ namespace SmileSunshineToy
             this.btn_prod = new System.Windows.Forms.Button();
             this.btn_fin = new System.Windows.Forms.Button();
             this.btn_rd = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
             this.btn_sale = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,7 +62,6 @@ namespace SmileSunshineToy
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.logout = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_user)).BeginInit();
             this.panel1.SuspendLayout();
@@ -253,6 +253,22 @@ namespace SmileSunshineToy
             this.btn_rd.UseVisualStyleBackColor = true;
             this.btn_rd.Click += new System.EventHandler(this.btn_rd_Click);
             // 
+            // logout
+            // 
+            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.ForeColor = System.Drawing.Color.Black;
+            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.Location = new System.Drawing.Point(0, 910);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(324, 90);
+            this.logout.TabIndex = 4;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // btn_sale
             // 
             this.btn_sale.Dock = System.Windows.Forms.DockStyle.Top;
@@ -313,7 +329,7 @@ namespace SmileSunshineToy
             // export
             // 
             this.export.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.export.Location = new System.Drawing.Point(1305, 822);
+            this.export.Location = new System.Drawing.Point(1204, 834);
             this.export.Name = "export";
             this.export.Size = new System.Drawing.Size(204, 55);
             this.export.TabIndex = 222;
@@ -325,7 +341,7 @@ namespace SmileSunshineToy
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(665, 230);
+            this.label2.Location = new System.Drawing.Point(564, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 29);
             this.label2.TabIndex = 217;
@@ -335,7 +351,7 @@ namespace SmileSunshineToy
             // editBtn
             // 
             this.editBtn.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.editBtn.Location = new System.Drawing.Point(680, 822);
+            this.editBtn.Location = new System.Drawing.Point(579, 834);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(149, 55);
             this.editBtn.TabIndex = 216;
@@ -346,7 +362,7 @@ namespace SmileSunshineToy
             // 
             this.txtPlanID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPlanID.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Bold);
-            this.txtPlanID.Location = new System.Drawing.Point(829, 228);
+            this.txtPlanID.Location = new System.Drawing.Point(728, 240);
             this.txtPlanID.Name = "txtPlanID";
             this.txtPlanID.ReadOnly = true;
             this.txtPlanID.Size = new System.Drawing.Size(494, 31);
@@ -357,7 +373,7 @@ namespace SmileSunshineToy
             // 
             this.filterComboBox.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(617, 282);
+            this.filterComboBox.Location = new System.Drawing.Point(516, 294);
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(192, 37);
             this.filterComboBox.TabIndex = 205;
@@ -366,7 +382,7 @@ namespace SmileSunshineToy
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
-            this.txtSearch.Location = new System.Drawing.Point(806, 269);
+            this.txtSearch.Location = new System.Drawing.Point(705, 281);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(403, 59);
             this.txtSearch.TabIndex = 204;
@@ -375,7 +391,7 @@ namespace SmileSunshineToy
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(984, 822);
+            this.btnCancel.Location = new System.Drawing.Point(883, 834);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(164, 55);
             this.btnCancel.TabIndex = 203;
@@ -385,7 +401,7 @@ namespace SmileSunshineToy
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(1154, 822);
+            this.btnSave.Location = new System.Drawing.Point(1053, 834);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(145, 55);
             this.btnSave.TabIndex = 202;
@@ -395,7 +411,7 @@ namespace SmileSunshineToy
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.Location = new System.Drawing.Point(835, 822);
+            this.btnAdd.Location = new System.Drawing.Point(734, 834);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(143, 55);
             this.btnAdd.TabIndex = 201;
@@ -427,7 +443,7 @@ namespace SmileSunshineToy
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(496, 334);
+            this.dataGridView1.Location = new System.Drawing.Point(395, 346);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -435,36 +451,20 @@ namespace SmileSunshineToy
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1383, 447);
+            this.dataGridView1.Size = new System.Drawing.Size(1139, 447);
             this.dataGridView1.TabIndex = 199;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(1204, 277);
+            this.btnSearch.Location = new System.Drawing.Point(1103, 289);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(133, 42);
             this.btnSearch.TabIndex = 200;
             this.btnSearch.Text = "search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // logout
-            // 
-            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logout.FlatAppearance.BorderSize = 0;
-            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.ForeColor = System.Drawing.Color.Black;
-            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 910);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(324, 90);
-            this.logout.TabIndex = 4;
-            this.logout.Text = "Logout";
-            this.logout.UseVisualStyleBackColor = true;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // UserProfileForm
             // 
