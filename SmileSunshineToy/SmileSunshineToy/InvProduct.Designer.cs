@@ -410,7 +410,7 @@ namespace SmileSunshineToy
             // filterComboBox
             // 
             this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(1392, 207);
+            this.filterComboBox.Location = new System.Drawing.Point(1179, 196);
             this.filterComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(130, 26);
@@ -418,7 +418,7 @@ namespace SmileSunshineToy
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(967, 207);
+            this.txtSearch.Location = new System.Drawing.Point(754, 196);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(431, 28);
@@ -426,7 +426,7 @@ namespace SmileSunshineToy
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(1274, 308);
+            this.btnCancel.Location = new System.Drawing.Point(1061, 297);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(123, 73);
@@ -436,7 +436,7 @@ namespace SmileSunshineToy
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1108, 308);
+            this.btnSave.Location = new System.Drawing.Point(895, 297);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(123, 73);
@@ -446,7 +446,7 @@ namespace SmileSunshineToy
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(776, 308);
+            this.btnAdd.Location = new System.Drawing.Point(563, 297);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(123, 73);
@@ -466,7 +466,7 @@ namespace SmileSunshineToy
             this.priceDataGridViewTextBoxColumn,
             this.stockQuantityDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(750, 385);
+            this.dataGridView1.Location = new System.Drawing.Point(537, 374);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -527,7 +527,7 @@ namespace SmileSunshineToy
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(948, 308);
+            this.btnDelete.Location = new System.Drawing.Point(735, 297);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(123, 73);
@@ -537,7 +537,7 @@ namespace SmileSunshineToy
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(838, 203);
+            this.btnSearch.Location = new System.Drawing.Point(625, 192);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(133, 33);
