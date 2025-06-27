@@ -35,8 +35,7 @@ namespace SmileSunshineToy
         private void PerStuOverview_Load(object sender, EventArgs e)
         {
             LoadStaffData();
-            LoadOrderComboBox();
-            LoadProductComboBox();
+
 
             // 初始化状态下拉框
             coboStatus.Items.AddRange(new string[] { "Active", "Inactive", "On Leave" });
@@ -60,47 +59,47 @@ namespace SmileSunshineToy
             }
         }
 
-        private void LoadOrderComboBox()
-        {
-            try
-            {
-                var orders = _orderManager.LoadData();
-                orderID.Items.Clear();
-                orderID.Items.Add("All Orders");
+        //private void LoadOrderComboBox()
+        //{
+        //    try
+        //    {
+        //        var orders = _orderManager.LoadData();
+        //        orderID.Items.Clear();
+        //        orderID.Items.Add("All Orders");
 
-                foreach (DataRow row in orders.Rows)
-                {
-                    orderID.Items.Add(row["OrderID"].ToString());
-                }
+        //        foreach (DataRow row in orders.Rows)
+        //        {
+        //            orderID.Items.Add(row["OrderID"].ToString());
+        //        }
 
-                orderID.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                FormNavigationManager.ShowError($"Failed to load orders: {ex.Message}");
-            }
-        }
+        //        orderID.SelectedIndex = 0;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        FormNavigationManager.ShowError($"Failed to load orders: {ex.Message}");
+        //    }
+        //}
 
-        private void LoadProductComboBox()
-        {
-            try
-            {
-                var products = _productManager.LoadData();
-                productID.Items.Clear();
-                productID.Items.Add("All Products");
+        //private void LoadProductComboBox()
+        //{
+        //    try
+        //    {
+        //        var products = _productManager.LoadData();
+        //        productID.Items.Clear();
+        //        productID.Items.Add("All Products");
 
-                foreach (DataRow row in products.Rows)
-                {
-                    productID.Items.Add(row["ProductID"].ToString());
-                }
+        //        foreach (DataRow row in products.Rows)
+        //        {
+        //            productID.Items.Add(row["ProductID"].ToString());
+        //        }
 
-                productID.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                FormNavigationManager.ShowError($"Failed to load products: {ex.Message}");
-            }
-        }
+        //        productID.SelectedIndex = 0;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        FormNavigationManager.ShowError($"Failed to load products: {ex.Message}");
+        //    }
+        //}
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -201,69 +200,69 @@ namespace SmileSunshineToy
             }
         }
 
-        private void orderSearch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (orderID.SelectedIndex <= 0) // "All Orders" selected
-                {
-                    orderGridView.DataSource = _orderManager.LoadData();
-                }
-                else
-                {
-                    string selectedOrderId = orderID.SelectedItem.ToString();
-                    string searchText = txtOrder.Text.Trim();
+        //private void orderSearch_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (orderID.SelectedIndex <= 0) // "All Orders" selected
+        //        {
+        //            orderGridView.DataSource = _orderManager.LoadData();
+        //        }
+        //        else
+        //        {
+        //            string selectedOrderId = orderID.SelectedItem.ToString();
+        //            string searchText = txtOrder.Text.Trim();
 
-                    if (string.IsNullOrEmpty(searchText))
-                    {
-                        orderGridView.DataSource = _orderManager.LoadGridData("order", "OrderID", selectedOrderId);
-                    }
-                    else
-                    {
-                        DataTable searchResult = _orderManager.SearchRecords(searchText, "OrderID");
-                        orderGridView.DataSource = searchResult;
-                    }
-                }
+        //            if (string.IsNullOrEmpty(searchText))
+        //            {
+        //                orderGridView.DataSource = _orderManager.LoadGridData("order", "OrderID", selectedOrderId);
+        //            }
+        //            else
+        //            {
+        //                DataTable searchResult = _orderManager.SearchRecords(searchText, "OrderID");
+        //                orderGridView.DataSource = searchResult;
+        //            }
+        //        }
 
-                orderGridView.ClearSelection();
-            }
-            catch (Exception ex)
-            {
-                FormNavigationManager.ShowError($"Failed to load orders: {ex.Message}");
-            }
-        }
+        //        orderGridView.ClearSelection();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        FormNavigationManager.ShowError($"Failed to load orders: {ex.Message}");
+        //    }
+        //}
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (productID.SelectedIndex <= 0) // "All Products" selected
-                {
-                    productGridView.DataSource = _productManager.LoadData();
-                }
-                else
-                {
-                    string selectedProductId = productID.SelectedItem.ToString();
-                    string searchText = txtProd.Text.Trim();
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (productID.SelectedIndex <= 0) // "All Products" selected
+        //        {
+        //            productGridView.DataSource = _productManager.LoadData();
+        //        }
+        //        else
+        //        {
+        //            string selectedProductId = productID.SelectedItem.ToString();
+        //            string searchText = txtProd.Text.Trim();
 
-                    if (string.IsNullOrEmpty(searchText))
-                    {
-                        productGridView.DataSource = _productManager.LoadGridData("product", "ProductID", selectedProductId);
-                    }
-                    else
-                    {
-                        DataTable searchResult = _productManager.SearchRecords(searchText, "ProductID");
-                        productGridView.DataSource = searchResult;
-                    }
-                }
+        //            if (string.IsNullOrEmpty(searchText))
+        //            {
+        //                productGridView.DataSource = _productManager.LoadGridData("product", "ProductID", selectedProductId);
+        //            }
+        //            else
+        //            {
+        //                DataTable searchResult = _productManager.SearchRecords(searchText, "ProductID");
+        //                productGridView.DataSource = searchResult;
+        //            }
+        //        }
 
-                productGridView.ClearSelection();
-            }
-            catch (Exception ex)
-            {
-                FormNavigationManager.ShowError($"Failed to load products: {ex.Message}");
-            }
-        }
+        //        productGridView.ClearSelection();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        FormNavigationManager.ShowError($"Failed to load products: {ex.Message}");
+        //    }
+        //}
 
         // 导航按钮事件处理
         private void btn_inv_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(InvMaterial), true); }
@@ -281,5 +280,13 @@ namespace SmileSunshineToy
         private void btn_sub1_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(InvProduct), true); }
         private void btn_sub2_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(InvMaterial), true); }
         private void btn_sub3_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(InvWarehouse), true); }
+        private void btn_product_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(PerCusOverview), true); }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
     }
 }

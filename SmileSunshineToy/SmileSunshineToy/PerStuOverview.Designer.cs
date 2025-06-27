@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace SmileSunshineToy
 {
     partial class PerStuOverview
@@ -31,10 +33,6 @@ namespace SmileSunshineToy
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PerStuOverview));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_inv = new System.Windows.Forms.Button();
@@ -60,16 +58,8 @@ namespace SmileSunshineToy
             this.btn_material = new System.Windows.Forms.Button();
             this.btn_product = new System.Windows.Forms.Button();
             this.export = new System.Windows.Forms.Button();
-            this.txtProd = new System.Windows.Forms.TextBox();
-            this.txtOrder = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.orderSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.editBtn = new System.Windows.Forms.Button();
-            this.productGridView = new System.Windows.Forms.DataGridView();
-            this.productID = new System.Windows.Forms.ComboBox();
-            this.orderGridView = new System.Windows.Forms.DataGridView();
-            this.orderID = new System.Windows.Forms.ComboBox();
             this.txtPlanID = new System.Windows.Forms.TextBox();
             this.dpEndDate = new System.Windows.Forms.DateTimePicker();
             this.coboStatus = new System.Windows.Forms.ComboBox();
@@ -89,8 +79,6 @@ namespace SmileSunshineToy
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -387,6 +375,7 @@ namespace SmileSunshineToy
             this.button7.TabIndex = 13;
             this.button7.Text = "Stuff";
             this.button7.UseVisualStyleBackColor = false;
+            //this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // btn_material
             // 
@@ -417,6 +406,7 @@ namespace SmileSunshineToy
             this.btn_product.TabIndex = 1;
             this.btn_product.Text = "Customer";
             this.btn_product.UseVisualStyleBackColor = true;
+            this.btn_product.Click += new System.EventHandler(this.btn_product_Click);
             // 
             // export
             // 
@@ -427,42 +417,6 @@ namespace SmileSunshineToy
             this.export.TabIndex = 150;
             this.export.Text = "export";
             this.export.UseVisualStyleBackColor = true;
-            // 
-            // txtProd
-            // 
-            this.txtProd.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.txtProd.Location = new System.Drawing.Point(676, 736);
-            this.txtProd.Name = "txtProd";
-            this.txtProd.Size = new System.Drawing.Size(240, 31);
-            this.txtProd.TabIndex = 149;
-            // 
-            // txtOrder
-            // 
-            this.txtOrder.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.txtOrder.Location = new System.Drawing.Point(660, 559);
-            this.txtOrder.Name = "txtOrder";
-            this.txtOrder.Size = new System.Drawing.Size(228, 31);
-            this.txtOrder.TabIndex = 148;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(912, 732);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(157, 35);
-            this.button3.TabIndex = 147;
-            this.button3.Text = "search";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // orderSearch
-            // 
-            this.orderSearch.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.orderSearch.Location = new System.Drawing.Point(883, 558);
-            this.orderSearch.Name = "orderSearch";
-            this.orderSearch.Size = new System.Drawing.Size(132, 35);
-            this.orderSearch.TabIndex = 146;
-            this.orderSearch.Text = "search";
-            this.orderSearch.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -485,94 +439,6 @@ namespace SmileSunshineToy
             this.editBtn.Text = "EDIT";
             this.editBtn.UseVisualStyleBackColor = true;
             // 
-            // productGridView
-            // 
-            this.productGridView.AllowUserToOrderColumns = true;
-            this.productGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.productGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.productGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.productGridView.Location = new System.Drawing.Point(533, 770);
-            this.productGridView.MultiSelect = false;
-            this.productGridView.Name = "productGridView";
-            this.productGridView.ReadOnly = true;
-            this.productGridView.RowHeadersVisible = false;
-            this.productGridView.RowHeadersWidth = 62;
-            this.productGridView.RowTemplate.Height = 30;
-            this.productGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productGridView.Size = new System.Drawing.Size(774, 136);
-            this.productGridView.TabIndex = 143;
-            // 
-            // productID
-            // 
-            this.productID.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.productID.FormattingEnabled = true;
-            this.productID.Location = new System.Drawing.Point(529, 736);
-            this.productID.Name = "productID";
-            this.productID.Size = new System.Drawing.Size(149, 32);
-            this.productID.TabIndex = 142;
-            this.productID.Text = "productID";
-            // 
-            // orderGridView
-            // 
-            this.orderGridView.AllowUserToOrderColumns = true;
-            this.orderGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.orderGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.orderGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.orderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.orderGridView.DefaultCellStyle = dataGridViewCellStyle4;
-            this.orderGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.orderGridView.Location = new System.Drawing.Point(533, 593);
-            this.orderGridView.MultiSelect = false;
-            this.orderGridView.Name = "orderGridView";
-            this.orderGridView.ReadOnly = true;
-            this.orderGridView.RowHeadersVisible = false;
-            this.orderGridView.RowHeadersWidth = 62;
-            this.orderGridView.RowTemplate.Height = 30;
-            this.orderGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orderGridView.Size = new System.Drawing.Size(774, 134);
-            this.orderGridView.TabIndex = 141;
-            // 
-            // orderID
-            // 
-            this.orderID.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.orderID.FormattingEnabled = true;
-            this.orderID.Location = new System.Drawing.Point(533, 558);
-            this.orderID.Name = "orderID";
-            this.orderID.Size = new System.Drawing.Size(128, 32);
-            this.orderID.TabIndex = 140;
-            this.orderID.Text = "orderID";
-            // 
             // txtPlanID
             // 
             this.txtPlanID.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -589,9 +455,9 @@ namespace SmileSunshineToy
             this.dpEndDate.CustomFormat = "yyyy-MM-dd";
             this.dpEndDate.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
             this.dpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpEndDate.Location = new System.Drawing.Point(1340, 739);
+            this.dpEndDate.Location = new System.Drawing.Point(1354, 245);
             this.dpEndDate.Name = "dpEndDate";
-            this.dpEndDate.Size = new System.Drawing.Size(362, 31);
+            this.dpEndDate.Size = new System.Drawing.Size(261, 31);
             this.dpEndDate.TabIndex = 138;
             // 
             // coboStatus
@@ -600,7 +466,7 @@ namespace SmileSunshineToy
             this.coboStatus.FormattingEnabled = true;
             this.coboStatus.Location = new System.Drawing.Point(1421, 303);
             this.coboStatus.Name = "coboStatus";
-            this.coboStatus.Size = new System.Drawing.Size(231, 37);
+            this.coboStatus.Size = new System.Drawing.Size(194, 37);
             this.coboStatus.TabIndex = 137;
             this.coboStatus.Text = "Stutas";
             // 
@@ -609,7 +475,7 @@ namespace SmileSunshineToy
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(1336, 703);
+            this.label4.Location = new System.Drawing.Point(1349, 218);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(250, 29);
             this.label4.TabIndex = 136;
@@ -620,7 +486,7 @@ namespace SmileSunshineToy
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(1336, 599);
+            this.label1.Location = new System.Drawing.Point(1349, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 29);
             this.label1.TabIndex = 135;
@@ -632,9 +498,9 @@ namespace SmileSunshineToy
             this.dpStartDate.CustomFormat = "yyyy-MM-dd";
             this.dpStartDate.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
             this.dpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpStartDate.Location = new System.Drawing.Point(1340, 629);
+            this.dpStartDate.Location = new System.Drawing.Point(1354, 184);
             this.dpStartDate.Name = "dpStartDate";
-            this.dpStartDate.Size = new System.Drawing.Size(349, 31);
+            this.dpStartDate.Size = new System.Drawing.Size(261, 31);
             this.dpStartDate.TabIndex = 134;
             // 
             // filterComboBox
@@ -709,7 +575,7 @@ namespace SmileSunshineToy
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(533, 424);
+            this.dataGridView1.Location = new System.Drawing.Point(533, 432);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -717,8 +583,9 @@ namespace SmileSunshineToy
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1072, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(1053, 510);
             this.dataGridView1.TabIndex = 127;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnSearch
             // 
@@ -736,16 +603,8 @@ namespace SmileSunshineToy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1615, 1000);
             this.Controls.Add(this.export);
-            this.Controls.Add(this.txtProd);
-            this.Controls.Add(this.txtOrder);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.orderSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.editBtn);
-            this.Controls.Add(this.productGridView);
-            this.Controls.Add(this.productID);
-            this.Controls.Add(this.orderGridView);
-            this.Controls.Add(this.orderID);
             this.Controls.Add(this.txtPlanID);
             this.Controls.Add(this.dpEndDate);
             this.Controls.Add(this.coboStatus);
@@ -772,8 +631,6 @@ namespace SmileSunshineToy
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -805,16 +662,8 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btn_material;
         private System.Windows.Forms.Button btn_product;
         private System.Windows.Forms.Button export;
-        private System.Windows.Forms.TextBox txtProd;
-        private System.Windows.Forms.TextBox txtOrder;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button orderSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.DataGridView productGridView;
-        private System.Windows.Forms.ComboBox productID;
-        private System.Windows.Forms.DataGridView orderGridView;
-        private System.Windows.Forms.ComboBox orderID;
         private System.Windows.Forms.TextBox txtPlanID;
         private System.Windows.Forms.DateTimePicker dpEndDate;
         private System.Windows.Forms.ComboBox coboStatus;
@@ -828,5 +677,6 @@ namespace SmileSunshineToy
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSearch;
+        private EventHandler button7_Click;
     }
 }
