@@ -73,7 +73,7 @@ namespace SmileSunshineToy
             this.logout.Font = new System.Drawing.Font("Arial Unicode MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 845);
+            this.logout.Location = new System.Drawing.Point(0, 779);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(472, 81);
             this.logout.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 926);
+            this.panel1.Size = new System.Drawing.Size(472, 860);
             this.panel1.TabIndex = 17;
             // 
             // btn_inv
@@ -271,7 +271,7 @@ namespace SmileSunshineToy
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1719, 140);
+            this.panel3.Size = new System.Drawing.Size(1615, 140);
             this.panel3.TabIndex = 16;
             // 
             // user
@@ -283,7 +283,7 @@ namespace SmileSunshineToy
             this.user.ForeColor = System.Drawing.Color.Black;
             this.user.ImageKey = "profile-user.png";
             this.user.ImageList = this.imageList1;
-            this.user.Location = new System.Drawing.Point(1579, 0);
+            this.user.Location = new System.Drawing.Point(1475, 0);
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(140, 140);
             this.user.TabIndex = 28;
@@ -294,7 +294,7 @@ namespace SmileSunshineToy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1719, 1066);
+            this.ClientSize = new System.Drawing.Size(1615, 1000);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
