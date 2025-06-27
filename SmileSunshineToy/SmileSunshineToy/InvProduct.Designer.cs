@@ -563,7 +563,6 @@ namespace SmileSunshineToy
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSearch);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InvProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -218,6 +218,7 @@
             this.Controls.Add(this.txtOrderID);
             this.Controls.Add(this.label1);
             this.Name = "AddOrderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Order";
             this.Load += new System.EventHandler(this.OrderForm_Load);
             this.ResumeLayout(false);

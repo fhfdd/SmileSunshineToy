@@ -297,7 +297,6 @@ namespace SmileSunshineToy
             this.ClientSize = new System.Drawing.Size(1615, 1000);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";

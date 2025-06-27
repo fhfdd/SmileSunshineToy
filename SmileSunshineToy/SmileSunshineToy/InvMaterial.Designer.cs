@@ -575,7 +575,6 @@ namespace SmileSunshineToy
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InvMaterial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
