@@ -5,7 +5,7 @@ using SmileSunshineToy;
 
 namespace SmileSunshineToy
 {
-    public partial class SalOrderQuery : BaseForm
+    public partial class SalOrderQuery : Form
     {
         private readonly DataGridManager _dataManager;
 
