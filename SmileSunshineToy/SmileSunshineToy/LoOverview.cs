@@ -178,5 +178,46 @@ namespace SmileSunshineToy
             if (FormNavigationManager.ConfirmLogout())
                 FormNavigationManager.ExitApplication();
         }
+
+        private void ProdPlanOverview_Load(object sender, EventArgs e) { }
+        //private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
+        private void btn_sub2_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
+        private void btn_sub1_Click(object sender, EventArgs e) { new ProdPlanOverview().Show(); this.Hide(); }
+        private void btn_user_Click(object sender, EventArgs e) { new UserProfileForm().Show(); this.Hide(); }
+        private void btn_inv_Click(object sender, EventArgs e) { new InvMaterial().Show(); this.Hide(); }
+        private void btn_person_Click(object sender, EventArgs e) { new PerCusOverview().Show(); this.Hide(); }
+        private void btn_proc_Click(object sender, EventArgs e) { new ProcOverview().Show(); this.Hide(); }
+        private void btn_log_Click(object sender, EventArgs e) { new LoOverview().Show(); this.Hide(); }
+        private void btn_prod_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
+        private void btn_fin_Click(object sender, EventArgs e) { new FinPayOverview().Show(); this.Hide(); }
+        private void btn_rd_Click(object sender, EventArgs e) { new RDdash().Show(); this.Hide(); }
+        private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
+       //private void btn_home_Click(object sender, EventArgs e) { this.Show(); this.Activate(); }
+        private void cancelBtn_Click(object sender, EventArgs e) { LoadData(); }
+
+        private void LoadData()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void addBtn_Click(object sender, EventArgs e) { AddRecord(); }
+
+        private void AddRecord()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e) { SearchRecords(); }
+
+        private void SearchRecords()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void txtPlanID_TextChanged(object sender, EventArgs e) { }
+        private void productGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
+
+        //private void saveBtn_Click(object sender, EventArgs e)
     }
 }
