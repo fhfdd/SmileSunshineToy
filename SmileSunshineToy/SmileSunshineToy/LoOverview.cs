@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class LoOverview : BaseForm
+    public partial class LoOverview : Form
     {
         private DataGridManager _logisticsManager;
         private DeliveryManager _deliveryManager;
@@ -16,7 +16,6 @@ namespace SmileSunshineToy
         {
             InitializeComponent();
             InitializeLogisticsSystem();
-            SetDesignSize(new Size(1792, 1126));
         }
 
         private void InitializeLogisticsSystem()

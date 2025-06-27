@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class FinPayOverview : BaseForm
+    public partial class FinPayOverview : Form
     {
         private readonly DataGridManager _dataManager;
 
@@ -13,7 +13,6 @@ namespace SmileSunshineToy
             InitializeComponent();
             _dataManager = new DataGridManager("payment", "PaymentID", "PAY");
             _dataManager.SetConnectionString(Configuration.ConnectionString);
-            SetDesignSize(new Size(1595, 920));
             InitializeDataGridView();
             LoadData();
         }

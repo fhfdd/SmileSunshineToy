@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class UserProfileForm : BaseForm
+    public partial class UserProfileForm : Form
     {
 
         public UserProfileForm()
