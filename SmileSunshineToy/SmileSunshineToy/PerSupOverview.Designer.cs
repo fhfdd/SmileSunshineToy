@@ -420,7 +420,7 @@ namespace SmileSunshineToy
             // export
             // 
             this.export.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.export.Location = new System.Drawing.Point(1219, 966);
+            this.export.Location = new System.Drawing.Point(1141, 879);
             this.export.Name = "export";
             this.export.Size = new System.Drawing.Size(204, 55);
             this.export.TabIndex = 126;
@@ -430,7 +430,7 @@ namespace SmileSunshineToy
             // txtProd
             // 
             this.txtProd.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.txtProd.Location = new System.Drawing.Point(737, 747);
+            this.txtProd.Location = new System.Drawing.Point(659, 660);
             this.txtProd.Name = "txtProd";
             this.txtProd.Size = new System.Drawing.Size(240, 31);
             this.txtProd.TabIndex = 125;
@@ -438,7 +438,7 @@ namespace SmileSunshineToy
             // txtOrder
             // 
             this.txtOrder.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.txtOrder.Location = new System.Drawing.Point(721, 570);
+            this.txtOrder.Location = new System.Drawing.Point(643, 483);
             this.txtOrder.Name = "txtOrder";
             this.txtOrder.Size = new System.Drawing.Size(228, 31);
             this.txtOrder.TabIndex = 124;
@@ -446,7 +446,7 @@ namespace SmileSunshineToy
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(973, 743);
+            this.button3.Location = new System.Drawing.Point(895, 656);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(157, 35);
             this.button3.TabIndex = 123;
@@ -456,7 +456,7 @@ namespace SmileSunshineToy
             // orderSearch
             // 
             this.orderSearch.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
-            this.orderSearch.Location = new System.Drawing.Point(944, 569);
+            this.orderSearch.Location = new System.Drawing.Point(866, 482);
             this.orderSearch.Name = "orderSearch";
             this.orderSearch.Size = new System.Drawing.Size(132, 35);
             this.orderSearch.TabIndex = 122;
@@ -468,7 +468,7 @@ namespace SmileSunshineToy
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(589, 271);
+            this.label2.Location = new System.Drawing.Point(511, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 29);
             this.label2.TabIndex = 121;
@@ -477,7 +477,7 @@ namespace SmileSunshineToy
             // editBtn
             // 
             this.editBtn.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.editBtn.Location = new System.Drawing.Point(594, 966);
+            this.editBtn.Location = new System.Drawing.Point(516, 879);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(149, 55);
             this.editBtn.TabIndex = 120;
@@ -507,7 +507,7 @@ namespace SmileSunshineToy
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.productGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.productGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.productGridView.Location = new System.Drawing.Point(594, 781);
+            this.productGridView.Location = new System.Drawing.Point(516, 694);
             this.productGridView.MultiSelect = false;
             this.productGridView.Name = "productGridView";
             this.productGridView.ReadOnly = true;
@@ -522,7 +522,7 @@ namespace SmileSunshineToy
             // 
             this.productID.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
             this.productID.FormattingEnabled = true;
-            this.productID.Location = new System.Drawing.Point(590, 747);
+            this.productID.Location = new System.Drawing.Point(512, 660);
             this.productID.Name = "productID";
             this.productID.Size = new System.Drawing.Size(149, 32);
             this.productID.TabIndex = 118;
@@ -551,7 +551,7 @@ namespace SmileSunshineToy
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.orderGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.orderGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.orderGridView.Location = new System.Drawing.Point(594, 604);
+            this.orderGridView.Location = new System.Drawing.Point(516, 517);
             this.orderGridView.MultiSelect = false;
             this.orderGridView.Name = "orderGridView";
             this.orderGridView.ReadOnly = true;
@@ -566,7 +566,7 @@ namespace SmileSunshineToy
             // 
             this.orderID.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
             this.orderID.FormattingEnabled = true;
-            this.orderID.Location = new System.Drawing.Point(594, 569);
+            this.orderID.Location = new System.Drawing.Point(516, 482);
             this.orderID.Name = "orderID";
             this.orderID.Size = new System.Drawing.Size(128, 32);
             this.orderID.TabIndex = 116;
@@ -576,7 +576,7 @@ namespace SmileSunshineToy
             // 
             this.txtPlanID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPlanID.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Bold);
-            this.txtPlanID.Location = new System.Drawing.Point(704, 279);
+            this.txtPlanID.Location = new System.Drawing.Point(626, 192);
             this.txtPlanID.Name = "txtPlanID";
             this.txtPlanID.ReadOnly = true;
             this.txtPlanID.Size = new System.Drawing.Size(494, 31);
@@ -588,7 +588,7 @@ namespace SmileSunshineToy
             this.dpEndDate.CustomFormat = "yyyy-MM-dd";
             this.dpEndDate.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
             this.dpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpEndDate.Location = new System.Drawing.Point(1401, 750);
+            this.dpEndDate.Location = new System.Drawing.Point(1323, 663);
             this.dpEndDate.Name = "dpEndDate";
             this.dpEndDate.Size = new System.Drawing.Size(362, 31);
             this.dpEndDate.TabIndex = 114;
@@ -597,7 +597,7 @@ namespace SmileSunshineToy
             // 
             this.coboStatus.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.coboStatus.FormattingEnabled = true;
-            this.coboStatus.Location = new System.Drawing.Point(1482, 314);
+            this.coboStatus.Location = new System.Drawing.Point(1404, 227);
             this.coboStatus.Name = "coboStatus";
             this.coboStatus.Size = new System.Drawing.Size(231, 37);
             this.coboStatus.TabIndex = 113;
@@ -608,7 +608,7 @@ namespace SmileSunshineToy
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(1397, 714);
+            this.label4.Location = new System.Drawing.Point(1319, 627);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(250, 29);
             this.label4.TabIndex = 112;
@@ -619,7 +619,7 @@ namespace SmileSunshineToy
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(1397, 610);
+            this.label1.Location = new System.Drawing.Point(1319, 523);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 29);
             this.label1.TabIndex = 111;
@@ -631,7 +631,7 @@ namespace SmileSunshineToy
             this.dpStartDate.CustomFormat = "yyyy-MM-dd";
             this.dpStartDate.Font = new System.Drawing.Font("Rockwell", 10F, System.Drawing.FontStyle.Bold);
             this.dpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpStartDate.Location = new System.Drawing.Point(1401, 640);
+            this.dpStartDate.Location = new System.Drawing.Point(1323, 553);
             this.dpStartDate.Name = "dpStartDate";
             this.dpStartDate.Size = new System.Drawing.Size(349, 31);
             this.dpStartDate.TabIndex = 110;
@@ -640,7 +640,7 @@ namespace SmileSunshineToy
             // 
             this.filterComboBox.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(655, 391);
+            this.filterComboBox.Location = new System.Drawing.Point(577, 304);
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(192, 37);
             this.filterComboBox.TabIndex = 109;
@@ -648,7 +648,7 @@ namespace SmileSunshineToy
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
-            this.txtSearch.Location = new System.Drawing.Point(844, 378);
+            this.txtSearch.Location = new System.Drawing.Point(766, 291);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(366, 59);
             this.txtSearch.TabIndex = 108;
@@ -656,7 +656,7 @@ namespace SmileSunshineToy
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(898, 966);
+            this.btnCancel.Location = new System.Drawing.Point(820, 879);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(164, 55);
             this.btnCancel.TabIndex = 107;
@@ -666,7 +666,7 @@ namespace SmileSunshineToy
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(1068, 966);
+            this.btnSave.Location = new System.Drawing.Point(990, 879);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(145, 55);
             this.btnSave.TabIndex = 106;
@@ -676,7 +676,7 @@ namespace SmileSunshineToy
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.Location = new System.Drawing.Point(749, 966);
+            this.btnAdd.Location = new System.Drawing.Point(671, 879);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(143, 55);
             this.btnAdd.TabIndex = 105;
@@ -708,7 +708,7 @@ namespace SmileSunshineToy
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(594, 435);
+            this.dataGridView1.Location = new System.Drawing.Point(516, 348);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -722,7 +722,7 @@ namespace SmileSunshineToy
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(1216, 388);
+            this.btnSearch.Location = new System.Drawing.Point(1138, 301);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(133, 42);
             this.btnSearch.TabIndex = 104;

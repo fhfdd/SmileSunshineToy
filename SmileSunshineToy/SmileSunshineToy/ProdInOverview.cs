@@ -194,14 +194,7 @@ namespace SmileSunshineToy
         private void btn_sub2_Click(object sender, EventArgs e) => FormNavigationManager.NavigateToForm(this, typeof(ProdPlanOverview), true);
         private void btn_sub3_Click(object sender, EventArgs e) => FormNavigationManager.NavigateToForm(this, typeof(InvWarehouse), true);
 
-        private void logout_Click(object sender, EventArgs e)
-        {
-            if (FormNavigationManager.ConfirmLogout())
-            {
-                this.Close();
-                FormNavigationManager.NavigateToForm(this, typeof(Login), true);
-            }
-        }
+        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
 
         private void btn_home_Click(object sender, EventArgs e)
         {

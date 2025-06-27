@@ -108,19 +108,7 @@ namespace SmileSunshineToy
         private void btn_rd_Click(object sender, EventArgs e) =>
             FormNavigationManager.NavigateToForm(this, typeof(RDdash));
 
-        private void logout_Click(object sender, EventArgs e)
-        {
-            if (FormNavigationManager.ConfirmLogout())
-            {
-                // 清除用户会话
-                UserSession.UserID = null;
-                UserSession.UserName = null;
-                UserSession.Role = UserRole.None;
-
-                // 返回登录页面
-                FormNavigationManager.NavigateToForm(this, typeof(Login), true);
-            }
-        }
+        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
 
         // 主页按钮点击事件
         private void btn_home_Click(object sender, EventArgs e)
