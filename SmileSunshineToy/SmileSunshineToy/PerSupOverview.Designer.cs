@@ -130,6 +130,7 @@ namespace SmileSunshineToy
             // 
             // btn_person
             // 
+            this.btn_person.BackColor = System.Drawing.Color.BurlyWood;
             this.btn_person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_person.FlatAppearance.BorderSize = 0;
@@ -144,7 +145,7 @@ namespace SmileSunshineToy
             this.btn_person.Size = new System.Drawing.Size(304, 87);
             this.btn_person.TabIndex = 20;
             this.btn_person.Text = "Personnel information";
-            this.btn_person.UseVisualStyleBackColor = true;
+            this.btn_person.UseVisualStyleBackColor = false;
             this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
             // 
             // btn_proc
@@ -199,7 +200,6 @@ namespace SmileSunshineToy
             this.btn_prod.TabIndex = 17;
             this.btn_prod.Text = "Production";
             this.btn_prod.UseVisualStyleBackColor = true;
-            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click_1);
             // 
             // btn_fin
             // 
@@ -246,7 +246,7 @@ namespace SmileSunshineToy
             this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 904);
+            this.logout.Location = new System.Drawing.Point(0, 779);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(304, 81);
             this.logout.TabIndex = 4;
@@ -263,7 +263,7 @@ namespace SmileSunshineToy
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageKey = "profile-user.png";
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1685, 0);
+            this.button1.Location = new System.Drawing.Point(1475, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 140);
             this.button1.TabIndex = 27;
@@ -279,7 +279,7 @@ namespace SmileSunshineToy
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(304, 140);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(172, 985);
+            this.panel3.Size = new System.Drawing.Size(172, 860);
             this.panel3.TabIndex = 59;
             // 
             // button7
@@ -299,6 +299,7 @@ namespace SmileSunshineToy
             // 
             // btn_material
             // 
+            this.btn_material.BackColor = System.Drawing.Color.BurlyWood;
             this.btn_material.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_material.FlatAppearance.BorderSize = 0;
             this.btn_material.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -310,7 +311,7 @@ namespace SmileSunshineToy
             this.btn_material.Size = new System.Drawing.Size(172, 78);
             this.btn_material.TabIndex = 2;
             this.btn_material.Text = "Supplier";
-            this.btn_material.UseVisualStyleBackColor = true;
+            this.btn_material.UseVisualStyleBackColor = false;
             // 
             // btn_product
             // 
@@ -370,7 +371,7 @@ namespace SmileSunshineToy
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1825, 140);
+            this.panel4.Size = new System.Drawing.Size(1615, 140);
             this.panel4.TabIndex = 17;
             // 
             // panel1
@@ -389,9 +390,8 @@ namespace SmileSunshineToy
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 985);
+            this.panel1.Size = new System.Drawing.Size(304, 860);
             this.panel1.TabIndex = 58;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -400,7 +400,7 @@ namespace SmileSunshineToy
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1825, 140);
+            this.panel2.Size = new System.Drawing.Size(1615, 140);
             this.panel2.TabIndex = 57;
             // 
             // productTableAdapter
@@ -733,7 +733,7 @@ namespace SmileSunshineToy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1825, 1125);
+            this.ClientSize = new System.Drawing.Size(1615, 1000);
             this.Controls.Add(this.export);
             this.Controls.Add(this.txtProd);
             this.Controls.Add(this.txtOrder);
@@ -761,7 +761,6 @@ namespace SmileSunshineToy
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PerSupOverview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PerSupOverview";

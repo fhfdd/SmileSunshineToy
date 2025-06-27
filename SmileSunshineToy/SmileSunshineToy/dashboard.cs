@@ -10,38 +10,39 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class Dashboard : Form
+    public partial class Dashboard : BaseForm
     {
-        public Dashboard() // 移除角色参数
+        public Dashboard()
         {
             InitializeComponent();
-            ShowAllButtons(); // 直接显示所有按钮
+            ConfigureUIByRole(UserSession.Role);
+            SetDesignSize(new Size(1595, 920));
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            // 显示当前用户信息
+            user.Text = UserSession.UserName;
         }
-
 
         // 核心逻辑：根据角色显示/隐藏按钮
         private void ConfigureUIByRole(UserRole role)
         {
-            // 1. 先隐藏所有功能按钮（注销和主页默认显示，需确保设计器中已设为可见）
-            btn_inv.Visible = false;
-            btn_person.Visible = false;
-            btn_proc.Visible = false;
-            btn_log.Visible = false;
-            btn_prod.Visible = false;
-            btn_fin.Visible = false;
-            btn_rd.Visible = false;
-            order.Visible = false; // 销售订单按钮
+            // 1. 先隐藏所有功能按钮
+            //btn_inv.Visible = false;
+            //btn_person.Visible = false;
+            //btn_proc.Visible = false;
+            //btn_log.Visible = false;
+            //btn_prod.Visible = false;
+            //btn_fin.Visible = false;
+            //btn_rd.Visible = false;
+            //order.Visible = false;
 
             // 2. 根据角色显示对应按钮
             switch (role)
             {
                 case UserRole.Admin:
-                    ShowAllButtons(); // 管理员显示所有按钮
+                    ShowAllButtons();
                     break;
                 case UserRole.Inventory:
                     btn_inv.Visible = true;
@@ -65,7 +66,7 @@ namespace SmileSunshineToy
                     btn_rd.Visible = true;
                     break;
                 case UserRole.Sales:
-                    order.Visible = true; // 销售订单按钮
+                    order.Visible = true;
                     break;
             }
         }
@@ -83,88 +84,53 @@ namespace SmileSunshineToy
             order.Visible = true;
         }
 
-        // ------------------- 以下是按钮点击事件（跳转到对应窗体） ------------------- //
-        private void btn_inv_Click(object sender, EventArgs e)
-        {
-            new InvMaterial().Show(); // 库存管理窗体
-            this.Hide();
-        }
+        // ------------------- 使用FormNavigationManager进行导航 ------------------- //
+        private void btn_inv_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(InvMaterial));
 
-        private void order_Click(object sender, EventArgs e)
-        {
-            new SalOrderQuery().Show(); // 销售订单窗体
-            this.Hide();
-        }
+        private void order_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(SalOrderQuery));
 
-        private void btn_person_Click(object sender, EventArgs e)
-        {
-            new PerCusOverview().Show(); // 人事管理窗体
-            this.Hide();
-        }
+        private void btn_person_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(PerCusOverview));
 
-        private void btn_proc_Click(object sender, EventArgs e)
-        {
-            new ProcOverview().Show(); // 采购管理窗体
-            this.Hide();
-        }
+        private void btn_proc_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(ProcOverview));
 
-        private void btn_log_Click(object sender, EventArgs e)
-        {
-            new LoOverview().Show(); // 物流管理窗体
-            this.Hide();
-        }
+        private void btn_log_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(LoOverview));
 
-        private void btn_prod_Click(object sender, EventArgs e)
-        {
-            new ProdInOverview().Show(); // 生产管理窗体
-            this.Hide();
-        }
+        private void btn_prod_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(ProdInOverview));
 
-        private void btn_fin_Click(object sender, EventArgs e)
-        {
-            new FinPayOverview().Show(); // 财务管理窗体
-            this.Hide();
-        }
+        private void btn_fin_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(FinPayOverview));
 
-        private void btn_rd_Click(object sender, EventArgs e)
-        {
-            new RDdash().Show(); // 研发管理窗体
-            this.Hide();
-        }
+        private void btn_rd_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(RDdash));
 
         private void logout_Click(object sender, EventArgs e)
         {
-            // 退出逻辑（同之前）
-            if (MessageBox.Show("确认退出？", "退出", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (FormNavigationManager.ConfirmLogout())
             {
-                this.Close();
-                new Login().Show();
+                // 清除用户会话
+                UserSession.UserID = null;
+                UserSession.UserName = null;
+                UserSession.Role = UserRole.None;
+
+                // 返回登录页面
+                FormNavigationManager.NavigateToForm(this, typeof(Login), true);
             }
         }
 
-        // 主页按钮点击事件：确保Dashboard始终可见并激活
+        // 主页按钮点击事件
         private void btn_home_Click(object sender, EventArgs e)
         {
-            // 显示窗体（若被隐藏）
             this.Show();
-            // 激活窗体（置于最前）
             this.Activate();
         }
 
-        private void btn_fin_Click_1(object sender, EventArgs e)
-        {
-            FinPayOverview finPayForm = new FinPayOverview(); // 创建实例
-            finPayForm.Show(); // 调用实例方法
-            this.Hide(); ;
-        }
-
-        private void btn_user_Click(object sender, EventArgs e)
-        {
-
-                new UserProfileForm().Show(); // 研发管理窗体
-                this.Hide();
-            
-        }
+        private void btn_user_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(UserProfileForm));
     }
 }
-

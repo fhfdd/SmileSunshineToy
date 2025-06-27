@@ -19,7 +19,7 @@ namespace SmileSunshineToy
 
 
 
-            Application.Run(new SalOrderQuery());
+            Application.Run(new FinPayOverview());
 
 
         }

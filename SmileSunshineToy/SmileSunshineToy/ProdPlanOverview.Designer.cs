@@ -38,15 +38,6 @@ namespace SmileSunshineToy
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
-            this.productionplanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new SmileSunshineToy.testDataSet();
-            this.productionplanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productionplanTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productionplanTableAdapter();
-            this.productionplanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.orderTableAdapter();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.export = new System.Windows.Forms.Button();
             this.txtProd = new System.Windows.Forms.TextBox();
@@ -92,12 +83,15 @@ namespace SmileSunshineToy
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
+            this.productionplanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new SmileSunshineToy.testDataSet();
+            this.productionplanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productionplanTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productionplanTableAdapter();
+            this.productionplanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.orderTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
             this.panel3.SuspendLayout();
@@ -106,6 +100,12 @@ namespace SmileSunshineToy
             this.panel4.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -123,48 +123,6 @@ namespace SmileSunshineToy
             this.imageList1.Images.SetKeyName(8, "product-management.png");
             this.imageList1.Images.SetKeyName(9, "order.png");
             this.imageList1.Images.SetKeyName(10, "home.png");
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // productionplanBindingSource1
-            // 
-            this.productionplanBindingSource1.DataMember = "productionplan";
-            this.productionplanBindingSource1.DataSource = this.testDataSet;
-            // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "testDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productionplanBindingSource
-            // 
-            this.productionplanBindingSource.DataMember = "productionplan";
-            this.productionplanBindingSource.DataSource = this.testDataSet;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "product";
-            this.productBindingSource.DataSource = this.testDataSet;
-            // 
-            // productionplanTableAdapter
-            // 
-            this.productionplanTableAdapter.ClearBeforeFill = true;
-            // 
-            // productionplanBindingSource2
-            // 
-            this.productionplanBindingSource2.DataMember = "productionplan";
-            this.productionplanBindingSource2.DataSource = this.testDataSet;
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataMember = "order";
-            this.orderBindingSource.DataSource = this.testDataSet;
-            // 
-            // orderTableAdapter
-            // 
-            this.orderTableAdapter.ClearBeforeFill = true;
             // 
             // timer1
             // 
@@ -226,7 +184,7 @@ namespace SmileSunshineToy
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(543, 139);
+            this.label2.Location = new System.Drawing.Point(595, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 29);
             this.label2.TabIndex = 73;
@@ -342,7 +300,7 @@ namespace SmileSunshineToy
             // 
             this.txtPlanID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPlanID.Font = new System.Drawing.Font("Rockwell", 13F, System.Drawing.FontStyle.Bold);
-            this.txtPlanID.Location = new System.Drawing.Point(658, 147);
+            this.txtPlanID.Location = new System.Drawing.Point(731, 128);
             this.txtPlanID.Name = "txtPlanID";
             this.txtPlanID.ReadOnly = true;
             this.txtPlanID.Size = new System.Drawing.Size(494, 31);
@@ -364,7 +322,7 @@ namespace SmileSunshineToy
             // 
             this.coboStatus.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.coboStatus.FormattingEnabled = true;
-            this.coboStatus.Location = new System.Drawing.Point(1436, 182);
+            this.coboStatus.Location = new System.Drawing.Point(1401, 128);
             this.coboStatus.Name = "coboStatus";
             this.coboStatus.Size = new System.Drawing.Size(231, 37);
             this.coboStatus.TabIndex = 64;
@@ -409,9 +367,9 @@ namespace SmileSunshineToy
             this.panel3.Controls.Add(this.btn_material);
             this.panel3.Controls.Add(this.btn_product);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(341, 140);
+            this.panel3.Location = new System.Drawing.Point(341, 83);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(189, 805);
+            this.panel3.Size = new System.Drawing.Size(189, 862);
             this.panel3.TabIndex = 59;
             // 
             // btn_material
@@ -461,9 +419,9 @@ namespace SmileSunshineToy
             this.panel1.Controls.Add(this.order);
             this.panel1.Controls.Add(this.btn_home);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 140);
+            this.panel1.Location = new System.Drawing.Point(0, 83);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(341, 805);
+            this.panel1.Size = new System.Drawing.Size(341, 862);
             this.panel1.TabIndex = 58;
             // 
             // btn_inv
@@ -603,7 +561,7 @@ namespace SmileSunshineToy
             this.logout.Font = new System.Drawing.Font("Rockwell", 14F, System.Drawing.FontStyle.Bold);
             this.logout.ForeColor = System.Drawing.Color.Black;
             this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 724);
+            this.logout.Location = new System.Drawing.Point(0, 781);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(341, 81);
             this.logout.TabIndex = 4;
@@ -654,7 +612,7 @@ namespace SmileSunshineToy
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1752, 140);
+            this.panel2.Size = new System.Drawing.Size(1752, 83);
             this.panel2.TabIndex = 57;
             // 
             // panel4
@@ -666,7 +624,7 @@ namespace SmileSunshineToy
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1752, 140);
+            this.panel4.Size = new System.Drawing.Size(1752, 99);
             this.panel4.TabIndex = 17;
             // 
             // toolStrip1
@@ -680,14 +638,14 @@ namespace SmileSunshineToy
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(177, 140);
+            this.toolStrip1.Size = new System.Drawing.Size(176, 99);
             this.toolStrip1.TabIndex = 81;
             this.toolStrip1.Text = "Time;Date";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(172, 38);
+            this.toolStripLabel1.Size = new System.Drawing.Size(173, 38);
             this.toolStripLabel1.Text = "Time,Date";
             // 
             // Role
@@ -712,7 +670,7 @@ namespace SmileSunshineToy
             this.button1.ImageList = this.imageList1;
             this.button1.Location = new System.Drawing.Point(1612, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 140);
+            this.button1.Size = new System.Drawing.Size(140, 99);
             this.button1.TabIndex = 27;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btn_user_Click);
@@ -721,7 +679,7 @@ namespace SmileSunshineToy
             // 
             this.filterComboBox.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold);
             this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(609, 259);
+            this.filterComboBox.Location = new System.Drawing.Point(597, 217);
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(192, 37);
             this.filterComboBox.TabIndex = 56;
@@ -729,7 +687,7 @@ namespace SmileSunshineToy
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Rockwell", 22F, System.Drawing.FontStyle.Bold);
-            this.txtSearch.Location = new System.Drawing.Point(798, 246);
+            this.txtSearch.Location = new System.Drawing.Point(786, 204);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(366, 59);
             this.txtSearch.TabIndex = 55;
@@ -791,7 +749,7 @@ namespace SmileSunshineToy
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(548, 303);
+            this.dataGridView1.Location = new System.Drawing.Point(548, 269);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -799,7 +757,7 @@ namespace SmileSunshineToy
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1072, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(1120, 160);
             this.dataGridView1.TabIndex = 49;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.dataGridView1_CellToolTipTextNeeded);
@@ -809,13 +767,55 @@ namespace SmileSunshineToy
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Rockwell", 16F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(1170, 256);
+            this.btnSearch.Location = new System.Drawing.Point(1158, 214);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(133, 42);
             this.btnSearch.TabIndex = 50;
             this.btnSearch.Text = "search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // productionplanBindingSource1
+            // 
+            this.productionplanBindingSource1.DataMember = "productionplan";
+            this.productionplanBindingSource1.DataSource = this.testDataSet;
+            // 
+            // testDataSet
+            // 
+            this.testDataSet.DataSetName = "testDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productionplanBindingSource
+            // 
+            this.productionplanBindingSource.DataMember = "productionplan";
+            this.productionplanBindingSource.DataSource = this.testDataSet;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "product";
+            this.productBindingSource.DataSource = this.testDataSet;
+            // 
+            // productionplanTableAdapter
+            // 
+            this.productionplanTableAdapter.ClearBeforeFill = true;
+            // 
+            // productionplanBindingSource2
+            // 
+            this.productionplanBindingSource2.DataMember = "productionplan";
+            this.productionplanBindingSource2.DataSource = this.testDataSet;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataMember = "order";
+            this.orderBindingSource.DataSource = this.testDataSet;
+            // 
+            // orderTableAdapter
+            // 
+            this.orderTableAdapter.ClearBeforeFill = true;
             // 
             // ProdPlanOverview
             // 
@@ -854,12 +854,6 @@ namespace SmileSunshineToy
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProOverview";
             this.Load += new System.EventHandler(this.ProdPlanOverview_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -870,6 +864,12 @@ namespace SmileSunshineToy
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionplanBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

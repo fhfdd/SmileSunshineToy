@@ -1,21 +1,206 @@
 ﻿using System;
-using System.Windows;
+using System.Data;
 using System.Windows.Forms;
-using MessageBox = System.Windows.Forms.MessageBox;
+using SmileSunshineToy;
 
 namespace SmileSunshineToy
 {
+    public partial class SalOrderQuery : BaseForm
+    {
+        private readonly DataGridManager _dataManager;
+
+        public SalOrderQuery()
+        {
+            InitializeComponent();
+            _dataManager = new DataGridManager("order", "OrderID", "ORD");
+            _dataManager.SetConnectionString(Configuration.ConnectionString);
+            InitializeDataGridView();
+            LoadData();
+        }
+
+        private void InitializeDataGridView()
+        {
+            dataGridView1.DataSource = _dataManager.DataTable;
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ReadOnly = true;
+        }
+
+        private void LoadData()
+        {
+            try
+            {
+                _dataManager.LoadData();
+                dataGridView1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                FormNavigationManager.ShowError($"加载订单数据失败: {ex.Message}");
+            }
+        }
+
+        #region 菜单导航事件
+        private void btn_fin_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(FinPayOverview));
+
+        private void btn_rd_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(RDdash));
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            if (FormNavigationManager.ConfirmLogout())
+            {
+                UserSession.UserID = null;
+                UserSession.UserName = null;
+                UserSession.Role = UserRole.None;
+                FormNavigationManager.NavigateToForm(this, typeof(Login), true);
+            }
+        }
+
+        private void order_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(SalOrderQuery));
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            this.Activate();
+        }
+
+        private void btn_inv_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(InvMaterial));
+
+        private void btn_person_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(PerCusOverview));
+
+        private void btn_proc_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(ProcOverview));
+
+        private void btn_log_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(LoOverview));
+
+        private void btn_prod_Click(object sender, EventArgs e) =>
+            FormNavigationManager.NavigateToForm(this, typeof(ProdInOverview));
+        #endregion
+
+        #region 数据操作事件
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_dataManager.AddRecord(true))
+                {
+                    dataGridView1.Refresh();
+                    FormNavigationManager.ShowInformation("已添加新订单记录");
+                }
+            }
+            catch (Exception ex)
+            {
+                FormNavigationManager.ShowError($"添加订单记录失败: {ex.Message}");
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                FormNavigationManager.ShowInformation("请选择要删除的订单记录");
+                return;
+            }
+
+            if (FormNavigationManager.ShowConfirmation("确定要删除选中的订单记录吗?"))
+            {
+                try
+                {
+                    if (_dataManager.DeleteRecord(dataGridView1.SelectedRows) &&
+                        _dataManager.SaveChanges())
+                    {
+                        dataGridView1.Refresh();
+                        FormNavigationManager.ShowInformation("订单记录删除成功");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    FormNavigationManager.ShowError($"删除订单记录失败: {ex.Message}");
+                }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_dataManager.SaveChanges())
+                {
+                    FormNavigationManager.ShowInformation("订单数据保存成功");
+                }
+                else
+                {
+                    FormNavigationManager.ShowInformation("没有需要保存的更改");
+                }
+            }
+            catch (Exception ex)
+            {
+                FormNavigationManager.ShowError($"保存订单数据失败: {ex.Message}");
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                LoadData();
+                return;
+            }
+
+            try
+            {
+                dataGridView1.DataSource = _dataManager.SearchRecords(
+                    txtSearch.Text,
+                    filterComboBox.SelectedItem?.ToString() ?? "OrderID"
+                );
+            }
+            catch (Exception ex)
+            {
+                FormNavigationManager.ShowError($"搜索订单记录失败: {ex.Message}");
+            }
+        }
+
+        private void export_Click(object sender, EventArgs e)
+        {
+            TextPdfExporter.ExportDataGridViewToPdf(dataGridView1);
+        }
+        #endregion
+
+        private void SalOrderQuery_Load(object sender, EventArgs e) { }
+    }
+
     partial class SalOrderQuery
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox filterComboBox;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button export;
+        private System.Windows.Forms.Button btnDelete;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        // 菜单控件
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_inv;
+        private System.Windows.Forms.Button btn_person;
+        private System.Windows.Forms.Button btn_proc;
+        private System.Windows.Forms.Button btn_log;
+        private System.Windows.Forms.Button btn_prod;
+        private System.Windows.Forms.Button btn_fin;
+        private System.Windows.Forms.Button btn_rd;
+        private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.Button order;
+        private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.Panel panel2;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -25,18 +210,21 @@ namespace SmileSunshineToy
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalOrderQuery));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.filterComboBox = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.export = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btn_inv = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_person = new System.Windows.Forms.Button();
             this.btn_proc = new System.Windows.Forms.Button();
             this.btn_log = new System.Windows.Forms.Button();
@@ -44,261 +232,102 @@ namespace SmileSunshineToy
             this.btn_fin = new System.Windows.Forms.Button();
             this.btn_rd = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.order = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.productTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.productTableAdapter();
-            this.filterComboBox = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new SmileSunshineToy.testDataSet();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.orderTableAdapter = new SmileSunshineToy.testDataSetTableAdapters.orderTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_inv
-            // 
-            this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_inv.FlatAppearance.BorderSize = 0;
-            this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inv.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_inv.ForeColor = System.Drawing.Color.Black;
-            this.btn_inv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inv.ImageKey = "product-management.png";
-            this.btn_inv.ImageList = this.imageList1;
-            this.btn_inv.Location = new System.Drawing.Point(0, 685);
-            this.btn_inv.Name = "btn_inv";
-            this.btn_inv.Size = new System.Drawing.Size(472, 87);
-            this.btn_inv.TabIndex = 26;
-            this.btn_inv.Text = "Inventory";
-            this.btn_inv.UseVisualStyleBackColor = true;
-            this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "profile-user.png");
-            this.imageList1.Images.SetKeyName(1, "user.png");
-            this.imageList1.Images.SetKeyName(2, "customer.png");
-            this.imageList1.Images.SetKeyName(3, "procurement.png");
-            this.imageList1.Images.SetKeyName(4, "delivery-truck.png");
-            this.imageList1.Images.SetKeyName(5, "production-line.png");
-            this.imageList1.Images.SetKeyName(6, "deposit.png");
-            this.imageList1.Images.SetKeyName(7, "analysis.png");
-            this.imageList1.Images.SetKeyName(8, "product-management.png");
-            this.imageList1.Images.SetKeyName(9, "order.png");
-            this.imageList1.Images.SetKeyName(10, "home.png");
-            // 
-            // btn_person
-            // 
-            this.btn_person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_person.FlatAppearance.BorderSize = 0;
-            this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_person.ForeColor = System.Drawing.Color.Black;
-            this.btn_person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_person.ImageKey = "customer.png";
-            this.btn_person.ImageList = this.imageList1;
-            this.btn_person.Location = new System.Drawing.Point(0, 598);
-            this.btn_person.Name = "btn_person";
-            this.btn_person.Size = new System.Drawing.Size(472, 87);
-            this.btn_person.TabIndex = 20;
-            this.btn_person.Text = "Personnel information";
-            this.btn_person.UseVisualStyleBackColor = true;
-            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
-            // 
-            // btn_proc
-            // 
-            this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_proc.FlatAppearance.BorderSize = 0;
-            this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_proc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_proc.ForeColor = System.Drawing.Color.Black;
-            this.btn_proc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_proc.ImageKey = "procurement.png";
-            this.btn_proc.ImageList = this.imageList1;
-            this.btn_proc.Location = new System.Drawing.Point(0, 511);
-            this.btn_proc.Name = "btn_proc";
-            this.btn_proc.Size = new System.Drawing.Size(472, 87);
-            this.btn_proc.TabIndex = 19;
-            this.btn_proc.Text = "Procurement";
-            this.btn_proc.UseVisualStyleBackColor = true;
-            this.btn_proc.Click += new System.EventHandler(this.btn_proc_Click);
-            // 
-            // btn_log
-            // 
-            this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_log.FlatAppearance.BorderSize = 0;
-            this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_log.ForeColor = System.Drawing.Color.Black;
-            this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_log.ImageKey = "delivery-truck.png";
-            this.btn_log.ImageList = this.imageList1;
-            this.btn_log.Location = new System.Drawing.Point(0, 424);
-            this.btn_log.Name = "btn_log";
-            this.btn_log.Size = new System.Drawing.Size(472, 87);
-            this.btn_log.TabIndex = 18;
-            this.btn_log.Text = "Logistics";
-            this.btn_log.UseVisualStyleBackColor = true;
-            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
-            // 
-            // btn_prod
-            // 
-            this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_prod.FlatAppearance.BorderSize = 0;
-            this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prod.ForeColor = System.Drawing.Color.Black;
-            this.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_prod.ImageKey = "production-line.png";
-            this.btn_prod.ImageList = this.imageList1;
-            this.btn_prod.Location = new System.Drawing.Point(0, 337);
-            this.btn_prod.Name = "btn_prod";
-            this.btn_prod.Size = new System.Drawing.Size(472, 87);
-            this.btn_prod.TabIndex = 17;
-            this.btn_prod.Text = "Production";
-            this.btn_prod.UseVisualStyleBackColor = true;
-            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
-            // 
-            // btn_fin
-            // 
-            this.btn_fin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_fin.FlatAppearance.BorderSize = 0;
-            this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_fin.ForeColor = System.Drawing.Color.Black;
-            this.btn_fin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fin.ImageKey = "deposit.png";
-            this.btn_fin.ImageList = this.imageList1;
-            this.btn_fin.Location = new System.Drawing.Point(0, 250);
-            this.btn_fin.Name = "btn_fin";
-            this.btn_fin.Size = new System.Drawing.Size(472, 87);
-            this.btn_fin.TabIndex = 15;
-            this.btn_fin.Text = "Financial";
-            this.btn_fin.UseVisualStyleBackColor = true;
-            this.btn_fin.Click += new System.EventHandler(this.btn_fin_Click);
-            // 
-            // btn_rd
-            // 
-            this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_rd.FlatAppearance.BorderSize = 0;
-            this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rd.ForeColor = System.Drawing.Color.Black;
-            this.btn_rd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_rd.ImageKey = "analysis.png";
-            this.btn_rd.ImageList = this.imageList1;
-            this.btn_rd.Location = new System.Drawing.Point(0, 163);
-            this.btn_rd.Name = "btn_rd";
-            this.btn_rd.Size = new System.Drawing.Size(472, 87);
-            this.btn_rd.TabIndex = 13;
-            this.btn_rd.Text = "R&&D";
-            this.btn_rd.UseVisualStyleBackColor = true;
-            this.btn_rd.Click += new System.EventHandler(this.btn_rd_Click);
-            // 
-            // logout
-            // 
-            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logout.FlatAppearance.BorderSize = 0;
-            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.ForeColor = System.Drawing.Color.Black;
-            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 774);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(472, 81);
-            this.logout.TabIndex = 4;
-            this.logout.Text = "Logout";
-            this.logout.UseVisualStyleBackColor = true;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.ImageKey = "profile-user.png";
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1760, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 140);
-            this.button1.TabIndex = 27;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btn_user_Click);
-            // 
-            // order
-            // 
-            this.order.Dock = System.Windows.Forms.DockStyle.Top;
-            this.order.FlatAppearance.BorderSize = 0;
-            this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order.ForeColor = System.Drawing.Color.Black;
-            this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.order.ImageKey = "order.png";
-            this.order.ImageList = this.imageList1;
-            this.order.Location = new System.Drawing.Point(0, 76);
-            this.order.Name = "order";
-            this.order.Size = new System.Drawing.Size(472, 87);
-            this.order.TabIndex = 2;
-            this.order.Text = "Sale Order";
-            this.order.UseVisualStyleBackColor = true;
-            this.order.Click += new System.EventHandler(this.order_Click);
-            // 
-            // btn_home
-            // 
-            this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_home.FlatAppearance.BorderSize = 0;
-            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.ForeColor = System.Drawing.Color.Black;
-            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.ImageKey = "home.png";
-            this.btn_home.ImageList = this.imageList1;
-            this.btn_home.Location = new System.Drawing.Point(0, 0);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(472, 76);
-            this.btn_home.TabIndex = 1;
-            this.btn_home.Text = "Home";
-            this.btn_home.UseVisualStyleBackColor = true;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Bisque;
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1900, 140);
-            this.panel4.TabIndex = 17;
-            // 
-            // panel1
-            // 
+
+            // dataGridView1 订单数据网格
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(300, 200);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1000, 500);
+            this.dataGridView1.TabIndex = 0;
+
+            // filterComboBox 搜索条件下拉框
+            this.filterComboBox.FormattingEnabled = true;
+            this.filterComboBox.Items.AddRange(new object[] {
+            "OrderID", "CustomerID", "OrderDate", "Status"});
+            this.filterComboBox.Location = new System.Drawing.Point(300, 150);
+            this.filterComboBox.Name = "filterComboBox";
+            this.filterComboBox.Size = new System.Drawing.Size(150, 28);
+            this.filterComboBox.TabIndex = 1;
+            this.filterComboBox.SelectedIndex = 0;
+
+            // txtSearch 搜索文本框
+            this.txtSearch.Location = new System.Drawing.Point(460, 150);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(300, 28);
+            this.txtSearch.TabIndex = 2;
+
+            // btnCancel 取消按钮
+            this.btnCancel.Location = new System.Drawing.Point(920, 750);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 40);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "取消";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+
+            // btnSave 保存按钮
+            this.btnSave.Location = new System.Drawing.Point(800, 750);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 40);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "保存";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+
+            // btnAdd 添加按钮
+            this.btnAdd.Location = new System.Drawing.Point(680, 750);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(100, 40);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "添加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+
+            // btnSearch 搜索按钮
+            this.btnSearch.Location = new System.Drawing.Point(780, 145);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 35);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "搜索";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+
+            // export 导出按钮
+            this.export.Location = new System.Drawing.Point(1040, 750);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(120, 40);
+            this.export.TabIndex = 7;
+            this.export.Text = "导出PDF";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.export_Click);
+
+            // btnDelete 删除按钮
+            this.btnDelete.Location = new System.Drawing.Point(560, 750);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 40);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "删除";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+
+            // panel1 侧边菜单面板
             this.panel1.BackColor = System.Drawing.Color.Bisque;
             this.panel1.Controls.Add(this.btn_inv);
             this.panel1.Controls.Add(this.btn_person);
@@ -311,285 +340,168 @@ namespace SmileSunshineToy
             this.panel1.Controls.Add(this.order);
             this.panel1.Controls.Add(this.btn_home);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 140);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 855);
-            this.panel1.TabIndex = 58;
-            // 
-            // panel2
-            // 
+            this.panel1.Size = new System.Drawing.Size(250, 900);
+            this.panel1.TabIndex = 9;
+
+            // btn_inv 库存菜单按钮
+            this.btn_inv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_inv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inv.Location = new System.Drawing.Point(0, 630);
+            this.btn_inv.Name = "btn_inv";
+            this.btn_inv.Size = new System.Drawing.Size(250, 60);
+            this.btn_inv.TabIndex = 26;
+            this.btn_inv.Text = "Inventory";
+            this.btn_inv.UseVisualStyleBackColor = true;
+            this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
+
+            // btn_person 人员菜单按钮
+            this.btn_person.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_person.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_person.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_person.Location = new System.Drawing.Point(0, 540);
+            this.btn_person.Name = "btn_person";
+            this.btn_person.Size = new System.Drawing.Size(250, 60);
+            this.btn_person.TabIndex = 20;
+            this.btn_person.Text = "Personnel";
+            this.btn_person.UseVisualStyleBackColor = true;
+            this.btn_person.Click += new System.EventHandler(this.btn_person_Click);
+
+            // btn_proc 采购菜单按钮
+            this.btn_proc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_proc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_proc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_proc.Location = new System.Drawing.Point(0, 450);
+            this.btn_proc.Name = "btn_proc";
+            this.btn_proc.Size = new System.Drawing.Size(250, 60);
+            this.btn_proc.TabIndex = 19;
+            this.btn_proc.Text = "Procurement";
+            this.btn_proc.UseVisualStyleBackColor = true;
+            this.btn_proc.Click += new System.EventHandler(this.btn_proc_Click);
+
+            // btn_log 物流菜单按钮
+            this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_log.Location = new System.Drawing.Point(0, 360);
+            this.btn_log.Name = "btn_log";
+            this.btn_log.Size = new System.Drawing.Size(250, 60);
+            this.btn_log.TabIndex = 18;
+            this.btn_log.Text = "Logistics";
+            this.btn_log.UseVisualStyleBackColor = true;
+            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
+
+            // btn_prod 生产菜单按钮
+            this.btn_prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prod.Location = new System.Drawing.Point(0, 270);
+            this.btn_prod.Name = "btn_prod";
+            this.btn_prod.Size = new System.Drawing.Size(250, 60);
+            this.btn_prod.TabIndex = 17;
+            this.btn_prod.Text = "Production";
+            this.btn_prod.UseVisualStyleBackColor = true;
+            this.btn_prod.Click += new System.EventHandler(this.btn_prod_Click);
+
+            // btn_fin 财务菜单按钮
+            this.btn_fin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_fin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fin.Location = new System.Drawing.Point(0, 180);
+            this.btn_fin.Name = "btn_fin";
+            this.btn_fin.Size = new System.Drawing.Size(250, 60);
+            this.btn_fin.TabIndex = 15;
+            this.btn_fin.Text = "Financial";
+            this.btn_fin.UseVisualStyleBackColor = true;
+            this.btn_fin.Click += new System.EventHandler(this.btn_fin_Click);
+
+            // btn_rd 研发菜单按钮
+            this.btn_rd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rd.Location = new System.Drawing.Point(0, 90);
+            this.btn_rd.Name = "btn_rd";
+            this.btn_rd.Size = new System.Drawing.Size(250, 60);
+            this.btn_rd.TabIndex = 13;
+            this.btn_rd.Text = "R&D";
+            this.btn_rd.UseVisualStyleBackColor = true;
+            this.btn_rd.Click += new System.EventHandler(this.btn_rd_Click);
+
+            // logout 登出按钮
+            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Location = new System.Drawing.Point(0, 840);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(250, 60);
+            this.logout.TabIndex = 4;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+
+            // order 订单菜单按钮
+            this.order.Dock = System.Windows.Forms.DockStyle.Top;
+            this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order.Location = new System.Drawing.Point(0, 0);
+            this.order.Name = "order";
+            this.order.Size = new System.Drawing.Size(250, 60);
+            this.order.TabIndex = 2;
+            this.order.Text = "Sales Order";
+            this.order.UseVisualStyleBackColor = true;
+            this.order.Click += new System.EventHandler(this.order_Click);
+
+            // btn_home 首页按钮
+            this.btn_home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Location = new System.Drawing.Point(0, 0);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Size = new System.Drawing.Size(250, 60);
+            this.btn_home.TabIndex = 1;
+            this.btn_home.Text = "Home";
+            this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+
+            // panel2 顶部面板
             this.panel2.BackColor = System.Drawing.Color.Bisque;
-            this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(250, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1900, 140);
-            this.panel2.TabIndex = 57;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // filterComboBox
-            // 
-            this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(1396, 208);
-            this.filterComboBox.Name = "filterComboBox";
-            this.filterComboBox.Size = new System.Drawing.Size(130, 26);
-            this.filterComboBox.TabIndex = 56;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(971, 208);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(431, 28);
-            this.txtSearch.TabIndex = 55;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(779, 308);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(124, 73);
-            this.btnAdd.TabIndex = 51;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataMember = "order";
-            this.orderBindingSource.DataSource = this.testDataSet;
-            // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "testDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "product";
-            this.productBindingSource.DataSource = this.testDataSet;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoEllipsis = true;
-            this.btnDelete.Location = new System.Drawing.Point(950, 308);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(124, 73);
-            this.btnDelete.TabIndex = 52;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(841, 204);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(134, 33);
-            this.btnSearch.TabIndex = 50;
-            this.btnSearch.Text = "search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // orderTableAdapter
-            // 
-            this.orderTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn,
-            this.customerIDDataGridViewTextBoxColumn,
-            this.orderDateDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.totalAmountDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.orderBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(753, 385);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1022, 578);
-            this.dataGridView1.TabIndex = 49;
-            // 
-            // orderIDDataGridViewTextBoxColumn
-            // 
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // customerIDDataGridViewTextBoxColumn
-            // 
-            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
-            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.customerIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            this.orderDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderDateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // totalAmountDataGridViewTextBoxColumn
-            // 
-            this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.HeaderText = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
-            this.totalAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalAmountDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // SalOrderQuery
-            // 
+            this.panel2.Size = new System.Drawing.Size(1250, 100);
+            this.panel2.TabIndex = 10;
+
+            // SalOrderQuery 窗体
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1900, 995);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1500, 900);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.filterComboBox);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.export);
             this.Controls.Add(this.btnSearch);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.filterComboBox);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "SalOrderQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "sale_order";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Sales Order Query";
             this.Load += new System.EventHandler(this.SalOrderQuery_Load);
-            this.panel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        // 删除按钮点击事件处理
-private void deleteBtn_Click(object sender, EventArgs e)
-{
-    // 检查是否有选中的行
-    if (dataGridView1.SelectedRows.Count == 0)
-    {
-        MessageBox.Show("请选择要删除的销售订单！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        return;
-    }
-
-    // 获取选中行的订单ID
-    int orderId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["orderIDDataGridViewTextBoxColumn"].Value);
-    
-    // 确认对话框
-    DialogResult result = MessageBox.Show($"确定要删除订单ID为 {orderId} 的销售订单吗？此操作不可撤销！", 
-        "确认删除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-    
-    if (result != DialogResult.Yes)
-    {
-        return;
-    }
-
-    try
-    {
-        // 开始数据库事务（可选，确保数据一致性）
-        using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(orderTableAdapter.Connection.ConnectionString))
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            using (System.Data.SqlClient.SqlTransaction transaction = connection.BeginTransaction())
-            {
-                try
-                {
-                   
-                    // 执行删除操作
-                    int rowsAffected = orderTableAdapter.DeleteByOrderID(orderId);
-                    
-                    if (rowsAffected > 0)
-                    {
-                        // 提交事务
-                        transaction.Commit();
-                        
-                        // 刷新数据
-                        this.orderTableAdapter.Fill(this.testDataSet.order);
-                        
-                        MessageBox.Show("The sales order has been deleted successfully!", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("The specified sales order was not found. It may have been deleted by another user!", "hint", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // 回滚事务
-                    transaction.Rollback();
-                    MessageBox.Show($"删除订单时发生错误：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            _dataManager.DataTable.RejectChanges();
+            dataGridView1.Refresh();
         }
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show($"连接数据库时发生错误：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    }
-}
-
-        #endregion
-
-        private System.Windows.Forms.Button btn_inv;
-        private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Button btn_person;
-        private System.Windows.Forms.Button btn_proc;
-        private System.Windows.Forms.Button btn_log;
-        private System.Windows.Forms.Button btn_prod;
-        private System.Windows.Forms.Button btn_fin;
-        private System.Windows.Forms.Button btn_rd;
-        private System.Windows.Forms.Button logout;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button order;
-        private System.Windows.Forms.Button btn_home;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private testDataSetTableAdapters.productTableAdapter productTableAdapter;
-        private System.Windows.Forms.ComboBox filterComboBox;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.BindingSource productBindingSource;
-        private testDataSet testDataSet;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.BindingSource orderBindingSource;
-        private testDataSetTableAdapters.orderTableAdapter orderTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
     }
 }

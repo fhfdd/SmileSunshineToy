@@ -6,7 +6,7 @@ using System.Linq;
 namespace SmileSunshineToy
 {
 
-    public partial class Login : Form
+    public partial class Login : BaseForm
     {
         private string sqlcon1 = "Server=127.0.0.1;Database=test;Uid=root;Pwd=;";
         public Login()
