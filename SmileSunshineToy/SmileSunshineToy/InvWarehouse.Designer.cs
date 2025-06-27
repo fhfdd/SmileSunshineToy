@@ -540,7 +540,6 @@ namespace SmileSunshineToy
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InvWarehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

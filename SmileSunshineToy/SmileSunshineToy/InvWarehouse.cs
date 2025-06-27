@@ -219,16 +219,7 @@ namespace SmileSunshineToy
         private void btn_rd_Click(object sender, EventArgs e) =>
             FormNavigationManager.NavigateToForm(this, typeof(RDdash));
 
-        private void logout_Click(object sender, EventArgs e)
-        {
-            if (FormNavigationManager.ConfirmLogout())
-            {
-                UserSession.UserID = null;
-                UserSession.UserName = null;
-                UserSession.Role = UserRole.None;
-                FormNavigationManager.NavigateToForm(this, typeof(Login), true);
-            }
-        }
+        private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
 
         private void btn_home_Click(object sender, EventArgs e) =>
               FormNavigationManager.NavigateToForm(this, typeof(UserProfileForm));

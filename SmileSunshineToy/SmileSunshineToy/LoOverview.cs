@@ -166,19 +166,14 @@ namespace SmileSunshineToy
 
         // 导航按钮事件
         private void btn_home_Click(object sender, EventArgs e) =>
-              FormNavigationManager.NavigateToForm(this, typeof(UserProfileForm));
+              FormNavigationManager.NavigateToForm(this, typeof(Dashboard));
 
         private void order_Click_1(object sender, EventArgs e) =>
             FormNavigationManager.NavigateToForm(this, typeof(Form), true);
 
         private void btn_log_Click_1(object sender, EventArgs e) { /* 当前页面 */ }
 
-        private void logout_Click(object sender, EventArgs e)
-        {
-            if (FormNavigationManager.ConfirmLogout())
-                FormNavigationManager.ExitApplication();
-        }
-
+ private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
         private void ProdPlanOverview_Load(object sender, EventArgs e) { }
         //private void logout_Click(object sender, EventArgs e) { if (MessageBox.Show("Confirm logout?", "Logout", MessageBoxButtons.YesNo) == DialogResult.Yes) { new Login().Show(); this.Hide(); } }
         private void btn_sub2_Click(object sender, EventArgs e) { new ProdInOverview().Show(); this.Hide(); }
@@ -217,6 +212,11 @@ namespace SmileSunshineToy
         private void txtPlanID_TextChanged(object sender, EventArgs e) { }
         private void productGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void label2_Click(object sender, EventArgs e) { }
+
+        private void btn_prod_Click_1(object sender, EventArgs e)
+        {
+            new ProdInOverview().Show(); this.Hide();
+        }
 
         //private void saveBtn_Click(object sender, EventArgs e)
     }
