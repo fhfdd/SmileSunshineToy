@@ -4,16 +4,16 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class InvWarehouse : BaseForm
+    public partial class InvMaterial : BaseForm
     {
         private readonly DataGridManager _dataManager;
 
-        public InvWarehouse()
+        public InvMaterial()
         {
             InitializeComponent();
 
             // 初始化DataGridManager
-            _dataManager = new DataGridManager("inventory", "InventoryID", "INV");
+            _dataManager = new DataGridManager("material", "MaterialID", "MAT");
             _dataManager.SetConnectionString(Configuration.ConnectionString);
 
             InitializeDataGridView();
@@ -34,43 +34,51 @@ namespace SmileSunshineToy
             // 添加自定义列
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "InventoryID",
-                HeaderText = "库存ID",
-                Name = "InventoryID",
+                DataPropertyName = "MaterialID",
+                HeaderText = "物料ID",
+                Name = "MaterialID",
                 ReadOnly = true,
                 Width = 120
             });
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "ProductID",
-                HeaderText = "产品ID",
-                Name = "ProductID",
+                DataPropertyName = "MaterialName",
+                HeaderText = "物料名称",
+                Name = "MaterialName",
+                Width = 180
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Specification",
+                HeaderText = "规格",
+                Name = "Specification",
+                Width = 200
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "StockQuantity",
+                HeaderText = "库存数量",
+                Name = "StockQuantity",
                 Width = 120
             });
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "Quantity",
-                HeaderText = "数量",
-                Name = "Quantity",
-                Width = 100
-            });
-
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Location",
-                HeaderText = "位置",
-                Name = "Location",
+                DataPropertyName = "SupplierID",
+                HeaderText = "供应商ID",
+                Name = "SupplierID",
                 Width = 150
             });
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "WarehouseID",
-                HeaderText = "仓库ID",
-                Name = "WarehouseID",
-                Width = 120
+                DataPropertyName = "Unit",
+                HeaderText = "单位",
+                Name = "Unit",
+                Width = 80
             });
 
             // 设置数据源
@@ -78,9 +86,10 @@ namespace SmileSunshineToy
 
             // 初始化搜索条件
             filterComboBox.Items.AddRange(new string[] {
-                "ProductID",
-                "Location",
-                "WarehouseID"
+                "MaterialID",
+                "MaterialName",
+                "Specification",
+                "SupplierID"
             });
             filterComboBox.SelectedIndex = 0;
         }
@@ -98,7 +107,7 @@ namespace SmileSunshineToy
             }
         }
 
-        // 添加库存记录
+        // 添加物料
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -106,7 +115,7 @@ namespace SmileSunshineToy
                 if (_dataManager.AddRecord(true))
                 {
                     dataGridView1.Refresh();
-                    FormNavigationManager.ShowInformation("已添加新库存记录");
+                    FormNavigationManager.ShowInformation("已添加新物料记录");
                 }
             }
             catch (Exception ex)
@@ -115,7 +124,7 @@ namespace SmileSunshineToy
             }
         }
 
-        // 删除库存记录
+        // 删除物料
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -124,7 +133,7 @@ namespace SmileSunshineToy
                 return;
             }
 
-            if (FormNavigationManager.ShowConfirmation("确定要删除选中的库存记录吗？"))
+            if (FormNavigationManager.ShowConfirmation("确定要删除选中的物料记录吗？"))
             {
                 try
                 {
@@ -172,7 +181,7 @@ namespace SmileSunshineToy
             }
         }
 
-        // 搜索库存记录
+        // 搜索物料
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
@@ -185,7 +194,7 @@ namespace SmileSunshineToy
             {
                 dataGridView1.DataSource = _dataManager.SearchRecords(
                     txtSearch.Text,
-                    filterComboBox.SelectedItem?.ToString() ?? "ProductID"
+                    filterComboBox.SelectedItem?.ToString() ?? "MaterialName"
                 );
             }
             catch (Exception ex)
@@ -194,12 +203,21 @@ namespace SmileSunshineToy
             }
         }
 
+        // 订单按钮点击事件
+        private void order_Click(object sender, EventArgs e)
+        {
+            FormNavigationManager.NavigateToForm(this, typeof(SalOrderQuery));
+        }
+
+        // 财务按钮点击事件
+        private void btn_fin_Click_1(object sender, EventArgs e)
+        {
+            FormNavigationManager.NavigateToForm(this, typeof(FinPayOverview));
+        }
+
         // 使用FormNavigationManager进行导航
         private void btn_inv_Click(object sender, EventArgs e) =>
             FormNavigationManager.NavigateToForm(this, typeof(InvMaterial));
-
-        private void order_Click(object sender, EventArgs e) =>
-            FormNavigationManager.NavigateToForm(this, typeof(SalOrderQuery));
 
         private void btn_person_Click(object sender, EventArgs e) =>
             FormNavigationManager.NavigateToForm(this, typeof(PerCusOverview));
@@ -246,8 +264,11 @@ namespace SmileSunshineToy
             FormNavigationManager.NavigateToForm(this, typeof(InvWarehouse));
 
         // 空事件处理器
-        private void InvWarehouse_Load(object sender, EventArgs e) { }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-        private void panel4_Paint(object sender, PaintEventArgs e) { }
+        private void InvMaterial_Load(object sender, EventArgs e) { }
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
+        private void panel2_Paint(object sender, PaintEventArgs e) { }
+        private void panel3_Paint(object sender, PaintEventArgs e) { }
+        private void txtSearch_TextChanged(object sender, EventArgs e) { }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
     }
 }

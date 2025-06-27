@@ -29,14 +29,14 @@ namespace SmileSunshineToy
         private void ConfigureUIByRole(UserRole role)
         {
             // 1. 先隐藏所有功能按钮
-            btn_inv.Visible = false;
-            btn_person.Visible = false;
-            btn_proc.Visible = false;
-            btn_log.Visible = false;
-            btn_prod.Visible = false;
-            btn_fin.Visible = false;
-            btn_rd.Visible = false;
-            order.Visible = false;
+            //btn_inv.Visible = false;
+            //btn_person.Visible = false;
+            //btn_proc.Visible = false;
+            //btn_log.Visible = false;
+            //btn_prod.Visible = false;
+            //btn_fin.Visible = false;
+            //btn_rd.Visible = false;
+            //order.Visible = false;
 
             // 2. 根据角色显示对应按钮
             switch (role)

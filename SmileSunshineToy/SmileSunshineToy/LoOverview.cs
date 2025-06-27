@@ -167,7 +167,7 @@ namespace SmileSunshineToy
 
         // 导航按钮事件
         private void btn_home_Click(object sender, EventArgs e) =>
-            FormNavigationManager.NavigateToForm(this, typeof(Form), true);
+              FormNavigationManager.NavigateToForm(this, typeof(UserProfileForm));
 
         private void order_Click_1(object sender, EventArgs e) =>
             FormNavigationManager.NavigateToForm(this, typeof(Form), true);

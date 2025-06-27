@@ -96,7 +96,8 @@ namespace SmileSunshineToy
         private void btn_fin_Click(object sender, EventArgs e) { new FinPayOverview().Show(); this.Hide(); }
         private void btn_rd_Click(object sender, EventArgs e) { new RDdash().Show(); this.Hide(); }
         private void order_Click(object sender, EventArgs e) { new SalOrderQuery().Show(); this.Hide(); }
-        private void btn_home_Click(object sender, EventArgs e) { this.Show(); this.Activate(); }
+        private void btn_home_Click(object sender, EventArgs e) =>
+              FormNavigationManager.NavigateToForm(this, typeof(UserProfileForm));
         private void cancelBtn_Click(object sender, EventArgs e) { LoadData(); }
         private void addBtn_Click(object sender, EventArgs e) { AddRecord(); }
         private void searchBtn_Click(object sender, EventArgs e) { SearchRecords(); }

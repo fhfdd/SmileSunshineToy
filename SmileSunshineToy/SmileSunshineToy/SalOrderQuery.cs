@@ -68,5 +68,8 @@ namespace SmileSunshineToy
         {
 
         }
+
+        private void btn_home_Click(object sender, EventArgs e) =>
+              FormNavigationManager.NavigateToForm(this, typeof(UserProfileForm));
     }
 }

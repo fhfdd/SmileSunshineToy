@@ -275,7 +275,8 @@ namespace SmileSunshineToy
         private void btn_fin_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(FinPayOverview), true); }
         private void btn_rd_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(RDdash), true); }
         private void logout_Click(object sender, EventArgs e) { if (FormNavigationManager.ShowConfirmation("Confirm logout?")) { this.Close(); FormNavigationManager.NavigateToForm(this, typeof(Login), false); } }
-        private void btn_home_Click(object sender, EventArgs e) { this.Show(); this.Activate(); }
+        private void btn_home_Click(object sender, EventArgs e) =>
+              FormNavigationManager.NavigateToForm(this, typeof(UserProfileForm));
         private void btn_user_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(UserProfileForm), true); }
         private void btn_sub1_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(InvProduct), true); }
         private void btn_sub2_Click(object sender, EventArgs e) { FormNavigationManager.NavigateToForm(this, typeof(InvMaterial), true); }

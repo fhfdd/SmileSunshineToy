@@ -52,7 +52,7 @@
             // txtOrderID
             // 
             this.txtOrderID.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtOrderID.Location = new System.Drawing.Point(160, 27);
+            this.txtOrderID.Location = new System.Drawing.Point(194, 30);
             this.txtOrderID.Name = "txtOrderID";
             this.txtOrderID.ReadOnly = true;
             this.txtOrderID.Size = new System.Drawing.Size(216, 37);
@@ -71,7 +71,7 @@
             // txtCustomerID
             // 
             this.txtCustomerID.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCustomerID.Location = new System.Drawing.Point(160, 57);
+            this.txtCustomerID.Location = new System.Drawing.Point(194, 60);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(216, 37);
             this.txtCustomerID.TabIndex = 3;
@@ -89,7 +89,7 @@
             // txtOrderDate
             // 
             this.txtOrderDate.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtOrderDate.Location = new System.Drawing.Point(160, 87);
+            this.txtOrderDate.Location = new System.Drawing.Point(194, 90);
             this.txtOrderDate.Name = "txtOrderDate";
             this.txtOrderDate.Size = new System.Drawing.Size(216, 37);
             this.txtOrderDate.TabIndex = 5;
@@ -113,7 +113,7 @@
             "Pending",
             "Processing",
             "Completed"});
-            this.cmbStatus.Location = new System.Drawing.Point(160, 117);
+            this.cmbStatus.Location = new System.Drawing.Point(194, 120);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(216, 34);
             this.cmbStatus.TabIndex = 7;
@@ -131,7 +131,7 @@
             // txtTotalAmount
             // 
             this.txtTotalAmount.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtTotalAmount.Location = new System.Drawing.Point(160, 147);
+            this.txtTotalAmount.Location = new System.Drawing.Point(194, 150);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.ReadOnly = true;
             this.txtTotalAmount.Size = new System.Drawing.Size(216, 37);
@@ -152,7 +152,7 @@
             this.cmbProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProduct.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(160, 177);
+            this.cmbProduct.Location = new System.Drawing.Point(194, 180);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(216, 34);
             this.cmbProduct.TabIndex = 11;
@@ -171,7 +171,7 @@
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQty.Location = new System.Drawing.Point(160, 207);
+            this.txtQty.Location = new System.Drawing.Point(194, 210);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(216, 37);
             this.txtQty.TabIndex = 13;
@@ -191,7 +191,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCancel.Location = new System.Drawing.Point(228, 250);
+            this.btnCancel.Location = new System.Drawing.Point(262, 253);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(131, 39);
             this.btnCancel.TabIndex = 15;
