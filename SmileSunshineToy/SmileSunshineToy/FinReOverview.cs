@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class FinReOverview : Form
+    public partial class FinReOverview : BaseForm
     {
         private readonly DataGridManager _invoiceManager;
         private readonly DataGridManager _orderManager;
@@ -34,6 +35,8 @@ namespace SmileSunshineToy
 
             // 初始化下拉框
             InitializeComboBoxes();
+
+            SetDesignSize(new Size(1795, 920));
         }
 
         private void InitializeDataGridViews()

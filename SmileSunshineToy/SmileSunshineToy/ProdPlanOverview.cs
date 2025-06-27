@@ -6,7 +6,7 @@ using SmileSunshineToy.Utilities;
 
 namespace SmileSunshineToy
 {
-    public partial class ProdPlanOverview : Form
+    public partial class ProdPlanOverview : BaseForm
     {
         private DataGridManager _dataManager;
         private bool userHasManuallySelectedOrder = false;

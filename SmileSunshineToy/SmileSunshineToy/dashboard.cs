@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class Dashboard : Form
+    public partial class Dashboard : BaseForm
     {
         public Dashboard()
         {
             InitializeComponent();
             ConfigureUIByRole(UserSession.Role);
+            SetDesignSize(new Size(1595, 920));
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

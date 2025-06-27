@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace SmileSunshineToy
 {
-    public partial class PerStuOverview : Form
+    public partial class PerStuOverview : BaseForm
     {
         private DataGridManager _staffManager;
         private DataGridManager _orderManager;

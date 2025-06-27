@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class FinPayOverview : Form
+    public partial class FinPayOverview : BaseForm
     {
         private readonly DataGridManager _dataManager;
 
@@ -12,7 +13,7 @@ namespace SmileSunshineToy
             InitializeComponent();
             _dataManager = new DataGridManager("payment", "PaymentID", "PAY");
             _dataManager.SetConnectionString(Configuration.ConnectionString);
-
+            SetDesignSize(new Size(1595, 920));
             InitializeDataGridView();
             LoadData();
         }
@@ -193,5 +194,10 @@ namespace SmileSunshineToy
         private void BottomToolStripPanel_Click(object sender, EventArgs e) { }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void FinPayOverview_Load(object sender, EventArgs e) { }
+            private void btn_product_Click(object sender, EventArgs e) =>
+    FormNavigationManager.NavigateToForm(this, typeof(FinReOverview));
+
+        private void btn_material_Click(object sender, EventArgs e) =>
+      FormNavigationManager.NavigateToForm(this, typeof(FinPayOverview));
     }
 }

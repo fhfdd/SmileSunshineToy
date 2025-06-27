@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class InvMaterial : Form
+    public partial class InvMaterial : BaseForm
     {
         private readonly DataGridManager _dataManager;
 

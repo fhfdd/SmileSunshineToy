@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SmileSunshineToy
 {
-    public partial class RDdash : Form
+    public partial class RDdash : BaseForm
     {
         public RDdash()
         {
