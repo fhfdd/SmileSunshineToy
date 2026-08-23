@@ -51,15 +51,7 @@ SmileSunshineToy
 9. 财务管理：收款登记、付款登记
 10. 账号权限：用户登录、用户资料维护、会话权限校验
  
-目录说明
- 
-plaintext  
-SmileSunshineToy/
-├─ SmileSunshineToy/         # 主程序源码（窗体、业务类、工具类）
-├─ test.sql、test (1).sql    # MySQL数据库初始化脚本（存在冗余副本，部署选用最终版本）
-├─ ocs.txt、odcs.txt         # 项目配套文本资料/测试数据文件
- 
- 
+
 部署运行
  
 本项目为课程原型，未做完善工程化处理。
@@ -83,7 +75,4 @@ SmileSunshineToy/
  
 本项目仅用于学习交流。
 如需二次使用，请自行评估风险。
- 
- 
- 
-如果你需要，我可以把这份 README 再精简一版用于直接提交到仓库，或者单独把「2‑system‑architecture」章节抽出来单独 markdown。
+
